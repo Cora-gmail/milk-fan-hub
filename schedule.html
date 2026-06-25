@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>m!lk Fan Hub — ニュース</title>
+<title>m!lk Fan Hub — 演出情報</title>
 <style>
 :root{
   --bg:#f0f5ff;--surface:#ffffff;--card:#ffffff;--border:#dce8ff;
@@ -80,6 +80,17 @@ footer{text-align:center;padding:18px 20px 28px;font-size:.7rem;color:var(--mute
 .sources-footer{display:flex;justify-content:center;gap:5px;flex-wrap:wrap;padding:14px 0 4px;}
 .src-link{padding:3px 10px;border-radius:20px;font-size:.62rem;font-weight:700;color:#fff;background:var(--c,#888);text-decoration:none;opacity:.85;transition:opacity .2s;}
 .src-link:hover{opacity:1;}
+
+.event-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:15px;display:flex;flex-direction:column;gap:8px;box-shadow:var(--shadow);transition:transform .2s,box-shadow .2s;}
+.event-card:hover{transform:translateY(-2px);box-shadow:var(--shadow-hover);}
+.event-date{font-size:.7rem;font-variant-numeric:tabular-nums;color:var(--muted);}
+.event-title{font-size:.93rem;font-weight:700;color:var(--text);line-height:1.5;}
+.event-title-zh{font-size:.87rem;color:var(--blue);line-height:1.5;}
+.event-details{font-size:.77rem;color:var(--muted);line-height:1.6;}
+.event-link{display:inline-block;padding:5px 13px;background:transparent;border:1px solid var(--blue);color:var(--blue);text-decoration:none;border-radius:20px;font-size:.71rem;font-weight:600;align-self:flex-start;margin-top:auto;transition:background .2s,color .2s;}
+.event-link:hover{background:var(--blue);color:#fff;}
+.no-schedule{text-align:center;padding:60px 20px;color:var(--muted);}
+.no-schedule p{margin-bottom:8px;line-height:1.8;}
 </style>
 </head>
 <body>
@@ -87,8 +98,8 @@ footer{text-align:center;padding:18px 20px 28px;font-size:.7rem;color:var(--mute
   <div class="member-stripe"><span style="background:#ff69b4"></span><span style="background:#ffd43b"></span><span style="background:#4da6ff"></span><span style="background:#e8e8f0;border-top:1px solid #dce8ff"></span><span style="background:#ff3344"></span></div>
   <div class="wordmark">m<span class="bang">!</span>lk</div>
   <div class="hearts">&#9825; &middot; &#9825; &middot; &#9825;</div>
-  <p class="tagline">Fan Hub &middot; 新聞聚合</p>
-  <nav class="page-nav"><a href="index.html" class="nav-link nav-active">ニュース</a><a href="schedule.html" class="nav-link">演出情報</a></nav>
+  <p class="tagline">Fan Hub &middot; 演出情報</p>
+  <nav class="page-nav"><a href="index.html" class="nav-link">ニュース</a><a href="schedule.html" class="nav-link nav-active">演出情報</a></nav>
   <p class="update-time" id="update-time"></p>
 </header>
 <div class="main-wrap">
@@ -103,24 +114,24 @@ footer{text-align:center;padding:18px 20px 28px;font-size:.7rem;color:var(--mute
       <span>四</span><span>五</span><span>六</span>
     </div>
     <div class="cal-grid" id="cal-grid"></div>
-    <button class="cal-clear" id="cal-clear">顯示全部文章</button>
+    <button class="cal-clear" id="cal-clear">顯示全部演出</button>
     <p class="cal-stats" id="cal-stats"></p>
   </aside>
   <section class="articles-section">
-    <div class="filter-bar"><span class="filter-label" id="filter-label">全部文章</span></div>
-    <div id="articles-container"></div>
+    <div class="filter-bar"><span class="filter-label" id="filter-label">全部演出</span></div>
+    <div id="events-container"></div>
   </section>
 </div>
 <footer>
-  <p>m!lk Fan Hub &nbsp;&middot;&nbsp; 非公式 / 非官方 &nbsp;&middot;&nbsp; 毎日 09:00 JST 自動更新</p>
+  <p>m!lk Fan Hub &nbsp;&middot;&nbsp; 演出情報參考自 sd-milk.com &nbsp;&middot;&nbsp; 毎日 09:00 JST 自動更新</p>
   <div class="sources-footer"><a href="https://sd-milk.com" target="_blank" rel="noopener" class="src-link" style="--c:#d4006e">sd-milk.com 公式</a><a href="https://natalie.mu/music/" target="_blank" rel="noopener" class="src-link" style="--c:#0066aa">Natalie Music</a><a href="https://www.oricon.co.jp" target="_blank" rel="noopener" class="src-link" style="--c:#cc2233">Oricon</a><a href="https://www.barks.jp" target="_blank" rel="noopener" class="src-link" style="--c:#b05010">BARKS</a><a href="https://www.sanspo.com" target="_blank" rel="noopener" class="src-link" style="--c:#0a6b30">SANSPO</a><a href="https://www.billboard-japan.com" target="_blank" rel="noopener" class="src-link" style="--c:#1a4a9f">Billboard Japan</a><a href="https://www.musicvoice.jp" target="_blank" rel="noopener" class="src-link" style="--c:#7b1ea2">Musicvoice</a><a href="https://spice.eplus.jp" target="_blank" rel="noopener" class="src-link" style="--c:#d45500">SPICE</a><a href="https://www.musicman.co.jp" target="_blank" rel="noopener" class="src-link" style="--c:#1b5e20">Musicman</a><a href="https://www.thefirsttimes.jp" target="_blank" rel="noopener" class="src-link" style="--c:#c62828">The First Times</a><a href="https://mdpr.jp" target="_blank" rel="noopener" class="src-link" style="--c:#1565c0">Modelpress</a><a href="https://www.biteki.com" target="_blank" rel="noopener" class="src-link" style="--c:#e91e8c">美的.com</a><a href="https://www.mensnonno.jp" target="_blank" rel="noopener" class="src-link" style="--c:#0d47a1">MEN'S NON-NO</a><a href="https://www.vogue.co.jp" target="_blank" rel="noopener" class="src-link" style="--c:#2c2c2c">VOGUE JAPAN</a><a href="https://www.tvguide.or.jp/cmn_keyword/mlk/" target="_blank" rel="noopener" class="src-link" style="--c:#e53935">TVガイドWeb</a><a href="https://thetv.jp" target="_blank" rel="noopener" class="src-link" style="--c:#00838f">WEBザテレビジョン</a><a href="https://ebidan.jp" target="_blank" rel="noopener" class="src-link" style="--c:#6d4c41">ebidan.jp</a><a href="https://www.tbs.co.jp/yatte_milk/" target="_blank" rel="noopener" class="src-link" style="--c:#cc0000">やってM!LK (TBS)</a><a href="https://www.tbs.co.jp/kiminosukihamuteki_tbs/" target="_blank" rel="noopener" class="src-link" style="--c:#880033">君の好きは無敵</a><a href="https://www.joqr.co.jp/qr/program/reco/" target="_blank" rel="noopener" class="src-link" style="--c:#0055bb">レコメン! 文化放送</a><a href="https://www.mbs1179.com/imadoki/" target="_blank" rel="noopener" class="src-link" style="--c:#e65100">イマドキッ MBSラジオ</a><a href="https://www.disney.co.jp/movie/toy5" target="_blank" rel="noopener" class="src-link" style="--c:#0d47a1">トイ・ストーリー５</a><a href="https://zeztz-gavan-26movie.com/" target="_blank" rel="noopener" class="src-link" style="--c:#1b5e20">仮面ライダーゼッツ</a></div>
 </footer>
 <script>
-const ARTICLES=[{"id": "495c8fb6b6dd", "source": "やってM!LK (TBS)", "title_ja": "配信 最新回を無料配信中！", "title_zh": "線上串流 最新一集現正免費播出中！", "summary_ja": "", "summary_zh": "", "url": "https://cu.tbs.co.jp/program/26073", "image": "https://cu.tbs.co.jp/images/og_image.png", "date": "2026-06-26"}, {"id": "495c8fb6b6dd", "source": "やってM!LK (TBS)", "title_ja": "6月25日(木)放送後から無料配信※都合により配信開始が遅れる場合がございます", "title_zh": "6月25日（週四）播出後將提供免費串流服務※因故可能延遲上線", "summary_ja": "", "summary_zh": "", "url": "https://cu.tbs.co.jp/program/26073", "image": "https://cu.tbs.co.jp/images/og_image.png", "date": "2026-06-26"}, {"id": "e59c4eb4da79", "source": "やってM!LK (TBS)", "title_ja": "メンバーコメント", "title_zh": "成員感言", "summary_ja": "", "summary_zh": "", "url": "https://www.tbs.co.jp/yatte_milk/season1/", "image": "https://www.tbs.co.jp/yatte_milk/img/ogp.jpg", "date": "2026-06-26"}, {"id": "495c8fb6b6dd", "source": "やってM!LK (TBS)", "title_ja": "配信 最新回を無料配信中 これまでの配信はこちら ※都合により視聴できない場合がございます", "title_zh": "節目 最新一集現正免費播出 過往集數請點此 ※因故可能無法觀看", "summary_ja": "", "summary_zh": "", "url": "https://cu.tbs.co.jp/program/26073", "image": "https://cu.tbs.co.jp/images/og_image.png", "date": "2026-06-26"}, {"id": "2e988520865b", "source": "Natalie Music", "title_ja": "「オリコン上半期ランキング」M!LK、Snow Man、BTS、米津玄師、嵐、Number_i、timeleszが1位に輝く", "title_zh": "「Oricon上半年排行榜」M!LK、Snow Man、BTS、米津玄師、嵐、Number_i、timelesz榮登榜首", "summary_ja": "オリコンが「オリコン上半期ランキング 2026」における「作品別売上数部門」を発表。全10部門のうちtimeleszが3冠、BTSが2冠を達成したほか、M!LK、Snow Man、米津玄師、嵐、Number_iが1位に輝いた。", "summary_zh": "Oricon公布了「Oricon 2026年上半年排行榜」中的「作品銷量類別」榜單。在總計10個類別中，timelesz包辦3項冠軍，BTS則奪得2項冠軍；此外，M!LK、Snow Man、米津玄師、嵐及Number_i也分別榮登各自分類榜首。", "url": "https://natalie.mu/music/news/677680", "image": "https://ogre.natalie.mu/media/news/music/2026/0624/milk.jpg?impolicy=twitter_card_face_crop", "date": "2026-06-25"}];
+const EVENTS=[];
 document.getElementById('update-time').textContent='最後更新：2026-06-26 01:39 JST';
 const byDate={};
-ARTICLES.forEach(function(a){var d=a.date||'unknown';if(!byDate[d])byDate[d]=[];byDate[d].push(a);});
-const datesWithNews=new Set(Object.keys(byDate));
+EVENTS.forEach(function(e){var d=e.date||'unknown';if(!byDate[d])byDate[d]=[];byDate[d].push(e);});
+const datesWithEvents=new Set(Object.keys(byDate));
 const now=new Date();
 var calYear=now.getFullYear(),calMonth=now.getMonth(),selected=null;
 const MN=['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月'];
@@ -129,64 +140,60 @@ function renderCalendar(){
   var fw=new Date(calYear,calMonth,1).getDay(),dt=new Date(calYear,calMonth+1,0).getDate();
   var ts=now.toISOString().slice(0,10),g=document.getElementById('cal-grid');
   g.innerHTML='';
-  for(var i=0;i<fw;i++){var e=document.createElement('div');e.className='cal-empty';g.appendChild(e);}
+  for(var i=0;i<fw;i++){var el=document.createElement('div');el.className='cal-empty';g.appendChild(el);}
   for(var d=1;d<=dt;d++){
     var ds=calYear+'-'+String(calMonth+1).padStart(2,'0')+'-'+String(d).padStart(2,'0');
     var btn=document.createElement('button');
-    btn.className='cal-day'+(datesWithNews.has(ds)?' has-news':'')+(selected===ds?' selected':'')+(ds===ts?' today':'');
+    btn.className='cal-day'+(datesWithEvents.has(ds)?' has-news':'')+(selected===ds?' selected':'')+(ds===ts?' today':'');
     btn.textContent=d;
-    if(datesWithNews.has(ds)){
-      (function(s){btn.addEventListener('click',function(){selected=(selected===s)?null:s;renderCalendar();renderArticles();});})(ds);
+    if(datesWithEvents.has(ds)){
+      (function(s){btn.addEventListener('click',function(){selected=(selected===s)?null:s;renderCalendar();renderEvents();});})(ds);
     }
     g.appendChild(btn);
   }
   var pfx=calYear+'-'+String(calMonth+1).padStart(2,'0');
-  var mc=[...datesWithNews].filter(function(d){return d.startsWith(pfx);}).length;
-  document.getElementById('cal-stats').textContent='本月 '+mc+' 天有文章　共 '+ARTICLES.length+' 篇';
+  var mc=[...datesWithEvents].filter(function(d){return d.startsWith(pfx);}).length;
+  document.getElementById('cal-stats').textContent='本月 '+mc+' 場演出　共 '+EVENTS.length+' 場';
 }
 document.getElementById('cal-prev').addEventListener('click',function(){if(calMonth===0){calYear--;calMonth=11;}else calMonth--;renderCalendar();});
 document.getElementById('cal-next').addEventListener('click',function(){if(calMonth===11){calYear++;calMonth=0;}else calMonth++;renderCalendar();});
-document.getElementById('cal-clear').addEventListener('click',function(){selected=null;renderCalendar();renderArticles();});
-const SC={"sd-milk.com 公式": "#d4006e", "Natalie Music": "#0066aa", "Oricon": "#cc2233", "BARKS": "#b05010", "SANSPO": "#0a6b30", "Billboard Japan": "#1a4a9f", "Musicvoice": "#7b1ea2", "SPICE": "#d45500", "Musicman": "#1b5e20", "The First Times": "#c62828", "Modelpress": "#1565c0", "美的.com": "#e91e8c", "MEN'S NON-NO": "#0d47a1", "VOGUE JAPAN": "#2c2c2c", "TVガイドWeb": "#e53935", "WEBザテレビジョン": "#00838f", "ebidan.jp": "#6d4c41", "やってM!LK (TBS)": "#cc0000", "君の好きは無敵": "#880033", "レコメン! 文化放送": "#0055bb", "イマドキッ MBSラジオ": "#e65100", "トイ・ストーリー５": "#0d47a1", "仮面ライダーゼッツ": "#1b5e20"};
+document.getElementById('cal-clear').addEventListener('click',function(){selected=null;renderCalendar();renderEvents();});
 function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
-function makeCard(a){
-  var art=document.createElement('article');art.className='card';
-  var imgHtml='';
-  if(a.image){
-    imgHtml='<div class="card-img"><img src="'+esc(a.image)+'" alt="" loading="lazy" onerror="this.closest(\'.card-img\').style.display=\'none\'">' +
-      '<a class="img-dl" href="'+esc(a.image)+'" target="_blank" rel="noopener">&#8599; 原圖</a></div>';
-  }
-  var color=SC[a.source]||'#888';
-  art.innerHTML=imgHtml+
-    '<div class="card-body">'+
-    '<div class="card-head"><span class="badge" style="--c:'+color+'">'+esc(a.source)+'</span>'+(a.date?'<time class="date-tag">'+esc(a.date)+'</time>':'')+
-    '</div>'+(a.title_zh?'<p class="title-zh">'+esc(a.title_zh)+'</p>':'')+(a.title_ja?'<p class="title-ja">'+esc(a.title_ja)+'</p>':'')+
-    (a.summary_zh?'<p class="sum-zh">'+esc(a.summary_zh)+'</p>':'')+(a.summary_ja?'<p class="sum-ja">'+esc(a.summary_ja)+'</p>':'')+
-    '<a class="card-btn" href="'+esc(a.url)+'" target="_blank" rel="noopener">原文を読む &#8594;</a></div>';
-  return art;
+function makeEventCard(e){
+  var card=document.createElement('article');card.className='event-card';
+  card.innerHTML=
+    (e.date?'<p class="event-date">'+esc(e.date)+'</p>':'')+
+    (e.title?'<p class="event-title">'+esc(e.title)+'</p>':'')+
+    (e.title_zh?'<p class="event-title-zh">'+esc(e.title_zh)+'</p>':'')+
+    (e.details?'<p class="event-details">'+esc(e.details)+'</p>':'')+
+    (e.url?'<a class="event-link" href="'+esc(e.url)+'" target="_blank" rel="noopener">詳細を見る &#8594;</a>':'');
+  return card;
 }
-function renderArticles(){
-  var c=document.getElementById('articles-container'),l=document.getElementById('filter-label');
+function renderEvents(){
+  var c=document.getElementById('events-container'),l=document.getElementById('filter-label');
   c.innerHTML='';
+  if(EVENTS.length===0){
+    c.innerHTML='<div class="no-schedule"><p>演出情報の取得中...</p><p style="margin-top:12px"><a href="https://sd-milk.com" target="_blank" rel="noopener" style="color:var(--blue)">sd-milk.com を確認する &#8594;</a></p></div>';
+    return;
+  }
   if(selected){
-    l.textContent=selected+' 的文章';
-    var arts=byDate[selected]||[];
-    if(!arts.length){c.innerHTML='<p class="empty-msg">這天沒有文章</p>';return;}
+    l.textContent=selected+' 的演出';
+    var evs=byDate[selected]||[];
+    if(!evs.length){c.innerHTML='<p class="empty-msg">這天沒有演出</p>';return;}
     var g=document.createElement('div');g.className='articles-grid';
-    arts.forEach(function(a){g.appendChild(makeCard(a));});c.appendChild(g);
+    evs.forEach(function(e){g.appendChild(makeEventCard(e));});c.appendChild(g);
   }else{
-    l.textContent='全部文章';
-    var sd=[...datesWithNews].sort().reverse();
-    if(!sd.length){c.innerHTML='<p class="empty-msg">文章累積中，明天再來看看</p>';return;}
+    l.textContent='全部演出';
+    var sd=[...datesWithEvents].sort();
     sd.forEach(function(date){
       var grp=document.createElement('div');grp.className='date-group';
       var h=document.createElement('p');h.className='date-heading';h.textContent=date;grp.appendChild(h);
       var g=document.createElement('div');g.className='articles-grid';
-      byDate[date].forEach(function(a){g.appendChild(makeCard(a));});grp.appendChild(g);c.appendChild(grp);
+      byDate[date].forEach(function(e){g.appendChild(makeEventCard(e));});grp.appendChild(g);c.appendChild(grp);
     });
   }
 }
-renderCalendar();renderArticles();
+renderCalendar();renderEvents();
 </script>
 </body>
 </html>
