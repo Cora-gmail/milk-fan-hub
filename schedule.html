@@ -61,10 +61,11 @@ body{background:var(--bg);color:var(--text);font-family:'Hiragino Sans','Noto Sa
 .articles-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:13px;}
 .card{background:var(--card);border:1px solid var(--border);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s,border-color .2s;box-shadow:var(--shadow);}
 .card:hover{transform:translateY(-3px);box-shadow:var(--shadow-hover);border-color:#b4caff;}
-.card-img{position:relative;overflow:hidden;background:var(--bg);display:flex;align-items:center;justify-content:center;min-height:80px;}
-.card-img img{width:100%;height:auto;display:block;max-height:220px;object-fit:contain;}
-.img-dl{position:absolute;bottom:6px;right:6px;background:rgba(42,91,215,.85);color:#fff;font-size:.63rem;padding:3px 8px;border-radius:10px;text-decoration:none;backdrop-filter:blur(4px);transition:background .2s;}
-.img-dl:hover{background:var(--blue);}
+.card-img{background:var(--bg);}
+.card-img img{width:100%;height:auto;display:block;}
+.img-dl-wrap{text-align:right;padding:3px 8px 5px;background:var(--bg);}
+.img-dl{font-size:.62rem;color:var(--blue);text-decoration:none;display:inline-block;padding:2px 6px;border-radius:8px;transition:background .2s;}
+.img-dl:hover{background:var(--blue3);}
 .card-body{padding:13px;display:flex;flex-direction:column;gap:7px;flex:1;}
 .card-head{display:flex;align-items:center;justify-content:space-between;gap:6px;flex-wrap:wrap;}
 .badge{background:var(--c,#888);color:#fff;font-size:.63rem;font-weight:700;padding:2px 8px;border-radius:10px;white-space:nowrap;}
@@ -127,8 +128,8 @@ footer{text-align:center;padding:18px 20px 28px;font-size:.7rem;color:var(--mute
   <div class="sources-footer"><a href="https://sd-milk.com" target="_blank" rel="noopener" class="src-link" style="--c:#d4006e">sd-milk.com 公式</a><a href="https://natalie.mu/music/" target="_blank" rel="noopener" class="src-link" style="--c:#0066aa">Natalie Music</a><a href="https://www.oricon.co.jp" target="_blank" rel="noopener" class="src-link" style="--c:#cc2233">Oricon</a><a href="https://www.barks.jp" target="_blank" rel="noopener" class="src-link" style="--c:#b05010">BARKS</a><a href="https://www.sanspo.com" target="_blank" rel="noopener" class="src-link" style="--c:#0a6b30">SANSPO</a><a href="https://www.billboard-japan.com" target="_blank" rel="noopener" class="src-link" style="--c:#1a4a9f">Billboard Japan</a><a href="https://www.musicvoice.jp" target="_blank" rel="noopener" class="src-link" style="--c:#7b1ea2">Musicvoice</a><a href="https://spice.eplus.jp" target="_blank" rel="noopener" class="src-link" style="--c:#d45500">SPICE</a><a href="https://www.musicman.co.jp" target="_blank" rel="noopener" class="src-link" style="--c:#1b5e20">Musicman</a><a href="https://www.thefirsttimes.jp" target="_blank" rel="noopener" class="src-link" style="--c:#c62828">The First Times</a><a href="https://mdpr.jp" target="_blank" rel="noopener" class="src-link" style="--c:#1565c0">Modelpress</a><a href="https://www.biteki.com" target="_blank" rel="noopener" class="src-link" style="--c:#e91e8c">美的.com</a><a href="https://www.mensnonno.jp" target="_blank" rel="noopener" class="src-link" style="--c:#0d47a1">MEN'S NON-NO</a><a href="https://www.vogue.co.jp" target="_blank" rel="noopener" class="src-link" style="--c:#2c2c2c">VOGUE JAPAN</a><a href="https://www.tvguide.or.jp/cmn_keyword/mlk/" target="_blank" rel="noopener" class="src-link" style="--c:#e53935">TVガイドWeb</a><a href="https://thetv.jp" target="_blank" rel="noopener" class="src-link" style="--c:#00838f">WEBザテレビジョン</a><a href="https://ebidan.jp" target="_blank" rel="noopener" class="src-link" style="--c:#6d4c41">ebidan.jp</a><a href="https://www.tbs.co.jp/yatte_milk/" target="_blank" rel="noopener" class="src-link" style="--c:#cc0000">やってM!LK (TBS)</a><a href="https://www.tbs.co.jp/kiminosukihamuteki_tbs/" target="_blank" rel="noopener" class="src-link" style="--c:#880033">君の好きは無敵</a><a href="https://www.joqr.co.jp/qr/program/reco/" target="_blank" rel="noopener" class="src-link" style="--c:#0055bb">レコメン! 文化放送</a><a href="https://www.mbs1179.com/imadoki/" target="_blank" rel="noopener" class="src-link" style="--c:#e65100">イマドキッ MBSラジオ</a><a href="https://www.disney.co.jp/movie/toy5" target="_blank" rel="noopener" class="src-link" style="--c:#0d47a1">トイ・ストーリー５</a><a href="https://zeztz-gavan-26movie.com/" target="_blank" rel="noopener" class="src-link" style="--c:#1b5e20">仮面ライダーゼッツ</a></div>
 </footer>
 <script>
-const EVENTS=[];
-document.getElementById('update-time').textContent='最後更新：2026-06-26 01:39 JST';
+const EVENTS=[{"id": "3192ad1b50c7", "date": "2025-11-06", "title": "PREMIUM MILK リニューアルに伴う引き継ぎのご案内 いつもM!LKを応援いただき、誠にありがとうございます。 この度、M!LKオフィシャルファンクラブ「PREMIUM MILK」は、2025年11月6日(木)にリニューアルいたしま", "details": "", "title_zh": "", "url": "https://sd-milk.com/pages/convert"}];
+document.getElementById('update-time').textContent='最後更新：2026-06-26 01:51 JST';
 const byDate={};
 EVENTS.forEach(function(e){var d=e.date||'unknown';if(!byDate[d])byDate[d]=[];byDate[d].push(e);});
 const datesWithEvents=new Set(Object.keys(byDate));
