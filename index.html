@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>m!lk Fan Hub</title>
+<style>
+:root {
+  --bg:      #120818;
+  --surface: #1e0d28;
+  --card:    #27103a;
+  --border:  #3d1a54;
+  --rose:    #ff4d8d;
+  --rose2:   #ff80b0;
+  --text:    #f2e0ec;
+  --muted:   #b08aa8;
+}
+*,*::before,*::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Hiragino Sans', 'Noto Sans TC', 'Noto Sans JP', system-ui, sans-serif;
+  min-height: 100vh;
+}
+.site-header {
+  text-align: center;
+  padding: 56px 20px 40px;
+  background: radial-gradient(ellipse at 50% 0%, #3d1060 0%, transparent 70%);
+  position: relative;
+  overflow: hidden;
+}
+.site-header::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ff4d8d' fill-opacity='0.06'%3E%3Ccircle cx='20' cy='20' r='2'/%3E%3C/g%3E%3C/svg%3E");
+  pointer-events: none;
+}
+.wordmark {
+  font-size: clamp(3rem, 10vw, 6rem);
+  font-weight: 900;
+  letter-spacing: 0.25em;
+  color: #fff;
+  text-shadow: 0 0 40px rgba(255,77,141,.6), 0 0 80px rgba(255,77,141,.2);
+  position: relative;
+}
+.wordmark .bang { color: var(--rose); }
+.tagline {
+  margin-top: 10px;
+  font-size: .78rem;
+  letter-spacing: .5em;
+  text-transform: uppercase;
+  color: var(--rose2);
+}
+.hearts {
+  margin: 14px 0 6px;
+  font-size: 1rem;
+  color: var(--rose);
+  letter-spacing: .4em;
+  opacity: .7;
+}
+.update-time {
+  font-size: .72rem;
+  color: var(--muted);
+  margin-top: 12px;
+}
+.sources {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  padding: 20px 20px 0;
+}
+.sources span {
+  padding: 4px 14px;
+  border-radius: 20px;
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .04em;
+  color: #fff;
+}
+main {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 32px 16px 80px;
+}
+.section-label {
+  font-size: .72rem;
+  letter-spacing: .35em;
+  text-transform: uppercase;
+  color: var(--rose);
+  margin-bottom: 20px;
+  padding-left: 12px;
+  border-left: 2px solid var(--rose);
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+  gap: 18px;
+}
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: transform .2s, box-shadow .2s, border-color .2s;
+}
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(255,77,141,.12);
+  border-color: rgba(255,77,141,.35);
+}
+.card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+.badge {
+  background: var(--c, #888);
+  color: #fff;
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: .05em;
+  padding: 3px 10px;
+  border-radius: 10px;
+}
+.date {
+  font-size: .72rem;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+.title-zh {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--rose2);
+  line-height: 1.5;
+}
+.title-ja {
+  font-size: .85rem;
+  color: #c4a8ba;
+  line-height: 1.6;
+}
+.sum-ja {
+  font-size: .78rem;
+  color: var(--muted);
+  line-height: 1.65;
+  border-top: 1px solid var(--border);
+  padding-top: 8px;
+}
+.sum-zh {
+  font-size: .82rem;
+  color: #e0b8cc;
+  line-height: 1.65;
+  margin-top: 6px;
+}
+.btn {
+  display: inline-block;
+  margin-top: auto;
+  padding: 7px 16px;
+  background: transparent;
+  border: 1px solid var(--rose);
+  color: var(--rose);
+  text-decoration: none;
+  border-radius: 20px;
+  font-size: .78rem;
+  font-weight: 600;
+  align-self: flex-start;
+  transition: background .2s, color .2s;
+}
+.btn:hover { background: var(--rose); color: #fff; }
+.empty {
+  text-align: center;
+  padding: 60px;
+  color: var(--muted);
+  grid-column: 1/-1;
+}
+footer {
+  text-align: center;
+  padding: 24px;
+  font-size: .72rem;
+  color: var(--muted);
+  border-top: 1px solid var(--border);
+}
+@media (max-width: 480px) {
+  .wordmark { letter-spacing: .15em; }
+  .grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wordmark">m<span class="bang">!</span>lk</div>
+  <div class="hearts">♡ · ♡ · ♡</div>
+  <p class="tagline">Fan Hub &nbsp;·&nbsp; 新聞聚合</p>
+  <p class="update-time">最後更新 / 最終更新：2026-06-25 18:35 JST</p>
+</header>
+
+<div class="sources">
+  <span style="background:#e91e7a">sd-milk.com 公式</span>
+  <span style="background:#0090d4">Natalie Music</span>
+  <span style="background:#cc2233">Oricon</span>
+</div>
+
+<main>
+  <p class="section-label">最新ニュース ／ 最新消息</p>
+  <div class="grid">
+    <article class="card">
+  <header class="card-head">
+    <span class="badge" style="--c:#0090d4">Natalie Music</span>
+    
+  </header>
+  <p class='title-zh'>「Oricon上半年排行榜」M!LK、Snow Man、BTS、米津玄師、嵐、Number_i、timelesz榮登榜首</p>
+  <p class="title-ja">「オリコン上半期ランキング」M!LK、Snow Man、BTS、米津玄師、嵐、Number_i、timeleszが1位に輝く</p>
+  <p class="sum-ja">オリコンが「オリコン上半期ランキング 2026」における「作品別売上数部門」を発表。全10部門のうちtimeleszが3冠、BTSが2冠を達成したほか、M!LK、Snow Man、米津玄師、嵐、Number_iが1位に輝いた。</p><p class="sum-zh">Oricon公布了「2026年Oricon上半年排行榜」中的「作品銷售量類別」榜單。在總計10個類別中，timelesz奪得3冠，BTS則拿下2冠；此外，M!LK、Snow Man、米津玄師、嵐及Number_i均榮登榜首。</p>
+  <a class="btn" href="https://natalie.mu/music/news/677680" target="_blank" rel="noopener noreferrer">原文を読む →</a>
+</article>
+  </div>
+</main>
+
+<footer>
+  m!lk Fan Hub &nbsp;·&nbsp; 非公式ファンサイト / 非官方粉絲網站 &nbsp;·&nbsp; 毎日 09:00 JST 自動更新
+</footer>
+
+</body>
+</html>
