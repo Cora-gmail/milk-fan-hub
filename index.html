@@ -3,80 +3,92 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>m!lk Fan Hub</title>
+<title>m!lk Fan Hub — ニュース</title>
 <style>
-:root{--bg:#120818;--surface:#1e0d28;--card:#27103a;--border:#3d1a54;--rose:#ff4d8d;--rose2:#ff80b0;--text:#f2e0ec;--muted:#b08aa8;}
+:root{
+  --bg:#f0f5ff;--surface:#ffffff;--card:#ffffff;--border:#dce8ff;
+  --blue:#2a5bd7;--blue2:#5b8dee;--blue3:#dce8ff;
+  --text:#1a1a2e;--muted:#64748b;
+  --pink:#ff69b4;--yellow:#ffd43b;--sky:#4da6ff;--red:#ff3344;
+  --shadow:0 2px 12px rgba(42,91,215,.08);
+  --shadow-hover:0 8px 28px rgba(42,91,215,.16);
+}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;}
 body{background:var(--bg);color:var(--text);font-family:'Hiragino Sans','Noto Sans TC','Noto Sans JP',system-ui,sans-serif;min-height:100vh;}
-.site-header{text-align:center;padding:48px 20px 36px;background:radial-gradient(ellipse at 50% 0%,#3d1060 0%,transparent 68%);position:relative;overflow:hidden;}
-.site-header::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='20' cy='20' r='1.5' fill='%23ff4d8d' fill-opacity='.07'/%3E%3C/svg%3E");pointer-events:none;}
-.wordmark{font-size:clamp(3rem,10vw,5.5rem);font-weight:900;letter-spacing:.25em;color:#fff;text-shadow:0 0 40px rgba(255,77,141,.6),0 0 80px rgba(255,77,141,.2);position:relative;}
-.wordmark .bang{color:var(--rose);}
-.tagline{margin-top:10px;font-size:.78rem;letter-spacing:.5em;text-transform:uppercase;color:var(--rose2);}
-.hearts{margin:12px 0 6px;font-size:.95rem;color:var(--rose);letter-spacing:.4em;opacity:.7;}
-.update-time{font-size:.72rem;color:var(--muted);margin-top:10px;}
-.sources{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;padding:18px 20px 0;}
-.sources span{padding:3px 12px;border-radius:20px;font-size:.7rem;font-weight:700;color:#fff;}
-.main-wrap{max-width:1100px;margin:0 auto;padding:32px 16px 80px;display:grid;grid-template-columns:280px 1fr;gap:28px;align-items:start;}
+.site-header{background:var(--surface);border-bottom:1px solid var(--border);padding:28px 20px 0;text-align:center;}
+.member-stripe{display:flex;height:5px;width:100%;margin-bottom:20px;}
+.member-stripe span{flex:1;}
+.wordmark{font-size:clamp(2.6rem,8vw,4.8rem);font-weight:900;letter-spacing:.25em;color:var(--blue);}
+.wordmark .bang{color:var(--pink);}
+.tagline{margin-top:5px;font-size:.72rem;letter-spacing:.45em;text-transform:uppercase;color:var(--blue2);}
+.hearts{margin:7px 0 3px;font-size:.85rem;color:var(--pink);letter-spacing:.4em;}
+.update-time{font-size:.68rem;color:var(--muted);margin:7px 0 14px;}
+.page-nav{display:flex;justify-content:center;gap:0;}
+.nav-link{padding:10px 32px;font-size:.8rem;font-weight:600;letter-spacing:.08em;text-decoration:none;color:var(--muted);border-bottom:3px solid transparent;transition:color .2s,border-color .2s;}
+.nav-link:hover{color:var(--blue);}
+.nav-link.nav-active{color:var(--blue);border-bottom-color:var(--blue);}
+.sources{display:flex;justify-content:center;gap:5px;flex-wrap:wrap;padding:12px 20px;}
+.sources span{padding:3px 10px;border-radius:20px;font-size:.63rem;font-weight:700;color:#fff;}
+.main-wrap{max-width:1100px;margin:0 auto;padding:22px 16px 80px;display:grid;grid-template-columns:258px 1fr;gap:22px;align-items:start;}
 @media(max-width:760px){.main-wrap{grid-template-columns:1fr;}}
-.calendar-wrap{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:20px;position:sticky;top:20px;}
-.cal-nav{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;}
-.cal-title{font-size:.95rem;font-weight:700;color:var(--rose2);}
-.cal-arrow{background:none;border:1px solid var(--border);color:var(--muted);width:28px;height:28px;border-radius:6px;cursor:pointer;font-size:.9rem;transition:border-color .2s,color .2s;display:flex;align-items:center;justify-content:center;}
-.cal-arrow:hover{border-color:var(--rose);color:var(--rose);}
-.cal-dow{display:grid;grid-template-columns:repeat(7,1fr);gap:2px;margin-bottom:4px;}
-.cal-dow span{text-align:center;font-size:.65rem;color:var(--muted);padding:4px 0;font-weight:600;}
+.calendar-wrap{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:16px;position:sticky;top:20px;box-shadow:var(--shadow);}
+@media(max-width:760px){.calendar-wrap{position:static;}}
+.cal-nav{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;}
+.cal-title{font-size:.88rem;font-weight:700;color:var(--blue);}
+.cal-arrow{background:none;border:1px solid var(--border);color:var(--muted);width:26px;height:26px;border-radius:6px;cursor:pointer;transition:border-color .2s,color .2s;display:flex;align-items:center;justify-content:center;font-size:.85rem;}
+.cal-arrow:hover{border-color:var(--blue);color:var(--blue);}
+.cal-dow{display:grid;grid-template-columns:repeat(7,1fr);gap:2px;margin-bottom:3px;}
+.cal-dow span{text-align:center;font-size:.6rem;color:var(--muted);padding:3px 0;font-weight:600;}
 .cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:2px;}
-.cal-empty{height:32px;}
-.cal-day{height:32px;border-radius:6px;border:none;background:transparent;color:var(--muted);font-size:.78rem;cursor:default;position:relative;transition:background .15s,color .15s;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:1px;}
+.cal-empty{height:30px;}
+.cal-day{height:30px;border-radius:5px;border:none;background:transparent;color:var(--muted);font-size:.74rem;cursor:default;position:relative;transition:background .15s,color .15s;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:1px;}
 .cal-day.has-news{color:var(--text);cursor:pointer;}
-.cal-day.has-news:hover{background:rgba(255,77,141,.12);}
-.cal-day.has-news::after{content:'';display:block;width:4px;height:4px;border-radius:50%;background:var(--rose);opacity:.8;}
-.cal-day.selected{background:var(--rose);color:#fff;}
+.cal-day.has-news:hover{background:var(--blue3);}
+.cal-day.has-news::after{content:'';display:block;width:4px;height:4px;border-radius:50%;background:var(--blue);opacity:.7;}
+.cal-day.selected{background:var(--blue);color:#fff;}
 .cal-day.selected::after{background:#fff;}
-.cal-day.today{font-weight:700;}
-.cal-clear{display:block;width:100%;margin-top:14px;padding:7px;background:rgba(255,77,141,.1);border:1px solid rgba(255,77,141,.25);color:var(--rose2);border-radius:8px;font-size:.78rem;cursor:pointer;transition:background .2s;}
-.cal-clear:hover{background:rgba(255,77,141,.2);}
-.cal-stats{margin-top:12px;font-size:.7rem;color:var(--muted);text-align:center;line-height:1.6;}
+.cal-day.today{font-weight:700;color:var(--pink);}
+.cal-day.today.selected{color:#fff;}
+.cal-clear{display:block;width:100%;margin-top:10px;padding:6px;background:var(--blue3);border:1px solid var(--border);color:var(--blue);border-radius:8px;font-size:.73rem;cursor:pointer;transition:background .2s;}
+.cal-clear:hover{background:#c5d8ff;}
+.cal-stats{margin-top:9px;font-size:.67rem;color:var(--muted);text-align:center;line-height:1.6;}
 .articles-section{min-width:0;}
-.filter-bar{margin-bottom:18px;}
-.filter-label{font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;color:var(--rose);padding-left:10px;border-left:2px solid var(--rose);}
-.date-group{margin-bottom:32px;}
-.date-heading{font-size:.72rem;letter-spacing:.25em;color:var(--rose2);margin-bottom:14px;padding-bottom:6px;border-bottom:1px solid var(--border);}
-.articles-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;}
-.card{background:var(--card);border:1px solid var(--border);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s,border-color .2s;}
-.card:hover{transform:translateY(-3px);box-shadow:0 10px 28px rgba(255,77,141,.12);border-color:rgba(255,77,141,.3);}
-.card-img{position:relative;padding-top:56.25%;overflow:hidden;background:var(--surface);}
+.filter-bar{margin-bottom:13px;}
+.filter-label{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--blue);padding-left:10px;border-left:3px solid var(--blue);}
+.date-group{margin-bottom:24px;}
+.date-heading{font-size:.7rem;letter-spacing:.22em;color:var(--blue2);margin-bottom:10px;padding-bottom:5px;border-bottom:1px solid var(--border);}
+.articles-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:13px;}
+.card{background:var(--card);border:1px solid var(--border);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s,border-color .2s;box-shadow:var(--shadow);}
+.card:hover{transform:translateY(-3px);box-shadow:var(--shadow-hover);border-color:#b4caff;}
+.card-img{position:relative;padding-top:56.25%;overflow:hidden;background:var(--bg);}
 .card-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
-.img-dl{position:absolute;bottom:8px;right:8px;background:rgba(0,0,0,.65);color:#fff;font-size:.68rem;padding:3px 9px;border-radius:12px;text-decoration:none;backdrop-filter:blur(4px);transition:background .2s;}
-.img-dl:hover{background:var(--rose);}
-.card-body{padding:16px;display:flex;flex-direction:column;gap:8px;flex:1;}
-.card-head{display:flex;align-items:center;justify-content:space-between;gap:6px;}
-.badge{background:var(--c,#888);color:#fff;font-size:.68rem;font-weight:700;padding:2px 9px;border-radius:10px;white-space:nowrap;}
-.date-tag{font-size:.7rem;color:var(--muted);font-variant-numeric:tabular-nums;}
-.title-zh{font-size:.97rem;font-weight:700;color:var(--rose2);line-height:1.5;}
-.title-ja{font-size:.8rem;color:#c4a8ba;line-height:1.6;}
-.sum-zh{font-size:.8rem;color:#e0b8cc;line-height:1.65;}
-.sum-ja{font-size:.75rem;color:var(--muted);line-height:1.65;border-top:1px solid var(--border);padding-top:6px;}
-.card-btn{display:inline-block;margin-top:auto;padding:6px 14px;background:transparent;border:1px solid var(--rose);color:var(--rose);text-decoration:none;border-radius:20px;font-size:.75rem;font-weight:600;align-self:flex-start;transition:background .2s,color .2s;}
-.card-btn:hover{background:var(--rose);color:#fff;}
+.img-dl{position:absolute;bottom:6px;right:6px;background:rgba(42,91,215,.85);color:#fff;font-size:.63rem;padding:3px 8px;border-radius:10px;text-decoration:none;backdrop-filter:blur(4px);transition:background .2s;}
+.img-dl:hover{background:var(--blue);}
+.card-body{padding:13px;display:flex;flex-direction:column;gap:7px;flex:1;}
+.card-head{display:flex;align-items:center;justify-content:space-between;gap:6px;flex-wrap:wrap;}
+.badge{background:var(--c,#888);color:#fff;font-size:.63rem;font-weight:700;padding:2px 8px;border-radius:10px;white-space:nowrap;}
+.date-tag{font-size:.67rem;color:var(--muted);font-variant-numeric:tabular-nums;}
+.title-zh{font-size:.93rem;font-weight:700;color:var(--blue);line-height:1.5;}
+.title-ja{font-size:.78rem;color:#4a5568;line-height:1.6;}
+.sum-zh{font-size:.77rem;color:#374151;line-height:1.65;}
+.sum-ja{font-size:.72rem;color:var(--muted);line-height:1.65;border-top:1px solid var(--border);padding-top:5px;}
+.card-btn{display:inline-block;margin-top:auto;padding:5px 13px;background:transparent;border:1px solid var(--blue);color:var(--blue);text-decoration:none;border-radius:20px;font-size:.71rem;font-weight:600;align-self:flex-start;transition:background .2s,color .2s;}
+.card-btn:hover{background:var(--blue);color:#fff;}
 .empty-msg{text-align:center;padding:48px;color:var(--muted);font-size:.9rem;}
-footer{text-align:center;padding:24px;font-size:.72rem;color:var(--muted);border-top:1px solid var(--border);}
+footer{text-align:center;padding:22px;font-size:.7rem;color:var(--muted);border-top:1px solid var(--border);background:var(--surface);}
 </style>
 </head>
 <body>
 <header class="site-header">
+  <div class="member-stripe"><span style="background:#ff69b4"></span><span style="background:#ffd43b"></span><span style="background:#4da6ff"></span><span style="background:#e8e8f0;border-top:1px solid #dce8ff"></span><span style="background:#ff3344"></span></div>
   <div class="wordmark">m<span class="bang">!</span>lk</div>
   <div class="hearts">&#9825; &middot; &#9825; &middot; &#9825;</div>
   <p class="tagline">Fan Hub &middot; 新聞聚合</p>
+  <nav class="page-nav"><a href="index.html" class="nav-link nav-active">ニュース</a><a href="schedule.html" class="nav-link">演出情報</a></nav>
   <p class="update-time" id="update-time"></p>
 </header>
-<div class="sources">
-  <span style="background:#e91e7a">sd-milk.com 公式</span>
-  <span style="background:#0090d4">Natalie Music</span>
-  <span style="background:#cc2233">Oricon</span>
-</div>
+<div class="sources"><span style="background:#d4006e">sd-milk.com</span><span style="background:#0066aa">Natalie</span><span style="background:#cc2233">Oricon</span><span style="background:#b05010">BARKS</span><span style="background:#0a6b30">SANSPO</span><span style="background:#1a4a9f">Billboard Japan</span><span style="background:#7b1ea2">Musicvoice</span><span style="background:#d45500">SPICE</span><span style="background:#1b5e20">Musicman</span><span style="background:#c62828">The First Times</span><span style="background:#1565c0">Modelpress</span><span style="background:#e91e8c">美的.com</span><span style="background:#0d47a1">MEN'S NON-NO</span><span style="background:#2c2c2c">VOGUE JAPAN</span><span style="background:#e53935">TVガイドWeb</span><span style="background:#00838f">WEBザテレビジョン</span><span style="background:#6d4c41">ebidan.jp</span><span style="background:#cc0000">やってM!LK</span><span style="background:#880033">君の好きは無敵</span><span style="background:#0055bb">レコメン!</span><span style="background:#e65100">イマドキッ</span><span style="background:#0d47a1">トイ・ストーリー５</span><span style="background:#1b5e20">仮面ライダーゼッツ</span></div>
 <div class="main-wrap">
   <aside class="calendar-wrap">
     <div class="cal-nav">
@@ -93,143 +105,83 @@ footer{text-align:center;padding:24px;font-size:.72rem;color:var(--muted);border
     <p class="cal-stats" id="cal-stats"></p>
   </aside>
   <section class="articles-section">
-    <div class="filter-bar">
-      <span class="filter-label" id="filter-label">全部文章</span>
-    </div>
+    <div class="filter-bar"><span class="filter-label" id="filter-label">全部文章</span></div>
     <div id="articles-container"></div>
   </section>
 </div>
-<footer>m!lk Fan Hub &nbsp;&middot;&nbsp; 非公式ファンサイト / 非官方粉絲網站 &nbsp;&middot;&nbsp; 毎日 09:00 JST 自動更新</footer>
+<footer>m!lk Fan Hub &nbsp;&middot;&nbsp; 非公式 / 非官方 &nbsp;&middot;&nbsp; 毎日 09:00 JST 自動更新</footer>
 <script>
-const ARTICLES = [{"id": "2e988520865b", "source": "Natalie Music", "title_ja": "「オリコン上半期ランキング」M!LK、Snow Man、BTS、米津玄師、嵐、Number_i、timeleszが1位に輝く", "title_zh": "「Oricon上半年排行榜」M!LK、Snow Man、BTS、米津玄師、嵐、Number_i、timelesz榮登榜首", "summary_ja": "オリコンが「オリコン上半期ランキング 2026」における「作品別売上数部門」を発表。全10部門のうちtimeleszが3冠、BTSが2冠を達成したほか、M!LK、Snow Man、米津玄師、嵐、Number_iが1位に輝いた。", "summary_zh": "Oricon公布了「Oricon 2026年上半年排行榜」中的「作品銷量類別」榜單。在總計10個類別中，timelesz包辦3項冠軍，BTS則奪得2項冠軍；此外，M!LK、Snow Man、米津玄師、嵐及Number_i也分別榮登各自分類榜首。", "url": "https://natalie.mu/music/news/677680", "image": "https://ogre.natalie.mu/media/news/music/2026/0624/milk.jpg?impolicy=twitter_card_face_crop", "date": "2026-06-25"}];
-const UPDATED_AT = "2026-06-25 19:01";
-
-document.getElementById('update-time').textContent = '最後更新 / 最終更新：' + UPDATED_AT + ' JST';
-
-const byDate = {};
-ARTICLES.forEach(function(a) {
-  var d = a.date || 'unknown';
-  if (!byDate[d]) byDate[d] = [];
-  byDate[d].push(a);
-});
-const datesWithNews = new Set(Object.keys(byDate));
-
-const now = new Date();
-var calYear = now.getFullYear();
-var calMonth = now.getMonth();
-var selected = null;
-const MONTH_NAMES = ['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月'];
-
-function renderCalendar() {
-  document.getElementById('cal-title').textContent = calYear + '年 ' + MONTH_NAMES[calMonth];
-  var firstWd = new Date(calYear, calMonth, 1).getDay();
-  var daysTotal = new Date(calYear, calMonth + 1, 0).getDate();
-  var todayStr = now.toISOString().slice(0, 10);
-  var grid = document.getElementById('cal-grid');
-  grid.innerHTML = '';
-  for (var i = 0; i < firstWd; i++) {
-    var e = document.createElement('div'); e.className = 'cal-empty'; grid.appendChild(e);
-  }
-  for (var d = 1; d <= daysTotal; d++) {
-    var ds = calYear + '-' + String(calMonth + 1).padStart(2, '0') + '-' + String(d).padStart(2, '0');
-    var hasNews = datesWithNews.has(ds);
-    var isSel = selected === ds;
-    var isToday = ds === todayStr;
-    var btn = document.createElement('button');
-    btn.className = 'cal-day' + (hasNews ? ' has-news' : '') + (isSel ? ' selected' : '') + (isToday ? ' today' : '');
-    btn.textContent = d;
-    if (hasNews) {
-      (function(dateStr) {
-        btn.addEventListener('click', function() {
-          selected = (selected === dateStr) ? null : dateStr;
-          renderCalendar(); renderArticles();
-        });
-      })(ds);
+const ARTICLES=[{"id": "130af1e0bf9a", "source": "Billboard Japan", "title_ja": "CHART INSIGHT＋", "title_zh": "CHART INSIGHT＋", "summary_ja": "", "summary_zh": "", "url": "https://www.billboard-japan.comjavascript:void(0);", "image": "", "date": "2026-06-26"}, {"id": "130af1e0bf9a", "source": "Billboard Japan", "title_ja": "MUSIC", "title_zh": "MUSIC", "summary_ja": "", "summary_zh": "", "url": "https://www.billboard-japan.comjavascript:void(0);", "image": "", "date": "2026-06-26"}, {"id": "3a1d944714bb", "source": "Billboard Japan", "title_ja": "CHART INSIGHT", "title_zh": "CHART INSIGHT", "summary_ja": "", "summary_zh": "", "url": "https://www.billboard-japan.com/chart_insight/", "image": "https://www.billboard-japan.com/common/og.png", "date": "2026-06-26"}, {"id": "c31d6e8067db", "source": "Billboard Japan", "title_ja": "CHART INSIGHT GLOBAL", "title_zh": "CHART INSIGHT GLOBAL", "summary_ja": "", "summary_zh": "", "url": "https://www.billboard-japan.com/chart_insight_global/", "image": "https://www.billboard-japan.com/common/og.png", "date": "2026-06-26"}, {"id": "130af1e0bf9a", "source": "Billboard Japan", "title_ja": "BOOKS", "title_zh": "書籍", "summary_ja": "", "summary_zh": "", "url": "https://www.billboard-japan.comjavascript:void(0);", "image": "", "date": "2026-06-26"}, {"id": "62c06b121f40", "source": "Billboard Japan", "title_ja": "BOOK CHART INSIGHT", "title_zh": "《BOOK CHART INSIGHT》", "summary_ja": "", "summary_zh": "", "url": "https://www.billboard-japan.com/chart_insight_books/", "image": "https://www.billboard-japan.com/common/og.png", "date": "2026-06-26"}, {"id": "495c8fb6b6dd", "source": "やってM!LK (TBS)", "title_ja": "配信 最新回を無料配信中！", "title_zh": "線上串流 最新一集現正免費播出中！", "summary_ja": "", "summary_zh": "", "url": "https://cu.tbs.co.jp/program/26073", "image": "https://cu.tbs.co.jp/images/og_image.png", "date": "2026-06-26"}, {"id": "495c8fb6b6dd", "source": "やってM!LK (TBS)", "title_ja": "6月25日(木)放送後から無料配信※都合により配信開始が遅れる場合がございます", "title_zh": "6月25日（週四）播出後將提供免費串流服務※因故可能延遲上線", "summary_ja": "", "summary_zh": "", "url": "https://cu.tbs.co.jp/program/26073", "image": "https://cu.tbs.co.jp/images/og_image.png", "date": "2026-06-26"}, {"id": "e59c4eb4da79", "source": "やってM!LK (TBS)", "title_ja": "メンバーコメント", "title_zh": "成員感言", "summary_ja": "", "summary_zh": "", "url": "https://www.tbs.co.jp/yatte_milk/season1/", "image": "https://www.tbs.co.jp/yatte_milk/img/ogp.jpg", "date": "2026-06-26"}, {"id": "495c8fb6b6dd", "source": "やってM!LK (TBS)", "title_ja": "配信 最新回を無料配信中 これまでの配信はこちら ※都合により視聴できない場合がございます", "title_zh": "節目 最新一集現正免費播出 過往集數請點此 ※因故可能無法觀看", "summary_ja": "", "summary_zh": "", "url": "https://cu.tbs.co.jp/program/26073", "image": "https://cu.tbs.co.jp/images/og_image.png", "date": "2026-06-26"}, {"id": "2e988520865b", "source": "Natalie Music", "title_ja": "「オリコン上半期ランキング」M!LK、Snow Man、BTS、米津玄師、嵐、Number_i、timeleszが1位に輝く", "title_zh": "「Oricon上半年排行榜」M!LK、Snow Man、BTS、米津玄師、嵐、Number_i、timelesz榮登榜首", "summary_ja": "オリコンが「オリコン上半期ランキング 2026」における「作品別売上数部門」を発表。全10部門のうちtimeleszが3冠、BTSが2冠を達成したほか、M!LK、Snow Man、米津玄師、嵐、Number_iが1位に輝いた。", "summary_zh": "Oricon公布了「Oricon 2026年上半年排行榜」中的「作品銷量類別」榜單。在總計10個類別中，timelesz包辦3項冠軍，BTS則奪得2項冠軍；此外，M!LK、Snow Man、米津玄師、嵐及Number_i也分別榮登各自分類榜首。", "url": "https://natalie.mu/music/news/677680", "image": "https://ogre.natalie.mu/media/news/music/2026/0624/milk.jpg?impolicy=twitter_card_face_crop", "date": "2026-06-25"}];
+document.getElementById('update-time').textContent='最後更新：2026-06-26 01:08 JST';
+const byDate={};
+ARTICLES.forEach(function(a){var d=a.date||'unknown';if(!byDate[d])byDate[d]=[];byDate[d].push(a);});
+const datesWithNews=new Set(Object.keys(byDate));
+const now=new Date();
+var calYear=now.getFullYear(),calMonth=now.getMonth(),selected=null;
+const MN=['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月'];
+function renderCalendar(){
+  document.getElementById('cal-title').textContent=calYear+'年 '+MN[calMonth];
+  var fw=new Date(calYear,calMonth,1).getDay(),dt=new Date(calYear,calMonth+1,0).getDate();
+  var ts=now.toISOString().slice(0,10),g=document.getElementById('cal-grid');
+  g.innerHTML='';
+  for(var i=0;i<fw;i++){var e=document.createElement('div');e.className='cal-empty';g.appendChild(e);}
+  for(var d=1;d<=dt;d++){
+    var ds=calYear+'-'+String(calMonth+1).padStart(2,'0')+'-'+String(d).padStart(2,'0');
+    var btn=document.createElement('button');
+    btn.className='cal-day'+(datesWithNews.has(ds)?' has-news':'')+(selected===ds?' selected':'')+(ds===ts?' today':'');
+    btn.textContent=d;
+    if(datesWithNews.has(ds)){
+      (function(s){btn.addEventListener('click',function(){selected=(selected===s)?null:s;renderCalendar();renderArticles();});})(ds);
     }
-    grid.appendChild(btn);
+    g.appendChild(btn);
   }
-  var monthPfx = calYear + '-' + String(calMonth + 1).padStart(2, '0');
-  var monthCount = [...datesWithNews].filter(function(d) { return d.startsWith(monthPfx); }).length;
-  document.getElementById('cal-stats').textContent =
-    '本月 ' + monthCount + ' 天有文章　共 ' + ARTICLES.length + ' 篇';
+  var pfx=calYear+'-'+String(calMonth+1).padStart(2,'0');
+  var mc=[...datesWithNews].filter(function(d){return d.startsWith(pfx);}).length;
+  document.getElementById('cal-stats').textContent='本月 '+mc+' 天有文章　共 '+ARTICLES.length+' 篇';
 }
-
-document.getElementById('cal-prev').addEventListener('click', function() {
-  if (calMonth === 0) { calYear--; calMonth = 11; } else calMonth--;
-  renderCalendar();
-});
-document.getElementById('cal-next').addEventListener('click', function() {
-  if (calMonth === 11) { calYear++; calMonth = 0; } else calMonth++;
-  renderCalendar();
-});
-document.getElementById('cal-clear').addEventListener('click', function() {
-  selected = null; renderCalendar(); renderArticles();
-});
-
-const SOURCE_COLORS = {'sd-milk.com (公式)':'#e91e7a','Natalie Music':'#0090d4','Oricon':'#cc2233'};
-function esc(s) {
-  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
-}
-
-function makeCard(a) {
-  var color = SOURCE_COLORS[a.source] || '#888';
-  var article = document.createElement('article');
-  article.className = 'card';
-  var imgHtml = '';
-  if (a.image) {
-    imgHtml = '<div class="card-img">' +
-      '<img src="' + esc(a.image) + '" alt="" loading="lazy" onerror="this.closest(\'.card-img\').style.display=\'none\'">' +
-      '<a class="img-dl" href="' + esc(a.image) + '" target="_blank" rel="noopener">&#8595; 查看圖片</a>' +
-      '</div>';
+document.getElementById('cal-prev').addEventListener('click',function(){if(calMonth===0){calYear--;calMonth=11;}else calMonth--;renderCalendar();});
+document.getElementById('cal-next').addEventListener('click',function(){if(calMonth===11){calYear++;calMonth=0;}else calMonth++;renderCalendar();});
+document.getElementById('cal-clear').addEventListener('click',function(){selected=null;renderCalendar();renderArticles();});
+const SC={"sd-milk.com 公式": "#d4006e", "Natalie Music": "#0066aa", "Oricon": "#cc2233", "BARKS": "#b05010", "SANSPO": "#0a6b30", "Billboard Japan": "#1a4a9f", "Musicvoice": "#7b1ea2", "SPICE": "#d45500", "Musicman": "#1b5e20", "The First Times": "#c62828", "Modelpress": "#1565c0", "美的.com": "#e91e8c", "MEN'S NON-NO": "#0d47a1", "VOGUE JAPAN": "#2c2c2c", "TVガイドWeb": "#e53935", "WEBザテレビジョン": "#00838f", "ebidan.jp": "#6d4c41", "やってM!LK (TBS)": "#cc0000", "君の好きは無敵": "#880033", "レコメン! 文化放送": "#0055bb", "イマドキッ MBSラジオ": "#e65100", "トイ・ストーリー５": "#0d47a1", "仮面ライダーゼッツ": "#1b5e20"};
+function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+function makeCard(a){
+  var art=document.createElement('article');art.className='card';
+  var imgHtml='';
+  if(a.image){
+    imgHtml='<div class="card-img"><img src="'+esc(a.image)+'" alt="" loading="lazy" onerror="this.closest(\'.card-img\').style.display=\'none\'">' +
+      '<a class="img-dl" href="'+esc(a.image)+'" target="_blank" rel="noopener">&#8599; 原圖</a></div>';
   }
-  article.innerHTML = imgHtml +
-    '<div class="card-body">' +
-      '<div class="card-head">' +
-        '<span class="badge" style="--c:' + color + '">' + esc(a.source) + '</span>' +
-        (a.date ? '<time class="date-tag">' + esc(a.date) + '</time>' : '') +
-      '</div>' +
-      (a.title_zh ? '<p class="title-zh">' + esc(a.title_zh) + '</p>' : '') +
-      (a.title_ja ? '<p class="title-ja">' + esc(a.title_ja) + '</p>' : '') +
-      (a.summary_zh ? '<p class="sum-zh">' + esc(a.summary_zh) + '</p>' : '') +
-      (a.summary_ja ? '<p class="sum-ja">' + esc(a.summary_ja) + '</p>' : '') +
-      '<a class="card-btn" href="' + esc(a.url) + '" target="_blank" rel="noopener noreferrer">原文を読む &#8594;</a>' +
-    '</div>';
-  return article;
+  var color=SC[a.source]||'#888';
+  art.innerHTML=imgHtml+
+    '<div class="card-body">'+
+    '<div class="card-head"><span class="badge" style="--c:'+color+'">'+esc(a.source)+'</span>'+(a.date?'<time class="date-tag">'+esc(a.date)+'</time>':'')+
+    '</div>'+(a.title_zh?'<p class="title-zh">'+esc(a.title_zh)+'</p>':'')+(a.title_ja?'<p class="title-ja">'+esc(a.title_ja)+'</p>':'')+
+    (a.summary_zh?'<p class="sum-zh">'+esc(a.summary_zh)+'</p>':'')+(a.summary_ja?'<p class="sum-ja">'+esc(a.summary_ja)+'</p>':'')+
+    '<a class="card-btn" href="'+esc(a.url)+'" target="_blank" rel="noopener">原文を読む &#8594;</a></div>';
+  return art;
 }
-
-function renderArticles() {
-  var container = document.getElementById('articles-container');
-  var label = document.getElementById('filter-label');
-  container.innerHTML = '';
-  if (selected) {
-    label.textContent = selected + ' 的文章';
-    var arts = byDate[selected] || [];
-    if (arts.length === 0) {
-      container.innerHTML = '<p class="empty-msg">這天沒有文章</p>'; return;
-    }
-    var grid = document.createElement('div'); grid.className = 'articles-grid';
-    arts.forEach(function(a) { grid.appendChild(makeCard(a)); });
-    container.appendChild(grid);
-  } else {
-    label.textContent = '全部文章';
-    var sortedDates = [...datesWithNews].sort().reverse();
-    if (sortedDates.length === 0) {
-      container.innerHTML = '<p class="empty-msg">文章累積中，明天再來看看</p>'; return;
-    }
-    sortedDates.forEach(function(date) {
-      var group = document.createElement('div'); group.className = 'date-group';
-      var heading = document.createElement('p'); heading.className = 'date-heading';
-      heading.textContent = date; group.appendChild(heading);
-      var grid = document.createElement('div'); grid.className = 'articles-grid';
-      byDate[date].forEach(function(a) { grid.appendChild(makeCard(a)); });
-      group.appendChild(grid);
-      container.appendChild(group);
+function renderArticles(){
+  var c=document.getElementById('articles-container'),l=document.getElementById('filter-label');
+  c.innerHTML='';
+  if(selected){
+    l.textContent=selected+' 的文章';
+    var arts=byDate[selected]||[];
+    if(!arts.length){c.innerHTML='<p class="empty-msg">這天沒有文章</p>';return;}
+    var g=document.createElement('div');g.className='articles-grid';
+    arts.forEach(function(a){g.appendChild(makeCard(a));});c.appendChild(g);
+  }else{
+    l.textContent='全部文章';
+    var sd=[...datesWithNews].sort().reverse();
+    if(!sd.length){c.innerHTML='<p class="empty-msg">文章累積中，明天再來看看</p>';return;}
+    sd.forEach(function(date){
+      var grp=document.createElement('div');grp.className='date-group';
+      var h=document.createElement('p');h.className='date-heading';h.textContent=date;grp.appendChild(h);
+      var g=document.createElement('div');g.className='articles-grid';
+      byDate[date].forEach(function(a){g.appendChild(makeCard(a));});grp.appendChild(g);c.appendChild(grp);
     });
   }
 }
-
-renderCalendar();
-renderArticles();
+renderCalendar();renderArticles();
 </script>
 </body>
 </html>
