@@ -129,7 +129,7 @@ footer{text-align:center;padding:18px 20px 28px;font-size:.7rem;color:var(--mute
 </footer>
 <script>
 const EVENTS=[{"id": "3192ad1b50c7", "date": "2025-11-06", "title": "PREMIUM MILK リニューアルに伴う引き継ぎのご案内 いつもM!LKを応援いただき、誠にありがとうございます。 この度、M!LKオフィシャルファンクラブ「PREMIUM MILK」は、2025年11月6日(木)にリニューアルいたしま", "details": "", "title_zh": "", "url": "https://sd-milk.com/pages/convert"}];
-document.getElementById('update-time').textContent='最後更新：2026-06-26 02:06 JST';
+document.getElementById('update-time').textContent='最後更新：2026-06-26 02:15 JST';
 const byDate={};
 EVENTS.forEach(function(e){var d=e.date||'unknown';if(!byDate[d])byDate[d]=[];byDate[d].push(e);});
 const datesWithEvents=new Set(Object.keys(byDate));
@@ -174,7 +174,7 @@ function renderEvents(){
   var c=document.getElementById('events-container'),l=document.getElementById('filter-label');
   c.innerHTML='';
   if(EVENTS.length===0){
-    c.innerHTML='<div class="no-schedule"><p>演出情報の取得中...</p><p style="margin-top:12px"><a href="https://sd-milk.com" target="_blank" rel="noopener" style="color:var(--blue)">sd-milk.com を確認する &#8594;</a></p></div>';
+    c.innerHTML='<div class="no-schedule"><p style="font-size:.9rem;color:#4a5568;">演出情報を自動取得できませんでした。</p><p style="margin-top:10px;font-size:.82rem;color:#718096;">公式サイトで最新スケジュールをご確認ください：</p><div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap"><a href="https://sd-milk.com/calendar" target="_blank" rel="noopener" style="display:inline-block;padding:8px 18px;background:var(--blue);color:#fff;border-radius:20px;font-size:.82rem;text-decoration:none;">公式カレンダー &#8599;</a><a href="https://sd-milk.com/contents/schedule" target="_blank" rel="noopener" style="display:inline-block;padding:8px 18px;background:var(--blue2);color:#fff;border-radius:20px;font-size:.82rem;text-decoration:none;">スケジュール一覧 &#8599;</a></div></div>';
     return;
   }
   if(selected){
