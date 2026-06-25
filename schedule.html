@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>m!lk Fan Hub — 演出情報</title>
 <style>
+
 :root{
   --bg:#f0f5ff;--surface:#ffffff;--card:#ffffff;--border:#dce8ff;
   --blue:#2a5bd7;--blue2:#5b8dee;--blue3:#dce8ff;
@@ -82,16 +83,14 @@ footer{text-align:center;padding:18px 20px 28px;font-size:.7rem;color:var(--mute
 .src-link{padding:3px 10px;border-radius:20px;font-size:.62rem;font-weight:700;color:#fff;background:var(--c,#888);text-decoration:none;opacity:.85;transition:opacity .2s;}
 .src-link:hover{opacity:1;}
 
-.event-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:15px;display:flex;flex-direction:column;gap:8px;box-shadow:var(--shadow);transition:transform .2s,box-shadow .2s;}
-.event-card:hover{transform:translateY(-2px);box-shadow:var(--shadow-hover);}
-.event-date{font-size:.7rem;font-variant-numeric:tabular-nums;color:var(--muted);}
-.event-title{font-size:.93rem;font-weight:700;color:var(--text);line-height:1.5;}
-.event-title-zh{font-size:.87rem;color:var(--blue);line-height:1.5;}
-.event-details{font-size:.77rem;color:var(--muted);line-height:1.6;}
-.event-link{display:inline-block;padding:5px 13px;background:transparent;border:1px solid var(--blue);color:var(--blue);text-decoration:none;border-radius:20px;font-size:.71rem;font-weight:600;align-self:flex-start;margin-top:auto;transition:background .2s,color .2s;}
-.event-link:hover{background:var(--blue);color:#fff;}
-.no-schedule{text-align:center;padding:60px 20px;color:var(--muted);}
-.no-schedule p{margin-bottom:8px;line-height:1.8;}
+.schedule-wrap{max-width:1100px;margin:24px auto;padding:0 16px 60px;}
+.schedule-links{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px;}
+.schedule-link-btn{display:inline-flex;align-items:center;gap:6px;padding:9px 20px;border-radius:22px;font-size:.83rem;font-weight:600;text-decoration:none;transition:opacity .2s;}
+.schedule-link-btn:hover{opacity:.82;}
+.schedule-link-btn.primary{background:var(--blue);color:#fff;}
+.schedule-link-btn.secondary{background:var(--blue3);color:var(--blue);border:1px solid var(--blue);}
+.embed-frame{width:100%;min-height:82vh;border:none;border-radius:14px;box-shadow:var(--shadow);display:block;background:#fff;}
+.embed-note{margin-top:10px;font-size:.72rem;color:var(--muted);text-align:center;}
 </style>
 </head>
 <body>
@@ -101,100 +100,30 @@ footer{text-align:center;padding:18px 20px 28px;font-size:.7rem;color:var(--mute
   <div class="hearts">&#9825; &middot; &#9825; &middot; &#9825;</div>
   <p class="tagline">Fan Hub &middot; 演出情報</p>
   <nav class="page-nav"><a href="index.html" class="nav-link">ニュース</a><a href="schedule.html" class="nav-link nav-active">演出情報</a></nav>
-  <p class="update-time" id="update-time"></p>
+  <p class="update-time">最後更新：2026-06-26 02:27 JST</p>
 </header>
-<div class="main-wrap">
-  <aside class="calendar-wrap">
-    <div class="cal-nav">
-      <button class="cal-arrow" id="cal-prev">&#8592;</button>
-      <span class="cal-title" id="cal-title"></span>
-      <button class="cal-arrow" id="cal-next">&#8594;</button>
-    </div>
-    <div class="cal-dow">
-      <span>日</span><span>一</span><span>二</span><span>三</span>
-      <span>四</span><span>五</span><span>六</span>
-    </div>
-    <div class="cal-grid" id="cal-grid"></div>
-    <button class="cal-clear" id="cal-clear">顯示全部演出</button>
-    <p class="cal-stats" id="cal-stats"></p>
-  </aside>
-  <section class="articles-section">
-    <div class="filter-bar"><span class="filter-label" id="filter-label">全部演出</span></div>
-    <div id="events-container"></div>
-  </section>
+<div class="schedule-wrap">
+  <div class="schedule-links">
+    <a class="schedule-link-btn primary" href="https://sd-milk.com/calendar"
+       target="_blank" rel="noopener">&#128197; 公式カレンダー &#8599;</a>
+    <a class="schedule-link-btn secondary" href="https://sd-milk.com/contents/schedule"
+       target="_blank" rel="noopener">&#128203; スケジュール一覧 &#8599;</a>
+  </div>
+  <iframe
+    class="embed-frame"
+    src="https://sd-milk.com/calendar"
+    title="M!LK 公式カレンダー"
+    loading="lazy"
+    sandbox="allow-scripts allow-same-origin allow-popups allow-forms">
+  </iframe>
+  <p class="embed-note">
+    内容が表示されない場合は上のリンクから公式サイトをご確認ください。
+    ／ 若無法顯示，請點上方連結前往官網確認。
+  </p>
 </div>
 <footer>
-  <p>m!lk Fan Hub &nbsp;&middot;&nbsp; 演出情報參考自 sd-milk.com &nbsp;&middot;&nbsp; 毎日 09:00 JST 自動更新</p>
+  <p>m!lk Fan Hub &nbsp;&middot;&nbsp; 演出情報は sd-milk.com 公式サイトより &nbsp;&middot;&nbsp; 毎日 09:00 JST 自動更新</p>
   <div class="sources-footer"><a href="https://sd-milk.com" target="_blank" rel="noopener" class="src-link" style="--c:#d4006e">sd-milk.com 公式</a><a href="https://natalie.mu/music/" target="_blank" rel="noopener" class="src-link" style="--c:#0066aa">Natalie Music</a><a href="https://www.oricon.co.jp" target="_blank" rel="noopener" class="src-link" style="--c:#cc2233">Oricon</a><a href="https://www.barks.jp" target="_blank" rel="noopener" class="src-link" style="--c:#b05010">BARKS</a><a href="https://www.sanspo.com" target="_blank" rel="noopener" class="src-link" style="--c:#0a6b30">SANSPO</a><a href="https://www.billboard-japan.com" target="_blank" rel="noopener" class="src-link" style="--c:#1a4a9f">Billboard Japan</a><a href="https://www.musicvoice.jp" target="_blank" rel="noopener" class="src-link" style="--c:#7b1ea2">Musicvoice</a><a href="https://spice.eplus.jp" target="_blank" rel="noopener" class="src-link" style="--c:#d45500">SPICE</a><a href="https://www.musicman.co.jp" target="_blank" rel="noopener" class="src-link" style="--c:#1b5e20">Musicman</a><a href="https://www.thefirsttimes.jp" target="_blank" rel="noopener" class="src-link" style="--c:#c62828">The First Times</a><a href="https://mdpr.jp" target="_blank" rel="noopener" class="src-link" style="--c:#1565c0">Modelpress</a><a href="https://www.biteki.com" target="_blank" rel="noopener" class="src-link" style="--c:#e91e8c">美的.com</a><a href="https://www.mensnonno.jp" target="_blank" rel="noopener" class="src-link" style="--c:#0d47a1">MEN'S NON-NO</a><a href="https://www.vogue.co.jp" target="_blank" rel="noopener" class="src-link" style="--c:#2c2c2c">VOGUE JAPAN</a><a href="https://www.tvguide.or.jp/cmn_keyword/mlk/" target="_blank" rel="noopener" class="src-link" style="--c:#e53935">TVガイドWeb</a><a href="https://thetv.jp" target="_blank" rel="noopener" class="src-link" style="--c:#00838f">WEBザテレビジョン</a><a href="https://ebidan.jp" target="_blank" rel="noopener" class="src-link" style="--c:#6d4c41">ebidan.jp</a><a href="https://www.tbs.co.jp/yatte_milk/" target="_blank" rel="noopener" class="src-link" style="--c:#cc0000">やってM!LK (TBS)</a><a href="https://www.tbs.co.jp/kiminosukihamuteki_tbs/" target="_blank" rel="noopener" class="src-link" style="--c:#880033">君の好きは無敵</a><a href="https://www.joqr.co.jp/qr/program/reco/" target="_blank" rel="noopener" class="src-link" style="--c:#0055bb">レコメン! 文化放送</a><a href="https://www.mbs1179.com/imadoki/" target="_blank" rel="noopener" class="src-link" style="--c:#e65100">イマドキッ MBSラジオ</a><a href="https://www.disney.co.jp/movie/toy5" target="_blank" rel="noopener" class="src-link" style="--c:#0d47a1">トイ・ストーリー５</a><a href="https://zeztz-gavan-26movie.com/" target="_blank" rel="noopener" class="src-link" style="--c:#1b5e20">仮面ライダーゼッツ</a></div>
 </footer>
-<script>
-const EVENTS=[{"id": "3192ad1b50c7", "date": "2025-11-06", "title": "PREMIUM MILK リニューアルに伴う引き継ぎのご案内 いつもM!LKを応援いただき、誠にありがとうございます。 この度、M!LKオフィシャルファンクラブ「PREMIUM MILK」は、2025年11月6日(木)にリニューアルいたしま", "details": "", "title_zh": "", "url": "https://sd-milk.com/pages/convert"}];
-document.getElementById('update-time').textContent='最後更新：2026-06-26 02:15 JST';
-const byDate={};
-EVENTS.forEach(function(e){var d=e.date||'unknown';if(!byDate[d])byDate[d]=[];byDate[d].push(e);});
-const datesWithEvents=new Set(Object.keys(byDate));
-const now=new Date();
-var calYear=now.getFullYear(),calMonth=now.getMonth(),selected=null;
-const MN=['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月'];
-function renderCalendar(){
-  document.getElementById('cal-title').textContent=calYear+'年 '+MN[calMonth];
-  var fw=new Date(calYear,calMonth,1).getDay(),dt=new Date(calYear,calMonth+1,0).getDate();
-  var ts=now.toISOString().slice(0,10),g=document.getElementById('cal-grid');
-  g.innerHTML='';
-  for(var i=0;i<fw;i++){var el=document.createElement('div');el.className='cal-empty';g.appendChild(el);}
-  for(var d=1;d<=dt;d++){
-    var ds=calYear+'-'+String(calMonth+1).padStart(2,'0')+'-'+String(d).padStart(2,'0');
-    var btn=document.createElement('button');
-    btn.className='cal-day'+(datesWithEvents.has(ds)?' has-news':'')+(selected===ds?' selected':'')+(ds===ts?' today':'');
-    btn.textContent=d;
-    if(datesWithEvents.has(ds)){
-      (function(s){btn.addEventListener('click',function(){selected=(selected===s)?null:s;renderCalendar();renderEvents();});})(ds);
-    }
-    g.appendChild(btn);
-  }
-  var pfx=calYear+'-'+String(calMonth+1).padStart(2,'0');
-  var mc=[...datesWithEvents].filter(function(d){return d.startsWith(pfx);}).length;
-  document.getElementById('cal-stats').textContent='本月 '+mc+' 場演出　共 '+EVENTS.length+' 場';
-}
-document.getElementById('cal-prev').addEventListener('click',function(){if(calMonth===0){calYear--;calMonth=11;}else calMonth--;renderCalendar();});
-document.getElementById('cal-next').addEventListener('click',function(){if(calMonth===11){calYear++;calMonth=0;}else calMonth++;renderCalendar();});
-document.getElementById('cal-clear').addEventListener('click',function(){selected=null;renderCalendar();renderEvents();});
-function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
-function makeEventCard(e){
-  var card=document.createElement('article');card.className='event-card';
-  card.innerHTML=
-    (e.date?'<p class="event-date">'+esc(e.date)+'</p>':'')+
-    (e.title?'<p class="event-title">'+esc(e.title)+'</p>':'')+
-    (e.title_zh?'<p class="event-title-zh">'+esc(e.title_zh)+'</p>':'')+
-    (e.details?'<p class="event-details">'+esc(e.details)+'</p>':'')+
-    (e.url?'<a class="event-link" href="'+esc(e.url)+'" target="_blank" rel="noopener">詳細を見る &#8594;</a>':'');
-  return card;
-}
-function renderEvents(){
-  var c=document.getElementById('events-container'),l=document.getElementById('filter-label');
-  c.innerHTML='';
-  if(EVENTS.length===0){
-    c.innerHTML='<div class="no-schedule"><p style="font-size:.9rem;color:#4a5568;">演出情報を自動取得できませんでした。</p><p style="margin-top:10px;font-size:.82rem;color:#718096;">公式サイトで最新スケジュールをご確認ください：</p><div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap"><a href="https://sd-milk.com/calendar" target="_blank" rel="noopener" style="display:inline-block;padding:8px 18px;background:var(--blue);color:#fff;border-radius:20px;font-size:.82rem;text-decoration:none;">公式カレンダー &#8599;</a><a href="https://sd-milk.com/contents/schedule" target="_blank" rel="noopener" style="display:inline-block;padding:8px 18px;background:var(--blue2);color:#fff;border-radius:20px;font-size:.82rem;text-decoration:none;">スケジュール一覧 &#8599;</a></div></div>';
-    return;
-  }
-  if(selected){
-    l.textContent=selected+' 的演出';
-    var evs=byDate[selected]||[];
-    if(!evs.length){c.innerHTML='<p class="empty-msg">這天沒有演出</p>';return;}
-    var g=document.createElement('div');g.className='articles-grid';
-    evs.forEach(function(e){g.appendChild(makeEventCard(e));});c.appendChild(g);
-  }else{
-    l.textContent='全部演出';
-    var sd=[...datesWithEvents].sort();
-    sd.forEach(function(date){
-      var grp=document.createElement('div');grp.className='date-group';
-      var h=document.createElement('p');h.className='date-heading';h.textContent=date;grp.appendChild(h);
-      var g=document.createElement('div');g.className='articles-grid';
-      byDate[date].forEach(function(e){g.appendChild(makeEventCard(e));});grp.appendChild(g);c.appendChild(grp);
-    });
-  }
-}
-renderCalendar();renderEvents();
-</script>
 </body>
 </html>
