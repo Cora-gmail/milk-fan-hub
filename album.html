@@ -26,8 +26,9 @@ body{background:var(--bg);color:var(--text);font-family:'Hiragino Sans','Noto Sa
 .tagline{margin-top:5px;font-size:.72rem;letter-spacing:.45em;text-transform:uppercase;color:var(--blue2);}
 .hearts{margin:7px 0 3px;font-size:.85rem;color:var(--pink);letter-spacing:.4em;}
 .update-time{font-size:.68rem;color:var(--muted);margin:7px 0 14px;}
-.page-nav{display:flex;justify-content:center;gap:0;}
-.nav-link{padding:10px 32px;font-size:.8rem;font-weight:600;letter-spacing:.08em;text-decoration:none;color:var(--muted);border-bottom:3px solid transparent;transition:color .2s,border-color .2s;}
+.page-nav{display:flex;justify-content:center;gap:0;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;}
+.page-nav::-webkit-scrollbar{display:none;}
+.nav-link{padding:10px 24px;font-size:.8rem;font-weight:600;letter-spacing:.08em;text-decoration:none;color:var(--muted);border-bottom:3px solid transparent;transition:color .2s,border-color .2s;white-space:nowrap;flex-shrink:0;}
 .nav-link:hover{color:var(--blue);}
 .nav-link.nav-active{color:var(--blue);border-bottom-color:var(--blue);}
 .sources{display:flex;justify-content:center;gap:5px;flex-wrap:wrap;padding:12px 20px;}
@@ -220,7 +221,7 @@ footer{text-align:center;padding:18px 20px 28px;font-size:.7rem;color:var(--mute
   <div class="hearts">&#9825; &middot; &#9825; &middot; &#9825;</div>
   <p class="tagline">Fan Hub &middot; 1st Mini Album</p>
   <nav class="page-nav"><a href="index.html" class="nav-link">ニュース</a><a href="schedule.html" class="nav-link">演出情報</a><a href="goods.html" class="nav-link">商品</a><a href="album.html" class="nav-link nav-active">アルバム</a><a href="sources.html" class="nav-link">來源</a></nav>
-  <p class="update-time">最後更新：2026-06-26 12:07 JST</p>
+  <p class="update-time">最後更新：2026-06-26 14:58 JST</p>
 </header>
 
 <div class="album-hero">
