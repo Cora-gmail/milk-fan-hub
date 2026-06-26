@@ -2,8 +2,11 @@ name: m!lk News Update
 
 on:
   schedule:
-    - cron: '0 0 * * *'   # 每天 00:00 UTC = 09:00 JST
-  workflow_dispatch:        # 允許手動執行
+    - cron: '0 0 * * *'    # 09:00 JST - 完整更新（新聞+所有頁面）
+    - cron: '0 3 * * *'    # 12:00 JST - 僅新聞
+    - cron: '0 9 * * *'    # 18:00 JST - 僅新聞
+    - cron: '0 15 * * *'   # 00:00 JST - 僅新聞
+  workflow_dispatch:         # 允許手動執行（視為完整更新）
 
 permissions:
   contents: write
@@ -27,12 +30,25 @@ jobs:
       - name: Fetch news & generate HTML
         env:
           DEEPL_API_KEY: ${{ secrets.DEEPL_API_KEY }}
-        run: python fetch_news.py
+        run: |
+          HOUR=$(date -u +%H)
+          if [ "$HOUR" = "00" ] || [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "Full update"
+            python fetch_news.py
+          else
+            echo "News-only update (hour=$HOUR UTC)"
+            NEWS_ONLY=1 python fetch_news.py
+          fi
 
       - name: Commit & push
         run: |
           git config user.email "actions@github.com"
           git config user.name "GitHub Actions"
-          git add index.html articles.json schedule.html schedule.json goods.html goods.json album.html sources.html DSC_3085.jpg
-          git diff --staged --quiet || git commit -m "update: $(date -u +'%Y-%m-%d')"
+          HOUR=$(date -u +%H)
+          if [ "$HOUR" = "00" ] || [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            git add index.html articles.json schedule.html schedule.json goods.html goods.json album.html sources.html DSC_3085.jpg
+          else
+            git add index.html articles.json
+          fi
+          git diff --staged --quiet || git commit -m "update: $(date -u +'%Y-%m-%d %H:%M')"
           git push
