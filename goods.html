@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>M!LK Fan Hub &mdash; 演出情報</title>
+<title>M!LK Fan Hub &mdash; 商品・リリース</title>
 <style>
 
 :root{
@@ -82,31 +82,33 @@ body{background:var(--bg);color:var(--text);font-family:'Hiragino Sans','Noto Sa
 footer{text-align:center;padding:18px 20px 28px;font-size:.7rem;color:var(--muted);border-top:1px solid var(--border);background:var(--surface);}
 
 
-.sched-wrap{max-width:1060px;margin:0 auto;padding:24px 16px 72px;}
-.sched-section{margin-bottom:36px;}
-.sched-section-title{font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;color:var(--blue);padding-left:10px;border-left:3px solid var(--blue);margin-bottom:16px;}
-.today-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px;}
-.today-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:14px;display:flex;flex-direction:column;gap:7px;box-shadow:var(--shadow);}
-.today-card .tc-source{font-size:.65rem;font-weight:700;color:#fff;padding:2px 8px;border-radius:8px;align-self:flex-start;}
-.today-card .tc-title{font-size:.88rem;font-weight:700;color:var(--blue);line-height:1.4;}
-.today-card .tc-ja{font-size:.75rem;color:#4a5568;line-height:1.5;}
-.today-card .tc-link{margin-top:auto;font-size:.75rem;color:var(--blue);text-decoration:none;font-weight:600;}
-.today-card .tc-link:hover{text-decoration:underline;}
-.today-empty{font-size:.82rem;color:var(--muted);padding:14px 0;}
-.prog-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:13px;}
-.prog-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:16px;display:flex;flex-direction:column;gap:8px;box-shadow:var(--shadow);transition:transform .18s,box-shadow .18s;}
-.prog-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-hover);}
-.prog-badge{font-size:.63rem;font-weight:700;color:#fff;padding:3px 9px;border-radius:9px;align-self:flex-start;letter-spacing:.04em;}
-.prog-name{font-size:.95rem;font-weight:800;color:var(--text);line-height:1.3;}
-.prog-station{font-size:.73rem;color:var(--muted);}
-.prog-schedule{font-size:.7rem;color:var(--blue2);font-weight:600;}
-.prog-link{display:inline-block;margin-top:6px;padding:6px 14px;border-radius:18px;background:var(--blue);color:#fff;font-size:.72rem;font-weight:700;text-decoration:none;align-self:flex-start;transition:opacity .2s;}
-.prog-link:hover{opacity:.82;}
-.official-cal{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px;}
-.cal-btn{display:inline-flex;align-items:center;padding:9px 20px;border-radius:22px;font-size:.82rem;font-weight:700;text-decoration:none;transition:opacity .2s;}
-.cal-btn:hover{opacity:.82;}
-.cal-btn.primary{background:var(--blue);color:#fff;}
-.cal-btn.secondary{background:var(--surface);color:var(--blue);border:1px solid var(--blue);}
+.goods-wrap{max-width:1060px;margin:0 auto;padding:24px 16px 72px;}
+.goods-section{margin-bottom:42px;}
+.section-label{font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;color:var(--blue);padding-left:10px;border-left:3px solid var(--blue);margin-bottom:16px;display:flex;align-items:center;gap:8px;}
+.section-label .cnt{font-size:.68rem;color:var(--muted);letter-spacing:0;font-weight:400;}
+.goods-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:14px;}
+.release-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px;}
+.goods-card,.release-card{background:var(--card);border:1px solid var(--border);border-radius:14px;display:flex;flex-direction:column;box-shadow:var(--shadow);transition:transform .2s,box-shadow .2s,border-color .2s;}
+.goods-card:hover,.release-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-hover);border-color:#b4caff;}
+.goods-img-wrap{overflow:hidden;border-radius:14px 14px 0 0;aspect-ratio:1/1;background:var(--surface);}
+.goods-img-wrap img{width:100%;height:100%;object-fit:cover;display:block;}
+.release-img-wrap{overflow:hidden;border-radius:14px 14px 0 0;aspect-ratio:1/1;background:var(--surface);}
+.release-img-wrap img{width:100%;height:100%;object-fit:cover;display:block;}
+.goods-img-none,.release-img-none{aspect-ratio:1/1;display:flex;align-items:center;justify-content:center;font-size:2.5rem;background:var(--surface);border-radius:14px 14px 0 0;color:var(--border);}
+.goods-body,.release-body{padding:11px;display:flex;flex-direction:column;gap:5px;flex:1;}
+.cat-badge{font-size:.6rem;font-weight:700;color:#fff;padding:2px 7px;border-radius:7px;align-self:flex-start;letter-spacing:.04em;}
+.goods-title-zh,.release-title-zh{font-size:.87rem;font-weight:700;color:var(--blue);line-height:1.4;}
+.goods-title,.release-title{font-size:.75rem;color:#4a5568;line-height:1.5;}
+.goods-price{font-size:.84rem;font-weight:700;color:var(--text);}
+.release-type{font-size:.68rem;color:var(--blue2);font-weight:600;}
+.goods-date,.release-date{font-size:.64rem;color:var(--muted);}
+.goods-buy,.release-link{display:inline-block;margin-top:auto;padding:6px 13px;background:var(--blue);color:#fff;border-radius:16px;font-size:.73rem;font-weight:700;text-decoration:none;align-self:flex-start;transition:opacity .2s;}
+.goods-buy:hover,.release-link:hover{opacity:.82;}
+.goods-empty{text-align:center;padding:30px 20px;color:var(--muted);font-size:.85rem;}
+.goods-empty a{color:var(--blue);}
+.fc-notice{font-size:.72rem;color:var(--muted);margin-bottom:12px;}
+.fc-notice a{color:var(--blue);text-decoration:none;}
+.fc-notice a:hover{text-decoration:underline;}
 </style>
 </head>
 <body>
@@ -114,35 +116,14 @@ footer{text-align:center;padding:18px 20px 28px;font-size:.7rem;color:var(--mute
   <div class="member-stripe"><span style="background:#ff69b4"></span><span style="background:#ffd43b"></span><span style="background:#4da6ff"></span><span style="background:#e8e8f0;border-top:1px solid #dce8ff"></span><span style="background:#ff3344"></span></div>
   <div class="wordmark">M<span class="bang">!</span>LK</div>
   <div class="hearts">&#9825; &middot; &#9825; &middot; &#9825;</div>
-  <p class="tagline">Fan Hub &middot; 演出情報</p>
-  <nav class="page-nav"><a href="index.html" class="nav-link">ニュース</a><a href="schedule.html" class="nav-link nav-active">演出情報</a><a href="goods.html" class="nav-link">商品</a><a href="album.html" class="nav-link">アルバム</a><a href="sources.html" class="nav-link">來源</a></nav>
+  <p class="tagline">Fan Hub &middot; 商品・リリース</p>
+  <nav class="page-nav"><a href="index.html" class="nav-link">ニュース</a><a href="schedule.html" class="nav-link">演出情報</a><a href="goods.html" class="nav-link nav-active">商品</a><a href="album.html" class="nav-link">アルバム</a><a href="sources.html" class="nav-link">來源</a></nav>
   <p class="update-time">最後更新：2026-06-26 11:06 JST</p>
 </header>
-<div class="sched-wrap">
-
-  <div class="sched-section">
-    <p class="sched-section-title">&#128197; 今日の関連ニュース (2026-06-26)</p>
-    <p class="today-empty">本日（2026-06-26）は関連ニュースが見つかりませんでした。</p>
-  </div>
-
-  <div class="sched-section">
-    <p class="sched-section-title">&#127914; 現在の出演番組・作品</p>
-    <div class="prog-grid"><div class="prog-card"><span class="prog-badge" style="background:#cc0000">TV</span><p class="prog-name">やってM!LK</p><p class="prog-station">TBS テレビ</p><p class="prog-schedule">定期放送中</p><a class="prog-link" href="https://www.tbs.co.jp/yatte_milk/" target="_blank" rel="noopener">公式サイト &rarr;</a></div><div class="prog-card"><span class="prog-badge" style="background:#880033">TV ドラマ</span><p class="prog-name">君の好きは無敵</p><p class="prog-station">TBS テレビ 火曜22:00〜</p><p class="prog-schedule">放送中</p><a class="prog-link" href="https://www.tbs.co.jp/kiminosukihamuteki_tbs/" target="_blank" rel="noopener">公式サイト &rarr;</a></div><div class="prog-card"><span class="prog-badge" style="background:#1565c0">ラジオ</span><p class="prog-name">レコメン!</p><p class="prog-station">文化放送</p><p class="prog-schedule">定期放送中</p><a class="prog-link" href="https://www.joqr.co.jp/qr/program/reco/" target="_blank" rel="noopener">公式サイト &rarr;</a></div><div class="prog-card"><span class="prog-badge" style="background:#7b1ea2">ラジオ</span><p class="prog-name">イマドキッ ドゥフドゥフナイト</p><p class="prog-station">MBSラジオ</p><p class="prog-schedule">定期放送中</p><a class="prog-link" href="https://www.mbs1179.com/imadoki/" target="_blank" rel="noopener">公式サイト &rarr;</a></div><div class="prog-card"><span class="prog-badge" style="background:#0057a8">映画</span><p class="prog-name">トイ・ストーリー５</p><p class="prog-station">Disney</p><p class="prog-schedule">劇場上映中</p><a class="prog-link" href="https://www.disney.co.jp/movie/toy5" target="_blank" rel="noopener">公式サイト &rarr;</a></div><div class="prog-card"><span class="prog-badge" style="background:#2c2c2c">映画</span><p class="prog-name">仮面ライダーゼッツ＆超宇宙刑事ギャバン</p><p class="prog-station">2026年夏公開</p><p class="prog-schedule">公開予定</p><a class="prog-link" href="https://zeztz-gavan-26movie.com/" target="_blank" rel="noopener">公式サイト &rarr;</a></div></div>
-  </div>
-
-  <div class="sched-section">
-    <p class="sched-section-title">&#128198; 公式スケジュール</p>
-    <p style="font-size:.8rem;color:var(--muted);margin-bottom:12px;">
-      最新の演出情報は公式サイトでご確認ください。
-    </p>
-    <div class="official-cal">
-      <a class="cal-btn primary" href="https://sd-milk.com/calendar"
-         target="_blank" rel="noopener">公式カレンダー &#8599;</a>
-      <a class="cal-btn secondary" href="https://sd-milk.com/contents/schedule"
-         target="_blank" rel="noopener">スケジュール一覧 &#8599;</a>
-    </div>
-  </div>
-
+<div class="goods-wrap">
+<div class="goods-section"><p class="section-label">&#127926; リリース情報<span class="cnt">(1)</span></p><div class="release-grid"><div class="release-card"><div class="release-img-wrap"><img src="https://cu.tbs.co.jp/images/og_image.png" alt="" loading="lazy" onerror="this.parentElement.innerHTML='&#127926;'"></div><div class="release-body"><span class="cat-badge" style="background:#cc0000">やってM!LK (TBS)</span><p class="release-title-zh">線上串流 最新一集現正免費播出中！</p><p class="release-title">配信 最新回を無料配信中！</p><p class="release-date">2026-06-26</p><a class="release-link" href="https://cu.tbs.co.jp/program/26073" target="_blank" rel="noopener">詳細を見る &rarr;</a></div></div></div></div>
+<div class="goods-section"><p class="section-label">&#11088; FC限定商品</p><div class="goods-empty"><a href="https://store.plusmember.jp/stardustch/products/list.php?category_id=891" target="_blank" rel="noopener">FC限定ショップを確認する &rarr;</a></div></div>
+<div class="goods-section"><p class="section-label">&#128722; 公式グッズ</p><div class="goods-empty"><a href="https://sd-milk.com/goods" target="_blank" rel="noopener">公式サイトで確認する &rarr;</a></div></div>
 </div>
 <footer>
   <p>M!LK Fan Hub &nbsp;&middot;&nbsp; 非公式ファンサイト &nbsp;&middot;&nbsp; 毎日 09:00 JST 自動更新</p>

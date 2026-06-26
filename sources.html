@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>M!LK Fan Hub &mdash; 來源一覧</title>
+<style>
+
+:root{
+  --bg:#f0f5ff;--surface:#ffffff;--card:#ffffff;--border:#dce8ff;
+  --blue:#2a5bd7;--blue2:#5b8dee;--blue3:#dce8ff;
+  --text:#1a1a2e;--muted:#64748b;
+  --pink:#ff69b4;--yellow:#ffd43b;--sky:#4da6ff;--red:#ff3344;
+  --shadow:0 2px 12px rgba(42,91,215,.08);
+  --shadow-hover:0 8px 28px rgba(42,91,215,.16);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:'Hiragino Sans','Noto Sans TC','Noto Sans JP',system-ui,sans-serif;min-height:100vh;}
+.hero-img{width:100%;max-height:340px;object-fit:cover;object-position:center top;display:block;}
+.site-header{background:var(--surface);border-bottom:1px solid var(--border);padding:28px 20px 0;text-align:center;}
+.member-stripe{display:flex;height:5px;width:100%;margin-bottom:20px;}
+.member-stripe span{flex:1;}
+.wordmark{font-size:clamp(2.6rem,8vw,4.8rem);font-weight:900;letter-spacing:.25em;color:var(--blue);}
+.wordmark .bang{color:var(--pink);}
+.tagline{margin-top:5px;font-size:.72rem;letter-spacing:.45em;text-transform:uppercase;color:var(--blue2);}
+.hearts{margin:7px 0 3px;font-size:.85rem;color:var(--pink);letter-spacing:.4em;}
+.update-time{font-size:.68rem;color:var(--muted);margin:7px 0 14px;}
+.page-nav{display:flex;justify-content:center;gap:0;}
+.nav-link{padding:10px 32px;font-size:.8rem;font-weight:600;letter-spacing:.08em;text-decoration:none;color:var(--muted);border-bottom:3px solid transparent;transition:color .2s,border-color .2s;}
+.nav-link:hover{color:var(--blue);}
+.nav-link.nav-active{color:var(--blue);border-bottom-color:var(--blue);}
+.sources{display:flex;justify-content:center;gap:5px;flex-wrap:wrap;padding:12px 20px;}
+.sources span{padding:3px 10px;border-radius:20px;font-size:.63rem;font-weight:700;color:#fff;}
+.main-wrap{max-width:1100px;margin:0 auto;padding:22px 16px 80px;display:grid;grid-template-columns:258px 1fr;gap:22px;align-items:start;}
+@media(max-width:760px){.main-wrap{grid-template-columns:1fr;}}
+.calendar-wrap{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:16px;position:sticky;top:20px;box-shadow:var(--shadow);}
+@media(max-width:760px){.calendar-wrap{position:static;}}
+.cal-nav{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;}
+.cal-title{font-size:.88rem;font-weight:700;color:var(--blue);}
+.cal-arrow{background:none;border:1px solid var(--border);color:var(--muted);width:26px;height:26px;border-radius:6px;cursor:pointer;transition:border-color .2s,color .2s;display:flex;align-items:center;justify-content:center;font-size:.85rem;}
+.cal-arrow:hover{border-color:var(--blue);color:var(--blue);}
+.cal-dow{display:grid;grid-template-columns:repeat(7,1fr);gap:2px;margin-bottom:3px;}
+.cal-dow span{text-align:center;font-size:.6rem;color:var(--muted);padding:3px 0;font-weight:600;}
+.cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:2px;}
+.cal-empty{height:30px;}
+.cal-day{height:30px;border-radius:5px;border:none;background:transparent;color:var(--muted);font-size:.74rem;cursor:default;position:relative;transition:background .15s,color .15s;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:1px;}
+.cal-day.has-news{color:var(--text);cursor:pointer;}
+.cal-day.has-news:hover{background:var(--blue3);}
+.cal-day.has-news::after{content:'';display:block;width:4px;height:4px;border-radius:50%;background:var(--blue);opacity:.7;}
+.cal-day.selected{background:var(--blue);color:#fff;}
+.cal-day.selected::after{background:#fff;}
+.cal-day.today{font-weight:700;color:var(--pink);}
+.cal-day.today.selected{color:#fff;}
+.cal-clear{display:block;width:100%;margin-top:10px;padding:6px;background:var(--blue3);border:1px solid var(--border);color:var(--blue);border-radius:8px;font-size:.73rem;cursor:pointer;transition:background .2s;}
+.cal-clear:hover{background:#c5d8ff;}
+.cal-stats{margin-top:9px;font-size:.67rem;color:var(--muted);text-align:center;line-height:1.6;}
+.articles-section{min-width:0;}
+.filter-bar{margin-bottom:13px;}
+.filter-label{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--blue);padding-left:10px;border-left:3px solid var(--blue);}
+.date-group{margin-bottom:24px;}
+.date-heading{font-size:.7rem;letter-spacing:.22em;color:var(--blue2);margin-bottom:10px;padding-bottom:5px;border-bottom:1px solid var(--border);}
+.articles-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:13px;}
+.card{background:var(--card);border:1px solid var(--border);border-radius:14px;display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s,border-color .2s;box-shadow:var(--shadow);}
+.card:hover{transform:translateY(-3px);box-shadow:var(--shadow-hover);border-color:#b4caff;}
+.card-img{background:var(--bg);overflow:hidden;border-radius:14px 14px 0 0;}
+.card-img img{width:100%;height:auto;display:block;}
+.img-dl-wrap{text-align:right;padding:3px 8px 5px;background:var(--bg);}
+.img-dl{font-size:.62rem;color:var(--blue);text-decoration:none;display:inline-block;padding:2px 6px;border-radius:8px;transition:background .2s;}
+.img-dl:hover{background:var(--blue3);}
+.card-body{padding:13px;display:flex;flex-direction:column;gap:7px;flex:1;}
+.card-head{display:flex;align-items:center;justify-content:space-between;gap:6px;flex-wrap:wrap;}
+.badge{background:var(--c,#888);color:#fff;font-size:.63rem;font-weight:700;padding:2px 8px;border-radius:10px;white-space:nowrap;}
+.date-tag{font-size:.67rem;color:var(--muted);font-variant-numeric:tabular-nums;}
+.title-zh{font-size:.93rem;font-weight:700;color:var(--blue);line-height:1.5;}
+.title-ja{font-size:.78rem;color:#4a5568;line-height:1.6;}
+.sum-zh{font-size:.77rem;color:#374151;line-height:1.65;}
+.sum-ja{font-size:.72rem;color:var(--muted);line-height:1.65;border-top:1px solid var(--border);padding-top:5px;}
+.card-btn{display:inline-block;margin-top:auto;padding:5px 13px;background:transparent;border:1px solid var(--blue);color:var(--blue);text-decoration:none;border-radius:20px;font-size:.71rem;font-weight:600;align-self:flex-start;transition:background .2s,color .2s;}
+.card-btn:hover{background:var(--blue);color:#fff;}
+.empty-msg{text-align:center;padding:48px;color:var(--muted);font-size:.9rem;}
+footer{text-align:center;padding:18px 20px 28px;font-size:.7rem;color:var(--muted);border-top:1px solid var(--border);background:var(--surface);}
+
+
+.src-wrap{max-width:800px;margin:0 auto;padding:32px 20px 80px;}
+.src-intro{font-size:.82rem;color:var(--muted);margin-bottom:28px;line-height:1.7;}
+.src-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px;}
+.src-card{display:flex;align-items:center;gap:12px;background:var(--card);border:1px solid var(--border);border-radius:10px;padding:12px 14px;text-decoration:none;color:var(--text);transition:transform .15s,box-shadow .15s,border-color .15s;}
+.src-card:hover{transform:translateY(-2px);box-shadow:var(--shadow-hover);border-color:#b4caff;}
+.src-dot{width:12px;height:12px;border-radius:50%;flex-shrink:0;}
+.src-name{font-size:.82rem;font-weight:700;flex:1;}
+.src-arrow{font-size:.75rem;color:var(--muted);}
+.src-section-label{font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;color:var(--blue);padding-left:10px;border-left:3px solid var(--blue);margin:28px 0 14px;}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="member-stripe"><span style="background:#ff69b4"></span><span style="background:#ffd43b"></span><span style="background:#4da6ff"></span><span style="background:#e8e8f0;border-top:1px solid #dce8ff"></span><span style="background:#ff3344"></span></div>
+  <div class="wordmark">M<span class="bang">!</span>LK</div>
+  <div class="hearts">&#9825; &middot; &#9825; &middot; &#9825;</div>
+  <p class="tagline">Fan Hub &middot; 來源一覧</p>
+  <nav class="page-nav"><a href="index.html" class="nav-link">ニュース</a><a href="schedule.html" class="nav-link">演出情報</a><a href="goods.html" class="nav-link">商品</a><a href="album.html" class="nav-link">アルバム</a><a href="sources.html" class="nav-link nav-active">來源</a></nav>
+  <p class="update-time">最後更新：2026-06-26 11:06 JST</p>
+</header>
+<div class="src-wrap">
+  <p class="src-intro">
+    本站新聞從以下 26 個來源自動彙整，每日 09:00 JST 更新。<br>
+    點擊可前往各來源官方網站。
+  </p>
+  <p class="src-section-label">&#128240; 新聞・エンタメ</p>
+  <div class="src-grid"><a class="src-card" href="https://sd-milk.com" target="_blank" rel="noopener"><span class="src-dot" style="background:#d4006e"></span><span class="src-name">sd-milk.com 公式</span><span class="src-arrow">&#8599;</span></a><a class="src-card" href="https://natalie.mu/music/" target="_blank" rel="noopener"><span class="src-dot" style="background:#0066aa"></span><span class="src-name">Natalie Music</span><span class="src-arrow">&#8599;</span></a><a class="src-card" href="https://www.oricon.co.jp" target="_blank" rel="noopener"><span class="src-dot" style="background:#cc2233"></span><span class="src-name">Oricon</span><span class="src-arrow">&#8599;</span></a><a class="src-card" href="https://www.barks.jp" target="_blank" rel="noopener"><span class="src-dot" style="background:#b05010"></span><span class="src-name">BARKS</span><span class="src-arrow">&#8599;</span></a><a class="src-card" href="https://www.sanspo.com" target="_blank" rel="noopener"><span class="src-dot" style="background:#0a6b30"></span><span class="src-name">SANSPO</span><span class="src-arrow">&#8599;</span></a><a class="src-card" href="https://www.billboard-japan.com" target="_blank" rel="noopener"><span class="src-dot" style="background:#1a4a9f"></span><span class="src-name">Billboard Japan</span><span class="src-arrow">&#8599;</span></a><a class="src-card" href="https://www.musicvoice.jp" target="_blank" rel="noopener"><span class="src-dot" style="background:#7b1ea2"></span><span class="src-name">Musicvoice</span><span class="src-arrow">&#8599;</span></a><a class="src-card" href="https://spice.eplus.jp" target="_blank" rel="noopener"><span class="src-dot" style="background:#d45500"></span><span class="src-name">SPICE</span><span class="src-arrow">&#8599;</span></a><a class="src-card" href="https://www.musicman.co.jp" target="_blank" rel="noopener"><span class="src-dot" style="background:#1b5e20"></span><span class="src-name">Musicman</span><span class="src-arrow">&#8599;</span></a><a class="src-card" href="https://www.thefirsttimes.jp" target="_blank" rel="noopener"><span class="src-dot" style="background:#c62828"></span><span class="src-name">The First Times</span><span class="src-arrow">&#8599;</span></a><a class="src-card" href="https://mdpr.jp" target="_blank" rel="noopener"><span class="src-dot" style="background:#1565c0"></span><span class="src-name">Modelpress</span><span class="src-arrow">&#8599;</span></a><a class="src-card" href="https://www.biteki.com" target="_blank" rel="noopener"><span class="src-dot" style="background:#e91e8c"></span><span class="src-name">美的.com</span><span class="src-arrow">&#8599;</span></a><a class="src-card" href="https://www.mensnonno.jp" target="_blank" rel="noopener"><span class="src-dot" style="background:#0d47a1"></span><span class="src-name">MEN'S NON-NO</span><span class="src-arrow">&#8599;</span></a><a class="src-card" href="https://www.vogue.co.jp" target="_blank" rel="noopener"><span class="src-dot" style="background:#2c2c2c"></span><span class="src-name">VOGUE JAPAN</span><span class="src-arrow">&#8599;</span></a><a class="src-card" href="https://www.tvguide.or.jp/cmn_keyword/mlk/" target="_blank" rel="noopener"><span class="src-dot" style="background:#e53935"></span><span class="src-name">TVガイドWeb</span><span class="src-arrow">&#8599;</span></a><a class="src-card" href="https://thetv.jp" target="_blank" rel="noopener"><span class="src-dot" style="background:#00838f"></span><span class="src-name">WEBザテレビジョン</span><span class="src-arrow">&#8599;</span></a><a class="src-card" href="https://ebidan.jp" target="_blank" rel="noopener"><span class="src-dot" style="background:#6d4c41"></span><span class="src-name">ebidan.jp</span><span class="src-arrow">&#8599;</span></a></div>
+  <p class="src-section-label">&#127902; 番組・作品</p>
+  <div class="src-grid"><a class="src-card" href="https://www.tbs.co.jp/yatte_milk/" target="_blank" rel="noopener"><span class="src-dot" style="background:#cc0000"></span><span class="src-name">やってM!LK (TBS)</span><span class="src-arrow">&#8599;</span></a><a class="src-card" href="https://www.tbs.co.jp/kiminosukihamuteki_tbs/" target="_blank" rel="noopener"><span class="src-dot" style="background:#880033"></span><span class="src-name">君の好きは無敵</span><span class="src-arrow">&#8599;</span></a><a class="src-card" href="https://www.joqr.co.jp/qr/program/reco/" target="_blank" rel="noopener"><span class="src-dot" style="background:#0055bb"></span><span class="src-name">レコメン! 文化放送</span><span class="src-arrow">&#8599;</span></a><a class="src-card" href="https://www.mbs1179.com/imadoki/" target="_blank" rel="noopener"><span class="src-dot" style="background:#e65100"></span><span class="src-name">イマドキッ MBSラジオ</span><span class="src-arrow">&#8599;</span></a><a class="src-card" href="https://www.disney.co.jp/movie/toy5" target="_blank" rel="noopener"><span class="src-dot" style="background:#0d47a1"></span><span class="src-name">トイ・ストーリー５</span><span class="src-arrow">&#8599;</span></a><a class="src-card" href="https://zeztz-gavan-26movie.com/" target="_blank" rel="noopener"><span class="src-dot" style="background:#1b5e20"></span><span class="src-name">仮面ライダーゼッツ</span><span class="src-arrow">&#8599;</span></a><a class="src-card" href="#" target="_blank" rel="noopener"><span class="src-dot" style="background:#e53935"></span><span class="src-name">VICTOR STORE</span><span class="src-arrow">&#8599;</span></a><a class="src-card" href="#" target="_blank" rel="noopener"><span class="src-dot" style="background:#0d47a1"></span><span class="src-name">UNIVERSAL MUSIC</span><span class="src-arrow">&#8599;</span></a><a class="src-card" href="#" target="_blank" rel="noopener"><span class="src-dot" style="background:#9c27b0"></span><span class="src-name">FC限定 (STARDUST)</span><span class="src-arrow">&#8599;</span></a></div>
+</div>
+<footer>
+  <p>M!LK Fan Hub &nbsp;&middot;&nbsp; 非公式ファンサイト &nbsp;&middot;&nbsp; 毎日 09:00 JST 自動更新</p>
+</footer>
+</body>
+</html>

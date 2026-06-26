@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>M!LK Fan Hub &mdash; 1st Mini Album</title>
+<style>
+
+:root{
+  --bg:#f0f5ff;--surface:#ffffff;--card:#ffffff;--border:#dce8ff;
+  --blue:#2a5bd7;--blue2:#5b8dee;--blue3:#dce8ff;
+  --text:#1a1a2e;--muted:#64748b;
+  --pink:#ff69b4;--yellow:#ffd43b;--sky:#4da6ff;--red:#ff3344;
+  --shadow:0 2px 12px rgba(42,91,215,.08);
+  --shadow-hover:0 8px 28px rgba(42,91,215,.16);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:'Hiragino Sans','Noto Sans TC','Noto Sans JP',system-ui,sans-serif;min-height:100vh;}
+.hero-img{width:100%;max-height:340px;object-fit:cover;object-position:center top;display:block;}
+.site-header{background:var(--surface);border-bottom:1px solid var(--border);padding:28px 20px 0;text-align:center;}
+.member-stripe{display:flex;height:5px;width:100%;margin-bottom:20px;}
+.member-stripe span{flex:1;}
+.wordmark{font-size:clamp(2.6rem,8vw,4.8rem);font-weight:900;letter-spacing:.25em;color:var(--blue);}
+.wordmark .bang{color:var(--pink);}
+.tagline{margin-top:5px;font-size:.72rem;letter-spacing:.45em;text-transform:uppercase;color:var(--blue2);}
+.hearts{margin:7px 0 3px;font-size:.85rem;color:var(--pink);letter-spacing:.4em;}
+.update-time{font-size:.68rem;color:var(--muted);margin:7px 0 14px;}
+.page-nav{display:flex;justify-content:center;gap:0;}
+.nav-link{padding:10px 32px;font-size:.8rem;font-weight:600;letter-spacing:.08em;text-decoration:none;color:var(--muted);border-bottom:3px solid transparent;transition:color .2s,border-color .2s;}
+.nav-link:hover{color:var(--blue);}
+.nav-link.nav-active{color:var(--blue);border-bottom-color:var(--blue);}
+.sources{display:flex;justify-content:center;gap:5px;flex-wrap:wrap;padding:12px 20px;}
+.sources span{padding:3px 10px;border-radius:20px;font-size:.63rem;font-weight:700;color:#fff;}
+.main-wrap{max-width:1100px;margin:0 auto;padding:22px 16px 80px;display:grid;grid-template-columns:258px 1fr;gap:22px;align-items:start;}
+@media(max-width:760px){.main-wrap{grid-template-columns:1fr;}}
+.calendar-wrap{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:16px;position:sticky;top:20px;box-shadow:var(--shadow);}
+@media(max-width:760px){.calendar-wrap{position:static;}}
+.cal-nav{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;}
+.cal-title{font-size:.88rem;font-weight:700;color:var(--blue);}
+.cal-arrow{background:none;border:1px solid var(--border);color:var(--muted);width:26px;height:26px;border-radius:6px;cursor:pointer;transition:border-color .2s,color .2s;display:flex;align-items:center;justify-content:center;font-size:.85rem;}
+.cal-arrow:hover{border-color:var(--blue);color:var(--blue);}
+.cal-dow{display:grid;grid-template-columns:repeat(7,1fr);gap:2px;margin-bottom:3px;}
+.cal-dow span{text-align:center;font-size:.6rem;color:var(--muted);padding:3px 0;font-weight:600;}
+.cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:2px;}
+.cal-empty{height:30px;}
+.cal-day{height:30px;border-radius:5px;border:none;background:transparent;color:var(--muted);font-size:.74rem;cursor:default;position:relative;transition:background .15s,color .15s;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:1px;}
+.cal-day.has-news{color:var(--text);cursor:pointer;}
+.cal-day.has-news:hover{background:var(--blue3);}
+.cal-day.has-news::after{content:'';display:block;width:4px;height:4px;border-radius:50%;background:var(--blue);opacity:.7;}
+.cal-day.selected{background:var(--blue);color:#fff;}
+.cal-day.selected::after{background:#fff;}
+.cal-day.today{font-weight:700;color:var(--pink);}
+.cal-day.today.selected{color:#fff;}
+.cal-clear{display:block;width:100%;margin-top:10px;padding:6px;background:var(--blue3);border:1px solid var(--border);color:var(--blue);border-radius:8px;font-size:.73rem;cursor:pointer;transition:background .2s;}
+.cal-clear:hover{background:#c5d8ff;}
+.cal-stats{margin-top:9px;font-size:.67rem;color:var(--muted);text-align:center;line-height:1.6;}
+.articles-section{min-width:0;}
+.filter-bar{margin-bottom:13px;}
+.filter-label{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--blue);padding-left:10px;border-left:3px solid var(--blue);}
+.date-group{margin-bottom:24px;}
+.date-heading{font-size:.7rem;letter-spacing:.22em;color:var(--blue2);margin-bottom:10px;padding-bottom:5px;border-bottom:1px solid var(--border);}
+.articles-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:13px;}
+.card{background:var(--card);border:1px solid var(--border);border-radius:14px;display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s,border-color .2s;box-shadow:var(--shadow);}
+.card:hover{transform:translateY(-3px);box-shadow:var(--shadow-hover);border-color:#b4caff;}
+.card-img{background:var(--bg);overflow:hidden;border-radius:14px 14px 0 0;}
+.card-img img{width:100%;height:auto;display:block;}
+.img-dl-wrap{text-align:right;padding:3px 8px 5px;background:var(--bg);}
+.img-dl{font-size:.62rem;color:var(--blue);text-decoration:none;display:inline-block;padding:2px 6px;border-radius:8px;transition:background .2s;}
+.img-dl:hover{background:var(--blue3);}
+.card-body{padding:13px;display:flex;flex-direction:column;gap:7px;flex:1;}
+.card-head{display:flex;align-items:center;justify-content:space-between;gap:6px;flex-wrap:wrap;}
+.badge{background:var(--c,#888);color:#fff;font-size:.63rem;font-weight:700;padding:2px 8px;border-radius:10px;white-space:nowrap;}
+.date-tag{font-size:.67rem;color:var(--muted);font-variant-numeric:tabular-nums;}
+.title-zh{font-size:.93rem;font-weight:700;color:var(--blue);line-height:1.5;}
+.title-ja{font-size:.78rem;color:#4a5568;line-height:1.6;}
+.sum-zh{font-size:.77rem;color:#374151;line-height:1.65;}
+.sum-ja{font-size:.72rem;color:var(--muted);line-height:1.65;border-top:1px solid var(--border);padding-top:5px;}
+.card-btn{display:inline-block;margin-top:auto;padding:5px 13px;background:transparent;border:1px solid var(--blue);color:var(--blue);text-decoration:none;border-radius:20px;font-size:.71rem;font-weight:600;align-self:flex-start;transition:background .2s,color .2s;}
+.card-btn:hover{background:var(--blue);color:#fff;}
+.empty-msg{text-align:center;padding:48px;color:var(--muted);font-size:.9rem;}
+footer{text-align:center;padding:18px 20px 28px;font-size:.7rem;color:var(--muted);border-top:1px solid var(--border);background:var(--surface);}
+
+
+
+:root{--ground:#FAFAF8;--surface:#FFFFFF;--text:#1C1B2E;--text-muted:#6B6A82;--accent:#D4477B;--accent-soft:#FAEEF4;--blue2:#7B9EC4;--blue-soft:#EDF3FA;--gold:#B8922A;--gold-soft:#FBF4E6;--border:#E6E4EE;--radius:14px;--radius-sm:8px;}
+.checker-wrap{max-width:960px;margin:0 auto;padding:0 20px 80px;}
+.album-hero{background:var(--text);color:#fff;padding:42px 24px 36px;text-align:center;position:relative;overflow:hidden;}
+.album-hero::before{content:'';position:absolute;inset:0;background:repeating-conic-gradient(rgba(255,255,255,.03) 0deg 45deg,transparent 45deg 90deg);background-size:40px 40px;pointer-events:none;}
+.hero-group-badge{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);border:1.5px solid var(--accent);border-radius:4px;padding:3px 10px;margin-bottom:18px;}
+.hero-label{font-size:12px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:8px;}
+.hero-title{font-size:clamp(24px,6vw,48px);font-weight:800;line-height:1.1;margin-bottom:5px;}
+.hero-title em{font-style:normal;color:var(--accent);}
+.hero-subtitle{font-size:13px;color:rgba(255,255,255,.5);margin-bottom:24px;letter-spacing:.04em;}
+.hero-meta{display:inline-flex;gap:24px;border-top:1px solid rgba(255,255,255,.12);padding-top:18px;}
+.hero-meta-item{text-align:center;}
+.hero-meta-item .val{display:block;font-size:18px;font-weight:700;color:#fff;margin-bottom:2px;}
+.hero-meta-item .key{font-size:11px;color:rgba(255,255,255,.4);letter-spacing:.08em;}
+.chk-section{padding:40px 0 0;}
+.chk-section-head{display:flex;align-items:baseline;gap:10px;margin-bottom:20px;border-bottom:2px solid var(--text);padding-bottom:9px;}
+.chk-section-title{font-size:16px;font-weight:800;}
+.chk-section-en{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--text-muted);}
+.checker-layout{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:start;}
+.wants-panel{display:flex;flex-direction:column;gap:6px;}
+.wants-intro{font-size:13px;color:var(--text-muted);margin-bottom:8px;line-height:1.5;}
+.want-item{display:flex;align-items:center;gap:12px;background:var(--surface);border:1.5px solid var(--border);border-radius:var(--radius-sm);padding:11px 14px;cursor:pointer;transition:border-color .15s,background .15s;user-select:none;}
+.want-item:hover{border-color:var(--accent);background:var(--accent-soft);}
+.want-item input[type=checkbox]{display:none;}
+.want-check{width:20px;height:20px;border:2px solid var(--border);border-radius:5px;flex-shrink:0;position:relative;transition:border-color .15s,background .15s;}
+.want-item:has(input:checked) .want-check{border-color:var(--accent);background:var(--accent);}
+.want-item:has(input:checked) .want-check::after{content:'';position:absolute;top:2px;left:5px;width:6px;height:9px;border:2px solid #fff;border-top:none;border-left:none;transform:rotate(45deg);}
+.want-item:has(input:checked){border-color:var(--accent);background:var(--accent-soft);}
+.want-info{display:flex;flex-direction:column;gap:2px;}
+.want-name{font-size:13px;font-weight:700;}
+.want-tag{font-size:11px;color:var(--text-muted);font-weight:500;}
+.want-tag.fc{color:var(--gold);}
+.sub-opt{max-height:0;overflow:hidden;transition:max-height .25s ease,margin .2s ease;margin-left:6px;}
+.sub-opt.open{max-height:320px;margin-bottom:2px;}
+.sub-opt select{width:100%;padding:8px 32px 8px 12px;border:1.5px solid var(--border);border-radius:var(--radius-sm);background:var(--surface) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236B6A82' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat right 12px center;font-size:13px;color:var(--text);font-family:inherit;appearance:none;-webkit-appearance:none;}
+.sub-check-grid{display:grid;grid-template-columns:1fr 1fr;gap:5px;padding:6px 4px 4px;}
+.sub-check-group-label{grid-column:1/-1;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--text-muted);padding:4px 2px 2px;}
+.sub-check-item{display:flex;align-items:center;gap:7px;font-size:12px;font-weight:600;cursor:pointer;padding:6px 9px;border-radius:6px;border:1.5px solid var(--border);background:var(--surface);user-select:none;transition:border-color .12s,background .12s;line-height:1.3;}
+.sub-check-item:hover{border-color:var(--accent);background:var(--accent-soft);}
+.sub-check-item input[type=checkbox]{display:none;}
+.sub-check-dot{width:14px;height:14px;border:2px solid var(--border);border-radius:3px;flex-shrink:0;position:relative;transition:border-color .12s,background .12s;}
+.sub-check-item:has(input:checked) .sub-check-dot{border-color:var(--accent);background:var(--accent);}
+.sub-check-item:has(input:checked) .sub-check-dot::after{content:'';position:absolute;top:1px;left:3px;width:5px;height:7px;border:1.5px solid #fff;border-top:none;border-left:none;transform:rotate(45deg);}
+.sub-check-item:has(input:checked){border-color:var(--accent);background:var(--accent-soft);}
+.reset-btn{margin-top:8px;align-self:flex-start;padding:7px 16px;background:transparent;border:1.5px solid var(--border);border-radius:var(--radius-sm);font-size:12px;color:var(--text-muted);cursor:pointer;font-family:inherit;transition:border-color .15s,color .15s;}
+.reset-btn:hover{border-color:var(--text);color:var(--text);}
+.result-panel{position:sticky;top:20px;background:var(--text);color:#fff;border-radius:var(--radius);padding:22px;min-height:220px;display:flex;flex-direction:column;gap:14px;}
+.result-empty{flex:1;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.3);font-size:13px;text-align:center;padding:20px;}
+.res-plan-header{background:rgba(212,71,123,.15);border:1px solid rgba(212,71,123,.3);border-radius:9px;padding:14px 16px;display:flex;flex-direction:column;gap:3px;}
+.res-plan-label{font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:rgba(212,71,123,.85);}
+.res-plan-price{font-size:28px;font-weight:800;color:var(--accent);line-height:1.1;letter-spacing:-.02em;}
+.res-plan-price small{font-size:13px;font-weight:500;color:rgba(255,255,255,.4);letter-spacing:0;margin-left:2px;}
+.res-plan-note{font-size:12px;color:rgba(255,255,255,.5);margin-top:3px;line-height:1.45;}
+.res-sec{display:flex;flex-direction:column;gap:7px;}
+.res-label{font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:1px;}
+.res-item{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:9px 12px;background:rgba(255,255,255,.07);border-radius:7px;}
+.res-item-name{font-size:13px;font-weight:700;display:flex;align-items:center;gap:6px;flex-wrap:wrap;line-height:1.35;}
+.res-item-right{display:flex;align-items:center;gap:8px;flex-shrink:0;}
+.res-qty{font-size:12px;color:rgba(255,255,255,.35);white-space:nowrap;}
+.res-item-price{font-size:15px;font-weight:800;color:var(--accent);white-space:nowrap;}
+.res-badge{font-size:10px;padding:2px 6px;border-radius:4px;font-weight:700;background:rgba(212,71,123,.25);color:#FFB0CC;}
+.res-badge-warn{font-size:10px;padding:2px 6px;border-radius:4px;font-weight:700;background:rgba(184,146,42,.3);color:#F5D47A;}
+.res-total{font-size:16px;font-weight:800;color:var(--accent);text-align:right;padding-top:6px;border-top:1px solid rgba(255,255,255,.08);}
+.res-store{background:rgba(255,255,255,.06);border-radius:7px;padding:11px 13px;display:flex;flex-direction:column;gap:3px;}
+.res-store-label{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.3);}
+.res-store-val{font-size:13px;font-weight:700;}
+.res-store-extra{font-size:12px;color:rgba(255,255,255,.5);margin-top:2px;}
+.res-tok{display:flex;justify-content:space-between;align-items:baseline;gap:8px;font-size:12px;padding:5px 0;border-bottom:1px solid rgba(255,255,255,.06);}
+.res-tok:last-child{border-bottom:none;}
+.res-tok-name{font-weight:600;}
+.res-tok-name.hi{color:var(--accent);}
+.res-tok-desc{color:rgba(255,255,255,.4);font-size:11px;text-align:right;}
+.res-warn{background:rgba(184,146,42,.12);border:1px solid rgba(184,146,42,.25);border-radius:7px;padding:10px 12px;font-size:12px;line-height:1.55;color:#F5D47A;}
+.res-deadline{font-size:11px;color:rgba(255,255,255,.35);text-align:center;padding-top:2px;}
+.editions-top{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;}
+.editions-solo{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;}
+.holo-wrap{border-radius:calc(var(--radius) + 2px);padding:2px;background:linear-gradient(125deg,#ff6b9d,#c26bfd,#6bb5ff,#6bffcd,#fff36b,#ffa66b,#ff6b9d);background-size:300% 300%;animation:holo-flow 6s linear infinite;box-shadow:0 4px 20px rgba(212,71,123,.15);}
+@keyframes holo-flow{0%{background-position:0% 50%;filter:hue-rotate(0deg);}50%{background-position:100% 50%;filter:hue-rotate(180deg);}100%{background-position:0% 50%;filter:hue-rotate(360deg);}}
+@media (prefers-reduced-motion:reduce){.holo-wrap{animation:none;background:linear-gradient(125deg,#ff6b9d,#6bb5ff,#6bffcd);}}
+.plain-wrap{border-radius:calc(var(--radius) + 2px);padding:2px;background:var(--border);}
+.card{background:var(--surface);border-radius:var(--radius);padding:18px;height:100%;display:flex;flex-direction:column;gap:11px;}
+.card-badge{display:inline-flex;align-items:center;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:3px 8px;border-radius:4px;align-self:flex-start;}
+.badge-standard{background:var(--border);color:var(--text-muted);}
+.badge-limited{background:var(--gold-soft);color:var(--gold);}
+.badge-solo{background:var(--accent-soft);color:var(--accent);}
+.card-name{font-size:15px;font-weight:800;line-height:1.25;}
+.card-name-en{font-size:11px;color:var(--text-muted);font-weight:500;margin-top:2px;}
+.card-price{font-size:22px;font-weight:800;color:var(--accent);letter-spacing:-.02em;}
+.card-price span{font-size:13px;font-weight:500;color:var(--text-muted);margin-left:2px;}
+.card-divider{border:none;border-top:1px solid var(--border);}
+.card-row{display:flex;flex-direction:column;gap:5px;}
+.card-row-label{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--text-muted);}
+.card-row-val{font-size:13px;line-height:1.5;}
+.tokuten-tag{display:inline-block;font-size:12px;font-weight:600;background:var(--accent-soft);color:var(--accent);border-radius:var(--radius-sm);padding:4px 9px;margin:2px 2px 2px 0;line-height:1.4;}
+.member-name{font-size:12px;font-weight:700;color:var(--accent);}
+.tokuten-block{display:flex;flex-direction:column;gap:16px;}
+.tokuten-row{background:var(--surface);border:1.5px solid var(--border);border-radius:var(--radius);overflow:hidden;}
+.tokuten-row-head{display:grid;grid-template-columns:200px 1fr;align-items:stretch;}
+.tokuten-row-type{background:var(--text);color:#fff;padding:16px 18px;display:flex;flex-direction:column;justify-content:center;gap:4px;}
+.type-label{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.45);}
+.type-name{font-size:14px;font-weight:800;}
+.type-period{font-size:11px;color:rgba(255,255,255,.5);margin-top:4px;}
+.tokuten-row-body{padding:16px 18px;display:flex;flex-direction:column;gap:8px;}
+.tokuten-condition{font-size:12px;color:var(--text-muted);line-height:1.5;}
+.tokuten-condition strong{color:var(--text);font-weight:700;}
+.tokuten-item{font-size:14px;font-weight:700;}
+.tokuten-stores{display:flex;flex-wrap:wrap;gap:4px;margin-top:4px;}
+.store-chip{font-size:11px;background:var(--ground);border:1px solid var(--border);border-radius:4px;padding:2px 7px;color:var(--text-muted);white-space:nowrap;}
+.channel-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;}
+.channel-card{background:var(--surface);border:1.5px solid var(--border);border-radius:var(--radius-sm);padding:14px 16px;}
+.channel-name{font-size:12px;font-weight:700;color:var(--text-muted);margin-bottom:4px;}
+.channel-gift{font-size:13px;font-weight:700;line-height:1.4;}
+.channel-note{font-size:11px;color:var(--text-muted);margin-top:3px;}
+.fc-note{background:var(--gold-soft);border:1.5px solid #E8D19A;border-radius:var(--radius-sm);padding:12px 16px;font-size:13px;color:var(--gold);font-weight:600;margin-bottom:16px;line-height:1.5;}
+.fc-table-wrap{border:1.5px solid var(--border);border-radius:var(--radius);overflow:hidden;}
+.fc-table{width:100%;border-collapse:collapse;font-size:13px;}
+.fc-table thead tr{background:var(--text);color:#fff;}
+.fc-table th{padding:10px 14px;text-align:left;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;white-space:nowrap;}
+.fc-table td{padding:10px 14px;border-bottom:1px solid var(--border);vertical-align:middle;line-height:1.4;}
+.fc-table tr:last-child td{border-bottom:none;}
+.fc-table tr:nth-child(even) td{background:rgba(0,0,0,.015);}
+.fc-price{font-weight:800;color:var(--accent);white-space:nowrap;}
+.deadline-box{background:var(--text);color:#fff;border-radius:var(--radius);padding:20px 24px;display:flex;flex-wrap:wrap;gap:16px 32px;align-items:flex-start;margin-top:12px;}
+.dl-label{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:4px;}
+.dl-val{font-size:15px;font-weight:800;}
+.dl-sub{font-size:11px;color:rgba(255,255,255,.5);margin-top:2px;}
+@media (max-width:700px){.editions-top{grid-template-columns:1fr;}.editions-solo{grid-template-columns:repeat(2,1fr);}.checker-layout{grid-template-columns:1fr;}.result-panel{position:static;}.tokuten-row-head{grid-template-columns:1fr;}.tokuten-row-type{padding:12px 16px;}.channel-grid{grid-template-columns:1fr 1fr;}}
+@media (max-width:420px){.editions-solo{grid-template-columns:1fr;}.channel-grid{grid-template-columns:1fr;}}
+
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="member-stripe"><span style="background:#ff69b4"></span><span style="background:#ffd43b"></span><span style="background:#4da6ff"></span><span style="background:#e8e8f0;border-top:1px solid #dce8ff"></span><span style="background:#ff3344"></span></div>
+  <div class="wordmark">M<span class="bang">!</span>LK</div>
+  <div class="hearts">&#9825; &middot; &#9825; &middot; &#9825;</div>
+  <p class="tagline">Fan Hub &middot; 1st Mini Album</p>
+  <nav class="page-nav"><a href="index.html" class="nav-link">ニュース</a><a href="schedule.html" class="nav-link">演出情報</a><a href="goods.html" class="nav-link">商品</a><a href="album.html" class="nav-link nav-active">アルバム</a><a href="sources.html" class="nav-link">來源</a></nav>
+  <p class="update-time">最後更新：2026-06-26 11:06 JST</p>
+</header>
+
+<div class="album-hero">
+  <div class="hero-group-badge">M!LK</div>
+  <p class="hero-label">1st Mini Album</p>
+  <h1 class="hero-title">タイトル<em>未定</em></h1>
+  <p class="hero-subtitle">Title Undecided</p>
+  <div class="hero-meta">
+    <div class="hero-meta-item"><span class="val">2026.09.16</span><span class="key">発売日</span></div>
+    <div class="hero-meta-item"><span class="val">7</span><span class="key">形態</span></div>
+    <div class="hero-meta-item"><span class="val">7/19</span><span class="key">予約締切</span></div>
+  </div>
+</div>
+
+<div class="checker-wrap">
+
+<div class="chk-section">
+  <div class="chk-section-head">
+    <h2 class="chk-section-title">特典チェッカー</h2>
+    <span class="chk-section-en">What should I buy?</span>
+  </div>
+  <div class="checker-layout">
+    <div class="wants-panel">
+      <p class="wants-intro">欲しい特典にチェックを入れると、購入すべき形態と通路を表示します。</p>
+      <label class="want-item" for="w-pair"><input type="checkbox" id="w-pair" onchange="compute()"><div class="want-check"></div><div class="want-info"><span class="want-name">ペアトレカ（雙人小卡）</span><span class="want-tag">早期予約特典・5種ランダム</span></div></label>
+      <label class="want-item" for="w-clear"><input type="checkbox" id="w-clear" onchange="compute()"><div class="want-check"></div><div class="want-info"><span class="want-name">クリアトレカ（透卡）</span><span class="want-tag">早期セット予約特典・ソロ5種ランダム</span></div></label>
+      <label class="want-item" for="w-bluray"><input type="checkbox" id="w-bluray" onchange="compute()"><div class="want-check"></div><div class="want-info"><span class="want-name">Blu-ray（イベント映像）</span><span class="want-tag">初回限定盤収録</span></div></label>
+      <label class="want-item" for="w-sticker"><input type="checkbox" id="w-sticker" onchange="toggleSub('sub-sticker','w-sticker'); compute()"><div class="want-check"></div><div class="want-info"><span class="want-name">通路別ステッカー</span><span class="want-tag">先着特典・各通路1種</span></div></label>
+      <div class="sub-opt" id="sub-sticker">
+        <select id="sel-sticker" onchange="compute()">
+          <option value="">どのメンバー？</option>
+          <option value="sano">佐野勇斗（楽天ブックス）</option>
+          <option value="shiozaki">塩﨑太智（TOWER RECORDS）</option>
+          <option value="sono">曽野舜太（VICTOR ONLINE）</option>
+          <option value="yamanaka">山中柔太朗（HMV）</option>
+          <option value="yoshida">吉田仁人（応援店）</option>
+          <option value="amazon">メガジャケ（Amazon）</option>
+        </select>
+      </div>
+      <label class="want-item" for="w-acrylic"><input type="checkbox" id="w-acrylic" onchange="toggleSub('sub-acrylic','w-acrylic'); compute()"><div class="want-check"></div><div class="want-info"><span class="want-name">アクスタ（複数選択可）</span><span class="want-tag fc">FC限定 · PREMIUM MILK会員</span></div></label>
+      <div class="sub-opt" id="sub-acrylic">
+        <div class="sub-check-grid">
+          <span class="sub-check-group-label">集合アクスタ</span>
+          <label class="sub-check-item"><input type="checkbox" name="acrylic-type" value="A" onchange="compute()"><div class="sub-check-dot"></div>集合A（初回盤）</label>
+          <label class="sub-check-item"><input type="checkbox" name="acrylic-type" value="B" onchange="compute()"><div class="sub-check-dot"></div>集合B（通常盤）</label>
+          <span class="sub-check-group-label">ソロアクスタ</span>
+          <label class="sub-check-item"><input type="checkbox" name="acrylic-type" value="sano" onchange="compute()"><div class="sub-check-dot"></div>佐野勇斗</label>
+          <label class="sub-check-item"><input type="checkbox" name="acrylic-type" value="shiozaki" onchange="compute()"><div class="sub-check-dot"></div>塩﨑太智</label>
+          <label class="sub-check-item"><input type="checkbox" name="acrylic-type" value="sono" onchange="compute()"><div class="sub-check-dot"></div>曽野舜太</label>
+          <label class="sub-check-item"><input type="checkbox" name="acrylic-type" value="yamanaka" onchange="compute()"><div class="sub-check-dot"></div>山中柔太朗</label>
+          <label class="sub-check-item"><input type="checkbox" name="acrylic-type" value="yoshida" onchange="compute()"><div class="sub-check-dot"></div>吉田仁人</label>
+        </div>
+      </div>
+      <label class="want-item" for="w-solocard"><input type="checkbox" id="w-solocard" onchange="toggleSub('sub-solo','w-solocard'); compute()"><div class="want-check"></div><div class="want-info"><span class="want-name">特定メンバーの封入ソロトレカ（複数選択可）</span><span class="want-tag">ソロ盤封入・3種ランダム</span></div></label>
+      <div class="sub-opt" id="sub-solo">
+        <div class="sub-check-grid">
+          <label class="sub-check-item"><input type="checkbox" name="solo-member" value="sano" onchange="compute()"><div class="sub-check-dot"></div>佐野勇斗</label>
+          <label class="sub-check-item"><input type="checkbox" name="solo-member" value="shiozaki" onchange="compute()"><div class="sub-check-dot"></div>塩﨑太智</label>
+          <label class="sub-check-item"><input type="checkbox" name="solo-member" value="sono" onchange="compute()"><div class="sub-check-dot"></div>曽野舜太</label>
+          <label class="sub-check-item"><input type="checkbox" name="solo-member" value="yamanaka" onchange="compute()"><div class="sub-check-dot"></div>山中柔太朗</label>
+          <label class="sub-check-item"><input type="checkbox" name="solo-member" value="yoshida" onchange="compute()"><div class="sub-check-dot"></div>吉田仁人</label>
+        </div>
+      </div>
+      <button class="reset-btn" onclick="resetAll()">選択をリセット</button>
+    </div>
+    <div class="result-panel" id="result-panel">
+      <div class="result-empty">欲しい特典を選んでください</div>
+    </div>
+  </div>
+</div>
+
+<div class="chk-section">
+  <div class="chk-section-head"><h2 class="chk-section-title">版本一覧</h2><span class="chk-section-en">Editions</span></div>
+  <div class="editions-top">
+    <div class="plain-wrap"><div class="card">
+      <span class="card-badge badge-standard">通常盤</span>
+      <div><div class="card-name">通常盤</div><div class="card-name-en">Regular Edition · CD only</div></div>
+      <div class="card-price">¥2,530<span>税込</span></div>
+      <hr class="card-divider">
+      <div class="card-row"><div class="card-row-label">収録</div><div class="card-row-val">CD 全5曲<br>アイドルパワー（既発）＋新曲</div></div>
+      <div class="card-row"><div class="card-row-label">封入特典</div><div><span class="tokuten-tag">限定トレカ（ソロ5種ランダム1枚）</span><span class="tokuten-tag">応募抽選シリアル ※初回プレスのみ</span></div></div>
+    </div></div>
+    <div class="holo-wrap"><div class="card">
+      <span class="card-badge badge-limited">初回限定盤</span>
+      <div><div class="card-name">初回限定盤</div><div class="card-name-en">First Limited Edition · CD + Blu-ray</div></div>
+      <div class="card-price">¥3,520<span>税込</span></div>
+      <hr class="card-divider">
+      <div class="card-row"><div class="card-row-label">収録</div><div class="card-row-val">CD 全5曲 ＋ Blu-ray<br>「爆裂愛してる / 好きすぎて滅！」<br>発売日記念スペシャルイベント映像</div></div>
+      <div class="card-row"><div class="card-row-label">封入特典</div><div><span class="tokuten-tag">限定トレカ（ソロ5種ランダム1枚）</span><span class="tokuten-tag">応募抽選シリアル</span></div></div>
+    </div></div>
+  </div>
+  <div class="editions-solo">
+    <div class="holo-wrap"><div class="card"><span class="card-badge badge-solo">ソロ盤</span><div><div class="member-name">佐野勇斗</div><div class="card-name-en">CD only · 初回生産限定</div></div><div class="card-price">¥2,530<span>税込</span></div><hr class="card-divider"><div class="card-row"><div class="card-row-label">収録</div><div class="card-row-val">全6曲（共通5曲＋ユニット曲）</div></div><div class="card-row"><div class="card-row-label">封入特典</div><div><span class="tokuten-tag">佐野勇斗 ソロ3種ランダム1枚</span><span class="tokuten-tag">応募抽選シリアル</span></div></div></div></div>
+    <div class="holo-wrap"><div class="card"><span class="card-badge badge-solo">ソロ盤</span><div><div class="member-name">塩﨑太智</div><div class="card-name-en">CD only · 初回生産限定</div></div><div class="card-price">¥2,530<span>税込</span></div><hr class="card-divider"><div class="card-row"><div class="card-row-label">収録</div><div class="card-row-val">全6曲（共通5曲＋ユニット曲）</div></div><div class="card-row"><div class="card-row-label">封入特典</div><div><span class="tokuten-tag">塩﨑太智 ソロ3種ランダム1枚</span><span class="tokuten-tag">応募抽選シリアル</span></div></div></div></div>
+    <div class="holo-wrap"><div class="card"><span class="card-badge badge-solo">ソロ盤</span><div><div class="member-name">曽野舜太</div><div class="card-name-en">CD only · 初回生産限定</div></div><div class="card-price">¥2,530<span>税込</span></div><hr class="card-divider"><div class="card-row"><div class="card-row-label">収録</div><div class="card-row-val">全6曲（共通5曲＋ユニット曲）</div></div><div class="card-row"><div class="card-row-label">封入特典</div><div><span class="tokuten-tag">曽野舜太 ソロ3種ランダム1枚</span><span class="tokuten-tag">応募抽選シリアル</span></div></div></div></div>
+    <div class="holo-wrap"><div class="card"><span class="card-badge badge-solo">ソロ盤</span><div><div class="member-name">山中柔太朗</div><div class="card-name-en">CD only · 初回生産限定</div></div><div class="card-price">¥2,530<span>税込</span></div><hr class="card-divider"><div class="card-row"><div class="card-row-label">収録</div><div class="card-row-val">全6曲（共通5曲＋ユニット曲）</div></div><div class="card-row"><div class="card-row-label">封入特典</div><div><span class="tokuten-tag">山中柔太朗 ソロ3種ランダム1枚</span><span class="tokuten-tag">応募抽選シリアル</span></div></div></div></div>
+    <div class="holo-wrap"><div class="card"><span class="card-badge badge-solo">ソロ盤</span><div><div class="member-name">吉田仁人</div><div class="card-name-en">CD only · 初回生産限定</div></div><div class="card-price">¥2,530<span>税込</span></div><hr class="card-divider"><div class="card-row"><div class="card-row-label">収録</div><div class="card-row-val">全6曲（共通5曲＋ユニット曲）</div></div><div class="card-row"><div class="card-row-label">封入特典</div><div><span class="tokuten-tag">吉田仁人 ソロ3種ランダム1枚</span><span class="tokuten-tag">応募抽選シリアル</span></div></div></div></div>
+  </div>
+</div>
+
+<div class="chk-section">
+  <div class="chk-section-head"><h2 class="chk-section-title">予約特典</h2><span class="chk-section-en">Pre-order Bonuses</span></div>
+  <div class="tokuten-block">
+    <div class="tokuten-row"><div class="tokuten-row-head">
+      <div class="tokuten-row-type"><span class="type-label">EC限定</span><span class="type-name">早期セット予約特典</span><span class="type-period">6/19（金）20:00 〜 7/19（日）23:59</span></div>
+      <div class="tokuten-row-body"><div class="tokuten-condition"><strong>条件：</strong>対象2形態以上のセット購入<br>（初回限定盤＋通常盤）または（初回限定盤＋ソロ盤いずれか1種）</div><div class="tokuten-item">メンバーソロ クリアトレカ（5種ランダム1枚）</div><div class="tokuten-stores"><span class="store-chip">VICTOR ONLINE</span><span class="store-chip">楽天ブックス</span><span class="store-chip">セブンネット</span><span class="store-chip">TOWER RECORDS ONLINE</span><span class="store-chip">HMV & BOOKS online</span><span class="store-chip">Amazon.co.jp</span></div></div>
+    </div></div>
+    <div class="tokuten-row"><div class="tokuten-row-head">
+      <div class="tokuten-row-type"><span class="type-label">EC限定</span><span class="type-name">早期予約特典</span><span class="type-period">6/19（金）20:00 〜 7/19（日）23:59</span></div>
+      <div class="tokuten-row-body"><div class="tokuten-condition"><strong>条件：</strong>任意の1形態を予約（単品可）</div><div class="tokuten-item">ペアトレカ（5種ランダム1枚）</div><div class="tokuten-condition">5種の組み合わせ：佐野勇斗×曽野舜太、佐野勇斗×山中柔太朗 など</div><div class="tokuten-stores"><span class="store-chip">VICTOR ONLINE</span><span class="store-chip">楽天ブックス</span><span class="store-chip">セブンネット</span><span class="store-chip">TOWER RECORDS ONLINE</span><span class="store-chip">HMV & BOOKS online</span><span class="store-chip">Amazon.co.jp</span></div></div>
+    </div></div>
+  </div>
+</div>
+
+<div class="chk-section">
+  <div class="chk-section-head"><h2 class="chk-section-title">通路別特典</h2><span class="chk-section-en">Store Exclusives · 先着</span></div>
+  <div class="channel-grid">
+    <div class="channel-card"><div class="channel-name">楽天ブックス</div><div class="channel-gift">佐野勇斗 デザイン ステッカー</div></div>
+    <div class="channel-card"><div class="channel-name">TOWER RECORDS</div><div class="channel-gift">塩﨑太智 デザイン ステッカー</div></div>
+    <div class="channel-card"><div class="channel-name">HMV & BOOKS</div><div class="channel-gift">山中柔太朗 デザイン ステッカー</div></div>
+    <div class="channel-card"><div class="channel-name">VICTOR ONLINE STORE</div><div class="channel-gift">曽野舜太 デザイン ステッカー</div></div>
+    <div class="channel-card"><div class="channel-name">応援店（TSUTAYA 等）</div><div class="channel-gift">吉田仁人 デザイン ステッカー</div></div>
+    <div class="channel-card"><div class="channel-name">Amazon.co.jp</div><div class="channel-gift">メガジャケ</div><div class="channel-note">ステッカーではなくメガジャケ</div></div>
+  </div>
+</div>
+
+<div class="chk-section">
+  <div class="chk-section-head"><h2 class="chk-section-title">FC限定商品</h2><span class="chk-section-en">PREMIUM MILK Members Only</span></div>
+  <div class="fc-note">PREMIUM MILK 会員限定 · VICTOR ONLINE STORE のみ取扱<br>FC購入者には早期予約特典（ペアトレカ）＋ <strong>曽野舜太デザインステッカー</strong> が付与される</div>
+  <div class="fc-table-wrap"><table class="fc-table">
+    <thead><tr><th>セット内容</th><th>CD形態</th><th>アクスタ</th><th>価格（税込）</th></tr></thead>
+    <tbody>
+      <tr><td>初回限定盤＋集合アクスタA</td><td>初回限定盤</td><td>集合アクスタ A</td><td class="fc-price">¥5,170</td></tr>
+      <tr><td>通常盤＋集合アクスタB</td><td>通常盤</td><td>集合アクスタ B</td><td class="fc-price">¥4,180</td></tr>
+      <tr><td>ソロ盤＋ソロアクスタ（各メンバー）</td><td>ソロ盤 × 1</td><td>ソロアクスタ（同メンバー）</td><td class="fc-price">¥4,180 × 各</td></tr>
+      <tr><td>2形態セット（初回＋通常）</td><td>初回限定盤＋通常盤</td><td>集合 A＋B</td><td class="fc-price">¥9,350</td></tr>
+      <tr><td>2形態セット（初回＋ソロ各）</td><td>初回限定盤＋ソロ盤 × 1</td><td>集合 A＋ソロ</td><td class="fc-price">¥9,350</td></tr>
+      <tr><td>3形態セット</td><td>初回＋通常＋ソロ × 1</td><td>集合 A＋B＋ソロ × 1</td><td class="fc-price">¥13,530</td></tr>
+      <tr><td>6形態セット（初回＋ソロ5）</td><td>初回限定盤＋ソロ全5</td><td>集合 A＋ソロ全5</td><td class="fc-price">¥26,070</td></tr>
+      <tr><td>6形態セット（通常＋ソロ5）</td><td>通常盤＋ソロ全5</td><td>集合 B＋ソロ全5</td><td class="fc-price">¥25,080</td></tr>
+      <tr><td>ソロ全形態セット</td><td>ソロ盤全5種</td><td>ソロアクスタ全5</td><td class="fc-price">¥20,900</td></tr>
+      <tr><td>全7形態セット</td><td>初回＋通常＋ソロ全5</td><td>集合 A＋B＋ソロ全5</td><td class="fc-price">¥30,250</td></tr>
+    </tbody>
+  </table></div>
+  <div class="deadline-box">
+    <div class="dl-item"><div class="dl-label">予約締切</div><div class="dl-val">2026年 7月19日（日）23:59</div></div>
+    <div class="dl-item"><div class="dl-label">コンビニ払い締切</div><div class="dl-val">7月17日（金）18:00</div></div>
+    <div class="dl-item"><div class="dl-label">支払期限</div><div class="dl-val">申込日から3日以内</div><div class="dl-sub">超過するとキャンセル対象</div></div>
+  </div>
+</div>
+
+</div>
+
+<script>
+const MEMBERS = {
+  sano:     { name: '佐野勇斗',   sticker_store: '楽天ブックス' },
+  shiozaki: { name: '塩﨑太智',   sticker_store: 'TOWER RECORDS ONLINE' },
+  sono:     { name: '曽野舜太',   sticker_store: 'VICTOR ONLINE STORE' },
+  yamanaka: { name: '山中柔太朗', sticker_store: 'HMV & BOOKS online' },
+  yoshida:  { name: '吉田仁人',   sticker_store: '応援店（TSUTAYA等）' },
+  amazon:   { name: 'Amazon',     sticker_store: 'Amazon.co.jp' },
+};
+const MEMBER_ORDER = ['sano','shiozaki','sono','yamanaka','yoshida'];
+
+function chk(id) { return document.getElementById(id)?.checked || false; }
+function sel(id) { return document.getElementById(id)?.value || ''; }
+function getChecked(name) {
+  return [...document.querySelectorAll('[name="' + name + '"]:checked')].map(el => el.value);
+}
+function toggleSub(subId, checkId) {
+  const sub = document.getElementById(subId);
+  const checked = document.getElementById(checkId).checked;
+  sub.classList.toggle('open', checked);
+  if (!checked) {
+    sub.querySelectorAll('input[type="checkbox"]').forEach(cb => cb.checked = false);
+    sub.querySelectorAll('select').forEach(s => s.value = '');
+  }
+}
+function resetAll() {
+  ['w-pair','w-clear','w-bluray','w-sticker','w-acrylic','w-solocard'].forEach(id => {
+    document.getElementById(id).checked = false;
+  });
+  ['sub-sticker','sub-acrylic','sub-solo'].forEach(id => {
+    const el = document.getElementById(id);
+    el.classList.remove('open');
+    el.querySelectorAll('input[type="checkbox"]').forEach(cb => cb.checked = false);
+    el.querySelectorAll('select').forEach(s => s.value = '');
+  });
+  compute();
+}
+function compute() {
+  const wants = { pair:chk('w-pair'), clear:chk('w-clear'), bluray:chk('w-bluray'), sticker:chk('w-sticker'), acrylic:chk('w-acrylic'), solocard:chk('w-solocard') };
+  const stickerM = sel('sel-sticker');
+  const selectedAcrylics = wants.acrylic ? getChecked('acrylic-type') : [];
+  const selectedSolos = wants.solocard ? getChecked('solo-member') : [];
+  const panel = document.getElementById('result-panel');
+  if (!Object.values(wants).some(Boolean)) { panel.innerHTML = '<div class="result-empty">欲しい特典を選んでください</div>'; return; }
+  const acrylicA = selectedAcrylics.includes('A');
+  const acrylicB = selectedAcrylics.includes('B');
+  const acrylicSoloSet = new Set(selectedAcrylics.filter(v => v !== 'A' && v !== 'B'));
+  const fcRequired = selectedAcrylics.length > 0;
+  const allSoloNeeded = MEMBER_ORDER.filter(id => selectedSolos.includes(id) || acrylicSoloSet.has(id));
+  let needInitial = wants.bluray || wants.clear || acrylicA;
+  let needNormal = acrylicB;
+  const warnings = [];
+  if (wants.clear && allSoloNeeded.length === 0 && !needNormal) needNormal = true;
+  const hasAnything = needInitial || needNormal || allSoloNeeded.length > 0;
+  if (wants.pair && !hasAnything) needNormal = true;
+  const items = [];
+  if (needInitial) items.push(acrylicA ? { name:'初回限定盤＋集合アクスタA セット', price:5170, badge:'FC限定' } : { name:'初回限定盤', price:3520 });
+  if (needNormal) items.push(acrylicB ? { name:'通常盤＋集合アクスタB セット', price:4180, badge:'FC限定' } : { name:'通常盤', price:2530 });
+  for (const id of allSoloNeeded) {
+    const mName = MEMBERS[id].name;
+    const hasAcrylic = acrylicSoloSet.has(id);
+    items.push(hasAcrylic ? { name:mName + 'ソロ盤＋ソロアクスタ セット', price:4180, badge:'FC限定' } : { name:mName + 'ソロ盤', price:2530 });
+  }
+  const needsEC = wants.pair || wants.clear;
+  let primaryStore = null, extraStore = null, extraPrice = 0;
+  if (fcRequired) primaryStore = 'VICTOR ONLINE STORE（FC会員）';
+  if (wants.sticker && stickerM) {
+    const sStore = MEMBERS[stickerM]?.sticker_store;
+    if (sStore) {
+      if (sStore === '応援店（TSUTAYA等）' && needsEC) { extraStore = '応援店（TSUTAYA等）'; extraPrice = 2530; warnings.push('吉田仁人ステッカーは応援店の先着特典ですが、応援店は早期予約特典の対象外です。ステッカーを取得するには応援店でも別途1形態以上を購入する必要があります。');
+      } else if (fcRequired && sStore !== 'VICTOR ONLINE STORE') { extraStore = sStore; extraPrice = 2530; warnings.push(MEMBERS[stickerM].name + 'のステッカーは' + sStore + 'の先着特典です。FC限定アクスタのためVICTOR ONLINE STOREでも購入しますが、ステッカー取得には' + sStore + 'でも別途1形態以上の購入が必要です。');
+      } else if (!fcRequired) { primaryStore = sStore; }
+    }
+  }
+  if (!primaryStore && needsEC) primaryStore = 'EC通路（6店舗いずれか）';
+  if (!primaryStore && !needsEC) primaryStore = '取扱店いずれか';
+  const tokuten = [];
+  const enclosedDiscs = [];
+  if (needInitial) enclosedDiscs.push('初回限定盤（5種ランダム）');
+  if (needNormal) enclosedDiscs.push('通常盤（5種ランダム）');
+  for (const id of allSoloNeeded) enclosedDiscs.push(MEMBERS[id].name + 'ソロ盤（3種ランダム）');
+  if (enclosedDiscs.length === 1) tokuten.push({ name:'封入ソロトレカ', desc:enclosedDiscs[0] });
+  else if (enclosedDiscs.length > 1) tokuten.push({ name:'封入ソロトレカ ×' + enclosedDiscs.length, desc:enclosedDiscs.join('・') });
+  tokuten.push({ name:'応募抽選シリアル', desc:'全' + items.length + '形態封入（初回プレス限定）' });
+  if (wants.pair) tokuten.push({ name:'ペアトレカ', desc:'5種ランダム1枚', hi:true });
+  if (wants.clear) tokuten.push({ name:'クリアトレカ（透卡）', desc:'ソロ5種ランダム1枚', hi:true });
+  if (wants.bluray) tokuten.push({ name:'Blu-ray イベント映像', desc:'発売日記念スペシャルイベント', hi:true });
+  if (wants.sticker && stickerM) {
+    const info = MEMBERS[stickerM];
+    if (info) {
+      if (stickerM === 'amazon') tokuten.push({ name:'メガジャケ', desc:'Amazon 先着特典', hi:true });
+      else tokuten.push({ name:info.name + ' デザインステッカー', desc:info.sticker_store + ' 先着特典', hi:true });
+    }
+  }
+  if (acrylicA) tokuten.push({ name:'集合アクスタA', desc:'FC限定', hi:true });
+  if (acrylicB) tokuten.push({ name:'集合アクスタB', desc:'FC限定', hi:true });
+  for (const id of [...acrylicSoloSet].filter(v => MEMBER_ORDER.includes(v)).sort((a,b) => MEMBER_ORDER.indexOf(a)-MEMBER_ORDER.indexOf(b))) {
+    tokuten.push({ name:MEMBERS[id].name + ' ソロアクスタ', desc:'FC限定', hi:true });
+  }
+  if (fcRequired) tokuten.push({ name:'曽野舜太 デザインステッカー', desc:'FC購入者全員特典' });
+  const total = items.reduce((s,i) => s + i.price, 0) + extraPrice;
+  const totalForms = items.length + (extraStore ? 1 : 0);
+  const allItemNames = items.map(i => i.name.replace('＋集合アクスタA セット','').replace('＋集合アクスタB セット','').replace('＋ソロアクスタ セット',''));
+  if (extraStore) allItemNames.push('任意1形態（' + extraStore + '）');
+  const planNote = allItemNames.length <= 2 ? allItemNames.join('＋') + 'の購入' : totalForms + '形態の購入';
+  const itemsHtml = items.map(i => '<div class="res-item"><div class="res-item-name">' + i.name + (i.badge ? '<span class="res-badge">' + i.badge + '</span>' : '') + '</div><div class="res-item-right"><span class="res-qty">× 1</span><div class="res-item-price">¥' + i.price.toLocaleString() + '</div></div></div>').join('');
+  const extraHtml = extraStore ? '<div class="res-item"><div class="res-item-name">任意1形態（' + extraStore + ' ステッカー用）<span class="res-badge-warn">別途</span></div><div class="res-item-right"><span class="res-qty">× 1</span><div class="res-item-price">¥2,530〜</div></div></div>' : '';
+  const formsSummary = '合計 ' + totalForms + '形態 / ¥' + total.toLocaleString() + (extraPrice ? '〜' : '') + '（税込）';
+  const tokutenHtml = tokuten.map(t => '<div class="res-tok"><span class="res-tok-name' + (t.hi ? ' hi' : '') + '">' + t.name + '</span><span class="res-tok-desc">' + t.desc + '</span></div>').join('');
+  const warningsHtml = warnings.map(w => '<div class="res-warn">⚠ ' + w + '</div>').join('');
+  const deadlineHtml = (needsEC || fcRequired) ? '<div class="res-deadline">予約締切：2026年7月19日（日）23:59</div>' : '';
+  panel.innerHTML = '<div class="res-plan-header"><div class="res-plan-label">✓ 最安プラン</div><div class="res-plan-price">¥' + total.toLocaleString() + '<small>' + (extraPrice ? '〜（税込）' : '（税込）') + '</small></div><div class="res-plan-note">' + planNote + '</div></div><div class="res-sec"><div class="res-label">購入リスト</div>' + itemsHtml + extraHtml + '<div class="res-total">' + formsSummary + '</div></div><div class="res-store"><div class="res-store-label">購入通路</div><div class="res-store-val">' + primaryStore + '</div>' + (extraStore ? '<div class="res-store-extra">＋ ' + extraStore + '（ステッカー用）</div>' : '') + '</div><div class="res-sec"><div class="res-label">取得できる特典</div>' + tokutenHtml + '</div>' + warningsHtml + deadlineHtml;
+}
+</script>
+
+<footer>
+  <p>M!LK Fan Hub &nbsp;&middot;&nbsp; 非公式ファンサイト &nbsp;&middot;&nbsp; 毎日 09:00 JST 自動更新</p>
+
+</footer>
+</body>
+</html>
