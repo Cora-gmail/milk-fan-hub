@@ -6,7 +6,16 @@ on:
     - cron: '0 3 * * *'    # 12:00 JST - 僅新聞
     - cron: '0 9 * * *'    # 18:00 JST - 僅新聞
     - cron: '0 15 * * *'   # 00:00 JST - 僅新聞
-  workflow_dispatch:         # 允許手動執行（視為完整更新）
+  workflow_dispatch:         # 允許手動執行
+    inputs:
+      backfill:
+        description: '回補歷史文章（true = 執行 backfill.py）'
+        required: false
+        default: 'false'
+      since:
+        description: '回補起始日期 (YYYY-MM-DD)，預設 2026-01-01'
+        required: false
+        default: '2026-01-01'
 
 permissions:
   contents: write
@@ -31,13 +40,19 @@ jobs:
         env:
           DEEPL_API_KEY: ${{ secrets.DEEPL_API_KEY }}
         run: |
-          HOUR=$(date -u +%H)
-          if [ "$HOUR" = "00" ] || [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
-            echo "Full update"
+          if [ "${{ github.event.inputs.backfill }}" = "true" ]; then
+            echo "=== Backfill mode ==="
+            python backfill.py --since "${{ github.event.inputs.since || '2026-01-01' }}"
             python fetch_news.py
           else
-            echo "News-only update (hour=$HOUR UTC)"
-            NEWS_ONLY=1 python fetch_news.py
+            HOUR=$(date -u +%H)
+            if [ "$HOUR" = "00" ] || [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+              echo "Full update"
+              python fetch_news.py
+            else
+              echo "News-only update (hour=$HOUR UTC)"
+              NEWS_ONLY=1 python fetch_news.py
+            fi
           fi
 
       - name: Commit & push
@@ -45,7 +60,7 @@ jobs:
           git config user.email "actions@github.com"
           git config user.name "GitHub Actions"
           HOUR=$(date -u +%H)
-          if [ "$HOUR" = "00" ] || [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+          if [ "${{ github.event.inputs.backfill }}" = "true" ] || [ "$HOUR" = "00" ] || [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
             git add index.html articles.json schedule.html schedule.json goods.html goods.json album.html sources.html DSC_3085.jpg
           else
             git add index.html articles.json
