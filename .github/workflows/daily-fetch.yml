@@ -16,6 +16,10 @@ on:
         description: '回補起始日期 (YYYY-MM-DD)，預設 2026-01-01'
         required: false
         default: '2026-01-01'
+      repair_dates:
+        description: '修復日期錯誤（true = backfill.py --repair-dates）'
+        required: false
+        default: 'false'
 
 permissions:
   contents: write
@@ -40,7 +44,11 @@ jobs:
         env:
           DEEPL_API_KEY: ${{ secrets.DEEPL_API_KEY }}
         run: |
-          if [ "${{ github.event.inputs.backfill }}" = "true" ]; then
+          if [ "${{ github.event.inputs.repair_dates }}" = "true" ]; then
+            echo "=== Repair dates mode ==="
+            python backfill.py --repair-dates
+            python fetch_news.py
+          elif [ "${{ github.event.inputs.backfill }}" = "true" ]; then
             echo "=== Backfill mode ==="
             python backfill.py --since "${{ github.event.inputs.since || '2026-01-01' }}"
             python fetch_news.py
