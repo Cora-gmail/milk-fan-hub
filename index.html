@@ -81,6 +81,39 @@ body{background:var(--bg);color:var(--text);font-family:'Hiragino Sans','Noto Sa
 .empty-msg{text-align:center;padding:48px;color:var(--muted);font-size:.9rem;}
 footer{text-align:center;padding:18px 20px 28px;font-size:.7rem;color:var(--muted);border-top:1px solid var(--border);background:var(--surface);}
 
+
+#am-backdrop{position:fixed;inset:0;background:rgba(10,10,20,.65);z-index:400;opacity:0;pointer-events:none;transition:opacity .25s;backdrop-filter:blur(3px);}
+#am-backdrop.am-open{opacity:1;pointer-events:all;}
+#am-modal{position:fixed;bottom:0;left:50%;transform:translateX(-50%) translateY(102%);width:min(860px,100%);max-height:92vh;background:#fff;border-radius:16px 16px 0 0;box-shadow:0 -4px 40px rgba(0,0,0,.18);z-index:500;display:flex;flex-direction:column;transition:transform .32s cubic-bezier(.2,.9,.3,1);overflow:hidden;}
+#am-modal.am-open{transform:translateX(-50%) translateY(0);}
+.am-handle{width:36px;height:4px;background:#e0e0e8;border-radius:2px;margin:10px auto 0;flex-shrink:0;}
+.am-header{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;padding:14px 20px 0;flex-shrink:0;}
+.am-meta{display:flex;align-items:center;gap:8px;}
+.am-badge{font-size:.68rem;font-weight:700;padding:2px 8px;border-radius:4px;color:#fff;background:var(--c,#888);}
+.am-date{font-size:.75rem;color:#888;}
+.am-close{width:30px;height:30px;border:none;background:#f0f0f4;border-radius:50%;cursor:pointer;font-size:.9rem;color:#666;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.am-close:hover{background:#e0e0e8;color:#111;}
+.am-scroll{overflow-y:auto;flex:1;padding:0 20px 28px;-webkit-overflow-scrolling:touch;}
+.am-title-zh{font-size:1.15rem;font-weight:800;line-height:1.42;margin-top:12px;color:#111118;text-wrap:balance;}
+.am-title-ja{font-size:.82rem;color:#888;line-height:1.5;margin-top:5px;}
+.am-image-strip{display:flex;gap:10px;overflow-x:auto;padding:16px 0 4px;scrollbar-width:none;}
+.am-image-strip::-webkit-scrollbar{display:none;}
+.am-img-item{flex-shrink:0;border-radius:8px;overflow:hidden;border:1px solid #e8e8ee;}
+.am-img-item img{display:block;height:170px;width:auto;max-width:280px;object-fit:cover;}
+.am-divider{border:none;border-top:1px solid #e8e8ee;margin:16px 0;}
+.am-section-label{font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#aaa;margin-bottom:10px;}
+.am-body-zh{font-size:.95rem;line-height:1.9;color:#111118;max-width:62ch;white-space:pre-wrap;}
+.am-ja-toggle{display:flex;align-items:center;gap:6px;background:none;border:1px solid #e0e0e8;border-radius:6px;padding:7px 14px;font-size:.78rem;color:#888;cursor:pointer;margin-top:18px;transition:background .15s;}
+.am-ja-toggle:hover{background:#f5f5f8;}
+.am-ja-toggle.am-ja-expanded{color:#555;}
+.am-body-ja{display:none;margin-top:10px;font-size:.82rem;line-height:1.8;color:#888;max-width:62ch;padding:12px;background:#f8f8fb;border-radius:8px;white-space:pre-wrap;}
+.am-body-ja.am-ja-visible{display:block;}
+.am-footer{padding:12px 20px;border-top:1px solid #e8e8ee;display:flex;align-items:center;justify-content:space-between;flex-shrink:0;background:#fff;}
+.am-source-note{font-size:.72rem;color:#aaa;}
+.am-orig-btn{display:inline-flex;align-items:center;gap:5px;background:#111118;color:#fff;font-size:.82rem;font-weight:600;padding:8px 16px;border-radius:7px;text-decoration:none;}
+.am-orig-btn:hover{opacity:.8;}
+@media(prefers-reduced-motion:reduce){#am-modal,#am-backdrop{transition:none;}}
+@media(max-width:600px){.am-scroll{padding:0 14px 24px;}.am-header{padding:14px 14px 0;}.am-footer{padding:10px 14px;}.am-title-zh{font-size:1rem;}}
 </style>
 </head>
 <body>
@@ -115,11 +148,39 @@ footer{text-align:center;padding:18px 20px 28px;font-size:.7rem;color:var(--mute
 </div>
 <footer>
   <p>M!LK Fan Hub &nbsp;&middot;&nbsp; 非公式 / 非官方 &nbsp;&middot;&nbsp; 毎日 09:00 JST 自動更新</p>
-
 </footer>
+
+<!-- Article Modal -->
+<div id="am-backdrop" onclick="closeArticleModal()"></div>
+<div id="am-modal" role="dialog" aria-modal="true">
+  <div class="am-handle"></div>
+  <div class="am-header">
+    <div class="am-meta">
+      <span class="badge am-badge" id="am-badge" style="--c:#888"></span>
+      <span class="am-date" id="am-date"></span>
+    </div>
+    <button class="am-close" onclick="closeArticleModal()" aria-label="閉じる">&#x2715;</button>
+  </div>
+  <div class="am-scroll">
+    <h2 class="am-title-zh" id="am-title-zh"></h2>
+    <p class="am-title-ja" id="am-title-ja"></p>
+    <div class="am-image-strip" id="am-images"></div>
+    <hr class="am-divider">
+    <p class="am-section-label">全文翻譯</p>
+    <div class="am-body-zh" id="am-body-zh"></div>
+    <button class="am-ja-toggle" id="am-ja-toggle" onclick="toggleAmJa()">
+      <span>日文原文を見る</span> &#9662;
+    </button>
+    <div class="am-body-ja" id="am-body-ja"></div>
+  </div>
+  <div class="am-footer">
+    <span class="am-source-note" id="am-source-note"></span>
+    <a class="am-orig-btn" id="am-orig-link" href="#" target="_blank" rel="noopener">原文を読む &#8594;</a>
+  </div>
+</div>
 <script>
-const ARTICLES=[{"id": "0742495f1257", "source": "Natalie Music", "title_ja": "からあげクン大好きなM!LK佐野勇斗、謎味マンとのCMで「爆裂うめぇ～!!」", "title_zh": "超愛「炸雞君」的M!LK成員佐野勇斗，在與「謎味人」合作的廣告中大喊：「爆裂好吃～！！」", "summary_ja": "佐野勇斗（M!LK）が出演するローソンの新テレビCM「近所の佐野くんVS謎味マン」編が、6月29日より全国で放送される。", "summary_zh": "由佐野勇斗（M!LK）主演的羅森新電視廣告「鄰家佐野君VS謎味人」篇，將自6月29日起於全國播出。", "url": "https://natalie.mu/music/news/677855", "image": "https://ogre.natalie.mu/media/news/music/2026/0626/30s_10.jpg", "date": "2026-06-29"}, {"id": "e29613d74c17", "source": "Natalie Music", "title_ja": "M!LK冠番組で挑戦する“爆裂ミッション”は回転寿司、カラオケ、わらしべ長者企画", "title_zh": "M!LK在自家節目中挑戰的「爆裂任務」包括迴轉壽司、卡拉OK，以及「草鞋富翁」企劃", "summary_ja": "7月7日22:00よりTBS系で放送されるM!LKの冠バラエティ番組「M!LKの爆裂ミッション」の詳細が発表された。", "summary_zh": "將於7月7日22:00起在TBS電視網播出的M!LK冠名綜藝節目《M!LK的爆裂任務》的詳細資訊已正式公布。", "url": "https://natalie.mu/music/news/678206", "image": "https://ogre.natalie.mu/media/news/music/2026/0628/tbs_bakuretsum.jpg", "date": "2026-06-28"}, {"id": "d916329d72cd", "source": "The First Times", "title_ja": "M!LK佐野勇斗、初出演のからあげクンCMで「爆裂うめぇ～!!」と大興奮！覆面ヒーロー姿の梅沢富美男と共演", "title_zh": "M!LK的佐野勇斗在首度出演的「炸雞君」廣告中興奮大喊：「超爆好吃～！！」，並與化身蒙面英雄的梅澤富美男共同演出", "summary_ja": "梅沢富美男と佐野勇斗（M!LK）が出演するローソンの新TV CM「近所の佐野くんVS謎味マン」篇が...", "summary_zh": "由梅澤富美男與佐野勇斗（M!LK）主演的羅森新電視廣告「鄰家佐野君VS謎味人」篇已...", "url": "https://www.thefirsttimes.jp/news/0000836661/", "image": "https://www.thefirsttimes.jp/admin/wp-content/uploads/5026/06/20260629-suna-040001-1200x630.jpg", "date": "2026-06-28"}, {"id": "a640f0f12a54", "source": "The First Times", "title_ja": "M!LKが視聴者の「やってほしい・調べてほしい」ミッションに挑戦！待望のGP帯“初”冠バラエティ『M!LKの爆裂ミッション』放送決定", "title_zh": "M!LK將挑戰觀眾提出的「希望她們做這件事／希望她們調查這件事」任務！備受期待的黃金時段「首檔」冠名綜藝節目《M!LK的爆裂任務》確定播出", "summary_ja": "M!LK待望のGP帯初の冠バラエティ番組『M!LKの爆裂ミッション』が7月7日に放送される。 ■回転寿...", "summary_zh": "M!LK備受期待的首檔黃金時段冠名綜藝節目《M!LK的爆裂任務》將於7月7日播出。 ■旋轉壽...", "url": "https://www.thefirsttimes.jp/news/0000836507/", "image": "https://www.thefirsttimes.jp/admin/wp-content/uploads/2026/06/20260628-sai-141101-1200x630.jpg", "date": "2026-06-28"}, {"id": "6a2f2d55e985", "source": "Natalie Music", "title_ja": "M!LK塩﨑太智がXアカウント開設、初手で三点倒立", "title_zh": "M!LK的鹽崎太智開設了X帳號，一上來就展示了三點倒立", "summary_ja": "M!LKの塩﨑太智が、本日6月27日に個人のX公式アカウント（@shiozaki__info）を開設した。", "summary_zh": "M!LK的鹽崎太智於今日（6月27日）開設了個人X官方帳號（@shiozaki__info）。", "url": "https://natalie.mu/music/news/678150", "image": "https://ogre.natalie.mu/media/news/music/2026/0218/milk_shiozakidaichi_art202602.jpg", "date": "2026-06-27"}, {"id": "8c7361842557", "source": "美的.com", "title_ja": "「アユーラ」の新・潤いミルクの虜♡ トーンアップUV＆UVミルクを『美的』8月号付録でお試し！", "title_zh": "徹底迷上「Ayura」的新款保濕乳液♡ 試試《美的》8月號附錄中的提亮防曬乳＆防曬乳液吧！", "summary_ja": "新「潤いミルクUV」で迎える、強く、明るく、ご機嫌な夏！夏肌を潤しながら守る。毎日使いたくなる日焼け止めアユーラの人気UVシリーズに、乾きやすく、ゆらぎやすい大人の夏肌でも毎日心地よく使える2つの日焼け止めが仲間入[…]", "summary_zh": "以全新「保濕乳液型防曬乳」迎接強韌、明亮、心情愉悅的夏天！在滋潤夏日肌膚的同時提供防護。Ayura這款讓人想每天使用的熱門防曬系列，如今新增了兩款防曬產品，即使是容易乾燥、容易不穩定的成熟夏日肌膚，也能每天舒適地使用[…]", "url": "https://www.biteki.com/make-up/others/2156093", "image": "https://www.biteki.com/wp-content/uploads/2026/06/KD_d27b0036.jpg", "date": "2026-06-27"}, {"id": "495c8fb6b6dd", "source": "やってM!LK (TBS)", "title_ja": "配信 最新回を無料配信中！", "title_zh": "線上串流 最新一集現正免費播出中！", "summary_ja": "", "summary_zh": "", "url": "https://cu.tbs.co.jp/program/26073", "image": "https://cu.tbs.co.jp/images/og_image.png", "date": "2026-06-26"}, {"id": "e59c4eb4da79", "source": "やってM!LK (TBS)", "title_ja": "メンバーコメント", "title_zh": "成員感言", "summary_ja": "", "summary_zh": "", "url": "https://www.tbs.co.jp/yatte_milk/season1/", "image": "https://www.tbs.co.jp/yatte_milk/img/ogp.jpg", "date": "2026-06-26"}, {"id": "2e988520865b", "source": "Natalie Music", "title_ja": "「オリコン上半期ランキング」M!LK、Snow Man、BTS、米津玄師、嵐、Number_i、timeleszが1位に輝く", "title_zh": "「Oricon上半年排行榜」M!LK、Snow Man、BTS、米津玄師、嵐、Number_i、timelesz榮登榜首", "summary_ja": "オリコンが「オリコン上半期ランキング 2026」における「作品別売上数部門」を発表。全10部門のうちtimeleszが3冠、BTSが2冠を達成したほか、M!LK、Snow Man、米津玄師、嵐、Number_iが1位に輝いた。", "summary_zh": "Oricon公布了「Oricon 2026年上半年排行榜」中的「作品銷量類別」榜單。在總計10個類別中，timelesz包辦3項冠軍，BTS則奪得2項冠軍；此外，M!LK、Snow Man、米津玄師、嵐及Number_i也分別榮登各自分類榜首。", "url": "https://natalie.mu/music/news/677680", "image": "https://ogre.natalie.mu/media/news/music/2026/0624/milk.jpg", "date": "2026-06-25"}];
-document.getElementById('update-time').textContent='最後更新：2026-06-29 11:09 JST';
+const ARTICLES=[{"id": "0742495f1257", "source": "Natalie Music", "title_ja": "からあげクン大好きなM!LK佐野勇斗、謎味マンとのCMで「爆裂うめぇ～!!」", "title_zh": "超愛「炸雞君」的M!LK成員佐野勇斗，在與「謎味人」合作的廣告中大喊：「爆裂好吃～！！」", "summary_ja": "佐野勇斗（M!LK）が出演するローソンの新テレビCM「近所の佐野くんVS謎味マン」編が、6月29日より全国で放送される。", "summary_zh": "由佐野勇斗（M!LK）主演的羅森新電視廣告「鄰家佐野君VS謎味人」篇，將自6月29日起於全國播出。", "url": "https://natalie.mu/music/news/677855", "image": "https://ogre.natalie.mu/media/news/music/2026/0626/30s_10.jpg", "date": "2026-06-29"}, {"id": "1a0fc3017df4", "source": "Natalie Music", "title_ja": "嬉C1000！M!LK塩﨑太智が「C1000ビタミンレモン」Web CMに出演、高校生に扮して大げさに挙手", "title_zh": "C1000真開心！M!LK的鹽崎太智出演「C1000維生素檸檬」網路廣告，化身高中生誇張地舉手", "summary_ja": "塩﨑太智（M!LK）が出演する「C1000ビタミンレモン」の新Web CM「ごきげんのヒミツ」編がYouTubeなどで本日6月29日16:00に公開される。", "summary_zh": "由鹽崎太智（M!LK）出演的「C1000維生素檸檬」全新網路廣告《好心情的祕密》篇，將於今日（6月29日）16:00在YouTube等平台公開。", "url": "https://natalie.mu/music/news/678321", "image": "https://ogre.natalie.mu/media/news/music/2026/0629/c1000_daichi_02.jpg", "date": "2026-06-29", "images": ["https://ogre.natalie.mu/media/news/music/2026/0629/c1000_daichi_02.jpg", "https://ogre.natalie.mu/media/news/music/2026/0629/c1000_daichi_02.jpg?imwidth=1280&imdensity=1", "https://ogre.natalie.mu/media/news/music/2026/0629/c1000_daichi_03.jpg?imwidth=400&imdensity=1", "https://ogre.natalie.mu/media/news/music/2026/0629/c1000_daichi_04.jpg?imwidth=400&imdensity=1", "https://ogre.natalie.mu/media/news/music/2026/0629/c1000_daichi_05.jpg?imwidth=400&imdensity=1"]}, {"id": "c999e5d1ca5c", "source": "Musicvoice", "title_ja": "佐野勇斗、からあげクンCM初出演に興奮　お気に入りは北海道チーズ", "title_zh": "佐野勇斗首次出演「炸雞君」廣告感到興奮，最喜歡的是北海道起司口味", "summary_ja": "俳優の佐野勇斗が出演するローソンの新TVCM「近所の佐野くんVS謎味マン」篇が、6月29日より全国で放送開始される。あわせて、撮影の裏側やインタビューを収録したメイキング映像も公開された。 【動画", "summary_zh": "由演員佐野勇斗主演的羅森新電視廣告「鄰家佐野君VS謎味俠」篇，將自6月29日起於全國播出。同時，收錄了拍攝幕後花絮及專訪的幕後花絮影片也已公開。【影片", "url": "https://www.musicvoice.jp/news/314845/", "image": "https://www.musicvoice.jp/wp-content/uploads/2026/06/pmu260629m214.jpg", "date": "2026-06-29", "images": ["https://www.musicvoice.jp/wp-content/uploads/2026/06/pmu260629m214.jpg"]}, {"id": "ce37046921a3", "source": "The First Times", "title_ja": "M!LK塩﨑太智が布団の上で三点倒立を披露しXに降臨！「バランス感覚がすごい」「この体制でもビジュいい」「Xに天使が舞い降りた」", "title_zh": "M!LK的鹽崎太智在被褥上展示三點倒立，降臨X平台！「平衡感超強」、「即使這個姿勢也超有視覺效果」、「天使降臨X平台了」", "summary_ja": "M!LKの塩崎太智（「崎」はたつさきが正式表記）が個人Xを開設した。 ■「やべえやつがXに解き放...", "summary_zh": "M!LK的鹽崎太智（「崎」的正式寫法為「たつさき」）開設了個人X帳號。 ■「有個厲害角色在X上現身了...", "url": "https://www.thefirsttimes.jp/news/0000836851/", "image": "https://www.thefirsttimes.jp/admin/wp-content/uploads/2026/06/20260629-miho-094501-1200x630.jpg", "date": "2026-06-29", "images": ["https://www.thefirsttimes.jp/admin/wp-content/uploads/2026/06/20260629-miho-094501-1200x630.jpg"]}, {"id": "e29613d74c17", "source": "Natalie Music", "title_ja": "M!LK冠番組で挑戦する“爆裂ミッション”は回転寿司、カラオケ、わらしべ長者企画", "title_zh": "M!LK在自家節目中挑戰的「爆裂任務」包括迴轉壽司、卡拉OK，以及「草鞋富翁」企劃", "summary_ja": "7月7日22:00よりTBS系で放送されるM!LKの冠バラエティ番組「M!LKの爆裂ミッション」の詳細が発表された。", "summary_zh": "將於7月7日22:00起在TBS電視網播出的M!LK冠名綜藝節目《M!LK的爆裂任務》的詳細資訊已正式公布。", "url": "https://natalie.mu/music/news/678206", "image": "https://ogre.natalie.mu/media/news/music/2026/0628/tbs_bakuretsum.jpg", "date": "2026-06-28"}, {"id": "d916329d72cd", "source": "The First Times", "title_ja": "M!LK佐野勇斗、初出演のからあげクンCMで「爆裂うめぇ～!!」と大興奮！覆面ヒーロー姿の梅沢富美男と共演", "title_zh": "M!LK的佐野勇斗在首度出演的「炸雞君」廣告中興奮大喊：「超爆好吃～！！」，並與化身蒙面英雄的梅澤富美男共同演出", "summary_ja": "梅沢富美男と佐野勇斗（M!LK）が出演するローソンの新TV CM「近所の佐野くんVS謎味マン」篇が...", "summary_zh": "由梅澤富美男與佐野勇斗（M!LK）主演的羅森新電視廣告「鄰家佐野君VS謎味人」篇已...", "url": "https://www.thefirsttimes.jp/news/0000836661/", "image": "https://www.thefirsttimes.jp/admin/wp-content/uploads/5026/06/20260629-suna-040001-1200x630.jpg", "date": "2026-06-28"}, {"id": "a640f0f12a54", "source": "The First Times", "title_ja": "M!LKが視聴者の「やってほしい・調べてほしい」ミッションに挑戦！待望のGP帯“初”冠バラエティ『M!LKの爆裂ミッション』放送決定", "title_zh": "M!LK將挑戰觀眾提出的「希望她們做這件事／希望她們調查這件事」任務！備受期待的黃金時段「首檔」冠名綜藝節目《M!LK的爆裂任務》確定播出", "summary_ja": "M!LK待望のGP帯初の冠バラエティ番組『M!LKの爆裂ミッション』が7月7日に放送される。 ■回転寿...", "summary_zh": "M!LK備受期待的首檔黃金時段冠名綜藝節目《M!LK的爆裂任務》將於7月7日播出。 ■旋轉壽...", "url": "https://www.thefirsttimes.jp/news/0000836507/", "image": "https://www.thefirsttimes.jp/admin/wp-content/uploads/2026/06/20260628-sai-141101-1200x630.jpg", "date": "2026-06-28"}, {"id": "6a2f2d55e985", "source": "Natalie Music", "title_ja": "M!LK塩﨑太智がXアカウント開設、初手で三点倒立", "title_zh": "M!LK的鹽崎太智開設了X帳號，一上來就展示了三點倒立", "summary_ja": "M!LKの塩﨑太智が、本日6月27日に個人のX公式アカウント（@shiozaki__info）を開設した。", "summary_zh": "M!LK的鹽崎太智於今日（6月27日）開設了個人X官方帳號（@shiozaki__info）。", "url": "https://natalie.mu/music/news/678150", "image": "https://ogre.natalie.mu/media/news/music/2026/0218/milk_shiozakidaichi_art202602.jpg", "date": "2026-06-27"}, {"id": "8c7361842557", "source": "美的.com", "title_ja": "「アユーラ」の新・潤いミルクの虜♡ トーンアップUV＆UVミルクを『美的』8月号付録でお試し！", "title_zh": "徹底迷上「Ayura」的新款保濕乳液♡ 試試《美的》8月號附錄中的提亮防曬乳＆防曬乳液吧！", "summary_ja": "新「潤いミルクUV」で迎える、強く、明るく、ご機嫌な夏！夏肌を潤しながら守る。毎日使いたくなる日焼け止めアユーラの人気UVシリーズに、乾きやすく、ゆらぎやすい大人の夏肌でも毎日心地よく使える2つの日焼け止めが仲間入[…]", "summary_zh": "以全新「保濕乳液型防曬乳」迎接強韌、明亮、心情愉悅的夏天！在滋潤夏日肌膚的同時提供防護。Ayura這款讓人想每天使用的熱門防曬系列，如今新增了兩款防曬產品，即使是容易乾燥、容易不穩定的成熟夏日肌膚，也能每天舒適地使用[…]", "url": "https://www.biteki.com/make-up/others/2156093", "image": "https://www.biteki.com/wp-content/uploads/2026/06/KD_d27b0036.jpg", "date": "2026-06-27"}, {"id": "495c8fb6b6dd", "source": "やってM!LK (TBS)", "title_ja": "配信 最新回を無料配信中！", "title_zh": "線上串流 最新一集現正免費播出中！", "summary_ja": "", "summary_zh": "", "url": "https://cu.tbs.co.jp/program/26073", "image": "https://cu.tbs.co.jp/images/og_image.png", "date": "2026-06-26"}, {"id": "e59c4eb4da79", "source": "やってM!LK (TBS)", "title_ja": "メンバーコメント", "title_zh": "成員感言", "summary_ja": "", "summary_zh": "", "url": "https://www.tbs.co.jp/yatte_milk/season1/", "image": "https://www.tbs.co.jp/yatte_milk/img/ogp.jpg", "date": "2026-06-26"}, {"id": "2e988520865b", "source": "Natalie Music", "title_ja": "「オリコン上半期ランキング」M!LK、Snow Man、BTS、米津玄師、嵐、Number_i、timeleszが1位に輝く", "title_zh": "「Oricon上半年排行榜」M!LK、Snow Man、BTS、米津玄師、嵐、Number_i、timelesz榮登榜首", "summary_ja": "オリコンが「オリコン上半期ランキング 2026」における「作品別売上数部門」を発表。全10部門のうちtimeleszが3冠、BTSが2冠を達成したほか、M!LK、Snow Man、米津玄師、嵐、Number_iが1位に輝いた。", "summary_zh": "Oricon公布了「Oricon 2026年上半年排行榜」中的「作品銷量類別」榜單。在總計10個類別中，timelesz包辦3項冠軍，BTS則奪得2項冠軍；此外，M!LK、Snow Man、米津玄師、嵐及Number_i也分別榮登各自分類榜首。", "url": "https://natalie.mu/music/news/677680", "image": "https://ogre.natalie.mu/media/news/music/2026/0624/milk.jpg", "date": "2026-06-25"}];
+document.getElementById('update-time').textContent='最後更新：2026-06-29 14:06 JST';
 const byDate={};
 ARTICLES.forEach(function(a){var d=a.date||'unknown';if(!byDate[d])byDate[d]=[];byDate[d].push(a);});
 const datesWithNews=new Set(Object.keys(byDate));
@@ -155,11 +216,10 @@ document.getElementById('cal-clear').addEventListener('click',function(){selecte
 const SC={"sd-milk.com 公式": "#d4006e", "Natalie Music": "#0066aa", "Oricon": "#cc2233", "BARKS": "#b05010", "SANSPO": "#0a6b30", "Billboard Japan": "#1a4a9f", "Musicvoice": "#7b1ea2", "SPICE": "#d45500", "Musicman": "#1b5e20", "The First Times": "#c62828", "Modelpress": "#1565c0", "美的.com": "#e91e8c", "MEN'S NON-NO": "#0d47a1", "VOGUE JAPAN": "#2c2c2c", "TVガイドWeb": "#e53935", "WEBザテレビジョン": "#00838f", "ebidan.jp": "#6d4c41", "やってM!LK (TBS)": "#cc0000", "君の好きは無敵": "#880033", "レコメン! 文化放送": "#0055bb", "イマドキッ MBSラジオ": "#e65100", "トイ・ストーリー５": "#0d47a1", "仮面ライダーゼッツ": "#1b5e20", "VICTOR STORE": "#e53935", "UNIVERSAL MUSIC": "#0d47a1", "FC限定 (STARDUST)": "#9c27b0"};
 function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
 function makeCard(a){
-  var art=document.createElement('article');art.className='card';
+  var art=document.createElement('article');art.className='card';art.style.cursor='pointer';
   var imgHtml='';
   if(a.image){
-    imgHtml='<div class="card-img"><img src="'+esc(a.image)+'" alt="" loading="lazy" onerror="this.closest(\'.card-img\').remove();this.closest(\'.img-dl-wrap\')&&this.closest(\'.img-dl-wrap\').remove()"></div>' +
-      '<div class="img-dl-wrap"><a class="img-dl" href="'+esc(a.image)+'" target="_blank" rel="noopener">&#8599; 原圖を開く</a></div>';
+    imgHtml='<div class="card-img"><img src="'+esc(a.image)+'" alt="" loading="lazy" onerror="this.closest(\'.card-img\').remove()"></div>';
   }
   var color=SC[a.source]||'#888';
   art.innerHTML=imgHtml+
@@ -167,9 +227,53 @@ function makeCard(a){
     '<div class="card-head"><span class="badge" style="--c:'+color+'">'+esc(a.source)+'</span>'+(a.date?'<time class="date-tag">'+esc(a.date)+'</time>':'')+
     '</div>'+(a.title_zh?'<p class="title-zh">'+esc(a.title_zh)+'</p>':'')+(a.title_ja?'<p class="title-ja">'+esc(a.title_ja)+'</p>':'')+
     (a.summary_zh?'<p class="sum-zh">'+esc(a.summary_zh)+'</p>':'')+(a.summary_ja?'<p class="sum-ja">'+esc(a.summary_ja)+'</p>':'')+
-    '<a class="card-btn" href="'+esc(a.url)+'" target="_blank" rel="noopener">原文を読む &#8594;</a></div>';
+    '<span class="card-btn">詳細・全文翻譯 &#8594;</span></div>';
+  art.addEventListener('click',function(){openArticleModal(a);});
   return art;
 }
+// ── Article Modal ──
+function openArticleModal(a){
+  var color=SC[a.source]||'#888';
+  var badge=document.getElementById('am-badge');
+  badge.textContent=a.source;badge.style.setProperty('--c',color);
+  document.getElementById('am-date').textContent=a.date||'';
+  document.getElementById('am-title-zh').textContent=a.title_zh||a.title_ja||'';
+  document.getElementById('am-title-ja').textContent=a.title_ja||'';
+  document.getElementById('am-orig-link').href=a.url||'#';
+  document.getElementById('am-source-note').textContent=(a.source||'')+'より';
+  var bz=document.getElementById('am-body-zh');
+  bz.textContent=a.summary_zh||'（翻譯準備中）';
+  var bj=document.getElementById('am-body-ja');
+  bj.textContent=a.summary_ja||'';
+  bj.classList.remove('am-ja-visible');
+  var jtb=document.getElementById('am-ja-toggle');
+  jtb.classList.remove('am-ja-expanded');
+  jtb.querySelector('span').textContent='日文原文を見る';
+  var strip=document.getElementById('am-images');
+  strip.innerHTML='';
+  var imgs=a.images&&a.images.length?a.images:(a.image?[a.image]:[]);
+  imgs.forEach(function(src){
+    var item=document.createElement('div');item.className='am-img-item';
+    item.innerHTML='<img src="'+esc(src)+'" alt="" loading="lazy" onerror="this.parentElement.remove()">';
+    strip.appendChild(item);
+  });
+  document.getElementById('am-backdrop').classList.add('am-open');
+  document.getElementById('am-modal').classList.add('am-open');
+  document.body.style.overflow='hidden';
+}
+function closeArticleModal(){
+  document.getElementById('am-backdrop').classList.remove('am-open');
+  document.getElementById('am-modal').classList.remove('am-open');
+  document.body.style.overflow='';
+}
+function toggleAmJa(){
+  var bj=document.getElementById('am-body-ja');
+  var btn=document.getElementById('am-ja-toggle');
+  var open=bj.classList.toggle('am-ja-visible');
+  btn.classList.toggle('am-ja-expanded',open);
+  btn.querySelector('span').textContent=open?'日文原文を隱す':'日文原文を見る';
+}
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeArticleModal();});
 function renderArticles(){
   var c=document.getElementById('articles-container'),l=document.getElementById('filter-label');
   c.innerHTML='';
