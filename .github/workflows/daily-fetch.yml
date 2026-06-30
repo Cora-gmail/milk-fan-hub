@@ -40,27 +40,26 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
+      - name: Install Playwright browsers
+        run: python -m playwright install chromium --with-deps
+
       - name: Fetch news & generate HTML
         env:
           DEEPL_API_KEY: ${{ secrets.DEEPL_API_KEY }}
         run: |
           if [ "${{ github.event.inputs.repair_dates }}" = "true" ]; then
-            echo "=== Repair dates mode ==="
+            echo "=== Repair dates ==="
             python backfill.py --repair-dates
-            python fetch_news.py
-          elif [ "${{ github.event.inputs.backfill }}" = "true" ]; then
-            echo "=== Backfill mode ==="
+          fi
+          if [ "${{ github.event.inputs.backfill }}" = "true" ]; then
+            echo "=== Backfill ==="
             python backfill.py --since "${{ github.event.inputs.since || '2026-01-01' }}"
+          fi
+          HOUR=$(date -u +%H)
+          if [ "${{ github.event.inputs.backfill }}" = "true" ] || [ "${{ github.event.inputs.repair_dates }}" = "true" ] || [ "$HOUR" = "00" ] || [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
             python fetch_news.py
           else
-            HOUR=$(date -u +%H)
-            if [ "$HOUR" = "00" ] || [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
-              echo "Full update"
-              python fetch_news.py
-            else
-              echo "News-only update (hour=$HOUR UTC)"
-              NEWS_ONLY=1 python fetch_news.py
-            fi
+            NEWS_ONLY=1 python fetch_news.py
           fi
 
       - name: Commit & push
