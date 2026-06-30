@@ -118,6 +118,63 @@ footer{text-align:center;padding:18px 20px 28px;font-size:.7rem;color:var(--mute
 .cal-btn:hover{opacity:.82;}
 .cal-btn.primary{background:var(--blue);color:#fff;}
 .cal-btn.secondary{background:var(--surface);color:var(--blue);border:1px solid var(--blue);}
+/* ── live events ──────────────────────────────────────────────────────── */
+.ev-today-block{border-radius:16px;overflow:hidden;box-shadow:var(--shadow);}
+.ev-today-hdr{background:var(--blue);color:#fff;padding:10px 18px;display:flex;align-items:center;gap:10px;}
+.ev-today-tag{font-size:.64rem;letter-spacing:.18em;font-weight:700;opacity:.85;}
+.ev-today-date{font-size:.74rem;font-weight:600;margin-left:auto;opacity:.82;font-variant-numeric:tabular-nums;}
+.ev-today-card{background:var(--card);padding:15px 18px;display:flex;align-items:center;gap:16px;border:1px solid var(--border);border-radius:0 0 16px 16px;text-decoration:none;color:inherit;transition:background .15s;}
+.ev-today-card:hover{background:#f7faff;}
+.ev-today-venue{font-size:.98rem;font-weight:700;margin:5px 0 2px;}
+.ev-today-city{font-size:.72rem;color:var(--muted);}
+.ev-today-arrow{margin-left:auto;color:var(--blue);font-size:1.1rem;}
+.ev-next-block{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:24px 20px;text-align:center;}
+.ev-next-label{font-size:.64rem;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;margin-bottom:16px;}
+.ev-next-link{display:inline-flex;align-items:center;gap:16px;text-decoration:none;color:inherit;}
+.ev-next-brick{text-align:center;flex-shrink:0;}
+.ev-next-div{width:1px;height:52px;background:var(--border);flex-shrink:0;}
+.ev-next-info{text-align:left;}
+.ev-next-venue{font-size:.96rem;font-weight:700;color:var(--text);margin-top:4px;}
+.ev-next-city{font-size:.72rem;color:var(--muted);margin-top:2px;}
+.ev-day-lg{font-size:2.4rem!important;color:var(--blue)!important;}
+.ev-list{display:flex;flex-direction:column;gap:8px;}
+.ev-row{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:13px 16px;display:flex;align-items:center;gap:14px;text-decoration:none;color:inherit;transition:transform .15s,box-shadow .15s;}
+.ev-row:hover{transform:translateY(-1px);box-shadow:var(--shadow-hover);}
+.datebrick{flex-shrink:0;width:52px;text-align:center;background:var(--bg);border-radius:8px;padding:6px 4px;border:1px solid var(--border);}
+.ev-month{font-size:.56rem;font-weight:700;color:var(--blue);letter-spacing:.04em;text-transform:uppercase;display:block;}
+.ev-day{font-size:1.32rem;font-weight:900;color:var(--text);line-height:1;display:block;font-variant-numeric:tabular-nums;}
+.ev-dow{font-size:.56rem;color:var(--muted);display:block;margin-top:1px;}
+.ev-info{flex:1;min-width:0;}
+.ev-badges{display:flex;gap:5px;align-items:center;margin-bottom:4px;flex-wrap:wrap;}
+.live-badge{font-size:.57rem;font-weight:800;color:#fff;background:var(--red);padding:1px 6px;border-radius:4px;letter-spacing:.06em;}
+.src-badge{font-size:.57rem;color:var(--muted);background:var(--bg);border:1px solid var(--border);padding:1px 5px;border-radius:4px;}
+.ev-venue{font-size:.87rem;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.ev-city{font-size:.69rem;color:var(--muted);margin-top:1px;}
+.ev-right{flex-shrink:0;display:flex;flex-direction:column;align-items:flex-end;gap:5px;}
+.days-chip{font-size:.59rem;font-weight:700;padding:2px 8px;border-radius:10px;white-space:nowrap;}
+.dc-soon{color:#fff;background:var(--red);}
+.dc-near{color:var(--blue);background:var(--blue3);}
+.ev-ext{font-size:.63rem;color:var(--blue);font-weight:600;}
+.ev-ext::after{content:' ↗';font-size:.56rem;}
+.tour-item{border-radius:12px;overflow:hidden;border:1px solid var(--border);background:var(--card);}
+.tour-btn{width:100%;background:none;border:none;cursor:pointer;padding:13px 16px;display:flex;align-items:center;gap:14px;text-align:left;transition:background .15s;}
+.tour-btn:hover{background:#f7faff;}
+.tour-icon{flex-shrink:0;width:52px;text-align:center;background:var(--bg);border-radius:8px;padding:5px 4px;border:1px solid var(--border);display:flex;flex-direction:column;align-items:center;}
+.tour-icon-lbl{font-size:.49rem;font-weight:800;color:var(--blue);letter-spacing:.06em;text-transform:uppercase;}
+.tour-icon-n{font-size:1.32rem;font-weight:900;color:var(--text);line-height:1;}
+.tour-icon-u{font-size:.49rem;color:var(--muted);}
+.tour-meta{flex:1;min-width:0;}
+.tour-title{font-size:.88rem;font-weight:700;}
+.tour-range{font-size:.69rem;color:var(--muted);margin-top:1px;}
+.tour-caret{margin-left:auto;color:var(--muted);font-size:.76rem;transition:transform .22s;flex-shrink:0;}
+.tour-item.open .tour-caret{transform:rotate(180deg);}
+.tour-dates{display:none;border-top:1px solid var(--border);}
+.tour-item.open .tour-dates{display:block;}
+.tour-dr{display:flex;align-items:center;gap:14px;padding:10px 16px;border-bottom:1px solid var(--bg);text-decoration:none;color:inherit;transition:background .15s;}
+.tour-dr:last-child{border-bottom:none;}
+.tour-dr:hover{background:#f7faff;}
+.tour-dr-venue{font-size:.8rem;font-weight:600;color:var(--text);}
+.tour-dr-city{font-size:.66rem;color:var(--muted);}
 </style>
 </head>
 <body>
@@ -127,14 +184,10 @@ footer{text-align:center;padding:18px 20px 28px;font-size:.7rem;color:var(--mute
   <div class="hearts">&#9825; &middot; &#9825; &middot; &#9825;</div>
   <p class="tagline">Fan Hub &middot; 演出情報</p>
   <nav class="page-nav"><a href="index.html" class="nav-link">ニュース</a><a href="schedule.html" class="nav-link nav-active">演出情報</a><a href="goods.html" class="nav-link">商品</a><a href="album.html" class="nav-link">アルバム</a><a href="sources.html" class="nav-link">來源</a></nav>
-  <p class="update-time">最後更新：2026-06-30 13:01 JST</p>
+  <p class="update-time">最後更新：2026-06-30 17:49 JST</p>
 </header>
 <div class="sched-wrap">
 
-  <div class="sched-section">
-    <p class="sched-section-title">&#128197; 今日の関連ニュース (2026-06-29（直近）)</p>
-    <div class="today-grid"><div class="today-card"><span class="tc-source" style="background:#0066aa">Natalie Music</span><p class="tc-title">超愛「炸雞君」的M!LK成員佐野勇斗，在與「謎味人」合作的廣告中大喊：「爆裂好吃～！！」</p><p class="tc-ja" style="font-size:.72rem;color:#374151;margin-top:2px">由佐野勇斗（M!LK）主演的羅森新電視廣告「鄰家佐野君VS謎味人」篇，將自6月29日起於全國播出。</p><p class="tc-ja">からあげクン大好きなM!LK佐野勇斗、謎味マンとのCMで「爆裂うめぇ～!!」</p><a class="tc-link" href="https://natalie.mu/music/news/677855" target="_blank" rel="noopener">原文を読む &rarr;</a></div><div class="today-card"><span class="tc-source" style="background:#0066aa">Natalie Music</span><p class="tc-title">C1000真開心！M!LK的鹽崎太智出演「C1000維生素檸檬」網路廣告，化身高中生誇張地舉手</p><p class="tc-ja" style="font-size:.72rem;color:#374151;margin-top:2px">由鹽崎太智（M!LK）出演的「C1000維生素檸檬」全新網路廣告《好心情的祕密》篇，將於今日（6月29日）16:00在YouTube等平台公開。</p><p class="tc-ja">嬉C1000！M!LK塩﨑太智が「C1000ビタミンレモン」Web CMに出演、高校生に扮して大げさに挙手</p><a class="tc-link" href="https://natalie.mu/music/news/678321" target="_blank" rel="noopener">原文を読む &rarr;</a></div><div class="today-card"><span class="tc-source" style="background:#7b1ea2">Musicvoice</span><p class="tc-title">佐野勇斗首次出演「炸雞君」廣告感到興奮，最喜歡的是北海道起司口味</p><p class="tc-ja" style="font-size:.72rem;color:#374151;margin-top:2px">由演員佐野勇斗主演的羅森新電視廣告「鄰家佐野君VS謎味俠」篇，將自6月29日起於全國播出。同時，收錄了拍攝幕後花絮及專訪的幕後花絮影片也已公開。【影片</p><p class="tc-ja">佐野勇斗、からあげクンCM初出演に興奮　お気に入りは北海道チーズ</p><a class="tc-link" href="https://www.musicvoice.jp/news/314845/" target="_blank" rel="noopener">原文を読む &rarr;</a></div><div class="today-card"><span class="tc-source" style="background:#c62828">The First Times</span><p class="tc-title">M!LK的鹽崎太智在被褥上展示三點倒立，降臨X平台！「平衡感超強」、「即使這個姿勢也超有視覺效果」、「天使降臨X平台了」</p><p class="tc-ja" style="font-size:.72rem;color:#374151;margin-top:2px">M!LK的鹽崎太智（「崎」的正式寫法為「たつさき」）開設了個人X帳號。 ■「有個厲害角色在X上現身了...</p><p class="tc-ja">M!LK塩﨑太智が布団の上で三点倒立を披露しXに降臨！「バランス感覚がすごい」「この体制でもビジュいい」「Xに天使が舞い降りた」</p><a class="tc-link" href="https://www.thefirsttimes.jp/news/0000836851/" target="_blank" rel="noopener">原文を読む &rarr;</a></div><div class="today-card"><span class="tc-source" style="background:#7b1ea2">Musicvoice</span><p class="tc-title">鈴木保奈美與曾野舜太（M!LK）將重新審視日語，NHK教育台夏季文化特輯確定播出</p><p class="tc-ja" style="font-size:.72rem;color:#374151;margin-top:2px">鈴木保奈美與曾野舜太（M!LK）將出演7月30日晚間10點起於E-Tele播出的《那日語，沒問題嗎？～成人語言導航～》，並擔任該節目的主持人。雖然英語、中文、法語等外語也很重要，但</p><p class="tc-ja">鈴木保奈美と曽野舜太（M!LK）が日本語を見つめ直す、Eテレ夏の教養特番が放送決定</p><a class="tc-link" href="https://www.musicvoice.jp/news/314874/" target="_blank" rel="noopener">原文を読む &rarr;</a></div><div class="today-card"><span class="tc-source" style="background:#c62828">The First Times</span><p class="tc-title">M!LK 鹽崎太智《鹽崎奇幻樂園》確定數位發行！封面插圖由漫畫家永井裕二特別繪製</p><p class="tc-ja" style="font-size:.72rem;color:#374151;margin-top:2px">M!LK的鹽崎太智（「崎」的正式寫法為「たつさき」）將於7月6日發行《鹽崎奇幻樂園》...</p><p class="tc-ja">M!LK塩﨑太智「しおざきわんだーらんど」配信リリース決定！ジャケット写真は漫画家・永井ゆうじが書き下ろし</p><a class="tc-link" href="https://www.thefirsttimes.jp/news/0000836861/" target="_blank" rel="noopener">原文を読む &rarr;</a></div></div>
-  </div>
 
   <div class="sched-section">
     <p class="sched-section-title">&#127914; 出演番組・作品</p>
@@ -159,5 +212,11 @@ footer{text-align:center;padding:18px 20px 28px;font-size:.7rem;color:var(--mute
   <p>M!LK Fan Hub &nbsp;&middot;&nbsp; 非公式ファンサイト &nbsp;&middot;&nbsp; 毎日 09:00 JST 自動更新</p>
 
 </footer>
+<script>
+function evTgl(id){
+  var el=document.getElementById(id),btn=el.querySelector('.tour-btn');
+  btn.setAttribute('aria-expanded',el.classList.toggle('open'));
+}
+</script>
 </body>
 </html>
