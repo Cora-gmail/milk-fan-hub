@@ -38,9 +38,12 @@ body{background:var(--bg);color:var(--text);font-family:'Hiragino Sans','Noto Sa
 .calendar-wrap{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:16px;position:sticky;top:20px;box-shadow:var(--shadow);}
 @media(max-width:760px){.calendar-wrap{position:static;}}
 .cal-nav{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;}
-.cal-title{font-size:.88rem;font-weight:700;color:var(--blue);}
+.cal-title{font-size:.88rem;font-weight:700;color:var(--blue);background:none;border:none;cursor:pointer;padding:2px 6px;border-radius:6px;transition:background .15s;}
+.cal-title:hover{background:var(--blue3);}
 .cal-arrow{background:none;border:1px solid var(--border);color:var(--muted);width:26px;height:26px;border-radius:6px;cursor:pointer;transition:border-color .2s,color .2s;display:flex;align-items:center;justify-content:center;font-size:.85rem;}
 .cal-arrow:hover{border-color:var(--blue);color:var(--blue);}
+.cal-picker{display:none;margin-bottom:6px;}
+.cal-picker.open{display:block;}
 .cal-dow{display:grid;grid-template-columns:repeat(7,1fr);gap:2px;margin-bottom:3px;}
 .cal-dow span{text-align:center;font-size:.6rem;color:var(--muted);padding:3px 0;font-weight:600;}
 .cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:2px;}
@@ -55,6 +58,12 @@ body{background:var(--bg);color:var(--text);font-family:'Hiragino Sans','Noto Sa
 .cal-day.today.selected{color:#fff;}
 .cal-clear{display:block;width:100%;margin-top:10px;padding:6px;background:var(--blue3);border:1px solid var(--border);color:var(--blue);border-radius:8px;font-size:.73rem;cursor:pointer;transition:background .2s;}
 .cal-clear:hover{background:#c5d8ff;}
+.cal-year-sel{width:100%;padding:5px 8px;border:1px solid var(--border);border-radius:8px;background:var(--card);color:var(--text);font-size:.85rem;margin-bottom:7px;cursor:pointer;}
+.cal-month-row{display:grid;grid-template-columns:repeat(4,1fr);gap:3px;margin-bottom:8px;}
+.cal-m{padding:4px 2px;border:1px solid transparent;border-radius:5px;font-size:.68rem;text-align:center;background:#f0f0f5;color:#bbb;cursor:default;border:none;}
+.cal-m.has-news{background:var(--blue3);color:var(--blue);cursor:pointer;font-weight:600;}
+.cal-m.has-news:hover{background:var(--blue);color:#fff;}
+.cal-m.cur-month{background:var(--blue)!important;color:#fff!important;font-weight:700;}
 .cal-stats{margin-top:9px;font-size:.67rem;color:var(--muted);text-align:center;line-height:1.6;}
 .articles-section{min-width:0;}
 .filter-bar{margin-bottom:13px;}
@@ -101,7 +110,7 @@ footer{text-align:center;padding:18px 20px 28px;font-size:.7rem;color:var(--mute
   <div class="hearts">&#9825; &middot; &#9825; &middot; &#9825;</div>
   <p class="tagline">Fan Hub &middot; 來源一覧</p>
   <nav class="page-nav"><a href="index.html" class="nav-link">ニュース</a><a href="schedule.html" class="nav-link">演出情報</a><a href="goods.html" class="nav-link">商品</a><a href="album.html" class="nav-link">アルバム</a><a href="sources.html" class="nav-link nav-active">來源</a></nav>
-  <p class="update-time">最後更新：2026-06-30 11:44 JST</p>
+  <p class="update-time">最後更新：2026-06-30 12:38 JST</p>
 </header>
 <div class="src-wrap">
   <p class="src-intro">
