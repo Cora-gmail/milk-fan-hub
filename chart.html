@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>M!LK Fan Hub — チャート実績</title>
+<style>
+:root{
+  --bg:#f0f5ff;--surface:#ffffff;--card:#ffffff;--border:#dce8ff;
+  --blue:#2a5bd7;--blue2:#5b8dee;--blue3:#dce8ff;
+  --text:#1a1a2e;--muted:#64748b;
+  --pink:#ff69b4;--yellow:#ffd43b;--sky:#4da6ff;--red:#ff3344;
+  --shadow:0 2px 12px rgba(42,91,215,.08);
+  --shadow-hover:0 8px 28px rgba(42,91,215,.16);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:'Hiragino Sans','Noto Sans TC','Noto Sans JP',system-ui,sans-serif;min-height:100vh;}
+.hero-img{width:100%;max-height:340px;object-fit:cover;object-position:center top;display:block;}
+.site-header{background:var(--surface);border-bottom:1px solid var(--border);padding:28px 20px 0;text-align:center;}
+.member-stripe{display:flex;height:5px;width:100%;margin-bottom:20px;}
+.member-stripe span{flex:1;}
+.wordmark{font-size:clamp(2.6rem,8vw,4.8rem);font-weight:900;letter-spacing:.25em;color:var(--blue);}
+.wordmark .bang{color:var(--pink);}
+.tagline{margin-top:5px;font-size:.72rem;letter-spacing:.45em;text-transform:uppercase;color:var(--blue2);}
+.hearts{margin:7px 0 3px;font-size:.85rem;color:var(--pink);letter-spacing:.4em;}
+.update-time{font-size:.68rem;color:var(--muted);margin:7px 0 14px;}
+.page-nav{display:flex;justify-content:center;gap:0;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;}
+.page-nav::-webkit-scrollbar{display:none;}
+.nav-link{padding:10px 24px;font-size:.8rem;font-weight:600;letter-spacing:.08em;text-decoration:none;color:var(--muted);border-bottom:3px solid transparent;transition:color .2s,border-color .2s;white-space:nowrap;flex-shrink:0;}
+.nav-link:hover{color:var(--blue);}
+.nav-link.nav-active{color:var(--blue);border-bottom-color:var(--blue);}
+.sources{display:flex;justify-content:center;gap:5px;flex-wrap:wrap;padding:12px 20px;}
+.sources span{padding:3px 10px;border-radius:20px;font-size:.63rem;font-weight:700;color:#fff;}
+.main-wrap{max-width:1100px;margin:0 auto;padding:22px 16px 80px;display:grid;grid-template-columns:258px 1fr;gap:22px;align-items:start;}
+@media(max-width:760px){.main-wrap{grid-template-columns:1fr;}}
+.calendar-wrap{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:16px;position:sticky;top:20px;box-shadow:var(--shadow);}
+@media(max-width:760px){.calendar-wrap{position:static;}}
+.cal-nav{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;}
+.cal-title{font-size:.88rem;font-weight:700;color:var(--blue);background:none;border:none;cursor:pointer;padding:2px 6px;border-radius:6px;transition:background .15s;}
+.cal-title:hover{background:var(--blue3);}
+.cal-arrow{background:none;border:1px solid var(--border);color:var(--muted);width:26px;height:26px;border-radius:6px;cursor:pointer;transition:border-color .2s,color .2s;display:flex;align-items:center;justify-content:center;font-size:.85rem;}
+.cal-arrow:hover{border-color:var(--blue);color:var(--blue);}
+.cal-picker{display:none;margin-bottom:6px;}
+.cal-picker.open{display:block;}
+.cal-dow{display:grid;grid-template-columns:repeat(7,1fr);gap:2px;margin-bottom:3px;}
+.cal-dow span{text-align:center;font-size:.6rem;color:var(--muted);padding:3px 0;font-weight:600;}
+.cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:2px;}
+.cal-empty{height:30px;}
+.cal-day{height:30px;border-radius:5px;border:none;background:transparent;color:var(--muted);font-size:.74rem;cursor:default;position:relative;transition:background .15s,color .15s;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:1px;}
+.cal-day.has-news{color:var(--text);cursor:pointer;}
+.cal-day.has-news:hover{background:var(--blue3);}
+.cal-day.has-news::after{content:'';display:block;width:4px;height:4px;border-radius:50%;background:var(--blue);opacity:.7;}
+.cal-day.selected{background:var(--blue);color:#fff;}
+.cal-day.selected::after{background:#fff;}
+.cal-day.today{font-weight:700;color:var(--pink);}
+.cal-day.today.selected{color:#fff;}
+.cal-clear{display:block;width:100%;margin-top:10px;padding:6px;background:var(--blue3);border:1px solid var(--border);color:var(--blue);border-radius:8px;font-size:.73rem;cursor:pointer;transition:background .2s;}
+.cal-clear:hover{background:#c5d8ff;}
+.cal-year-sel{width:100%;padding:5px 8px;border:1px solid var(--border);border-radius:8px;background:var(--card);color:var(--text);font-size:.85rem;margin-bottom:7px;cursor:pointer;}
+.cal-month-row{display:grid;grid-template-columns:repeat(4,1fr);gap:3px;margin-bottom:8px;}
+.cal-m{padding:4px 2px;border:1px solid transparent;border-radius:5px;font-size:.68rem;text-align:center;background:#f0f0f5;color:#bbb;cursor:default;border:none;}
+.cal-m.has-news{background:var(--blue3);color:var(--blue);cursor:pointer;font-weight:600;}
+.cal-m.has-news:hover{background:var(--blue);color:#fff;}
+.cal-m.cur-month{background:var(--blue)!important;color:#fff!important;font-weight:700;}
+.cal-stats{margin-top:9px;font-size:.67rem;color:var(--muted);text-align:center;line-height:1.6;}
+.articles-section{min-width:0;}
+.filter-bar{margin-bottom:13px;}
+.filter-label{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--blue);padding-left:10px;border-left:3px solid var(--blue);}
+.date-group{margin-bottom:24px;}
+.date-heading{font-size:.7rem;letter-spacing:.22em;color:var(--blue2);margin-bottom:10px;padding-bottom:5px;border-bottom:1px solid var(--border);}
+.articles-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:13px;}
+.topic-cluster{background:#eef3ff;border:1px solid var(--border);border-radius:12px;padding:11px 12px 9px;margin-top:11px;}
+.topic-cluster-label{font-size:.6rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue2);margin-bottom:9px;display:flex;align-items:center;gap:5px;}
+.topic-cluster-label::before{content:'';display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--blue2);flex-shrink:0;}
+.card{background:var(--card);border:1px solid var(--border);border-radius:14px;display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s,border-color .2s;box-shadow:var(--shadow);}
+.card:hover{transform:translateY(-3px);box-shadow:var(--shadow-hover);border-color:#b4caff;}
+.card-img{overflow:hidden;background:var(--bg);border-radius:14px 14px 0 0;}
+.card-img img{width:100%;height:auto;display:block;}
+.img-dl-wrap{text-align:right;padding:3px 8px 5px;background:var(--bg);}
+.img-dl{font-size:.62rem;color:var(--blue);text-decoration:none;display:inline-block;padding:2px 6px;border-radius:8px;transition:background .2s;}
+.img-dl:hover{background:var(--blue3);}
+.card-body{padding:13px;display:flex;flex-direction:column;gap:7px;flex:1;}
+.card-head{display:flex;align-items:center;justify-content:space-between;gap:6px;flex-wrap:wrap;}
+.badge{background:var(--c,#888);color:#fff;font-size:.63rem;font-weight:700;padding:2px 8px;border-radius:10px;white-space:nowrap;}
+.date-tag{font-size:.67rem;color:var(--muted);font-variant-numeric:tabular-nums;}
+.title-zh{font-size:.93rem;font-weight:700;color:var(--blue);line-height:1.5;}
+.title-ja{font-size:.78rem;color:#4a5568;line-height:1.6;}
+.sum-zh{font-size:.77rem;color:#374151;line-height:1.65;}
+.sum-ja{font-size:.72rem;color:var(--muted);line-height:1.65;border-top:1px solid var(--border);padding-top:5px;}
+.card-btn{display:inline-block;margin-top:auto;padding:5px 13px;background:transparent;border:1px solid var(--blue);color:var(--blue);text-decoration:none;border-radius:20px;font-size:.71rem;font-weight:600;align-self:flex-start;transition:background .2s,color .2s;}
+.card-btn:hover{background:var(--blue);color:#fff;}
+.empty-msg{text-align:center;padding:48px;color:var(--muted);font-size:.9rem;}
+footer{text-align:center;padding:18px 20px 28px;font-size:.7rem;color:var(--muted);border-top:1px solid var(--border);background:var(--surface);}
+
+
+.chart-hero{background:linear-gradient(135deg,var(--blue) 0%,var(--blue2) 100%);
+  color:#fff;padding:28px 20px 20px;text-align:center;border-radius:0 0 22px 22px;}
+.chart-hero-title{font-size:1.05rem;font-weight:800;letter-spacing:.2em;opacity:.85;margin-bottom:4px;}
+.chart-hero-count{font-size:2.8rem;font-weight:900;line-height:1;}
+.chart-hero-sub{font-size:.72rem;opacity:.75;margin-top:4px;}
+.chart-filters{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0 4px;}
+.cf-btn{padding:5px 14px;border-radius:20px;font-size:.72rem;font-weight:700;border:1.5px solid var(--border);
+  background:var(--card);color:var(--muted);cursor:pointer;transition:all .15s;}
+.cf-btn.active,.cf-btn:hover{background:var(--blue);color:#fff;border-color:var(--blue);}
+.chart-week-group{margin-bottom:32px;}
+.chart-week-label{font-size:.7rem;font-weight:800;letter-spacing:.25em;text-transform:uppercase;
+  color:var(--blue2);padding-left:10px;border-left:3px solid var(--blue3);margin-bottom:12px;}
+.chart-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;}
+.chart-card{background:var(--card);border:1px solid var(--border);border-radius:14px;
+  overflow:hidden;display:flex;flex-direction:column;box-shadow:0 2px 10px rgba(42,91,215,.07);
+  transition:transform .18s,box-shadow .18s;text-decoration:none;color:inherit;}
+.chart-card:hover{transform:translateY(-3px);box-shadow:0 6px 20px rgba(42,91,215,.15);}
+.chart-card-img{width:100%;aspect-ratio:1;object-fit:cover;background:var(--bg);}
+.chart-card-img-placeholder{width:100%;aspect-ratio:1;background:linear-gradient(135deg,var(--blue3),var(--bg));
+  display:flex;align-items:center;justify-content:center;font-size:2rem;color:var(--blue2);}
+.chart-card-body{padding:12px;flex:1;display:flex;flex-direction:column;gap:5px;}
+.chart-card-top{display:flex;align-items:center;gap:6px;flex-wrap:wrap;}
+.rank-badge{font-size:.8rem;font-weight:900;width:34px;height:34px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;color:#fff;}
+.rb-1{background:linear-gradient(135deg,#FFD700,#FFA500);}
+.rb-2{background:linear-gradient(135deg,#C0C0C0,#909090);}
+.rb-3{background:linear-gradient(135deg,#CD7F32,#A0522D);}
+.rb-n{background:var(--blue);font-size:.72rem;}
+.chart-type-tag{font-size:.58rem;font-weight:700;color:var(--blue);background:var(--blue3);
+  padding:2px 7px;border-radius:6px;}
+.chart-new-badge{font-size:.56rem;font-weight:800;color:#fff;background:#e53e3e;
+  padding:2px 6px;border-radius:5px;}
+.chart-member-tag{font-size:.6rem;font-weight:700;color:var(--muted);background:var(--bg);
+  border:1px solid var(--border);padding:1px 6px;border-radius:6px;}
+.chart-card-title{font-size:.95rem;font-weight:800;line-height:1.3;color:var(--text);}
+.chart-card-artist{font-size:.75rem;color:var(--muted);}
+.chart-card-meta{font-size:.65rem;color:var(--muted);margin-top:auto;padding-top:6px;
+  border-top:1px solid var(--border);display:flex;justify-content:space-between;flex-wrap:wrap;gap:4px;}
+.chart-empty{text-align:center;padding:48px 20px;color:var(--muted);font-size:.9rem;}
+/* ── Historical archive ──────────────────────────────── */
+.history-wrap{margin-top:48px;}
+.history-section-title{font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;
+  color:var(--blue);padding-left:10px;border-left:3px solid var(--blue);margin-bottom:18px;font-weight:700;}
+.year-group{margin-bottom:12px;border:1px solid var(--border);border-radius:14px;overflow:hidden;}
+.year-header{display:flex;align-items:center;gap:10px;padding:13px 16px;
+  background:var(--card);cursor:pointer;user-select:none;transition:background .15s;}
+.year-header:hover{background:var(--blue3);}
+.year-title{font-size:1rem;font-weight:900;color:var(--blue);flex:1;}
+.year-count{font-size:.62rem;font-weight:700;color:var(--muted);background:var(--bg);
+  border:1px solid var(--border);padding:2px 8px;border-radius:10px;}
+.year-toggle{font-size:.75rem;color:var(--muted);transition:transform .2s;}
+.year-toggle.open{transform:rotate(90deg);}
+.year-body{display:none;border-top:1px solid var(--border);}
+.year-body.open{display:block;}
+.month-group{padding:10px 16px 6px;}
+.month-label{font-size:.65rem;font-weight:800;letter-spacing:.15em;text-transform:uppercase;
+  color:var(--blue2);margin-bottom:6px;padding-bottom:4px;border-bottom:1px solid var(--border);}
+.hist-row{display:flex;align-items:center;gap:9px;padding:6px 0;border-bottom:1px dashed var(--border);
+  text-decoration:none;color:inherit;transition:background .1s;}
+.hist-row:last-child{border-bottom:none;}
+.hist-row:hover{background:var(--blue3);border-radius:6px;padding-left:6px;}
+.hist-rank{font-size:.7rem;font-weight:900;width:26px;height:26px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;color:#fff;font-variant-numeric:tabular-nums;}
+.hist-type{font-size:.56rem;font-weight:700;color:var(--blue);background:var(--blue3);
+  padding:1px 5px;border-radius:5px;white-space:nowrap;}
+.hist-info{flex:1;min-width:0;}
+.hist-title{font-size:.82rem;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.hist-artist{font-size:.67rem;color:var(--muted);}
+.hist-meta{font-size:.62rem;color:var(--muted);white-space:nowrap;font-variant-numeric:tabular-nums;}
+.hist-member{font-size:.57rem;font-weight:700;color:var(--blue);background:var(--blue3);
+  padding:1px 5px;border-radius:5px;white-space:nowrap;}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="member-stripe"><span style="background:#ff69b4"></span><span style="background:#ffd43b"></span><span style="background:#4da6ff"></span><span style="background:#e8e8f0;border-top:1px solid #dce8ff"></span><span style="background:#ff3344"></span></div>
+  <div class="wordmark">M<span class="bang">!</span>LK</div>
+  <div class="hearts">&#9825; &middot; &#9825; &middot; &#9825;</div>
+  <p class="tagline">Fan Hub &middot; チャート実績</p>
+  <nav class="page-nav"><a href="index.html" class="nav-link">ニュース</a><a href="schedule.html" class="nav-link">演出情報</a><a href="goods.html" class="nav-link">商品</a><a href="album.html" class="nav-link">アルバム</a><a href="chart.html" class="nav-link nav-active">チャート</a><a href="sources.html" class="nav-link">來源</a></nav>
+  <p class="update-time">最後更新：2026-07-03 18:02 JST</p>
+</header>
+<div class="sched-wrap" style="max-width:1060px;margin:0 auto;padding:20px 16px 72px;">
+  <div class="chart-hero">
+    <p class="chart-hero-title">ORICON CHART</p>
+    <p class="chart-hero-count">5 件</p>
+    <p class="chart-hero-sub">チャートイン記録（累計）</p>
+  </div>
+  <div class="chart-filters" id="chart-filters">
+    <button class="cf-btn active" data-code="all">すべて</button>
+    <button class="cf-btn" data-code="cos">合算シングル</button>
+    <button class="cf-btn" data-code="coa">合算アルバム</button>
+    <button class="cf-btn" data-code="js">シングル</button>
+    <button class="cf-btn" data-code="ja">アルバム</button>
+    <button class="cf-btn" data-code="dis">デジタルシングル</button>
+    <button class="cf-btn" data-code="st">ストリーミング</button>
+  </div>
+
+  <!-- 最近12週 cards -->
+  <div id="chart-recent"><div class="chart-week-group"><p class="chart-week-label">📅 2026-06-29</p><div class="chart-grid"><a class="chart-card" href="https://www.oricon.co.jp/prof/643953/products/1557291/1/" target="_blank" rel="noopener" data-code="cos"><img class="chart-card-img" src="https://m.media-amazon.com/images/I/61lMBX4YjvL._SL160_.jpg" alt="爆裂愛してる / 好きすぎて滅!" loading="lazy"><div class="chart-card-body"><div class="chart-card-top"><span class="rank-badge rb-2">2</span><span class="chart-type-tag">合算シングル</span></div><p class="chart-card-title">爆裂愛してる / 好きすぎて滅!</p><p class="chart-card-artist">M!LK</p><div class="chart-card-meta"><span>リリース日： 2026年02月18日</span><span></span></div></div></a></div></div><div class="chart-week-group"><p class="chart-week-label">📅 2026-06-22</p><div class="chart-grid"><a class="chart-card" href="https://www.oricon.co.jp/prof/643953/products/1557291/1/" target="_blank" rel="noopener" data-code="cos"><img class="chart-card-img" src="https://m.media-amazon.com/images/I/61lMBX4YjvL._SL160_.jpg" alt="爆裂愛してる / 好きすぎて滅!" loading="lazy"><div class="chart-card-body"><div class="chart-card-top"><span class="rank-badge rb-2">2</span><span class="chart-type-tag">合算シングル</span></div><p class="chart-card-title">爆裂愛してる / 好きすぎて滅!</p><p class="chart-card-artist">M!LK</p><div class="chart-card-meta"><span>リリース日： 2026年02月18日</span><span></span></div></div></a></div></div><div class="chart-week-group"><p class="chart-week-label">📅 2026-06-15</p><div class="chart-grid"><a class="chart-card" href="https://www.oricon.co.jp/prof/643953/products/1557291/1/" target="_blank" rel="noopener" data-code="cos"><img class="chart-card-img" src="https://m.media-amazon.com/images/I/61lMBX4YjvL._SL160_.jpg" alt="爆裂愛してる / 好きすぎて滅!" loading="lazy"><div class="chart-card-body"><div class="chart-card-top"><span class="rank-badge rb-n">5</span><span class="chart-type-tag">合算シングル</span></div><p class="chart-card-title">爆裂愛してる / 好きすぎて滅!</p><p class="chart-card-artist">M!LK</p><div class="chart-card-meta"><span>リリース日： 2026年02月18日</span><span></span></div></div></a></div></div><div class="chart-week-group"><p class="chart-week-label">📅 2026-06-08</p><div class="chart-grid"><a class="chart-card" href="https://www.oricon.co.jp/prof/643953/products/1557291/1/" target="_blank" rel="noopener" data-code="cos"><img class="chart-card-img" src="https://m.media-amazon.com/images/I/61lMBX4YjvL._SL160_.jpg" alt="爆裂愛してる / 好きすぎて滅!" loading="lazy"><div class="chart-card-body"><div class="chart-card-top"><span class="rank-badge rb-3">3</span><span class="chart-type-tag">合算シングル</span></div><p class="chart-card-title">爆裂愛してる / 好きすぎて滅!</p><p class="chart-card-artist">M!LK</p><div class="chart-card-meta"><span>リリース日： 2026年02月18日</span><span></span></div></div></a></div></div><div class="chart-week-group"><p class="chart-week-label">📅 2026-06-01</p><div class="chart-grid"><a class="chart-card" href="https://www.oricon.co.jp/prof/643953/products/1557291/1/" target="_blank" rel="noopener" data-code="cos"><img class="chart-card-img" src="https://m.media-amazon.com/images/I/61lMBX4YjvL._SL160_.jpg" alt="爆裂愛してる / 好きすぎて滅!" loading="lazy"><div class="chart-card-body"><div class="chart-card-top"><span class="rank-badge rb-3">3</span><span class="chart-type-tag">合算シングル</span></div><p class="chart-card-title">爆裂愛してる / 好きすぎて滅!</p><p class="chart-card-artist">M!LK</p><div class="chart-card-meta"><span>リリース日： 2026年02月18日</span><span></span></div></div></a></div></div></div>
+
+  <!-- 過去記録 year/month archive -->
+  
+
+  <p style="font-size:.68rem;color:var(--muted);margin-top:28px;">
+    データ出典：<a href="https://www.oricon.co.jp/rank/" target="_blank" rel="noopener" style="color:var(--blue)">Oricon</a>
+  </p>
+</div>
+<footer>
+  <p></p>
+</footer>
+<script>
+// Filter buttons — apply to both recent cards and history rows
+document.querySelectorAll('.cf-btn').forEach(function(btn){
+  btn.addEventListener('click',function(){
+    document.querySelectorAll('.cf-btn').forEach(function(b){b.classList.remove('active');});
+    btn.classList.add('active');
+    var code=btn.dataset.code;
+    // Recent cards
+    document.querySelectorAll('.chart-card').forEach(function(card){
+      card.style.display=(code==='all'||card.dataset.code===code)?'':'none';
+    });
+    document.querySelectorAll('.chart-week-group').forEach(function(grp){
+      var vis=grp.querySelectorAll('.chart-card:not([style*="none"])').length;
+      grp.style.display=vis?'':'none';
+    });
+    // History rows
+    document.querySelectorAll('.hist-row').forEach(function(row){
+      row.style.display=(code==='all'||row.dataset.code===code)?'':'none';
+    });
+    document.querySelectorAll('.month-group').forEach(function(mg){
+      var vis=mg.querySelectorAll('.hist-row:not([style*="none"])').length;
+      mg.style.display=vis?'':'none';
+    });
+    document.querySelectorAll('.year-group').forEach(function(yg){
+      var vis=yg.querySelectorAll('.hist-row:not([style*="none"])').length;
+      yg.style.display=vis?'':'none';
+    });
+  });
+});
+// Year accordion toggle
+document.querySelectorAll('.year-header').forEach(function(hdr){
+  hdr.addEventListener('click',function(){
+    var body=hdr.nextElementSibling;
+    var tog=hdr.querySelector('.year-toggle');
+    var open=body.classList.toggle('open');
+    if(tog) tog.classList.toggle('open',open);
+  });
+});
+</script>
+</body>
+</html>
