@@ -76,7 +76,7 @@ jobs:
           git config user.name "GitHub Actions"
           HOUR=$(date -u +%H)
           if [ "${{ github.event.inputs.backfill }}" = "true" ] || [ "$HOUR" = "00" ] || [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
-            git add index.html articles.json schedule.html schedule.json goods.html goods.json album.html sources.html DSC_3085.jpg
+            git add index.html articles.json schedule.html schedule.json goods.html goods.json album.html chart.html charts.json sources.html DSC_3085.jpg
           else
             git add index.html articles.json
           fi
