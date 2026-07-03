@@ -71,6 +71,9 @@ body{background:var(--bg);color:var(--text);font-family:'Hiragino Sans','Noto Sa
 .date-group{margin-bottom:24px;}
 .date-heading{font-size:.7rem;letter-spacing:.22em;color:var(--blue2);margin-bottom:10px;padding-bottom:5px;border-bottom:1px solid var(--border);}
 .articles-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:13px;}
+.topic-cluster{background:#eef3ff;border:1px solid var(--border);border-radius:12px;padding:11px 12px 9px;margin-top:11px;}
+.topic-cluster-label{font-size:.6rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue2);margin-bottom:9px;display:flex;align-items:center;gap:5px;}
+.topic-cluster-label::before{content:'';display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--blue2);flex-shrink:0;}
 .card{background:var(--card);border:1px solid var(--border);border-radius:14px;display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s,border-color .2s;box-shadow:var(--shadow);}
 .card:hover{transform:translateY(-3px);box-shadow:var(--shadow-hover);border-color:#b4caff;}
 .card-img{overflow:hidden;background:var(--bg);border-radius:14px 14px 0 0;}
@@ -103,6 +106,19 @@ footer{text-align:center;padding:18px 20px 28px;font-size:.7rem;color:var(--mute
 .today-card .tc-link{margin-top:auto;font-size:.75rem;color:var(--blue);text-decoration:none;font-weight:600;}
 .today-card .tc-link:hover{text-decoration:underline;}
 .today-empty{font-size:.82rem;color:var(--muted);padding:14px 0;}
+.today-sub-label{font-size:.65rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin:4px 0 10px;}
+.today-prog-row{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--border);}
+.today-prog-row:last-of-type{border-bottom:none;}
+.prog-badge{font-size:.63rem;font-weight:700;color:#fff;padding:3px 8px;border-radius:8px;flex-shrink:0;}
+.today-prog-body{flex:1;min-width:0;}
+.today-prog-name{display:block;font-size:.9rem;font-weight:700;color:var(--text);}
+.today-prog-detail{display:block;font-size:.72rem;color:var(--muted);margin-top:1px;}
+.today-prog-link{font-size:.7rem;color:var(--blue);font-weight:600;text-decoration:none;white-space:nowrap;flex-shrink:0;}
+.today-prog-link:hover{text-decoration:underline;}
+.today-evt-row{display:flex;align-items:flex-start;gap:10px;padding:9px 0;border-bottom:1px solid var(--border);}
+.today-evt-row:last-of-type{border-bottom:none;}
+.today-evt-body{flex:1;min-width:0;}
+.today-evt-venue{display:block;font-size:.72rem;color:var(--muted);margin-top:2px;}
 .sched-section-label{font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;color:var(--blue);padding-left:10px;border-left:3px solid var(--blue);margin-bottom:14px;}
 .prog-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:13px;}
 .prog-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:16px;display:flex;flex-direction:column;gap:8px;box-shadow:var(--shadow);transition:transform .18s,box-shadow .18s;}
@@ -175,6 +191,53 @@ footer{text-align:center;padding:18px 20px 28px;font-size:.7rem;color:var(--mute
 .tour-dr:hover{background:#f7faff;}
 .tour-dr-venue{font-size:.8rem;font-weight:600;color:var(--text);}
 .tour-dr-city{font-size:.66rem;color:var(--muted);}
+/* ── schedule calendar ──────────────────────────────────────────────────── */
+.sc-cal-wrap{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:18px;box-shadow:var(--shadow);}
+.sc-cal-nav{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;}
+.sc-cal-title{font-size:.95rem;font-weight:800;color:var(--text);}
+.sc-cal-arrow{background:none;border:1px solid var(--border);color:var(--muted);width:28px;height:28px;border-radius:7px;cursor:pointer;font-size:.85rem;display:flex;align-items:center;justify-content:center;transition:border-color .2s,color .2s;}
+.sc-cal-arrow:hover{border-color:var(--blue);color:var(--blue);}
+.sc-cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:3px;}
+.sc-cal-dow{font-size:.58rem;font-weight:700;text-align:center;color:var(--muted);letter-spacing:.04em;padding:3px 0;}
+.sc-cal-cell{aspect-ratio:1;display:flex;flex-direction:column;align-items:center;justify-content:center;border-radius:7px;cursor:default;position:relative;font-size:.75rem;color:var(--muted);}
+.sc-cal-cell.cur-month{color:var(--text);}
+.sc-cal-cell.today{background:var(--blue);color:#fff;font-weight:800;}
+.sc-cal-cell.has-event{cursor:pointer;background:var(--blue3);}
+.sc-cal-cell.has-event:hover{background:#c5d9ff;}
+.sc-cal-cell.selected{outline:2px solid var(--blue);outline-offset:-2px;}
+.sc-cal-dot{display:flex;gap:2px;margin-top:2px;flex-wrap:wrap;justify-content:center;}
+.sc-dot-live{width:5px;height:5px;border-radius:50%;background:var(--red);flex-shrink:0;}
+.sc-dot-ev{width:5px;height:5px;border-radius:50%;background:var(--blue);flex-shrink:0;}
+.sc-day-events{margin-top:14px;display:none;}
+.sc-day-events.visible{display:block;}
+.sc-day-title{font-size:.72rem;font-weight:700;color:var(--blue);margin-bottom:8px;letter-spacing:.1em;}
+.sc-evt-item{display:flex;align-items:flex-start;gap:9px;padding:8px 0;border-bottom:1px solid var(--border);}
+.sc-evt-item:last-child{border-bottom:none;}
+.sc-evt-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;margin-top:5px;}
+.sc-evt-body{flex:1;min-width:0;}
+.sc-evt-title{font-size:.84rem;font-weight:600;color:var(--text);}
+.sc-evt-detail{font-size:.7rem;color:var(--muted);margin-top:1px;}
+/* ── past appearances ───────────────────────────────────────────────────── */
+.past-year-group{margin-bottom:24px;}
+.past-year-label{font-size:.7rem;font-weight:800;letter-spacing:.2em;color:var(--blue2);margin-bottom:10px;padding-left:10px;border-left:3px solid var(--blue3);}
+.past-list{display:flex;flex-direction:column;gap:6px;}
+.past-item{display:flex;align-items:center;gap:12px;padding:9px 12px;background:var(--card);border:1px solid var(--border);border-radius:10px;text-decoration:none;color:inherit;transition:background .15s;}
+.past-item:hover{background:#f7faff;}
+.past-date-chip{font-size:.65rem;font-weight:700;color:var(--muted);white-space:nowrap;min-width:54px;font-variant-numeric:tabular-nums;}
+.past-title{font-size:.83rem;font-weight:600;flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.past-detail{font-size:.68rem;color:var(--muted);white-space:nowrap;}
+/* ── dynamic programs ───────────────────────────────────────────────────── */
+.dyn-prog-list{display:flex;flex-direction:column;gap:8px;}
+.dyn-prog-item{display:flex;align-items:center;gap:10px;padding:10px 14px;background:var(--card);border:1px solid var(--border);border-radius:11px;text-decoration:none;color:inherit;transition:background .15s;}
+.dyn-prog-item:hover{background:#f7faff;}
+.dyn-prog-type{font-size:.6rem;font-weight:700;color:#fff;padding:2px 8px;border-radius:7px;flex-shrink:0;}
+.dyn-prog-info{flex:1;min-width:0;}
+.dyn-prog-name{font-size:.88rem;font-weight:700;display:block;}
+.dyn-prog-station{font-size:.7rem;color:var(--muted);display:block;margin-top:1px;}
+.dyn-status-chip{font-size:.6rem;font-weight:700;padding:2px 8px;border-radius:7px;white-space:nowrap;flex-shrink:0;}
+.dyn-active{background:#e8f5e9;color:#2e7d32;}
+.dyn-upcoming{background:var(--blue3);color:var(--blue);}
+.dyn-release{background:#f3e5f5;color:#6a1b9a;}
 </style>
 </head>
 <body>
@@ -184,20 +247,42 @@ footer{text-align:center;padding:18px 20px 28px;font-size:.7rem;color:var(--mute
   <div class="hearts">&#9825; &middot; &#9825; &middot; &#9825;</div>
   <p class="tagline">Fan Hub &middot; 演出情報</p>
   <nav class="page-nav"><a href="index.html" class="nav-link">ニュース</a><a href="schedule.html" class="nav-link nav-active">演出情報</a><a href="goods.html" class="nav-link">商品</a><a href="album.html" class="nav-link">アルバム</a><a href="sources.html" class="nav-link">來源</a></nav>
-  <p class="update-time">最後更新：2026-07-02 15:46 JST</p>
+  <p class="update-time">最後更新：2026-07-03 11:29 JST</p>
 </header>
 <div class="sched-wrap">
 
 <div class="sched-section"><p class="sched-section-label">&#127917; ライブ・イベント</p><div class="ev-next-block"><p class="ev-next-label">現在登録されているライブ・イベントはありません</p><p style="font-size:.8rem;color:var(--muted);margin-top:8px;">公式スケジュールは <a href="https://sd-milk.com/calendar" target="_blank" rel="noopener" style="color:var(--blue)">こちら</a> でご確認ください。</p></div></div>
 
   <div class="sched-section">
-    <p class="sched-section-title">&#128240; 2026-07-02 本日のニュース</p>
-    <div class="today-grid"><div class="today-card"><span class="tc-source" style="background:#c62828">The First Times</span><p class="tc-title">佐野隼人×Diamond☆Yukai聯手送上好兆頭！ “2026 FNS歌謠節之夏”實現的夢想合作“酷”又“棒”</p><p class="tc-ja" style="font-size:.72rem;color:#374151;margin-top:2px">RED WARRIORS 的 Diamond☆Yukai 更新了她的 Instagram，發布了與 M!LK 的佐野隼人的 2 張照片…</p><p class="tc-ja">佐野勇斗×ダイアモンド☆ユカイがふたりでグッドサインを披露！『2026 FNS歌謡祭 夏』で実現した夢コラボに「カッコよかった」「最高」の声</p><a class="tc-link" href="https://www.thefirsttimes.jp/news/0000839200/" target="_blank" rel="noopener">原文を読む &rarr;</a></div><div class="today-card"><span class="tc-source" style="background:#c62828">The First Times</span><p class="tc-title">與M!LK共同出演的寶塚歌劇花組在《FNS Kayousai》後台隨著《Sukisugi De Mete!》、《Iijan》和《Idol Power》跳舞！花絮也公開：「大家都好漂亮」「帥哥大塞車」「氣場閃閃」</p><p class="tc-ja" style="font-size:.72rem;color:#374151;margin-top:2px">在7月1日播出的「2026 FNS Kayousai Summer」（富士電視台）中，M!LK和寶塚歌劇花組說：「我愛你...</p><p class="tc-ja">M!LKと共演の宝塚歌劇団 花組が『FNS歌謡祭』舞台裏で「好きすぎて滅！」「イイじゃん」「アイドルパワー」ダンス！オフショットも公開「全員ビジュよすぎて滅」「イケメン大渋滞」「オーラがキラキラ」</p><a class="tc-link" href="https://www.thefirsttimes.jp/news/0000839082/" target="_blank" rel="noopener">原文を読む &rarr;</a></div><div class="today-card"><span class="tc-source" style="background:#0a6b30">SANSPO</span><p class="tc-title">M!LK與寶塚在“FNS歌謠祭”上的合作成為SNS熱門話題，有“我太興奮了”和“太漂亮了”等評論</p><p class="tc-ja" style="font-size:.72rem;color:#374151;margin-top:2px">M!LK與寶塚在「FNS歌謠祭」上的合作在SNS上成為熱門話題：「我很興奮」和「太漂亮了」 Sanspo</p><p class="tc-ja">M!LK、「FNS歌謡祭」での宝塚コラボに「勝手にキュンとしちゃいました」　「麗しすぎて滅」とSNSで話題沸騰</p><a class="tc-link" href="https://news.google.com/rss/articles/CBMidkFVX3lxTE5aUmxPdE5rbHJKMUk0LTNrZXZZRGtRbmlhTmh2dHBfemZ5MDJEcmlFREp1OGdjckxTT3J1UklBQWczZzRHb2ZXeHFYUkFtZ2o1RFZNUDNNUWtiYVhWRkZvVUtac21XclNNLVNSQVdSb0R5cEpZUmfSAYoBQVVfeXFMUHB3cEJLMUpVQTkwRlR6dGd4bFVWSWdienY4N3BrMHVNeGktV1gwaUhnc3hRVkUxdUE0QWtjV1l5NHdtYzRrWmtoWEVpejlJQWNtRXdMS3UwMnQwTW1FUEdFWGotd2llaGxwanA5NUN4TVhOS0Fwb282V2ExVkdPOUFNOHowcm1ydXN3?oc=5" target="_blank" rel="noopener">原文を読む &rarr;</a></div><div class="today-card"><span class="tc-source" style="background:#0a6b30">SANSPO</span><p class="tc-title">M!LK在「FNS歌謠祭」上與寶塚的合作，「太興奮了」「太漂亮了」等評論成為SNS熱門話題（照片/圖片1/1）</p><p class="tc-ja" style="font-size:.72rem;color:#374151;margin-top:2px">M!LK 在“FNS 歌謠節”上與寶塚的合作已成為 SNS 上的熱門話題，評論包括“我太興奮了”和“太漂亮了”（照片/圖片 1/1） Sanspo</p><p class="tc-ja">M!LK、「FNS歌謡祭」での宝塚コラボに「勝手にキュンとしちゃいました」 「麗しすぎて滅」とSNSで話題沸騰（写真・画像 1/1）</p><a class="tc-link" href="https://news.google.com/rss/articles/CBMioAFBVV95cUxObTZBUjNMY1JxWHJhck1CajJQTWl4b05xb1J1WjJOOGR1QWgzUlNBX0ZEMEN3bGQ2aTA1bFNTV0oweUdvbHdWdUktLUxvNDdsMXFfNVNYSjJpdGxLM0dRUWh4NWR1X0xocU1nRmhkbGhUb0JSem9uREdLMHBiRnlwdEM5cnk0QlpfOUdFcXdZd19MaFdWSkV3cm1PMWMtOFZt?oc=5" target="_blank" rel="noopener">原文を読む &rarr;</a></div></div>
+    <p class="sched-section-title">&#128197; 2026-07-03 今日の行程</p>
+    <p class="today-sub-label">&#128250; 今日放送</p>
+<div class="today-prog-row"><span class="prog-badge" style="background:#0277bd">ラジオ</span><div class="today-prog-body"><strong class="today-prog-name">レコメン!</strong><span class="today-prog-detail">文化放送 毎週月〜金</span></div><a class="today-prog-link" href="https://www.joqr.co.jp/qr/program/reco/" target="_blank" rel="noopener">公式 &#8599;</a></div>
   </div>
 
   <div class="sched-section">
     <p class="sched-section-title">&#127914; 出演番組・作品</p>
-    <p class="sched-section-label">&#127897; 現在放送中・出演中</p><div class="prog-grid"><div class="prog-card"><div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap"><span class="prog-badge" style="background:#b71c1c">TV</span></div><p class="prog-name">やってM!LK</p><p class="prog-station">TBS テレビ</p><p class="prog-schedule">定期放送中</p><a class="prog-link" href="https://www.tbs.co.jp/yatte_milk/" target="_blank" rel="noopener">公式サイト &rarr;</a></div><div class="prog-card"><div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap"><span class="prog-badge" style="background:#0277bd">ラジオ</span><span class="today-badge">本日放送</span></div><p class="prog-name">レコメン!</p><p class="prog-station">文化放送 毎週月〜金</p><p class="prog-schedule">定期放送中</p><a class="prog-link" href="https://www.joqr.co.jp/qr/program/reco/" target="_blank" rel="noopener">公式サイト &rarr;</a></div><div class="prog-card"><div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap"><span class="prog-badge" style="background:#0277bd">ラジオ</span></div><p class="prog-name">イマドキッ ドゥフドゥフナイト</p><p class="prog-station">MBSラジオ</p><p class="prog-schedule">定期放送中</p><a class="prog-link" href="https://www.mbs1179.com/imadoki/" target="_blank" rel="noopener">公式サイト &rarr;</a></div></div><p class="sched-section-label" style="margin-top:28px">&#127916; 公開予定</p><div class="prog-grid"><div class="prog-card"><div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap"><span class="prog-badge" style="background:#b71c1c">TV</span></div><p class="prog-name">君の好きは無敵</p><p class="prog-station">TBS テレビ 火曜22:00〜</p><p class="prog-schedule">放送予定</p><a class="prog-link" href="https://www.tbs.co.jp/kiminosukihamuteki_tbs/" target="_blank" rel="noopener">公式サイト &rarr;</a></div><div class="prog-card"><div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap"><span class="prog-badge" style="background:#37474f">映画</span></div><p class="prog-name">トイ・ストーリー５</p><p class="prog-station">Disney / 2026年夏公開予定</p><p class="prog-schedule">公開予定</p><a class="prog-link" href="https://www.disney.co.jp/movie/toy5" target="_blank" rel="noopener">公式サイト &rarr;</a></div><div class="prog-card"><div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap"><span class="prog-badge" style="background:#37474f">映画</span></div><p class="prog-name">仮面ライダーゼッツ＆超宇宙刑事ギャバン</p><p class="prog-station">2026年夏公開予定</p><p class="prog-schedule">公開予定</p><a class="prog-link" href="https://zeztz-gavan-26movie.com/" target="_blank" rel="noopener">公式サイト &rarr;</a></div></div><p class="sched-section-label" style="margin-top:28px">&#127926; リリース予定</p><div class="prog-grid"><div class="prog-card"><div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap"><span class="prog-badge" style="background:#6a1b9a">リリース</span></div><p class="prog-name">M!LK 1st Mini Album（タイトル未定）</p><p class="prog-station">2026年09月16日発売</p><p class="prog-schedule">予約受付中</p><a class="prog-link" href="https://victor-store.jp/" target="_blank" rel="noopener">公式サイト &rarr;</a></div></div>
+    <p class="sched-section-label">&#127897; 現在放送中・出演中</p><div class="prog-grid"><div class="prog-card"><div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap"><span class="prog-badge" style="background:#b71c1c">TV</span></div><p class="prog-name">やってM!LK</p><p class="prog-station">TBS テレビ</p><p class="prog-schedule">定期放送中</p><a class="prog-link" href="https://www.tbs.co.jp/yatte_milk/" target="_blank" rel="noopener">公式サイト &rarr;</a></div><div class="prog-card"><div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap"><span class="prog-badge" style="background:#0277bd">ラジオ</span><span class="today-badge">本日放送</span></div><p class="prog-name">レコメン!</p><p class="prog-station">文化放送 毎週月〜金</p><p class="prog-schedule">定期放送中</p><a class="prog-link" href="https://www.joqr.co.jp/qr/program/reco/" target="_blank" rel="noopener">公式サイト &rarr;</a></div><div class="prog-card"><div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap"><span class="prog-badge" style="background:#0277bd">ラジオ</span></div><p class="prog-name">イマドキッ ドゥフドゥフナイト</p><p class="prog-station">MBSラジオ</p><p class="prog-schedule">定期放送中</p><a class="prog-link" href="https://www.mbs1179.com/imadoki/" target="_blank" rel="noopener">公式サイト &rarr;</a></div></div><p class="sched-section-label" style="margin-top:28px">&#127916; 公開予定</p><div class="prog-grid"><div class="prog-card"><div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap"><span class="prog-badge" style="background:#37474f">映画</span></div><p class="prog-name">LOGIN JOIN M!LK OFFICIAL SITE NEWS PROFILE DISCOGRAPHY TICKET MEDIA LIVE CALENDA</p><p class="prog-station"></p><p class="prog-schedule"></p><a class="prog-link" href="https://sd-milk.com/signin" target="_blank" rel="noopener">公式サイト &rarr;</a></div><div class="prog-card"><div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap"><span class="prog-badge" style="background:#37474f">映画</span></div><p class="prog-name">M!LK OFFICIAL SITE NEWS PROFILE DISCOGRAPHY TICKET MEDIA LIVE CALENDAR MOVIE GAL</p><p class="prog-station"></p><p class="prog-schedule"></p><a class="prog-link" href="https://sd-milk.com/" target="_blank" rel="noopener">公式サイト &rarr;</a></div><div class="prog-card"><div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap"><span class="prog-badge" style="background:#00695c">イベント</span></div><p class="prog-name">M!LK OFFICIAL SITE NEWS PROFILE DISCOGRAPHY TICKET MEDIA LIVE CALENDAR</p><p class="prog-station"></p><p class="prog-schedule"></p><a class="prog-link" href="https://sd-milk.com/" target="_blank" rel="noopener">公式サイト &rarr;</a></div><div class="prog-card"><div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap"><span class="prog-badge" style="background:#37474f">映画</span></div><p class="prog-name">MOVIE GALLERY WALLPAPER PREMIUM BLOG M!LK JAM SPECIAL M!LGRAM</p><p class="prog-station"></p><p class="prog-schedule"></p><a class="prog-link" href="https://sd-milk.com/movies/null/null" target="_blank" rel="noopener">公式サイト &rarr;</a></div><div class="prog-card"><div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap"><span class="prog-badge" style="background:#37474f">映画</span></div><p class="prog-name">MOVIE</p><p class="prog-station"></p><p class="prog-schedule"></p><a class="prog-link" href="https://sd-milk.com/movies/null/null" target="_blank" rel="noopener">公式サイト &rarr;</a></div><div class="prog-card"><div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap"><span class="prog-badge" style="background:#b71c1c">TV</span></div><p class="prog-name">ALL TV RADIO MAGAZINE WEB LIVE RELEASE MOVIE EVENT BIRTHDAY STAGE</p><p class="prog-station"></p><p class="prog-schedule"></p><a class="prog-link" href="https://sd-milk.com/contents/schedule" target="_blank" rel="noopener">公式サイト &rarr;</a></div><div class="prog-card"><div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap"><span class="prog-badge" style="background:#0277bd">ラジオ</span></div><p class="prog-name">RADIO</p><p class="prog-station"></p><p class="prog-schedule"></p><a class="prog-link" href="https://sd-milk.com/contents/schedule/radio" target="_blank" rel="noopener">公式サイト &rarr;</a></div><div class="prog-card"><div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap"><span class="prog-badge" style="background:#37474f">映画</span></div><p class="prog-name">2026. 05.18 MOVIE 映画「トイ・ストーリー５」 佐野勇斗</p><p class="prog-station"></p><p class="prog-schedule"></p><a class="prog-link" href="https://sd-milk.com/contents/1074347" target="_blank" rel="noopener">公式サイト &rarr;</a></div><div class="prog-card"><div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap"><span class="prog-badge" style="background:#37474f">映画</span></div><p class="prog-name">2026. 05.18 MOVIE</p><p class="prog-station"></p><p class="prog-schedule"></p><a class="prog-link" href="https://sd-milk.com/contents/schedule" target="_blank" rel="noopener">公式サイト &rarr;</a></div><div class="prog-card"><div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap"><span class="prog-badge" style="background:#37474f">映画</span></div><p class="prog-name">映画「トイ・ストーリー５」</p><p class="prog-station"></p><p class="prog-schedule"></p><a class="prog-link" href="https://sd-milk.com/contents/schedule" target="_blank" rel="noopener">公式サイト &rarr;</a></div><div class="prog-card"><div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap"><span class="prog-badge" style="background:#b71c1c">TV</span></div><p class="prog-name">2026. 06.07 TV 日本テレビ系「THE MUSIC DAY 2026」 M!LK</p><p class="prog-station"></p><p class="prog-schedule"></p><a class="prog-link" href="https://sd-milk.com/contents/1081115" target="_blank" rel="noopener">公式サイト &rarr;</a></div><div class="prog-card"><div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap"><span class="prog-badge" style="background:#b71c1c">TV</span></div><p class="prog-name">2026. 06.07 TV</p><p class="prog-station"></p><p class="prog-schedule"></p><a class="prog-link" href="https://sd-milk.com/contents/schedule" target="_blank" rel="noopener">公式サイト &rarr;</a></div><div class="prog-card"><div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap"><span class="prog-badge" style="background:#b71c1c">TV</span></div><p class="prog-name">日本テレビ系「THE MUSIC DAY 2026」</p><p class="prog-station"></p><p class="prog-schedule"></p><a class="prog-link" href="https://sd-milk.com/contents/schedule" target="_blank" rel="noopener">公式サイト &rarr;</a></div><div class="prog-card"><div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap"><span class="prog-badge" style="background:#b71c1c">TV</span></div><p class="prog-name">2026. 05.13 TV テレ東系列「ポケモンとどこいく！？」 曽野舜太</p><p class="prog-station"></p><p class="prog-schedule"></p><a class="prog-link" href="https://sd-milk.com/contents/1072984" target="_blank" rel="noopener">公式サイト &rarr;</a></div><div class="prog-card"><div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap"><span class="prog-badge" style="background:#b71c1c">TV</span></div><p class="prog-name">2026. 05.13 TV</p><p class="prog-station"></p><p class="prog-schedule"></p><a class="prog-link" href="https://sd-milk.com/contents/schedule" target="_blank" rel="noopener">公式サイト &rarr;</a></div><div class="prog-card"><div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap"><span class="prog-badge" style="background:#b71c1c">TV</span></div><p class="prog-name">2026. 06.29 TV TBS系『「ピクサーの世界展」風間俊介と五感フル回転で大満喫スペシャル』 塩﨑太智</p><p class="prog-station"></p><p class="prog-schedule"></p><a class="prog-link" href="https://sd-milk.com/contents/1087498" target="_blank" rel="noopener">公式サイト &rarr;</a></div><div class="prog-card"><div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap"><span class="prog-badge" style="background:#b71c1c">TV</span></div><p class="prog-name">2026. 06.29 TV</p><p class="prog-station"></p><p class="prog-schedule"></p><a class="prog-link" href="https://sd-milk.com/contents/schedule" target="_blank" rel="noopener">公式サイト &rarr;</a></div><div class="prog-card"><div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap"><span class="prog-badge" style="background:#b71c1c">TV</span></div><p class="prog-name">TBS系『「ピクサーの世界展」風間俊介と五感フル回転で大満喫スペシャル』</p><p class="prog-station"></p><p class="prog-schedule"></p><a class="prog-link" href="https://sd-milk.com/contents/schedule" target="_blank" rel="noopener">公式サイト &rarr;</a></div><div class="prog-card"><div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap"><span class="prog-badge" style="background:#b71c1c">TV</span></div><p class="prog-name">2026. 06.29 TV TBS系「CDTVライブ！ライブ！」 M!LK</p><p class="prog-station"></p><p class="prog-schedule"></p><a class="prog-link" href="https://sd-milk.com/contents/1087526" target="_blank" rel="noopener">公式サイト &rarr;</a></div><div class="prog-card"><div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap"><span class="prog-badge" style="background:#b71c1c">TV</span></div><p class="prog-name">TBS系「CDTVライブ！ライブ！」</p><p class="prog-station"></p><p class="prog-schedule"></p><a class="prog-link" href="https://sd-milk.com/contents/schedule" target="_blank" rel="noopener">公式サイト &rarr;</a></div><div class="prog-card"><div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap"><span class="prog-badge" style="background:#b71c1c">TV</span></div><p class="prog-name">2026. 06.16 TV TBS系「M!LKの爆裂ミッション」 M!LK</p><p class="prog-station"></p><p class="prog-schedule"></p><a class="prog-link" href="https://sd-milk.com/contents/1083544" target="_blank" rel="noopener">公式サイト &rarr;</a></div><div class="prog-card"><div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap"><span class="prog-badge" style="background:#b71c1c">TV</span></div><p class="prog-name">2026. 06.16 TV</p><p class="prog-station"></p><p class="prog-schedule"></p><a class="prog-link" href="https://sd-milk.com/contents/schedule" target="_blank" rel="noopener">公式サイト &rarr;</a></div><div class="prog-card"><div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap"><span class="prog-badge" style="background:#b71c1c">TV</span></div><p class="prog-name">TBS系「M!LKの爆裂ミッション」</p><p class="prog-station"></p><p class="prog-schedule"></p><a class="prog-link" href="https://sd-milk.com/contents/schedule" target="_blank" rel="noopener">公式サイト &rarr;</a></div><div class="prog-card"><div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap"><span class="prog-badge" style="background:#0277bd">ラジオ</span></div><p class="prog-name">2025. 01.07 RADIO MBSラジオ「イマドキッ ドゥフドゥフナイト」 吉田仁人</p><p class="prog-station"></p><p class="prog-schedule"></p><a class="prog-link" href="https://sd-milk.com/contents/1001225" target="_blank" rel="noopener">公式サイト &rarr;</a></div><div class="prog-card"><div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap"><span class="prog-badge" style="background:#0277bd">ラジオ</span></div><p class="prog-name">2025. 01.07 RADIO</p><p class="prog-station"></p><p class="prog-schedule"></p><a class="prog-link" href="https://sd-milk.com/contents/schedule" target="_blank" rel="noopener">公式サイト &rarr;</a></div><div class="prog-card"><div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap"><span class="prog-badge" style="background:#0277bd">ラジオ</span></div><p class="prog-name">MBSラジオ「イマドキッ ドゥフドゥフナイト」</p><p class="prog-station"></p><p class="prog-schedule"></p><a class="prog-link" href="https://sd-milk.com/contents/schedule" target="_blank" rel="noopener">公式サイト &rarr;</a></div><div class="prog-card"><div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap"><span class="prog-badge" style="background:#b71c1c">TV</span></div><p class="prog-name">2026. 07.02 TV NEW TBS系「サンド屋台」 佐野勇斗</p><p class="prog-station"></p><p class="prog-schedule"></p><a class="prog-link" href="https://sd-milk.com/contents/1088498" target="_blank" rel="noopener">公式サイト &rarr;</a></div><div class="prog-card"><div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap"><span class="prog-badge" style="background:#b71c1c">TV</span></div><p class="prog-name">2026. 07.02 TV</p><p class="prog-station"></p><p class="prog-schedule"></p><a class="prog-link" href="https://sd-milk.com/contents/schedule" target="_blank" rel="noopener">公式サイト &rarr;</a></div><div class="prog-card"><div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap"><span class="prog-badge" style="background:#b71c1c">TV</span></div><p class="prog-name">君の好きは無敵</p><p class="prog-station">TBS テレビ 火曜22:00〜</p><p class="prog-schedule">放送予定</p><a class="prog-link" href="https://www.tbs.co.jp/kiminosukihamuteki_tbs/" target="_blank" rel="noopener">公式サイト &rarr;</a></div><div class="prog-card"><div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap"><span class="prog-badge" style="background:#37474f">映画</span></div><p class="prog-name">トイ・ストーリー５</p><p class="prog-station">Disney / 2026年夏公開予定</p><p class="prog-schedule">公開予定</p><a class="prog-link" href="https://www.disney.co.jp/movie/toy5" target="_blank" rel="noopener">公式サイト &rarr;</a></div><div class="prog-card"><div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap"><span class="prog-badge" style="background:#37474f">映画</span></div><p class="prog-name">仮面ライダーゼッツ＆超宇宙刑事ギャバン</p><p class="prog-station">2026年夏公開予定</p><p class="prog-schedule">公開予定</p><a class="prog-link" href="https://zeztz-gavan-26movie.com/" target="_blank" rel="noopener">公式サイト &rarr;</a></div></div><p class="sched-section-label" style="margin-top:28px">&#127926; リリース予定</p><div class="prog-grid"><div class="prog-card"><div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap"><span class="prog-badge" style="background:#6a1b9a">リリース</span></div><p class="prog-name">2026. 06.29 RELEASE 塩﨑太智「しおざきわんだーらんど」配信リリース 塩﨑太智</p><p class="prog-station"></p><p class="prog-schedule"></p><a class="prog-link" href="https://sd-milk.com/contents/1087631" target="_blank" rel="noopener">公式サイト &rarr;</a></div><div class="prog-card"><div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap"><span class="prog-badge" style="background:#6a1b9a">リリース</span></div><p class="prog-name">塩﨑太智「しおざきわんだーらんど」配信リリース</p><p class="prog-station"></p><p class="prog-schedule"></p><a class="prog-link" href="https://sd-milk.com/contents/schedule" target="_blank" rel="noopener">公式サイト &rarr;</a></div><div class="prog-card"><div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap"><span class="prog-badge" style="background:#6a1b9a">リリース</span></div><p class="prog-name">M!LK 1st Mini Album（タイトル未定）</p><p class="prog-station">2026年09月16日発売</p><p class="prog-schedule">予約受付中</p><a class="prog-link" href="https://victor-store.jp/" target="_blank" rel="noopener">公式サイト &rarr;</a></div></div>
+  </div>
+
+  <div class="sched-section">
+    <p class="sched-section-title">&#128197; スケジュール カレンダー</p>
+    <div class="sc-cal-wrap">
+      <div class="sc-cal-nav">
+        <button class="sc-cal-arrow" onclick="scCalPrev()">&#8249;</button>
+        <span class="sc-cal-title" id="sc-cal-title"></span>
+        <button class="sc-cal-arrow" onclick="scCalNext()">&#8250;</button>
+      </div>
+      <div class="sc-cal-grid" id="sc-cal-grid"></div>
+      <div class="sc-day-events" id="sc-day-events">
+        <p class="sc-day-title" id="sc-day-title"></p>
+        <div id="sc-day-list"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sched-section">
+    <p class="sched-section-title">&#128190; 過去出演 &#38957;&#27511;</p>
+    <div class="past-year-group"><p class="past-year-label">2025 年</p><div class="past-list"><a class="past-item" href="https://sd-milk.com/pages/convert" target="_blank" rel="noopener"><span class="past-date-chip">11-06</span><span class="past-title">PREMIUM MILK リニューアルに伴う引き継ぎのご案内 いつもM!LKを応援いただき、誠にありがとうございます。 この度、M!LKオフィシャルファンクラブ「PREMIUM MILK」は、2025年11月6日(木)にリニューアルいたしま</span></a></div></div>
   </div>
 
   <div class="sched-section">
@@ -216,13 +301,75 @@ footer{text-align:center;padding:18px 20px 28px;font-size:.7rem;color:var(--mute
 </div>
 <footer>
   <p>M!LK Fan Hub &nbsp;&middot;&nbsp; 非公式ファンサイト &nbsp;&middot;&nbsp; 毎日 09:00 JST 自動更新</p>
-
 </footer>
 <script>
-function evTgl(id){
-  var el=document.getElementById(id),btn=el.querySelector('.tour-btn');
-  btn.setAttribute('aria-expanded',el.classList.toggle('open'));
+const SCHED_EVENTS=[{"date": "2025-11-06", "title": "PREMIUM MILK リニューアルに伴う引き継ぎのご案内 いつもM!LKを応援いただき、誠にありがとうございます。 この度、M!LKオフィシャルファンクラブ「PREMIUM MILK」は、2025年11月6日(木)にリニューアルいたしま", "details": "", "url": "https://sd-milk.com/pages/convert"}];
+var scY=0,scM=0,scSel='';
+(function(){var d=new Date();scY=d.getFullYear();scM=d.getMonth();})();
+var MON_LBL=['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月'];
+var DOW_LBL=['日','月','火','水','木','金','土'];
+var evByDate={};
+SCHED_EVENTS.forEach(function(e){var d=e.date||'';if(!evByDate[d])evByDate[d]=[];evByDate[d].push(e);});
+function scRender(){
+  var title=document.getElementById('sc-cal-title');
+  title.textContent=scY+'年 '+MON_LBL[scM];
+  var grid=document.getElementById('sc-cal-grid');
+  grid.innerHTML='';
+  DOW_LBL.forEach(function(d){var el=document.createElement('div');el.className='sc-cal-dow';el.textContent=d;grid.appendChild(el);});
+  var first=new Date(scY,scM,1).getDay();
+  var days=new Date(scY,scM+1,0).getDate();
+  var today=new Date().toISOString().slice(0,10);
+  for(var i=0;i<first;i++){var blank=document.createElement('div');blank.className='sc-cal-cell';grid.appendChild(blank);}
+  for(var d=1;d<=days;d++){
+    var ds=scY+'-'+String(scM+1).padStart(2,'0')+'-'+String(d).padStart(2,'0');
+    var cell=document.createElement('div');
+    var cls=['sc-cal-cell','cur-month'];
+    if(ds===today)cls.push('today');
+    if(evByDate[ds])cls.push('has-event');
+    if(ds===scSel)cls.push('selected');
+    cell.className=cls.join(' ');
+    cell.innerHTML='<span>'+d+'</span>';
+    if(evByDate[ds]){
+      var dot=document.createElement('div');dot.className='sc-cal-dot';
+      evByDate[ds].slice(0,3).forEach(function(e){
+        var s=document.createElement('span');
+        s.className=(e.title||'').includes('[LIVE]')?'sc-dot-live':'sc-dot-ev';
+        dot.appendChild(s);
+      });
+      cell.appendChild(dot);
+      (function(date){cell.onclick=function(){scSel=date;scShowDay(date);scRender();};})(ds);
+    }
+    grid.appendChild(cell);
+  }
 }
+function scShowDay(date){
+  var evts=evByDate[date]||[];
+  var panel=document.getElementById('sc-day-events');
+  var title=document.getElementById('sc-day-title');
+  var list=document.getElementById('sc-day-list');
+  title.textContent=date;
+  list.innerHTML='';
+  evts.forEach(function(e){
+    var item=document.createElement('div');item.className='sc-evt-item';
+    var isLive=(e.title||'').includes('[LIVE]');
+    var dotColor=isLive?'var(--red)':'var(--blue)';
+    var detail=e.details||'';
+    item.innerHTML='<div class="sc-evt-dot" style="background:'+dotColor+'"></div>'
+      +'<div class="sc-evt-body"><p class="sc-evt-title">'+(e.title||'').replace('[LIVE]','').trim()+'</p>'
+      +(detail?'<p class="sc-evt-detail">'+detail+'</p>':'')+'</div>';
+    if(e.url&&e.url!=='#'){
+      var a=document.createElement('a');a.href=e.url;a.target='_blank';a.rel='noopener';
+      a.style.cssText='font-size:.68rem;color:var(--blue);font-weight:600;text-decoration:none;white-space:nowrap;';
+      a.textContent='詳細 ↗';item.appendChild(a);
+    }
+    list.appendChild(item);
+  });
+  panel.classList.toggle('visible',evts.length>0);
+}
+function scCalPrev(){if(scM===0){scY--;scM=11;}else{scM--;}scSel='';scRender();document.getElementById('sc-day-events').classList.remove('visible');}
+function scCalNext(){if(scM===11){scY++;scM=0;}else{scM++;}scSel='';scRender();document.getElementById('sc-day-events').classList.remove('visible');}
+function evTgl(id){var el=document.getElementById(id),btn=el.querySelector('.tour-btn');btn.setAttribute('aria-expanded',el.classList.toggle('open'));}
+scRender();
 </script>
 </body>
 </html>
