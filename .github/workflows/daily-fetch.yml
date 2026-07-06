@@ -63,22 +63,12 @@ jobs:
             echo "=== Backfill ==="
             python backfill.py --since "${{ github.event.inputs.since || '2026-01-01' }}"
           fi
-          HOUR=$(date -u +%H)
-          if [ "${{ github.event.inputs.backfill }}" = "true" ] || [ "${{ github.event.inputs.repair_dates }}" = "true" ] || [ "$HOUR" = "00" ] || [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
-            python fetch_news.py
-          else
-            NEWS_ONLY=1 python fetch_news.py
-          fi
+          python fetch_news.py
 
       - name: Commit & push
         run: |
           git config user.email "actions@github.com"
           git config user.name "GitHub Actions"
-          HOUR=$(date -u +%H)
-          if [ "${{ github.event.inputs.backfill }}" = "true" ] || [ "$HOUR" = "00" ] || [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
-            git add index.html articles.json schedule.html schedule.json goods.html goods.json album.html chart.html charts.json sources.html DSC_3085.jpg
-          else
-            git add index.html articles.json
-          fi
+          git add index.html articles.json schedule.html schedule.json goods.html goods.json album.html chart.html charts.json sources.html DSC_3085.jpg
           git diff --staged --quiet || git commit -m "update: $(date -u +'%Y-%m-%d %H:%M')"
           git push
