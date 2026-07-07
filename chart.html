@@ -41,6 +41,7 @@ body{background:var(--bg);color:var(--text);font-family:'Hiragino Sans','Noto Sa
 .cal-title:hover{background:var(--blue3);}
 .cal-arrow{background:none;border:1px solid var(--border);color:var(--muted);width:26px;height:26px;border-radius:6px;cursor:pointer;transition:border-color .2s,color .2s;display:flex;align-items:center;justify-content:center;font-size:.85rem;}
 .cal-arrow:hover{border-color:var(--blue);color:var(--blue);}
+.cal-today-btn{font-size:.68rem;font-weight:700;letter-spacing:.02em;}
 .cal-picker{display:none;margin-bottom:6px;}
 .cal-picker.open{display:block;}
 .cal-dow{display:grid;grid-template-columns:repeat(7,1fr);gap:2px;margin-bottom:3px;}
@@ -68,6 +69,12 @@ body{background:var(--bg);color:var(--text);font-family:'Hiragino Sans','Noto Sa
 .filter-bar{margin-bottom:13px;}
 .filter-label{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--blue);padding-left:10px;border-left:3px solid var(--blue);}
 .date-group{margin-bottom:24px;}
+#back-to-today{position:fixed;bottom:22px;right:22px;z-index:999;
+  background:var(--blue);color:#fff;border:none;border-radius:20px;
+  padding:8px 16px;font-size:.78rem;font-weight:600;letter-spacing:.05em;
+  cursor:pointer;box-shadow:0 2px 10px rgba(42,91,215,.35);
+  transition:background .15s;}
+#back-to-today:hover{background:var(--blue2);}
 .date-heading{font-size:.7rem;letter-spacing:.22em;color:var(--blue2);margin-bottom:10px;padding-bottom:5px;border-bottom:1px solid var(--border);}
 .articles-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:13px;}
 .topic-cluster{background:#eef3ff;border:1px solid var(--border);border-radius:12px;padding:11px 12px 9px;margin-top:11px;}
@@ -174,7 +181,7 @@ footer{text-align:center;padding:18px 20px 28px;font-size:.7rem;color:var(--mute
   <div class="hearts">&#9825; &middot; &#9825; &middot; &#9825;</div>
   <p class="tagline">Fan Hub &middot; チャート実績</p>
   <nav class="page-nav"><a href="index.html" class="nav-link">ニュース</a><a href="schedule.html" class="nav-link">演出情報</a><a href="goods.html" class="nav-link">商品</a><a href="album.html" class="nav-link">アルバム</a><a href="chart.html" class="nav-link nav-active">チャート</a><a href="sources.html" class="nav-link">來源</a></nav>
-  <p class="update-time">最後更新：2026-07-07 09:00 JST</p>
+  <p class="update-time">最後更新：2026-07-07 12:00 JST</p>
 </header>
 <div class="sched-wrap" style="max-width:1060px;margin:0 auto;padding:20px 16px 72px;">
   <div class="chart-hero">
