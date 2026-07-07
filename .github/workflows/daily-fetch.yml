@@ -2,10 +2,10 @@ name: m!lk News Update
 
 on:
   schedule:
-    - cron: '0 0 * * *'    # 09:00 JST - 完整更新（新聞+所有頁面）
-    - cron: '0 3 * * *'    # 12:00 JST - 僅新聞
-    - cron: '0 9 * * *'    # 18:00 JST - 僅新聞
-    - cron: '0 15 * * *'   # 00:00 JST - 僅新聞
+    - cron: '0 0 * * *'    # 09:00 JST
+    - cron: '0 3 * * *'    # 12:00 JST
+    - cron: '0 9 * * *'    # 18:00 JST
+    - cron: '0 15 * * *'   # 00:00 JST
   workflow_dispatch:         # 允許手動執行
     inputs:
       backfill:
