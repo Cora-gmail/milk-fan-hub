@@ -581,18 +581,6 @@
     "images": []
   },
   {
-    "id": "bd95533140cd",
-    "source": "Oricon",
-    "title_ja": "曽野舜太の記事・ニュース・速報 9ページ目",
-    "title_zh": "Shunta Sono 的文章/新聞/突發新聞 第 9 頁",
-    "summary_ja": "曽野舜太の記事・ニュース・速報 9ページ目 オリコンニュース",
-    "summary_zh": "Shunta Sono 文章/新聞/突發新聞 第 9 頁 Oricon 新聞",
-    "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTFBRNWc1bDVvcGdrU0JzUS1CTE4tOGpqVG0tNGRFVC11Z0VnQzl1eWc2elBDYk5mXzJSUUFobGdjS1E3TEtDdEZMOVlFSG1QUFVvdUxEUHcxQm1yS1N0Z3c?oc=5",
-    "image": "",
-    "date": "2026-07-06",
-    "images": []
-  },
-  {
     "id": "b08162eafce7",
     "source": "Oricon",
     "title_ja": "M!LK、初のGP帯冠特番に歓喜「2年前では絶対考えられないことが起こってる」 過酷ロケに悶絶も",
@@ -2175,9 +2163,12 @@
     "summary_ja": "M!LK塩崎太智、ソロ曲「しおざきわんだーらんど」7・6配信決定 この世界の“ワンダフルな真理”をハッピーに歌う オリコンニュース",
     "summary_zh": "M!LK鹽崎太一的個人歌曲《Shiozaki Wonderland》將於7月6日發行Oricon新聞",
     "url": "https://www.oricon.co.jp/news/2464287/full/",
-    "image": "",
+    "image": "https://contents.oricon.co.jp/upimg/news/2465000/2464287/20260629_121305_p_o_16639962.jpg",
     "date": "2026-06-29",
-    "images": []
+    "images": [
+      "https://contents.oricon.co.jp/upimg/news/2465000/2464287/20260629_121305_p_o_16639962.jpg",
+      "https://contents.oricon.co.jp/upimg/news/2465000/2464287/20260629_121334_p_o_35428887.jpg"
+    ]
   },
   {
     "id": "25caa6ca3fcd",
