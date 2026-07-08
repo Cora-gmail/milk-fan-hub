@@ -160,6 +160,18 @@
     "images": []
   },
   {
+    "id": "7759675f4f4c",
+    "source": "Oricon",
+    "title_ja": "曽野舜太さん「三重おいないナビゲ...｜Release No.2889131｜eltha（エルザ）",
+    "title_zh": "園俊太《三重井內導航器...｜發售No.2889131｜eltha》",
+    "summary_ja": "曽野舜太さん「三重おいないナビゲ...｜Release No.2889131｜eltha（エルザ） eltha",
+    "summary_zh": "園俊太《三重大內導航遊戲...｜發售第2889131號｜eltha（艾爾莎）eltha",
+    "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTFB2U0tpRFF3aFY1SUZVZWFJbFN2MEhVZTUxUnRKZFhkQ2daVVhTd1Z2RmxTZ29CaGh0YXlMNnZRQXZSaEpnbzJCR2Noc0hkYkhwdWpQQWNub3otM3hmWEE?oc=5",
+    "image": "",
+    "date": "2026-07-07",
+    "images": []
+  },
+  {
     "id": "5d8fc544b611",
     "source": "Musicvoice",
     "title_ja": "M!LK・塩﨑太智「しおざきわんだーらんど」MV公開　子供たちと息の合った楽しいダンスを披露",
@@ -2335,9 +2347,13 @@
     "summary_ja": "M!LK佐野勇斗、“謎の覆面ヒーロー”梅沢富美男と対面 近夏の“挑戦したいこと”告白「M!LKのメンバーと富士山に登りたい」 オリコンニュース",
     "summary_zh": "M!LK 佐野勇人與“神秘蒙面英雄”梅澤文雄見面，並坦白了明年夏天“想要挑戰的事情”“我想和 M!LK 成員一起爬富士山” Oricon 新聞",
     "url": "https://www.oricon.co.jp/news/2463988/full/",
-    "image": "",
+    "image": "https://contents.oricon.co.jp/upimg/news/2464000/2463988/20260626_163747_p_o_62421742.jpg",
     "date": "2026-06-28",
-    "images": []
+    "images": [
+      "https://contents.oricon.co.jp/upimg/news/2464000/2463988/20260626_163747_p_o_62421742.jpg",
+      "https://contents.oricon.co.jp/upimg/news/2464000/2463988/20260626_163843_p_o_44261061.jpg",
+      "https://contents.oricon.co.jp/upimg/news/2464000/2463988/20260626_163843_p_o_73911124.jpg"
+    ]
   },
   {
     "id": "24f0a3b1411b",
