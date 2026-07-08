@@ -1,6 +1,14 @@
 name: m!lk News Update
 
 on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'fetch_news.py'
+      - 'backfill.py'
+      - 'requirements.txt'
+      - 'daily-fetch.yml'
   schedule:
     - cron: '0 0 * * *'    # 09:00 JST
     - cron: '0 3 * * *'    # 12:00 JST
