@@ -562,17 +562,30 @@ footer{text-align:center;padding:18px 20px 28px;font-size:.7rem;color:var(--mute
 
   .res-tok {
     display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    gap: 8px;
+    align-items: center;
+    gap: 10px;
     font-size: 12px;
-    padding: 5px 0;
+    padding: 6px 0;
     border-bottom: 1px solid rgba(255,255,255,0.06);
   }
   .res-tok:last-child { border-bottom: none; }
+  .res-tok-img {
+    width: 56px; height: 56px;
+    border-radius: 7px;
+    object-fit: cover;
+    flex-shrink: 0;
+    border: 1px solid rgba(255,255,255,0.12);
+  }
+  .res-tok-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    flex: 1;
+    min-width: 0;
+  }
   .res-tok-name { font-weight: 600; }
   .res-tok-name.hi { color: var(--accent); }
-  .res-tok-desc { color: rgba(255,255,255,0.4); font-size: 11px; text-align: right; }
+  .res-tok-desc { color: rgba(255,255,255,0.4); font-size: 11px; }
   .res-tok.bonus { opacity: 0.55; }
   .res-tok.bonus .res-tok-name { font-weight: 500; }
   .res-bonus-sep {
@@ -640,6 +653,21 @@ footer{text-align:center;padding:18px 20px 28px;font-size:.7rem;color:var(--mute
     flex-direction: column;
     gap: 12px;
   }
+  .card-cover {
+    border-radius: calc(var(--radius) - 2px) calc(var(--radius) - 2px) 0 0;
+    overflow: hidden;
+    margin: -20px -20px 0;
+    background: var(--ground);
+    aspect-ratio: 1 / 1;
+  }
+  .card-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform .35s;
+  }
+  .card:hover .card-cover img { transform: scale(1.04); }
   .card-badge {
     display: inline-flex;
     align-items: center;
@@ -700,6 +728,8 @@ footer{text-align:center;padding:18px 20px 28px;font-size:.7rem;color:var(--mute
   .tokuten-condition strong { color: var(--text); font-weight: 700; }
   .tokuten-item { font-size: 14px; font-weight: 700; }
   .tokuten-stores { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 4px; }
+  .tokuten-imgs { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px; }
+  .tokuten-imgs img { height: 140px; width: auto; border-radius: 8px; object-fit: cover; border: 1px solid var(--border); }
   .store-chip {
     font-size: 11px; background: var(--ground);
     border: 1px solid var(--border); border-radius: 4px;
@@ -770,15 +800,15 @@ footer{text-align:center;padding:18px 20px 28px;font-size:.7rem;color:var(--mute
   <div class="hearts">&#9825; &middot; &#9825; &middot; &#9825;</div>
   <p class="tagline">Fan Hub &middot; 1st Mini Album</p>
   <nav class="page-nav"><a href="index.html" class="nav-link">ニュース</a><a href="schedule.html" class="nav-link">演出情報</a><a href="goods.html" class="nav-link">商品</a><a href="album.html" class="nav-link nav-active">アルバム</a><a href="chart.html" class="nav-link">チャート</a><a href="sources.html" class="nav-link">來源</a></nav>
-  <p class="update-time">最後更新：2026-07-13 09:00 JST</p>
+  <p class="update-time">最後更新：2026-07-13 12:00 JST</p>
 </header>
 
 <!-- ══ HERO ══════════════════════════════════════════════ -->
 <header class="hero">
   <div class="hero-group-badge">M!LK</div>
   <p class="hero-label">1st Mini Album</p>
-  <h1 class="hero-title">タイトル<em>未定</em></h1>
-  <p class="hero-subtitle">Title Undecided</p>
+  <h1 class="hero-title"><em>LOVE ENG!NE</em></h1>
+  <p class="hero-subtitle">1st Mini Album · 2026.09.16</p>
   <div class="hero-meta">
     <div class="hero-meta-item">
       <span class="val">2026.09.16</span>
@@ -1022,6 +1052,7 @@ footer{text-align:center;padding:18px 20px 28px;font-size:.7rem;color:var(--mute
   <div class="editions-top">
     <div class="plain-wrap">
       <div class="card">
+        <div class="card-cover"><img src="https://sd-milk.com/s3/skiyaki/uploads/ckeditor/pictures/860904/content_%E9%80%9A%E5%B8%B8%E7%9B%A4_0709_MILK_LE_JKT_VICL-66166%E3%81%AE%E3%82%B3%E3%83%94%E3%83%BC.jpg" alt="通常盤 ジャケット" loading="lazy"></div>
         <span class="card-badge badge-standard">通常盤</span>
         <div>
           <div class="card-name">通常盤</div>
@@ -1045,6 +1076,7 @@ footer{text-align:center;padding:18px 20px 28px;font-size:.7rem;color:var(--mute
 
     <div class="holo-wrap">
       <div class="card">
+        <div class="card-cover"><img src="https://sd-milk.com/s3/skiyaki/uploads/ckeditor/pictures/860903/content_%E5%88%9D%E5%9B%9E%E7%9B%A4_0709_MILK_LE_JKT_VIZL2547%E3%81%AE%E3%82%B3%E3%83%94%E3%83%BC.jpg" alt="初回限定盤 ジャケット" loading="lazy"></div>
         <span class="card-badge badge-limited">初回限定盤</span>
         <div>
           <div class="card-name">初回限定盤</div>
@@ -1069,6 +1101,7 @@ footer{text-align:center;padding:18px 20px 28px;font-size:.7rem;color:var(--mute
 
   <div class="editions-solo">
     <div class="holo-wrap"><div class="card">
+      <div class="card-cover"><img src="https://sd-milk.com/s3/skiyaki/uploads/ckeditor/pictures/860902/content_%E4%BD%90%E9%87%8E%E7%9B%A4_0709_MILK_LE_JKT_VICL-66177%E3%81%AE%E3%82%B3%E3%83%94%E3%83%BC.jpg" alt="佐野勇斗盤 ジャケット" loading="lazy"></div>
       <span class="card-badge badge-solo">ソロ盤</span>
       <div><div class="member-name">佐野勇斗</div><div class="card-name-en">CD only · 初回生産限定</div></div>
       <div class="card-price">¥2,530<span>税込</span></div>
@@ -1081,6 +1114,7 @@ footer{text-align:center;padding:18px 20px 28px;font-size:.7rem;color:var(--mute
     </div></div>
 
     <div class="holo-wrap"><div class="card">
+      <div class="card-cover"><img src="https://sd-milk.com/s3/skiyaki/uploads/ckeditor/pictures/860901/content_%E5%A1%A9%EF%A8%91%E7%9B%A4_0709_MILK_LE_JKT_VICL-66178%E3%81%AE%E3%82%B3%E3%83%94%E3%83%BC.jpg" alt="塩﨑太智盤 ジャケット" loading="lazy"></div>
       <span class="card-badge badge-solo">ソロ盤</span>
       <div><div class="member-name">塩﨑太智</div><div class="card-name-en">CD only · 初回生産限定</div></div>
       <div class="card-price">¥2,530<span>税込</span></div>
@@ -1093,6 +1127,7 @@ footer{text-align:center;padding:18px 20px 28px;font-size:.7rem;color:var(--mute
     </div></div>
 
     <div class="holo-wrap"><div class="card">
+      <div class="card-cover"><img src="https://sd-milk.com/s3/skiyaki/uploads/ckeditor/pictures/860899/content_%E6%9B%BD%E9%87%8E%E7%9B%A4_0709_MILK_LE_JKT_VICL-66179%E3%81%AE%E3%82%B3%E3%83%94%E3%83%BC.jpg" alt="曽野舜太盤 ジャケット" loading="lazy"></div>
       <span class="card-badge badge-solo">ソロ盤</span>
       <div><div class="member-name">曽野舜太</div><div class="card-name-en">CD only · 初回生産限定</div></div>
       <div class="card-price">¥2,530<span>税込</span></div>
@@ -1105,6 +1140,7 @@ footer{text-align:center;padding:18px 20px 28px;font-size:.7rem;color:var(--mute
     </div></div>
 
     <div class="holo-wrap"><div class="card">
+      <div class="card-cover"><img src="https://sd-milk.com/s3/skiyaki/uploads/ckeditor/pictures/860900/content_%E5%B1%B1%E4%B8%AD%E7%9B%A4_0709_MILK_LE_JKT_VICL-66180%E3%81%AE%E3%82%B3%E3%83%94%E3%83%BC.jpg" alt="山中柔太朗盤 ジャケット" loading="lazy"></div>
       <span class="card-badge badge-solo">ソロ盤</span>
       <div><div class="member-name">山中柔太朗</div><div class="card-name-en">CD only · 初回生産限定</div></div>
       <div class="card-price">¥2,530<span>税込</span></div>
@@ -1117,6 +1153,7 @@ footer{text-align:center;padding:18px 20px 28px;font-size:.7rem;color:var(--mute
     </div></div>
 
     <div class="holo-wrap"><div class="card">
+      <div class="card-cover"><img src="https://sd-milk.com/s3/skiyaki/uploads/ckeditor/pictures/860898/content_%E5%90%89%E7%94%B0%E7%9B%A4_0709_MILK_LE_JKT_VICL-66181%E3%81%AE%E3%82%B3%E3%83%94%E3%83%BC.jpg" alt="吉田仁人盤 ジャケット" loading="lazy"></div>
       <span class="card-badge badge-solo">ソロ盤</span>
       <div><div class="member-name">吉田仁人</div><div class="card-name-en">CD only · 初回生産限定</div></div>
       <div class="card-price">¥2,530<span>税込</span></div>
@@ -1148,6 +1185,9 @@ footer{text-align:center;padding:18px 20px 28px;font-size:.7rem;color:var(--mute
         <div class="tokuten-row-body">
           <div class="tokuten-condition"><strong>条件：</strong>対象2形態以上のセット購入<br>（初回限定盤＋通常盤）または（初回限定盤＋ソロ盤いずれか1種）</div>
           <div class="tokuten-item">メンバーソロ クリアトレカ（5種ランダム1枚）</div>
+          <div class="tokuten-imgs">
+            <img src="https://sd-milk.com/s3/skiyaki/uploads/ckeditor/pictures/860853/content_260710_M_LK_mini_album_kokuchi_04_4.jpg" alt="早期セット予約特典 クリアトレカ" loading="lazy">
+          </div>
           <div class="tokuten-stores">
             <span class="store-chip">VICTOR ONLINE</span><span class="store-chip">楽天ブックス</span>
             <span class="store-chip">セブンネット</span><span class="store-chip">TOWER RECORDS ONLINE</span>
@@ -1167,6 +1207,9 @@ footer{text-align:center;padding:18px 20px 28px;font-size:.7rem;color:var(--mute
           <div class="tokuten-condition"><strong>条件：</strong>任意の1形態を予約（単品可）</div>
           <div class="tokuten-item">ペアトレカ（5種ランダム1枚）</div>
           <div class="tokuten-condition">5種の組み合わせ：佐野勇斗×曽野舜太、佐野勇斗×山中柔太朗 など</div>
+          <div class="tokuten-imgs">
+            <img src="https://sd-milk.com/s3/skiyaki/uploads/ckeditor/pictures/860852/content_260710_M_LK_mini_album_kokuchi_04_3.jpg" alt="早期予約特典 ペアトレカ" loading="lazy">
+          </div>
           <div class="tokuten-stores">
             <span class="store-chip">VICTOR ONLINE</span><span class="store-chip">楽天ブックス</span>
             <span class="store-chip">セブンネット</span><span class="store-chip">TOWER RECORDS ONLINE</span>
@@ -1245,6 +1288,10 @@ const MEMBERS = {
 };
 const MEMBER_ORDER = ['sano','shiozaki','sono','yamanaka','yoshida'];
 const EC_STORES = ['VICTOR ONLINE STORE','楽天ブックス','セブンネットショッピング','TOWER RECORDS ONLINE','HMV & BOOKS online','Amazon.co.jp'];
+const TOKUTEN_IMG = {
+  pair:  'https://sd-milk.com/s3/skiyaki/uploads/ckeditor/pictures/860852/content_260710_M_LK_mini_album_kokuchi_04_3.jpg',
+  clear: 'https://sd-milk.com/s3/skiyaki/uploads/ckeditor/pictures/860853/content_260710_M_LK_mini_album_kokuchi_04_4.jpg',
+};
 
 function chk(id) { return document.getElementById(id)?.checked || false; }
 function sel(id) { return document.getElementById(id)?.value || ''; }
@@ -1429,6 +1476,7 @@ function compute() {
       desc:  isSelected ? '早期予約特典・各5種ランダム1枚' : 'EC通路で期間内購入の場合に取得',
       hi:    isSelected,
       bonus: !isSelected,
+      img:   isSelected ? TOKUTEN_IMG.pair : '',
     });
   }
 
@@ -1440,6 +1488,7 @@ function compute() {
       desc:  isSelected ? '早期セット予約特典・各ソロ5種ランダム1枚' : 'EC通路で期間内購入の場合に取得',
       hi:    isSelected,
       bonus: !isSelected,
+      img:   isSelected ? TOKUTEN_IMG.clear : '',
     });
   }
 
@@ -1493,18 +1542,20 @@ function compute() {
 
   const selectedToks = tokuten.filter(t => !t.bonus);
   const bonusToks    = tokuten.filter(t =>  t.bonus);
+  const _tokRow = (t, bonus) => {
+    const imgHtml = t.img ? `<img class="res-tok-img" src="${t.img}" alt="" loading="lazy" onerror="this.style.display='none'">` : '';
+    return `<div class="res-tok${bonus ? ' bonus' : ''}">
+      ${imgHtml}
+      <div class="res-tok-text">
+        <span class="res-tok-name${t.hi ? ' hi' : ''}">${t.name}</span>
+        <span class="res-tok-desc">${t.desc}</span>
+      </div>
+    </div>`;
+  };
   const tokutenHtml =
-    selectedToks.map(t => `
-    <div class="res-tok">
-      <span class="res-tok-name${t.hi ? ' hi' : ''}">${t.name}</span>
-      <span class="res-tok-desc">${t.desc}</span>
-    </div>`).join('') +
+    selectedToks.map(t => _tokRow(t, false)).join('') +
     (bonusToks.length ? `<div class="res-bonus-sep">購入で同時取得</div>` : '') +
-    bonusToks.map(t => `
-    <div class="res-tok bonus">
-      <span class="res-tok-name">${t.name}</span>
-      <span class="res-tok-desc">${t.desc}</span>
-    </div>`).join('');
+    bonusToks.map(t => _tokRow(t, true)).join('');
 
   const warningsHtml = warnings.map(w => `<div class="res-warn">⚠️ ${w}</div>`).join('');
   const deadlineHtml = (needsEC || fcRequired)
