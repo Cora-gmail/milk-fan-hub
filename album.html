@@ -575,7 +575,10 @@ footer{text-align:center;padding:18px 20px 28px;font-size:.7rem;color:var(--mute
     object-fit: cover;
     flex-shrink: 0;
     border: 1px solid rgba(255,255,255,0.12);
+    cursor: zoom-in;
+    transition: opacity .2s;
   }
+  .res-tok-img:hover { opacity: .8; }
   .res-tok-text {
     display: flex;
     flex-direction: column;
@@ -652,6 +655,7 @@ footer{text-align:center;padding:18px 20px 28px;font-size:.7rem;color:var(--mute
     display: flex;
     flex-direction: column;
     gap: 12px;
+    overflow: hidden;
   }
   .card-cover {
     border-radius: calc(var(--radius) - 2px) calc(var(--radius) - 2px) 0 0;
@@ -729,7 +733,14 @@ footer{text-align:center;padding:18px 20px 28px;font-size:.7rem;color:var(--mute
   .tokuten-item { font-size: 14px; font-weight: 700; }
   .tokuten-stores { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 4px; }
   .tokuten-imgs { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px; }
-  .tokuten-imgs img { height: 140px; width: auto; border-radius: 8px; object-fit: cover; border: 1px solid var(--border); }
+  .tokuten-imgs img { height: 140px; width: auto; border-radius: 8px; object-fit: cover; border: 1px solid var(--border); cursor: pointer; transition: opacity .2s; }
+  .tokuten-imgs img:hover { opacity: .82; }
+  /* ─── LIGHTBOX ─── */
+  #alb-lb { display:none; position:fixed; inset:0; background:rgba(0,0,0,.88); z-index:9000; align-items:center; justify-content:center; cursor:zoom-out; }
+  #alb-lb.open { display:flex; }
+  #alb-lb img { max-width:92vw; max-height:90vh; border-radius:10px; object-fit:contain; box-shadow:0 8px 48px rgba(0,0,0,.7); }
+  #alb-lb-close { position:fixed; top:16px; right:20px; background:none; border:none; color:#fff; font-size:2rem; cursor:pointer; line-height:1; z-index:9001; opacity:.7; }
+  #alb-lb-close:hover { opacity:1; }
   .store-chip {
     font-size: 11px; background: var(--ground);
     border: 1px solid var(--border); border-radius: 4px;
@@ -800,7 +811,7 @@ footer{text-align:center;padding:18px 20px 28px;font-size:.7rem;color:var(--mute
   <div class="hearts">&#9825; &middot; &#9825; &middot; &#9825;</div>
   <p class="tagline">Fan Hub &middot; 1st Mini Album</p>
   <nav class="page-nav"><a href="index.html" class="nav-link">ニュース</a><a href="schedule.html" class="nav-link">演出情報</a><a href="goods.html" class="nav-link">商品</a><a href="album.html" class="nav-link nav-active">アルバム</a><a href="chart.html" class="nav-link">チャート</a><a href="sources.html" class="nav-link">來源</a></nav>
-  <p class="update-time">最後更新：2026-07-13 12:00 JST</p>
+  <p class="update-time">最後更新：2026-07-13 17:17 JST</p>
 </header>
 
 <!-- ══ HERO ══════════════════════════════════════════════ -->
@@ -1186,7 +1197,7 @@ footer{text-align:center;padding:18px 20px 28px;font-size:.7rem;color:var(--mute
           <div class="tokuten-condition"><strong>条件：</strong>対象2形態以上のセット購入<br>（初回限定盤＋通常盤）または（初回限定盤＋ソロ盤いずれか1種）</div>
           <div class="tokuten-item">メンバーソロ クリアトレカ（5種ランダム1枚）</div>
           <div class="tokuten-imgs">
-            <img src="https://sd-milk.com/s3/skiyaki/uploads/ckeditor/pictures/860853/content_260710_M_LK_mini_album_kokuchi_04_4.jpg" alt="早期セット予約特典 クリアトレカ" loading="lazy">
+            <img src="https://sd-milk.com/s3/skiyaki/uploads/ckeditor/pictures/860853/content_260710_M_LK_mini_album_kokuchi_04_4.jpg" alt="早期セット予約特典 クリアトレカ" loading="lazy" onclick="openAlbLb(this.src)">
           </div>
           <div class="tokuten-stores">
             <span class="store-chip">VICTOR ONLINE</span><span class="store-chip">楽天ブックス</span>
@@ -1208,7 +1219,7 @@ footer{text-align:center;padding:18px 20px 28px;font-size:.7rem;color:var(--mute
           <div class="tokuten-item">ペアトレカ（5種ランダム1枚）</div>
           <div class="tokuten-condition">5種の組み合わせ：佐野勇斗×曽野舜太、佐野勇斗×山中柔太朗 など</div>
           <div class="tokuten-imgs">
-            <img src="https://sd-milk.com/s3/skiyaki/uploads/ckeditor/pictures/860852/content_260710_M_LK_mini_album_kokuchi_04_3.jpg" alt="早期予約特典 ペアトレカ" loading="lazy">
+            <img src="https://sd-milk.com/s3/skiyaki/uploads/ckeditor/pictures/860852/content_260710_M_LK_mini_album_kokuchi_04_3.jpg" alt="早期予約特典 ペアトレカ" loading="lazy" onclick="openAlbLb(this.src)">
           </div>
           <div class="tokuten-stores">
             <span class="store-chip">VICTOR ONLINE</span><span class="store-chip">楽天ブックス</span>
@@ -1543,7 +1554,7 @@ function compute() {
   const selectedToks = tokuten.filter(t => !t.bonus);
   const bonusToks    = tokuten.filter(t =>  t.bonus);
   const _tokRow = (t, bonus) => {
-    const imgHtml = t.img ? `<img class="res-tok-img" src="${t.img}" alt="" loading="lazy" onerror="this.style.display='none'">` : '';
+    const imgHtml = t.img ? `<img class="res-tok-img" src="${t.img}" alt="" loading="lazy" onerror="this.style.display='none'" onclick="openAlbLb(this.src)">` : '';
     return `<div class="res-tok${bonus ? ' bonus' : ''}">
       ${imgHtml}
       <div class="res-tok-text">
