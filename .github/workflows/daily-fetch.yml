@@ -79,5 +79,5 @@ jobs:
           git config user.name "GitHub Actions"
           git add index.html articles.json schedule.html schedule.json goods.html goods.json releases.json album.html chart.html charts.json chart_scanned.json sources.html DSC_3085.jpg
           git diff --staged --quiet || git commit -m "update: $(date -u +'%Y-%m-%d %H:%M')"
-          git pull --rebase origin main
+          git pull --rebase -X ours origin main
           git push
