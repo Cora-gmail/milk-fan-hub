@@ -28,6 +28,9 @@ body{background:var(--bg);color:var(--text);font-family:'Hiragino Sans','Noto Sa
 .update-time{font-size:.68rem;color:var(--muted);margin:7px 0 14px;}
 .page-nav{display:flex;justify-content:center;gap:0;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;}
 .page-nav::-webkit-scrollbar{display:none;}
+@media(max-width:600px){
+  .page-nav{justify-content:flex-start;-webkit-mask-image:linear-gradient(to right,#000 75%,transparent 100%);mask-image:linear-gradient(to right,#000 75%,transparent 100%);}
+}
 .nav-link{padding:10px 24px;font-size:.8rem;font-weight:600;letter-spacing:.08em;text-decoration:none;color:var(--muted);border-bottom:3px solid transparent;transition:color .2s,border-color .2s;white-space:nowrap;flex-shrink:0;}
 .nav-link:hover{color:var(--blue);}
 .nav-link.nav-active{color:var(--blue);border-bottom-color:var(--blue);}
@@ -174,6 +177,15 @@ footer{text-align:center;padding:18px 20px 28px;font-size:.7rem;color:var(--mute
 .rr-modal-member-tag{font-size:.72rem;font-weight:600;background:var(--surface);border:1px solid var(--border);padding:3px 9px;border-radius:8px;color:var(--text);}
 .rr-modal-body-zh{font-size:.82rem;line-height:1.7;color:var(--text);border-top:1px solid var(--border);padding-top:12px;margin-bottom:12px;}
 .rr-modal-body-zh p{margin:0 0 .6em 0;}
+@media(max-width:600px){
+  #rr-overlay{padding:0;align-items:flex-end;}
+  #rr-modal{border-radius:20px 20px 0 0;max-height:88vh;width:100%;max-width:100%;}
+  .rr-modal-close{position:sticky;top:0;display:block;width:100%;text-align:right;padding:12px 16px;background:var(--card);border-radius:20px 20px 0 0;border-bottom:1px solid var(--border);box-sizing:border-box;font-size:1.2rem;}
+  .rr-modal-gallery img{height:140px;}
+  .rr-modal-body{padding:14px 16px 24px;}
+  .rr-modal-fmt-row{padding:10px 12px;font-size:.82rem;}
+  .rr-modal-buy-btn{padding:10px 16px;font-size:.8rem;}
+}
 </style>
 </head>
 <body>
@@ -183,7 +195,7 @@ footer{text-align:center;padding:18px 20px 28px;font-size:.7rem;color:var(--mute
   <div class="hearts">&#9825; &middot; &#9825; &middot; &#9825;</div>
   <p class="tagline">Fan Hub &middot; 商品・リリース</p>
   <nav class="page-nav"><a href="index.html" class="nav-link">ニュース</a><a href="schedule.html" class="nav-link">演出情報</a><a href="goods.html" class="nav-link nav-active">商品</a><a href="album.html" class="nav-link">アルバム</a><a href="chart.html" class="nav-link">チャート</a><a href="sources.html" class="nav-link">來源</a></nav>
-  <p class="update-time">最後更新：2026-07-16 03:52 JST</p>
+  <p class="update-time">最後更新：2026-07-16 10:46 JST</p>
 </header>
 <script>var _rrData={};</script>
 <div class="goods-wrap">

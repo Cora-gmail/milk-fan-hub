@@ -27,6 +27,9 @@ body{background:var(--bg);color:var(--text);font-family:'Hiragino Sans','Noto Sa
 .update-time{font-size:.68rem;color:var(--muted);margin:7px 0 14px;}
 .page-nav{display:flex;justify-content:center;gap:0;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;}
 .page-nav::-webkit-scrollbar{display:none;}
+@media(max-width:600px){
+  .page-nav{justify-content:flex-start;-webkit-mask-image:linear-gradient(to right,#000 75%,transparent 100%);mask-image:linear-gradient(to right,#000 75%,transparent 100%);}
+}
 .nav-link{padding:10px 24px;font-size:.8rem;font-weight:600;letter-spacing:.08em;text-decoration:none;color:var(--muted);border-bottom:3px solid transparent;transition:color .2s,border-color .2s;white-space:nowrap;flex-shrink:0;}
 .nav-link:hover{color:var(--blue);}
 .nav-link.nav-active{color:var(--blue);border-bottom-color:var(--blue);}
@@ -172,6 +175,13 @@ footer{text-align:center;padding:18px 20px 28px;font-size:.7rem;color:var(--mute
 .hist-meta{font-size:.62rem;color:var(--muted);white-space:nowrap;font-variant-numeric:tabular-nums;}
 .hist-member{font-size:.57rem;font-weight:700;color:var(--blue);background:var(--blue3);
   padding:1px 5px;border-radius:5px;white-space:nowrap;}
+@media(max-width:600px){
+  .hist-row{flex-wrap:wrap;gap:6px;}
+  .hist-rank{width:22px;height:22px;font-size:.65rem;}
+  .hist-info{min-width:calc(100% - 36px);}
+  .hist-meta{flex-basis:100%;padding-left:28px;margin-top:-4px;}
+  .hist-title{white-space:normal;font-size:.8rem;}
+}
 </style>
 </head>
 <body>
@@ -181,7 +191,7 @@ footer{text-align:center;padding:18px 20px 28px;font-size:.7rem;color:var(--mute
   <div class="hearts">&#9825; &middot; &#9825; &middot; &#9825;</div>
   <p class="tagline">Fan Hub &middot; チャート実績</p>
   <nav class="page-nav"><a href="index.html" class="nav-link">ニュース</a><a href="schedule.html" class="nav-link">演出情報</a><a href="goods.html" class="nav-link">商品</a><a href="album.html" class="nav-link">アルバム</a><a href="chart.html" class="nav-link nav-active">チャート</a><a href="sources.html" class="nav-link">來源</a></nav>
-  <p class="update-time">最後更新：2026-07-16 03:52 JST</p>
+  <p class="update-time">最後更新：2026-07-16 10:46 JST</p>
 </header>
 <div class="sched-wrap" style="max-width:1060px;margin:0 auto;padding:20px 16px 72px;">
   <div class="chart-hero">
