@@ -32,6 +32,18 @@ on:
         description: '補翻譯（true = backfill.py --repair-translations）'
         required: false
         default: 'false'
+      backfill_charts:
+        description: '回補 Oricon 排行榜（true = backfill.py --backfill-charts --since SINCE）'
+        required: false
+        default: 'false'
+      weekly_only:
+        description: '排行榜回補只補週別，跳過日別（true = --weekly-only）'
+        required: false
+        default: 'false'
+      repair_body:
+        description: '重抓最近 90 天文章內文（true = backfill.py --repair-body，再接 --repair-translations）'
+        required: false
+        default: 'false'
 
 permissions:
   contents: write
@@ -70,6 +82,19 @@ jobs:
           if [ "${{ github.event.inputs.backfill }}" = "true" ]; then
             echo "=== Backfill ==="
             python backfill.py --since "${{ github.event.inputs.since || '2026-01-01' }}"
+          fi
+          if [ "${{ github.event.inputs.backfill_charts }}" = "true" ]; then
+            echo "=== Backfill Charts ==="
+            WCMD="python backfill.py --backfill-charts --since ${{ github.event.inputs.since || '2021-01-01' }}"
+            if [ "${{ github.event.inputs.weekly_only }}" = "true" ]; then
+              WCMD="$WCMD --weekly-only"
+            fi
+            eval $WCMD
+          fi
+          if [ "${{ github.event.inputs.repair_body }}" = "true" ]; then
+            echo "=== Repair Body ==="
+            python backfill.py --repair-body
+            python backfill.py --repair-translations
           fi
           python fetch_news.py
 
