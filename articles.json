@@ -47,6 +47,17 @@
     "date": "2026-07-23"
   },
   {
+    "id": "0e0b8b67859e",
+    "source": "Oricon",
+    "title_ja": "M!LK、和のエッセンスを感じるスタイリングを披露 グループへの思い語る",
+    "title_zh": "M!LK展示充滿日本精髓的造型並講述對組合的感受",
+    "summary_ja": "M!LK、和のエッセンスを感じるスタイリングを披露 グループへの思い語る オリコンニュース",
+    "summary_zh": "M!LK展現日本精髓造型，暢談對組合Oricon的感受 News",
+    "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE1QWV9HeHdFYzN6R2MxSHNZeXd1RkxHM1J2akZxN290MGwxbkM1ZVUzc0RBMjNRQWZabEFoanBiWl9xZElWMzQ0RTg4bWlBaDA?oc=5",
+    "image": "",
+    "date": "2026-07-23"
+  },
+  {
     "id": "f45fffad7061",
     "source": "Musicvoice",
     "title_ja": "瀬尾（佐野勇斗）創作の原点を取り戻す　ネット「不器用だけど素直な瀬尾きゅんかわいい」",
@@ -267,8 +278,15 @@
     "summary_ja": "曽野舜太（M!LK）、守りたいものは「5人の関係性」 年齢を重ねても“5人の良さ”変わらないこと望む オリコンニュース",
     "summary_zh": "園俊太（M!LK）想要守護的是“五個人的關係”，希望“五個人的善良”即使隨著年齡的增長也不會改變 Oricon News",
     "url": "https://www.oricon.co.jp/news/2469143/full/",
-    "image": "",
-    "date": "2026-07-21"
+    "image": "https://contents.oricon.co.jp/upimg/news/2470000/2469143/20260721_144252_p_o_87108720.jpg",
+    "date": "2026-07-21",
+    "images": [
+      "https://contents.oricon.co.jp/upimg/news/2470000/2469143/20260721_144252_p_o_87108720.jpg",
+      "https://contents.oricon.co.jp/upimg/news/2470000/2469143/20260721_144358_p_o_90970536.jpg",
+      "https://contents.oricon.co.jp/upimg/news/2470000/2469143/20260721_144358_p_o_66886715.jpg",
+      "https://contents.oricon.co.jp/upimg/news/2470000/2469143/20260721_144246_p_o_87048347.jpg",
+      "https://contents.oricon.co.jp/upimg/news/2470000/2469143/20260721_144248_p_o_59916844.jpg"
+    ]
   },
   {
     "id": "efdeee967e5a",
