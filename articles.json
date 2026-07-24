@@ -76,6 +76,17 @@
     "date": "2026-07-24"
   },
   {
+    "id": "aa2b1ce653e3",
+    "source": "Oricon",
+    "title_ja": "“令和の新クイズ王”M!LK曽野舜太、賞金獲得 使い道は“ネギ”?【コメント全文】",
+    "title_zh": "「令和新猜謎王」M!LK 園野俊太獲得獎金。他用蔥嗎？ [完整評論]",
+    "summary_ja": "“令和の新クイズ王”M!LK曽野舜太、賞金獲得 使い道は“ネギ”?【コメント全文】 オリコンニュース",
+    "summary_zh": "「令和新猜謎王」M!LK 園野俊太獲得獎金。使用“蔥”嗎？ [完整評論] Oricon新聞",
+    "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE40bG9xTlczM1ZvVWstM2ZkXzZzMUljdmRiS1lrbGI4R2JCQ2tuWkhHZlgtOERZVmZCMkNVazhReHBvVHM2NlU5WDVYZ3BhaFlmUlVvWkx2dnhQX3M?oc=5",
+    "image": "",
+    "date": "2026-07-24"
+  },
+  {
     "id": "24f7742a8b61",
     "source": "The First Times",
     "title_ja": "M!LK佐野勇斗＆塩﨑太智が“がっしり肩組み”！満面の笑みを浮かべる仲良し2ショットに「激エモ」「兄弟みたい」「かわいすぎて横転」「最高すぎる」「尊い」",
@@ -174,17 +185,6 @@
     "summary_ja": "『ぐるナイ』“あみだで決定”M!LKメンバーがゲスト出演 予告動画公開で予想合戦「この立ち方は…」「すでに面白い」 オリコンニュース",
     "summary_zh": "「Gurunai」「Amidade決定」M!LK成員將作為嘉賓出演，預覽影片發布，預測戰「這個站姿…」「已經很有趣了」Oricon新聞",
     "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFAzMXZ5d0o3TzNrTzdQYXF1eEZ4M3VYWDRmR19TX2tnQzFOOFBMcWloODJTYXpMdjdhZEU3LXFvOGtXci1URXZZVGtqTC1fWDBRSHI2QlpB?oc=5",
-    "image": "",
-    "date": "2026-07-23"
-  },
-  {
-    "id": "8fa2d1eb1878",
-    "source": "Oricon",
-    "title_ja": "曽野舜太の記事・ニュース・速報 10ページ目",
-    "title_zh": "Shunta Sono 的文章/新聞/突發新聞 第 10 頁",
-    "summary_ja": "曽野舜太の記事・ニュース・速報 10ページ目 オリコンニュース",
-    "summary_zh": "Shunta Sono 文章/新聞/突發新聞 第 10 頁 Oricon 新聞",
-    "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE5ZZTNtZTJUclRJQ2tjdzUtLTZOVEpuWW41NkxwUlZzbk56NTBKSTk3SGg1LTY3UnVsZHR2ZXNockRNR0pJdklGY21kRUIwQnhQeXlQSTVseDNZQS1JU0Zr?oc=5",
     "image": "",
     "date": "2026-07-23"
   },
@@ -572,8 +572,11 @@
     "summary_ja": "M!LK・山中柔太朗、まさかの“誤字”にメンバー&ファンから総ツッコミ「なんで歌ってる本人がこんなパロディみたいな間違え方するのwww」 オリコンニュース",
     "summary_zh": "M!LK山中裕太郎意外“印刷錯誤”，成員和粉絲批評“為什麼唱這首歌的人會犯這樣的錯誤，就像模仿一樣？”公信榜新聞",
     "url": "https://www.oricon.co.jp/news/2468802/full/",
-    "image": "",
-    "date": "2026-07-19"
+    "image": "https://contents.oricon.co.jp/upimg/news/2469000/2468802/20260129_154032_p_o_18863449.jpg",
+    "date": "2026-07-19",
+    "images": [
+      "https://contents.oricon.co.jp/upimg/news/2469000/2468802/20260129_154032_p_o_18863449.jpg"
+    ]
   },
   {
     "id": "1dfc2efa6eb8",
@@ -4358,6 +4361,17 @@
     "image": "",
     "date": "2026-06-24",
     "images": []
+  },
+  {
+    "id": "158c6fb57dc1",
+    "source": "Oricon",
+    "title_ja": "関連動画 | M!LK佐野勇斗、美容＆リフレッシュ法告白「何があってもします」",
+    "title_zh": "相關影片| M!LK 佐野隼人坦白自己的美容和提神方法：“無論如何我都會這麼做”",
+    "summary_ja": "関連動画 | M!LK佐野勇斗、美容＆リフレッシュ法告白「何があってもします」 オリコンニュース",
+    "summary_zh": "相關影片| M!LK 佐野隼人坦白自己的美麗和提神方法“無論如何我都會這麼做” Oricon News",
+    "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFAxR0dmeGg0VFlZY25HRHdwN2RCemMwNkZabVZPZUlmNmoyVlJxUmpwUkhaZ0twdTJaVTh3a2lJeFVoZV9CVzRuZEVBcUt3S1RkS2dXVWJmTlVzRlhkMVBF?oc=5",
+    "image": "",
+    "date": "2026-06-24"
   },
   {
     "id": "e842e7c53e5f",
