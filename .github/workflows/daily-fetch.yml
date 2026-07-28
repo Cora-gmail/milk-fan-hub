@@ -44,6 +44,14 @@ on:
         description: '重抓最近 90 天文章內文（true = backfill.py --repair-body，再接 --repair-translations）'
         required: false
         default: 'false'
+      backfill_bj_charts:
+        description: '回補 Billboard Japan 榜單（true = backfill.py --backfill-bj-charts --since SINCE）'
+        required: false
+        default: 'false'
+      repair_schedule_dates:
+        description: '修復行事曆日期（true = backfill.py --repair-schedule-dates）'
+        required: false
+        default: 'false'
 
 permissions:
   contents: write
@@ -96,13 +104,21 @@ jobs:
             python backfill.py --repair-body
             python backfill.py --repair-translations
           fi
+          if [ "${{ github.event.inputs.backfill_bj_charts }}" = "true" ]; then
+            echo "=== Backfill Billboard Japan Charts ==="
+            python backfill.py --backfill-bj-charts --since "${{ github.event.inputs.since || '2025-01-01' }}"
+          fi
+          if [ "${{ github.event.inputs.repair_schedule_dates }}" = "true" ]; then
+            echo "=== Repair Schedule Dates ==="
+            python backfill.py --repair-schedule-dates
+          fi
           python fetch_news.py
 
       - name: Commit & push
         run: |
           git config user.email "actions@github.com"
           git config user.name "GitHub Actions"
-          git add index.html articles.json schedule.html schedule.json goods.html goods.json releases.json album.html chart.html charts.json chart_scanned.json chart_daily_scanned.json sources.html DSC_3085.jpg
+          git add index.html articles.json schedule.html schedule.json goods.html goods.json releases.json album.html chart.html charts.json chart_scanned.json chart_daily_scanned.json chart_bj_scanned.json sources.html DSC_3085.jpg
           git add editions_img_*.jpg 2>/dev/null || true
           git diff --staged --quiet || git commit -m "update: $(date -u +'%Y-%m-%d %H:%M')"
           git pull --rebase -X ours origin main
