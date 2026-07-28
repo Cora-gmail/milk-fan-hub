@@ -1,0 +1,130 @@
+[
+  {
+    "chart_code": "hot100",
+    "date": "2026-07-27"
+  },
+  {
+    "chart_code": "hot100",
+    "date": "2026-07-20"
+  },
+  {
+    "chart_code": "hot100",
+    "date": "2026-07-13"
+  },
+  {
+    "chart_code": "hot100",
+    "date": "2026-07-06"
+  },
+  {
+    "chart_code": "hot100",
+    "date": "2026-06-29"
+  },
+  {
+    "chart_code": "hot100",
+    "date": "2026-06-22"
+  },
+  {
+    "chart_code": "hot100",
+    "date": "2026-06-15"
+  },
+  {
+    "chart_code": "hot100",
+    "date": "2026-06-08"
+  },
+  {
+    "chart_code": "sales",
+    "date": "2026-07-27"
+  },
+  {
+    "chart_code": "sales",
+    "date": "2026-07-20"
+  },
+  {
+    "chart_code": "sales",
+    "date": "2026-07-13"
+  },
+  {
+    "chart_code": "sales",
+    "date": "2026-07-06"
+  },
+  {
+    "chart_code": "sales",
+    "date": "2026-06-29"
+  },
+  {
+    "chart_code": "sales",
+    "date": "2026-06-22"
+  },
+  {
+    "chart_code": "sales",
+    "date": "2026-06-15"
+  },
+  {
+    "chart_code": "sales",
+    "date": "2026-06-08"
+  },
+  {
+    "chart_code": "hot_albums",
+    "date": "2026-07-27"
+  },
+  {
+    "chart_code": "hot_albums",
+    "date": "2026-07-20"
+  },
+  {
+    "chart_code": "hot_albums",
+    "date": "2026-07-13"
+  },
+  {
+    "chart_code": "hot_albums",
+    "date": "2026-07-06"
+  },
+  {
+    "chart_code": "hot_albums",
+    "date": "2026-06-29"
+  },
+  {
+    "chart_code": "hot_albums",
+    "date": "2026-06-22"
+  },
+  {
+    "chart_code": "hot_albums",
+    "date": "2026-06-15"
+  },
+  {
+    "chart_code": "hot_albums",
+    "date": "2026-06-08"
+  },
+  {
+    "chart_code": "stsongs",
+    "date": "2026-07-27"
+  },
+  {
+    "chart_code": "stsongs",
+    "date": "2026-07-20"
+  },
+  {
+    "chart_code": "stsongs",
+    "date": "2026-07-13"
+  },
+  {
+    "chart_code": "stsongs",
+    "date": "2026-07-06"
+  },
+  {
+    "chart_code": "stsongs",
+    "date": "2026-06-29"
+  },
+  {
+    "chart_code": "stsongs",
+    "date": "2026-06-22"
+  },
+  {
+    "chart_code": "stsongs",
+    "date": "2026-06-15"
+  },
+  {
+    "chart_code": "stsongs",
+    "date": "2026-06-08"
+  }
+]
