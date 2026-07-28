@@ -154,7 +154,7 @@
     "id": "37b5066c00c3",
     "source": "Oricon",
     "title_ja": "読売テレビ、特番『ゴールデンタッグ』出演全タッグ解禁 ダイアン津田は“25歳差”仲良し俳優と、曽野舜太は初共演のハイテンションコンビに【一覧】",
-    "title_zh": "讀賣電視台特別節目《黃金搭檔》公開所有出演組合 黛安·津田將與「相差25歲」的親密演員搭檔，曾野舜太則將與初次合作的活力滿滿搭檔同台【一覽】",
+    "title_zh": "讀賣電視台特別節目《黃金搭檔》公開所有出演組合 黛安·津田將與「相差25歲」的親密演員搭檔，曾野舜太則將與初次共演的高亢組合合作【一覽】",
     "summary_ja": "読売テレビ、特番『ゴールデンタッグ』出演全タッグ解禁 ダイアン津田は“25歳差”仲良し俳優と、曽野舜太は初共演のハイテンションコンビに【一覧】 オリコンニュース",
     "summary_zh": "讀賣電視台特別節目《黃金搭檔》公開所有出演組合 黛安·津田將與「相差25歲」的親密演員搭檔，曾野舜太則將與初次共演的高亢組合合作【一覽】 Oricon News",
     "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE54WkltYkJlbzNxNWdXV0ROQUtMcjZaTVE0UVV0S0toeDhjbHNtdHlfTnlKTUFoRjR2S2EtTUhmMFF5ODd1cGR4QjdXdWRfWUtiWlVka1l3?oc=5",
@@ -248,7 +248,7 @@
     "title_ja": "関連動画 | M!LK塩﨑太智＆吉田仁人のYouTubeチャンネルが“4年半ぶり”に復活 ファン歓喜「最高」「興奮が止まらない」",
     "title_zh": "相關影片 | M!LK 鹽崎太智＆吉田仁人的 YouTube 頻道「睽違四年半」復活 粉絲歡呼「太棒了」「興奮得停不下來」",
     "summary_ja": "関連動画 | M!LK塩﨑太智＆吉田仁人のYouTubeチャンネルが“4年半ぶり”に復活 ファン歓喜「最高」「興奮が止まらない」 オリコンニュース",
-    "summary_zh": "相關影片 | M!LK 鹽崎太智＆吉田仁人的YouTube頻道「睽違4年半」復活 粉絲歡呼「太棒了」「興奮得停不下來」 Oricon News",
+    "summary_zh": "相關影片 | M!LK 鹽崎太智＆吉田仁人的YouTube頻道「睽違4年半」復活 粉絲歡呼「太棒了」「興奮得停不下來」 Oricon新聞",
     "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTFA3U1p3cnhLUXY5TlppNU1QampnczB3Z0VoeHJQZm44RkptaURkRjNQdXY0LXZvWV9ZcUZOMUhvM0NyOG9kU2VuYnlJQWk3VVhadVh5YU9vYklJREQtM2VOYkl4S25sUGNYZnc?oc=5",
     "image": "",
     "date": "2026-07-25"
@@ -1146,8 +1146,14 @@
     "summary_ja": "M!LK塩﨑太智、ソロ曲の“バックダンサー”たちに囲まれ笑顔「どの子も可愛すぎる 」「全員推します」 『Mステ』で「しおざきわんだーらんど」披露 オリコンニュース",
     "summary_zh": "M!LK鹽崎太一在“伴舞”的簇擁下微笑，獨唱歌曲“所有女孩都太可愛了”“我推薦大家”在“M Station”公信榜上表演“鹽崎仙境”",
     "url": "https://www.oricon.co.jp/news/2468694/full/",
-    "image": "",
-    "date": "2026-07-18"
+    "image": "https://contents.oricon.co.jp/upimg/news/2469000/2468694/20260711_111446_p_o_91946615.jpg",
+    "date": "2026-07-18",
+    "images": [
+      "https://contents.oricon.co.jp/upimg/news/2469000/2468694/20260711_111446_p_o_91946615.jpg",
+      "https://contents.oricon.co.jp/upimg/news/2469000/2468694/20260718_113152_p_o_12932544.jpg",
+      "https://contents.oricon.co.jp/upimg/news/2469000/2468694/20260718_113155_p_o_51826441.jpg",
+      "https://contents.oricon.co.jp/upimg/news/2469000/2468694/20260718_113159_p_o_49740805.jpg"
+    ]
   },
   {
     "id": "8d4ae01fbe32",
@@ -2857,6 +2863,17 @@
     "image": "",
     "date": "2026-07-10",
     "images": []
+  },
+  {
+    "id": "f889196e9d98",
+    "source": "Oricon",
+    "title_ja": "コメント | M!LK山中柔太朗、Kis-My-Ft2千賀健永の粋な行動明かす「出ていないドラマの打ち上げを…」",
+    "title_zh": "評論 | M!LK的山中柔太朗透露Kis-My-Ft2千賀健永的貼心舉動：「為我沒出演的日劇舉辦慶功宴……」",
+    "summary_ja": "コメント | M!LK山中柔太朗、Kis-My-Ft2千賀健永の粋な行動明かす「出ていないドラマの打ち上げを…」 オリコンニュース",
+    "summary_zh": "評論 | M!LK的山中柔太朗透露Kis-My-Ft2千賀健永的紳士之舉：「為自己並未出演的日劇舉辦慶功宴……」 Oricon新聞",
+    "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5mc1NwUDhQWDVNNnVPQ1hlVXFmMGkxdW40OGxyRDZtUk95d2lVU1dHenR4TkRsaUpvQnExTTNoLVJVUFItWmNja2ZCY3hYQ2RlSzUzVGpsY292QQ?oc=5",
+    "image": "",
+    "date": "2026-07-10"
   },
   {
     "id": "3704967d3970",
