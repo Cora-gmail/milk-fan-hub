@@ -1,5 +1,20 @@
 [
   {
+    "id": "fc7d2beee8ae",
+    "chart_code": "cos",
+    "chart_name": "合算シングル",
+    "date": "2026-08-03",
+    "rank": 6,
+    "status": "UP",
+    "title": "爆裂愛してる / 好きすぎて滅!",
+    "artist": "M!LK",
+    "member": "M!LK",
+    "image": "https://m.media-amazon.com/images/I/61lMBX4YjvL._SL160_.jpg",
+    "url": "https://www.oricon.co.jp/prof/643953/products/1557291/1/",
+    "label": "リリース日： 2026年02月18日",
+    "release_date": ""
+  },
+  {
     "id": "7a80d98d63d8",
     "chart_code": "bj_hot100",
     "chart_name": "BJ Hot 100",
@@ -238,6 +253,21 @@
     "source": "billboard_japan"
   },
   {
+    "id": "6d65390f114d",
+    "chart_code": "cos",
+    "chart_name": "合算シングル",
+    "date": "2026-07-27",
+    "rank": 8,
+    "status": "DOWN",
+    "title": "爆裂愛してる / 好きすぎて滅!",
+    "artist": "M!LK",
+    "member": "M!LK",
+    "image": "https://m.media-amazon.com/images/I/61lMBX4YjvL._SL160_.jpg",
+    "url": "https://www.oricon.co.jp/prof/643953/products/1557291/1/",
+    "label": "リリース日： 2026年02月18日",
+    "release_date": ""
+  },
+  {
     "id": "f88027f28199",
     "chart_code": "bj_hot100",
     "chart_name": "BJ Hot 100",
@@ -440,6 +470,21 @@
     "label": "",
     "release_date": "",
     "source": "billboard_japan"
+  },
+  {
+    "id": "616a7c0b6a3f",
+    "chart_code": "cos",
+    "chart_name": "合算シングル",
+    "date": "2026-07-20",
+    "rank": 7,
+    "status": "DOWN",
+    "title": "爆裂愛してる / 好きすぎて滅!",
+    "artist": "M!LK",
+    "member": "M!LK",
+    "image": "https://m.media-amazon.com/images/I/61lMBX4YjvL._SL160_.jpg",
+    "url": "https://www.oricon.co.jp/prof/643953/products/1557291/1/",
+    "label": "リリース日： 2026年02月18日",
+    "release_date": ""
   },
   {
     "id": "83e2fb145c31",
