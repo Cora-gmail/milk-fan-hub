@@ -1,5 +1,139 @@
 [
   {
+    "id": "2f73868f6717",
+    "url": "https://sd-milk.com/contents/1098315",
+    "category": "リリース",
+    "title": "NEWS",
+    "title_zh": "訊息",
+    "date": "2026-08-04",
+    "release_date": "2026-09-16",
+    "release_label": "2026年9月16日発売",
+    "sale_start": "",
+    "sale_end": "",
+    "image": "https://sd-milk.com/s3/skiyaki/uploads/ckeditor/pictures/866690/content_%E3%83%AA%E3%83%AA%E3%82%A4%E3%83%98%E3%82%99%E7%94%A8%E3%83%88%E3%83%AC%E3%82%AB_SAMPLE.jpg",
+    "images": [
+      "https://sd-milk.com/s3/skiyaki/uploads/ckeditor/pictures/866690/content_%E3%83%AA%E3%83%AA%E3%82%A4%E3%83%98%E3%82%99%E7%94%A8%E3%83%88%E3%83%AC%E3%82%AB_SAMPLE.jpg",
+      "/s3/skiyaki/uploads/ckeditor/pictures/866690/content_%E3%83%AA%E3%83%AA%E3%82%A4%E3%83%98%E3%82%99%E7%94%A8%E3%83%88%E3%83%AC%E3%82%AB_SAMPLE.jpg"
+    ],
+    "formats": [
+      {
+        "name": "初回限定盤／",
+        "price": "¥3,520 (税込)"
+      },
+      {
+        "name": "通常盤／",
+        "price": "¥2,530 (税込)"
+      },
+      {
+        "name": "初回生産限定「佐野勇斗」盤／",
+        "price": "¥2,530 (税込)"
+      },
+      {
+        "name": "初回生産限定「塩﨑太智」盤／",
+        "price": "¥2,530 (税込)"
+      },
+      {
+        "name": "初回生産限定「曽野舜太」盤／",
+        "price": "¥2,530 (税込)"
+      },
+      {
+        "name": "初回生産限定「山中柔太朗」盤／",
+        "price": "¥2,530 (税込)"
+      },
+      {
+        "name": "初回生産限定「吉田仁人」盤／",
+        "price": "¥2,530 (税込)"
+      }
+    ],
+    "buy_links": [
+      {
+        "text": "https://victor-store.jp/special/milk20260916_2",
+        "url": "https://victor-store.jp/special/milk20260916_2"
+      },
+      {
+        "text": "https://victor-store.jp/special/milk20260916_1",
+        "url": "https://victor-store.jp/special/milk20260916_1"
+      },
+      {
+        "text": "https://victor-store.jp/help/contact",
+        "url": "https://victor-store.jp/help/contact"
+      },
+      {
+        "text": "https://www.jvcmusic.co.jp/cs/form01/",
+        "url": "https://www.jvcmusic.co.jp/cs/form01/"
+      }
+    ],
+    "body_ja": "M!LK 1st Mini Album『LOVE ENG!NE』発売記念「6SHOT撮影会（PREMIUM MILK会員限定）」＆「メンバー全員お見送り会」開催決定！",
+    "body_zh": "為紀念M!LK第一張迷你專輯《LOVE ENG!NE》發行，將舉辦「6SHOT寫真會（僅限PREMIUM MILK成員）」和「全體成員告別派對」！"
+  },
+  {
+    "id": "34e38fbb6fd4",
+    "url": "https://sd-milk.com/contents/1098310",
+    "category": "リリース",
+    "title": "NEWS",
+    "title_zh": "訊息",
+    "date": "2026-08-04",
+    "release_date": "2026-09-16",
+    "release_label": "2026年9月16日発売",
+    "sale_start": "",
+    "sale_end": "",
+    "image": "https://sd-milk.com/s3/skiyaki/uploads/ckeditor/pictures/866690/content_%E3%83%AA%E3%83%AA%E3%82%A4%E3%83%98%E3%82%99%E7%94%A8%E3%83%88%E3%83%AC%E3%82%AB_SAMPLE.jpg",
+    "images": [
+      "https://sd-milk.com/s3/skiyaki/uploads/ckeditor/pictures/866690/content_%E3%83%AA%E3%83%AA%E3%82%A4%E3%83%98%E3%82%99%E7%94%A8%E3%83%88%E3%83%AC%E3%82%AB_SAMPLE.jpg",
+      "/s3/skiyaki/uploads/ckeditor/pictures/866690/content_%E3%83%AA%E3%83%AA%E3%82%A4%E3%83%98%E3%82%99%E7%94%A8%E3%83%88%E3%83%AC%E3%82%AB_SAMPLE.jpg"
+    ],
+    "formats": [
+      {
+        "name": "初回限定盤／",
+        "price": "¥3,520 (税込)"
+      },
+      {
+        "name": "通常盤／",
+        "price": "¥2,530 (税込)"
+      },
+      {
+        "name": "初回生産限定「佐野勇斗」盤／",
+        "price": "¥2,530 (税込)"
+      },
+      {
+        "name": "初回生産限定「塩﨑太智」盤／",
+        "price": "¥2,530 (税込)"
+      },
+      {
+        "name": "初回生産限定「曽野舜太」盤／",
+        "price": "¥2,530 (税込)"
+      },
+      {
+        "name": "初回生産限定「山中柔太朗」盤／",
+        "price": "¥2,530 (税込)"
+      },
+      {
+        "name": "初回生産限定「吉田仁人」盤／",
+        "price": "¥2,530 (税込)"
+      }
+    ],
+    "buy_links": [
+      {
+        "text": "https://victor-store.jp/special/milk20260916_1",
+        "url": "https://victor-store.jp/special/milk20260916_1"
+      },
+      {
+        "text": "https://victor-store.jp/special/milk20260916_2",
+        "url": "https://victor-store.jp/special/milk20260916_2"
+      },
+      {
+        "text": "https://victor-store.jp/help/contact",
+        "url": "https://victor-store.jp/help/contact"
+      },
+      {
+        "text": "https://www.jvcmusic.co.jp/cs/form01/",
+        "url": "https://www.jvcmusic.co.jp/cs/form01/"
+      }
+    ],
+    "body_ja": "M!LK 1st Mini Album『LOVE ENG!NE』発売日記念スペシャルイベント9月16日(水)開催決定！",
+    "body_zh": "紀念M!LK第一張迷你專輯《LOVE ENG!NE》發行日期的特別活動將於9月16日星期三舉行！"
+  },
+  {
     "id": "061e15dcc6cd",
     "url": "https://sd-milk.com/contents/1097947",
     "category": "リリース",
