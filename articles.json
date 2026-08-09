@@ -184,28 +184,6 @@
     "date": "2026-08-07"
   },
   {
-    "id": "06190f098ba8",
-    "source": "Oricon",
-    "title_ja": "映画『仮面ライダーゼッツ』舞台あいさつ ジークの話題が一瞬出る 上堀内佳寿也がストップし、今井竜太郎&曽野舜太「天野さんに怒られる」",
-    "title_zh": "電影《假面騎士Zets》的舞台問候 齊格的話題一下子就被提到了。上堀內和也停下來，今井龍太郎和園俊太說：“天野桑會罵我的。”",
-    "summary_ja": "映画『仮面ライダーゼッツ』舞台あいさつ ジークの話題が一瞬出る 上堀内佳寿也がストップし、今井竜太郎&曽野舜太「天野さんに怒られる」 オリコンニュース",
-    "summary_zh": "電影《假面騎士Zets》的舞台問候中，暫時提到了齊格的話題。上堀內一也停下來，今井龍太郎&園俊太「被天野先生罵」Oricon新聞",
-    "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE1ydDZhZFBpUXQzUXU2VnQ3VFNzVlhYUjZUalZvUUdab0pPWFhUZkp3ai1BdmdKRnRCM2p4akR1aFdzamIzYkF3UlVCcEthMGlPQ1JZc2RTUElub25qeF83ZA?oc=5",
-    "image": "",
-    "date": "2026-08-07"
-  },
-  {
-    "id": "5f14631c1b75",
-    "source": "Oricon",
-    "title_ja": "今井竜太郎&曽野舜太、ゼッツ エージェンドリーム&夢現のチャームをつけて舞台あいさつ かわいくアピール合戦",
-    "title_zh": "今井龍太郎 & 園俊太佩戴 Z's Agent Dream & Yumegen 吊飾登台致意 - 可愛魅力對決",
-    "summary_ja": "今井竜太郎&曽野舜太、ゼッツ エージェンドリーム&夢現のチャームをつけて舞台あいさつ かわいくアピール合戦 オリコンニュース",
-    "summary_zh": "今井龍太郎＆園俊太佩戴絕地特工夢＆夢元飾物登場，可愛魅力大戰Oricon新聞",
-    "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE9UaWpNcDNZdExXNHdWTjRVSW51T1J2U2VmU3p3ZE5halFNOW1PYzNQWXR4VlBPRlhoM3l6VndJSE9IRGZ0S25oT0h1M2ttZXM?oc=5",
-    "image": "",
-    "date": "2026-08-07"
-  },
-  {
     "id": "c0daa2c3c578",
     "source": "Oricon",
     "title_ja": "コメント | 曽野舜太、仮面ライダー映画出演でM!LKメンバー反応明かす 塩崎太智は「スゴいやん！舜ちゃん、マジ出るん？」",
@@ -217,12 +195,34 @@
     "date": "2026-08-07"
   },
   {
+    "id": "06190f098ba8",
+    "source": "Oricon",
+    "title_ja": "映画『仮面ライダーゼッツ』舞台あいさつ ジークの話題が一瞬出る 上堀内佳寿也がストップし、今井竜太郎&曽野舜太「天野さんに怒られる」",
+    "title_zh": "電影《假面騎士Zets》的舞台問候 齊格的話題一下子就被提到了。上堀內一也停下來，今井龍太郎和園俊太說：「先生。」天野在罵我。 」",
+    "summary_ja": "映画『仮面ライダーゼッツ』舞台あいさつ ジークの話題が一瞬出る 上堀内佳寿也がストップし、今井竜太郎&曽野舜太「天野さんに怒られる」 オリコンニュース",
+    "summary_zh": "電影《假面騎士Zets》舞台問候中，齊格被提及，上堀內一也停下來，今井龍太郎＆園俊太“被天野先生罵了” Oricon News",
+    "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE1ydDZhZFBpUXQzUXU2VnQ3VFNzVlhYUjZUalZvUUdab0pPWFhUZkp3ai1BdmdKRnRCM2p4akR1aFdzamIzYkF3UlVCcEthMGlPQ1JZc2RTUElub25qeF83ZA?oc=5",
+    "image": "",
+    "date": "2026-08-07"
+  },
+  {
+    "id": "5f14631c1b75",
+    "source": "Oricon",
+    "title_ja": "今井竜太郎&曽野舜太、ゼッツ エージェンドリーム&夢現のチャームをつけて舞台あいさつ かわいくアピール合戦",
+    "title_zh": "今井龍太郎 & 園俊太佩戴 Z's Agent Dream & Yumegen 吊飾登台致意 - 可愛魅力對決",
+    "summary_ja": "今井竜太郎&曽野舜太、ゼッツ エージェンドリーム&夢現のチャームをつけて舞台あいさつ かわいくアピール合戦 オリコンニュース",
+    "summary_zh": "今井龍太郎＆園俊太佩戴絕津特工夢＆夢元飾物登場，可愛魅力大戰Oricon新聞",
+    "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE9UaWpNcDNZdExXNHdWTjRVSW51T1J2U2VmU3p3ZE5halFNOW1PYzNQWXR4VlBPRlhoM3l6VndJSE9IRGZ0S25oT0h1M2ttZXM?oc=5",
+    "image": "",
+    "date": "2026-08-07"
+  },
+  {
     "id": "78d39b3f3afd",
     "source": "Oricon",
     "title_ja": "曽野舜太、話題のセリフを生披露「我々には美しい母国語がある」 “むげん”であいうえお作文に苦悶",
     "title_zh": "Shunta Sono 現場表演流行台詞：「我們有美麗的母語。」他在《Mugen》中的寫作遇到了困難",
     "summary_ja": "曽野舜太、話題のセリフを生披露「我々には美しい母国語がある」 “むげん”であいうえお作文に苦悶 オリコンニュース",
-    "summary_zh": "園野俊太現場表演流行台詞：「我們有美麗的母語。」他為自己在公信榜新聞「Mugen」上的寫作感到痛苦",
+    "summary_zh": "園野俊太現場表演流行台詞：「我們有美麗的母語。」他為自己在《Mugen》Oricon 新聞中的寫作感到痛苦",
     "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFB6NF9na19QM2tZQ2wtU3k0Wjgxd2xRcnBMbmJrZEI3WGEwaFpDbjBlZlpzVnhHTXV4R2Y2VHVYU3ptZVA2SFJNTlp5eGZINGdGWXlNMy1R?oc=5",
     "image": "",
     "date": "2026-08-07"
@@ -231,9 +231,9 @@
     "id": "8b9cdc0860fe",
     "source": "Modelpress",
     "title_ja": "今井竜太郎 M！LK曽野舜太と初共演で仲良し「いい匂いがしました！」2人で「滅ポーズ」も披露",
-    "title_zh": "今井龍太郎 M!首次與LK園野俊太搭檔，兩人是好朋友，直呼“味道好極了！”兩人還表演了“Metetsupose”",
-    "summary_ja": "今井竜太郎 M！LK曽野舜太と初共演で仲良し「いい匂いがしました！」2人で「滅ポーズ」も披露 モデルプレス",
-    "summary_zh": "今井龍太郎 M!與LK Shunta Sono首次合作，是好朋友，他說：“聞起來很香！”兩人還表演了“破壞姿勢” Model Press",
+    "title_zh": "今井龍太郎 M!首次與LK園野俊太搭檔，兩人是好朋友，直呼“好香！”兩人還擺出“Metetsupose”",
+    "summary_ja": "今井竜太郎 M！LK曽野舜太と初共演で仲良し「いい匂いがしました！」2人で「滅ポーズ」も披露 mdpr.jp",
+    "summary_zh": "今井龍太郎 M!第一次與 LK Shunta Sono 共同主演時，他說：“聞起來很香！”他們還表演了“Metetsu 姿勢”mdpr.jp",
     "url": "https://news.google.com/rss/articles/CBMiQ0FVX3lxTE51cUE5eV9BT1lkR1ZINjJmLUxHUmM3NXpCb3pSTzFtQkdWTEV5MWpRS1pYTGpMS04zajBsYlBOV3BIblU?oc=5",
     "image": "",
     "date": "2026-08-07"
