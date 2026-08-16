@@ -158,5 +158,21 @@
   {
     "chart_code": "stsongs",
     "date": "2026-08-10"
+  },
+  {
+    "chart_code": "hot100",
+    "date": "2026-08-17"
+  },
+  {
+    "chart_code": "sales",
+    "date": "2026-08-17"
+  },
+  {
+    "chart_code": "hot_albums",
+    "date": "2026-08-17"
+  },
+  {
+    "chart_code": "stsongs",
+    "date": "2026-08-17"
   }
 ]
