@@ -1,5 +1,85 @@
 [
   {
+    "id": "f79caa3c7fce",
+    "url": "https://sd-milk.com/contents/1105354",
+    "category": "リリース",
+    "title": "NEWS",
+    "title_zh": "新聞",
+    "date": "2026-08-29",
+    "release_date": "2026-09-16",
+    "release_label": "2026年9月16日発売",
+    "sale_start": "",
+    "sale_end": "",
+    "image": "https://sd-milk.com/s3/skiyaki/uploads/ckeditor/pictures/872899/content_M_LK_%E5%91%8A%E7%9F%A5_.jpg",
+    "images": [
+      "https://sd-milk.com/s3/skiyaki/uploads/ckeditor/pictures/872899/content_M_LK_%E5%91%8A%E7%9F%A5_.jpg",
+      "/s3/skiyaki/uploads/ckeditor/pictures/872899/content_M_LK_%E5%91%8A%E7%9F%A5_.jpg",
+      "/s3/skiyaki/uploads/ckeditor/pictures/872840/content_%E3%82%B7%E3%83%A3%E3%82%AB%E3%83%AC%E3%83%9B%E3%82%99%E4%BA%8B%E5%89%8D%E4%BA%88%E7%B4%84%E7%94%A8%E3%83%88%E3%83%AC%E3%82%ABB_SAMPLE.jpg"
+    ],
+    "formats": [
+      {
+        "name": "初回限定盤／",
+        "price": "¥3,520 (税込)"
+      },
+      {
+        "name": "通常盤／",
+        "price": "¥2,530 (税込)"
+      },
+      {
+        "name": "初回生産限定「佐野勇斗」盤／",
+        "price": "¥2,530 (税込)"
+      },
+      {
+        "name": "初回生産限定「塩﨑太智」盤／",
+        "price": "¥2,530 (税込)"
+      },
+      {
+        "name": "初回生産限定「曽野舜太」盤／",
+        "price": "¥2,530 (税込)"
+      },
+      {
+        "name": "初回生産限定「山中柔太朗」盤／",
+        "price": "¥2,530 (税込)"
+      },
+      {
+        "name": "初回生産限定「吉田仁人」盤／",
+        "price": "¥2,530 (税込)"
+      }
+    ],
+    "buy_links": [
+      {
+        "text": "https://books.rakuten.co.jp/event/cd/milk/event-20260926/",
+        "url": "https://books.rakuten.co.jp/event/cd/milk/event-20260926/"
+      },
+      {
+        "text": "https://books.rakuten.co.jp/event/cd/milk/event-20261024/",
+        "url": "https://books.rakuten.co.jp/event/cd/milk/event-20261024/"
+      },
+      {
+        "text": "https://books.rakuten.co.jp/event/cd/milk/event-20261121/",
+        "url": "https://books.rakuten.co.jp/event/cd/milk/event-20261121/"
+      },
+      {
+        "text": "https://books.rakuten.co.jp/event/cd/milk/event-20261212/",
+        "url": "https://books.rakuten.co.jp/event/cd/milk/event-20261212/"
+      },
+      {
+        "text": "https://books.rakuten.co.jp/event/cd/milk/event-20261225/",
+        "url": "https://books.rakuten.co.jp/event/cd/milk/event-20261225/ "
+      },
+      {
+        "text": "https://books.rakuten.co.jp/event/cd/milk/event-20270115/",
+        "url": "https://books.rakuten.co.jp/event/cd/milk/event-20270115/"
+      },
+      {
+        "text": "https://books.faq.rakuten.net/s/ask",
+        "url": "https://books.faq.rakuten.net/s/ask"
+      }
+    ],
+    "body_ja": "M!LK ARENA TOUR 2026-2027『シャカリキレボリューション』開催記念「メンバー全員お見送り会」開催決定！",
+    "body_zh": "M!LK ARENA TOUR 2026-2027《Shakari Revolution》舉辦紀念「全體成員送別會」確定舉行！"
+  },
+  {
     "id": "3094178da6ff",
     "url": "https://sd-milk.com/contents/1105468",
     "category": "リリース",
