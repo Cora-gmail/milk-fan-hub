@@ -1,5 +1,58 @@
 [
   {
+    "id": "52d861786221",
+    "url": "https://sd-milk.com/contents/1106260",
+    "category": "リリース",
+    "title": "NEWS",
+    "title_zh": "新聞",
+    "date": "2026-09-01",
+    "release_date": "2026-09-16",
+    "release_label": "2026年9月16日発売",
+    "sale_start": "",
+    "sale_end": "",
+    "image": "https://sd-milk.com/s3/skiyaki/uploads/ckeditor/pictures/873655/content_tokuten-a.png",
+    "images": [
+      "https://sd-milk.com/s3/skiyaki/uploads/ckeditor/pictures/873655/content_tokuten-a.png",
+      "/s3/skiyaki/uploads/ckeditor/pictures/873655/content_tokuten-a.png",
+      "/s3/skiyaki/uploads/ckeditor/pictures/873656/content_tokuten-b.png",
+      "/s3/skiyaki/uploads/ckeditor/pictures/873657/content_tokuten-c.png"
+    ],
+    "formats": [
+      {
+        "name": "初回生産限定「佐野勇斗」盤／",
+        "price": "¥2,530 (税込)"
+      },
+      {
+        "name": "初回生産限定「塩﨑太智」盤／",
+        "price": "¥2,530 (税込)"
+      },
+      {
+        "name": "初回生産限定「曽野舜太」盤／",
+        "price": "¥2,530 (税込)"
+      },
+      {
+        "name": "初回生産限定「山中柔太朗」盤／",
+        "price": "¥2,530 (税込)"
+      },
+      {
+        "name": "初回生産限定「吉田仁人」盤／",
+        "price": "¥2,530 (税込)"
+      }
+    ],
+    "buy_links": [
+      {
+        "text": "https://www.rakuten.co.jp/myrakuten/help/",
+        "url": "https://www.rakuten.co.jp/myrakuten/help/"
+      },
+      {
+        "text": "https://books.faq.rakuten.net/s/ask",
+        "url": "https://books.faq.rakuten.net/s/ask"
+      }
+    ],
+    "body_ja": "【楽天ブックス】「LOVE ENG!NE」発売記念オンラインラッキードロー開催決定！",
+    "body_zh": "【樂天書店】「LOVE ENG!NE」發售紀念線上幸運抽獎活動確定舉辦！"
+  },
+  {
     "id": "f79caa3c7fce",
     "url": "https://sd-milk.com/contents/1105354",
     "category": "リリース",
