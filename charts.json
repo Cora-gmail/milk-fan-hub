@@ -1,5 +1,35 @@
 [
   {
+    "id": "da23d76fde1f",
+    "chart_code": "cos",
+    "chart_name": "合算シングル",
+    "date": "2026-08-31",
+    "rank": 5,
+    "status": "DOWN",
+    "title": "爆裂愛してる / 好きすぎて滅!",
+    "artist": "M!LK",
+    "member": "M!LK",
+    "image": "https://m.media-amazon.com/images/I/61lMBX4YjvL._SL160_.jpg",
+    "url": "https://www.oricon.co.jp/prof/643953/products/1557291/1/",
+    "label": "リリース日： 2026年02月18日",
+    "release_date": ""
+  },
+  {
+    "id": "05a82931d08f",
+    "chart_code": "dis",
+    "chart_name": "デジタルシングル",
+    "date": "2026-08-31",
+    "rank": 12,
+    "status": "DOWN",
+    "title": "好きすぎて滅!",
+    "artist": "M!LK",
+    "member": "M!LK",
+    "image": "",
+    "url": "https://www.oricon.co.jp/prof/643953/",
+    "label": "配信開始日：2025年10月27日",
+    "release_date": ""
+  },
+  {
     "id": "fc1d0c17511b",
     "chart_code": "js",
     "chart_name": "シングル",
@@ -217,6 +247,21 @@
     "label": "",
     "release_date": "",
     "source": "billboard_japan"
+  },
+  {
+    "id": "d4df8d596cff",
+    "chart_code": "cos",
+    "chart_name": "合算シングル",
+    "date": "2026-08-24",
+    "rank": 3,
+    "status": "UP",
+    "title": "爆裂愛してる / 好きすぎて滅!",
+    "artist": "M!LK",
+    "member": "M!LK",
+    "image": "https://m.media-amazon.com/images/I/61lMBX4YjvL._SL160_.jpg",
+    "url": "https://www.oricon.co.jp/prof/643953/products/1557291/1/",
+    "label": "リリース日： 2026年02月18日",
+    "release_date": ""
   },
   {
     "id": "630bc69281ec",
@@ -489,6 +534,36 @@
     "release_date": ""
   },
   {
+    "id": "c8838e6eba54",
+    "chart_code": "cos",
+    "chart_name": "合算シングル",
+    "date": "2026-08-17",
+    "rank": 12,
+    "status": "NEW",
+    "title": "罪と罰と雨とキス (佐野勇斗&吉田仁人)",
+    "artist": "M!LK",
+    "member": "M!LK",
+    "image": "https://contents.oricon.co.jp/img/_parts/common/ph-noimage02.png",
+    "url": "https://www.oricon.co.jp/prof/643953/",
+    "label": "リリース日： 2026年08月03日",
+    "release_date": ""
+  },
+  {
+    "id": "b598b7b3ae04",
+    "chart_code": "js",
+    "chart_name": "シングル",
+    "date": "2026-08-17",
+    "rank": 20,
+    "status": "UP",
+    "title": "爆裂愛してる/好きすぎて滅!",
+    "artist": "M!LK",
+    "member": "M!LK",
+    "image": "https://m.media-amazon.com/images/I/61lMBX4YjvL._SL160_.jpg",
+    "url": "https://www.oricon.co.jp/prof/643953/products/1557291/1/",
+    "label": "ビクターエンタテインメント",
+    "release_date": "2026年02月18日"
+  },
+  {
     "id": "745ed136998d",
     "chart_code": "dis",
     "chart_name": "デジタルシングル",
@@ -516,21 +591,6 @@
     "image": "",
     "url": "https://www.oricon.co.jp/prof/643953/",
     "label": "配信開始日：2026年07月17日",
-    "release_date": ""
-  },
-  {
-    "id": "c8838e6eba54",
-    "chart_code": "cos",
-    "chart_name": "合算シングル",
-    "date": "2026-08-17",
-    "rank": 12,
-    "status": "NEW",
-    "title": "罪と罰と雨とキス (佐野勇斗&吉田仁人)",
-    "artist": "M!LK",
-    "member": "M!LK",
-    "image": "https://contents.oricon.co.jp/img/_parts/common/ph-noimage02.png",
-    "url": "https://www.oricon.co.jp/prof/643953/",
-    "label": "リリース日： 2026年08月03日",
     "release_date": ""
   },
   {
@@ -802,6 +862,21 @@
     "label": "",
     "release_date": "",
     "source": "billboard_japan"
+  },
+  {
+    "id": "4fc0f6a235b9",
+    "chart_code": "dis",
+    "chart_name": "デジタルシングル",
+    "date": "2026-08-10",
+    "rank": 19,
+    "status": "DOWN",
+    "title": "好きすぎて滅!",
+    "artist": "M!LK",
+    "member": "M!LK",
+    "image": "",
+    "url": "https://www.oricon.co.jp/prof/643953/",
+    "label": "配信開始日：2025年10月27日",
+    "release_date": ""
   },
   {
     "id": "21fca73617d5",
