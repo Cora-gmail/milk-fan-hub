@@ -1,5 +1,20 @@
 [
   {
+    "id": "a64f6a41d528",
+    "chart_code": "cos",
+    "chart_name": "合算シングル",
+    "date": "2026-09-07",
+    "rank": 6,
+    "status": "DOWN",
+    "title": "爆裂愛してる / 好きすぎて滅!",
+    "artist": "M!LK",
+    "member": "M!LK",
+    "image": "https://m.media-amazon.com/images/I/61lMBX4YjvL._SL160_.jpg",
+    "url": "https://www.oricon.co.jp/prof/643953/products/1557291/1/",
+    "label": "リリース日： 2026年02月18日",
+    "release_date": ""
+  },
+  {
     "id": "90395b9b665f",
     "chart_code": "bj_hot100",
     "chart_name": "BJ Hot 100",
@@ -202,21 +217,6 @@
     "release_date": ""
   },
   {
-    "id": "05a82931d08f",
-    "chart_code": "dis",
-    "chart_name": "デジタルシングル",
-    "date": "2026-08-31",
-    "rank": 12,
-    "status": "DOWN",
-    "title": "好きすぎて滅!",
-    "artist": "M!LK",
-    "member": "M!LK",
-    "image": "",
-    "url": "https://www.oricon.co.jp/prof/643953/",
-    "label": "配信開始日：2025年10月27日",
-    "release_date": ""
-  },
-  {
     "id": "fc1d0c17511b",
     "chart_code": "js",
     "chart_name": "シングル",
@@ -230,6 +230,21 @@
     "url": "https://www.oricon.co.jp/prof/643953/products/1557291/1/",
     "label": "ビクターエンタテインメント",
     "release_date": "2026年02月18日"
+  },
+  {
+    "id": "05a82931d08f",
+    "chart_code": "dis",
+    "chart_name": "デジタルシングル",
+    "date": "2026-08-31",
+    "rank": 12,
+    "status": "DOWN",
+    "title": "好きすぎて滅!",
+    "artist": "M!LK",
+    "member": "M!LK",
+    "image": "",
+    "url": "https://www.oricon.co.jp/prof/643953/",
+    "label": "配信開始日：2025年10月27日",
+    "release_date": ""
   },
   {
     "id": "0430e8b04b13",
@@ -449,6 +464,21 @@
     "url": "https://www.oricon.co.jp/prof/643953/products/1557291/1/",
     "label": "リリース日： 2026年02月18日",
     "release_date": ""
+  },
+  {
+    "id": "287d672dc452",
+    "chart_code": "js",
+    "chart_name": "シングル",
+    "date": "2026-08-24",
+    "rank": 14,
+    "status": "UP",
+    "title": "爆裂愛してる/好きすぎて滅!",
+    "artist": "M!LK",
+    "member": "M!LK",
+    "image": "https://m.media-amazon.com/images/I/61lMBX4YjvL._SL160_.jpg",
+    "url": "https://www.oricon.co.jp/prof/643953/products/1557291/1/",
+    "label": "ビクターエンタテインメント",
+    "release_date": "2026年02月18日"
   },
   {
     "id": "630bc69281ec",
