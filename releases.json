@@ -1,5 +1,103 @@
 [
   {
+    "id": "c1b29c865cd5",
+    "url": "https://sd-milk.com/contents/1109862",
+    "category": "リリース",
+    "title": "NEWS",
+    "title_zh": "NEWS",
+    "date": "2026-09-13",
+    "release_date": "2026-09-16",
+    "release_label": "2026年9月16日発売",
+    "sale_start": "",
+    "sale_end": "",
+    "image": "https://sd-milk.com/assets/milk2/app/og_image.png",
+    "images": [
+      "https://sd-milk.com/assets/milk2/app/og_image.png"
+    ],
+    "formats": [
+      {
+        "name": "初回限定盤／",
+        "price": "¥3,520 (税込)"
+      },
+      {
+        "name": "通常盤／",
+        "price": "¥2,530 (税込)"
+      },
+      {
+        "name": "初回生産限定「佐野勇斗」盤／",
+        "price": "¥2,530 (税込)"
+      },
+      {
+        "name": "初回生産限定「塩﨑太智」盤／",
+        "price": "¥2,530 (税込)"
+      },
+      {
+        "name": "初回生産限定「曽野舜太」盤／",
+        "price": "¥2,530 (税込)"
+      },
+      {
+        "name": "初回生産限定「山中柔太朗」盤／",
+        "price": "¥2,530 (税込)"
+      },
+      {
+        "name": "初回生産限定「吉田仁人」盤／",
+        "price": "¥2,530 (税込)"
+      },
+      {
+        "name": "通常盤／",
+        "price": "¥2,530 (税込)"
+      }
+    ],
+    "buy_links": [
+      {
+        "text": "https://tower.jp/store/tohoku/SendaiParco",
+        "url": "https://tower.jp/store/tohoku/SendaiParco"
+      },
+      {
+        "text": "https://tower.jp/store/chubu_hokuriku_shinetsu/NagoyaParco",
+        "url": "https://tower.jp/store/chubu_hokuriku_shinetsu/NagoyaParco"
+      },
+      {
+        "text": "https://tower.jp/store/kyushu_okinawa/FukuokaParco",
+        "url": "https://tower.jp/store/kyushu_okinawa/FukuokaParco"
+      },
+      {
+        "text": "https://www.jvcmusic.co.jp/MILK/LOVE_ENGINE/0915/",
+        "url": "https://www.jvcmusic.co.jp/MILK/LOVE_ENGINE/0915/"
+      },
+      {
+        "text": "https://www.jvcmusic.co.jp/cs/form01/",
+        "url": "https://www.jvcmusic.co.jp/cs/form01/"
+      }
+    ],
+    "body_ja": "M!LK「LOVE ENG!NE」フラゲ日限定即売会 開催決定！",
+    "body_zh": "M!LK「LOVE ENG!NE」フラゲ日限定即売会 開催決定！"
+  },
+  {
+    "id": "ba375b268741",
+    "url": "https://sd-milk.com/contents/1109338",
+    "category": "グッズ",
+    "title": "NEWS",
+    "title_zh": "NEWS",
+    "date": "2026-09-13",
+    "release_date": "",
+    "release_label": "",
+    "sale_start": "",
+    "sale_end": "",
+    "image": "https://sd-milk.com/s3/skiyaki/uploads/ckeditor/pictures/875815/content_M_LK_66_syashinichiran__2_.jpg",
+    "images": [
+      "https://sd-milk.com/s3/skiyaki/uploads/ckeditor/pictures/875815/content_M_LK_66_syashinichiran__2_.jpg",
+      "/s3/skiyaki/uploads/ckeditor/pictures/875815/content_M_LK_66_syashinichiran__2_.jpg",
+      "/s3/skiyaki/uploads/ckeditor/pictures/875813/content_M_LK_67_syashinichiran__1_.jpg",
+      "/s3/skiyaki/uploads/ckeditor/pictures/875814/content_M_LK_%E3%82%B7%E3%83%A3%E3%82%AB%E3%83%AC%E3%83%9B%E3%82%99_ichiran%E6%9E%A0%E7%84%A1%E3%81%97.jpg",
+      "/s3/skiyaki/uploads/ckeditor/pictures/875812/content_M_LK_%E3%82%B7%E3%83%A3%E3%82%AB%E3%83%AC%E3%83%9B%E3%82%99_ichiran%E4%BC%9A%E5%A0%B4_%E7%A6%8F%E5%B2%A1.jpg"
+    ],
+    "formats": [],
+    "buy_links": [],
+    "body_ja": "M!LK ARENA TOUR 2026-2027「シャカリキレボリューション」オフィシャルグッズ＆生写真セット 【9/26(土)、27(日)福岡・マリンメッセ福岡B館公演】〈事前購入・会場受取〉実施のお知らせ",
+    "body_zh": "M!LK ARENA TOUR 2026-2027「シャカリキレボリューション」オフィシャルグッズ＆生写真セット 【9/26(土)、27(日)福岡・マリンメッセ福岡B館公演】〈事前購入・会場受取〉実施のお知らせ"
+  },
+  {
     "id": "9bfe3a8186be",
     "url": "https://sd-milk.com/contents/1109673",
     "category": "リリース",
@@ -1894,48 +1992,6 @@
       "/s3/skiyaki/uploads/ckeditor/pictures/802858/content_S__102940939.jpg"
     ],
     "formats": [],
-    "buy_links": []
-  },
-  {
-    "id": "a417364d2a0e",
-    "url": "https://sd-milk.com/contents/1014686",
-    "category": "グッズ",
-    "title": "NEWS",
-    "title_zh": "訊息",
-    "date": "2025-11-27",
-    "release_date": "",
-    "release_label": "",
-    "image": "https://sd-milk.com/s3/skiyaki/uploads/ckeditor/pictures/797445/content_M_LK_61_syashinichiran__1_.jpg",
-    "images": [
-      "https://sd-milk.com/s3/skiyaki/uploads/ckeditor/pictures/797445/content_M_LK_61_syashinichiran__1_.jpg",
-      "/s3/skiyaki/uploads/ckeditor/pictures/797445/content_M_LK_61_syashinichiran__1_.jpg",
-      "/s3/skiyaki/uploads/ckeditor/pictures/797444/content_M_LK_62_syashinichiran__1_.jpg",
-      "/s3/skiyaki/uploads/ckeditor/pictures/797447/content_M_LK_SP_%E9%99%90%E5%AE%9A%E4%B8%80%E8%A6%A7.jpg",
-      "/s3/skiyaki/uploads/ckeditor/pictures/797446/content_M_LK_2025-26SMILEPOP_ichiran.jpg"
-    ],
-    "formats": [],
-    "buy_links": []
-  },
-  {
-    "id": "4fbc61a5cf4f",
-    "url": "https://sd-milk.com/contents/1012900",
-    "category": "グッズ",
-    "title": "NEWS",
-    "title_zh": "訊息",
-    "date": "2025-11-23",
-    "release_date": "",
-    "release_label": "",
-    "image": "https://sd-milk.com/s3/skiyaki/uploads/ckeditor/pictures/796698/content_610D14F7-BB09-4923-8FC2-3BA0D5BFD79A.jpeg",
-    "images": [
-      "https://sd-milk.com/s3/skiyaki/uploads/ckeditor/pictures/796698/content_610D14F7-BB09-4923-8FC2-3BA0D5BFD79A.jpeg",
-      "/s3/skiyaki/uploads/ckeditor/pictures/796698/content_610D14F7-BB09-4923-8FC2-3BA0D5BFD79A.jpeg"
-    ],
-    "formats": [
-      {
-        "name": "・メジャー2nd アルバム『M!X』 …通常盤／",
-        "price": "¥3,520 (税込)"
-      }
-    ],
     "buy_links": []
   }
 ]
