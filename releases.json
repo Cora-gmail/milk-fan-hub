@@ -1,5 +1,61 @@
 [
   {
+    "id": "16b92eddedb9",
+    "url": "https://sd-milk.com/contents/1110541",
+    "category": "リリース",
+    "title": "NEWS",
+    "title_zh": "NEWS",
+    "date": "2026-09-15",
+    "release_date": "2026-09-16",
+    "release_label": "2026年9月16日発売",
+    "sale_start": "",
+    "sale_end": "",
+    "image": "https://sd-milk.com/s3/skiyaki/uploads/ckeditor/pictures/876870/content_M_LK_%E5%91%8A%E7%9F%A55.jpg",
+    "images": [
+      "https://sd-milk.com/s3/skiyaki/uploads/ckeditor/pictures/876870/content_M_LK_%E5%91%8A%E7%9F%A55.jpg",
+      "/s3/skiyaki/uploads/ckeditor/pictures/876870/content_M_LK_%E5%91%8A%E7%9F%A55.jpg",
+      "/s3/skiyaki/uploads/ckeditor/pictures/876864/content_%E3%82%BD%E3%83%AD%E3%83%88%E3%83%AC%E3%82%AB_%E3%83%AA%E3%83%AA%E3%82%A4%E3%83%98%E3%82%99%E4%BC%9A%E5%A0%B4_SAMPLE.jpg"
+    ],
+    "formats": [
+      {
+        "name": "初回限定盤／",
+        "price": "¥3,520 (税込)"
+      },
+      {
+        "name": "通常盤／",
+        "price": "¥2,530 (税込)"
+      },
+      {
+        "name": "初回生産限定「佐野勇斗」盤／",
+        "price": "¥2,530 (税込)"
+      },
+      {
+        "name": "初回生産限定「塩﨑太智」盤／",
+        "price": "¥2,530 (税込)"
+      },
+      {
+        "name": "初回生産限定「曽野舜太」盤／",
+        "price": "¥2,530 (税込)"
+      },
+      {
+        "name": "初回生産限定「山中柔太朗」盤／",
+        "price": "¥2,530 (税込)"
+      },
+      {
+        "name": "初回生産限定「吉田仁人」盤／",
+        "price": "¥2,530 (税込)"
+      }
+    ],
+    "buy_links": [
+      {
+        "text": "https://www.jvcmusic.co.jp/cs/form01/",
+        "url": "https://www.jvcmusic.co.jp/cs/form01/"
+      }
+    ],
+    "body_ja": "9月16日(水)開催「LOVE ENG!NE」発売日記念スペシャルイベント会場限定抽選会実施のお知らせ",
+    "body_zh": "9月16日(水)開催「LOVE ENG!NE」発売日記念スペシャルイベント会場限定抽選会実施のお知らせ"
+  },
+  {
     "id": "bb52c0e0a5d3",
     "url": "https://sd-milk.com/contents/1109812",
     "category": "リリース",
@@ -1981,27 +2037,6 @@
       "/s3/skiyaki/uploads/ckeditor/pictures/818762/content_M_LK_62_syashinichiran__3_.jpg",
       "/s3/skiyaki/uploads/ckeditor/pictures/818760/content_M_LK_SP_%E9%99%90%E5%AE%9A%E4%B8%80%E8%A6%A7%E6%9D%B1%E4%BA%AC.jpg",
       "/s3/skiyaki/uploads/ckeditor/pictures/818763/content_M_LK_2025-26SMILEPOP_ichiran__2_.jpg"
-    ],
-    "formats": [],
-    "buy_links": []
-  },
-  {
-    "id": "2a97ac24086e",
-    "url": "https://sd-milk.com/contents/1033259",
-    "category": "グッズ",
-    "title": "NEWS",
-    "title_zh": "訊息",
-    "date": "2026-01-08",
-    "release_date": "",
-    "release_label": "",
-    "image": "https://sd-milk.com/s3/skiyaki/uploads/ckeditor/pictures/810931/content_QJlhDf5w.jpeg",
-    "images": [
-      "https://sd-milk.com/s3/skiyaki/uploads/ckeditor/pictures/810931/content_QJlhDf5w.jpeg",
-      "/s3/skiyaki/uploads/ckeditor/pictures/810931/content_QJlhDf5w.jpeg",
-      "/s3/skiyaki/uploads/ckeditor/pictures/810928/content_M_LK_62_syashinichiran__2_.jpg",
-      "/s3/skiyaki/uploads/ckeditor/pictures/810930/content_M_LK_62_syashinichiran__2_.jpg",
-      "/s3/skiyaki/uploads/ckeditor/pictures/810927/content_M_LK_SP_%E9%99%90%E5%AE%9A%E4%B8%80%E8%A6%A7_%E6%84%9B%E7%9F%A5.jpg",
-      "/s3/skiyaki/uploads/ckeditor/pictures/810929/content_M_LK_2025-26SMILEPOP_ichiran__1_.jpg"
     ],
     "formats": [],
     "buy_links": []
