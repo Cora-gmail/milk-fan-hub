@@ -1,5 +1,20 @@
 [
   {
+    "id": "f24a58dd186c",
+    "chart_code": "cos",
+    "chart_name": "合算シングル",
+    "date": "2026-09-14",
+    "rank": 6,
+    "status": "STAY",
+    "title": "爆裂愛してる / 好きすぎて滅!",
+    "artist": "M!LK",
+    "member": "M!LK",
+    "image": "https://m.media-amazon.com/images/I/61lMBX4YjvL._SL160_.jpg",
+    "url": "https://www.oricon.co.jp/prof/643953/products/1557291/1/",
+    "label": "リリース日： 2026年02月18日",
+    "release_date": ""
+  },
+  {
     "id": "739fa3768d1d",
     "chart_code": "st",
     "chart_name": "ストリーミング",
@@ -27,21 +42,6 @@
     "image": "",
     "url": "https://www.oricon.co.jp/prof/643953/",
     "label": "配信開始日：2026年02月09日",
-    "release_date": ""
-  },
-  {
-    "id": "f24a58dd186c",
-    "chart_code": "cos",
-    "chart_name": "合算シングル",
-    "date": "2026-09-14",
-    "rank": 6,
-    "status": "STAY",
-    "title": "爆裂愛してる / 好きすぎて滅!",
-    "artist": "M!LK",
-    "member": "M!LK",
-    "image": "https://m.media-amazon.com/images/I/61lMBX4YjvL._SL160_.jpg",
-    "url": "https://www.oricon.co.jp/prof/643953/products/1557291/1/",
-    "label": "リリース日： 2026年02月18日",
     "release_date": ""
   },
   {
@@ -232,6 +232,21 @@
     "source": "billboard_japan"
   },
   {
+    "id": "a64f6a41d528",
+    "chart_code": "cos",
+    "chart_name": "合算シングル",
+    "date": "2026-09-07",
+    "rank": 6,
+    "status": "DOWN",
+    "title": "爆裂愛してる / 好きすぎて滅!",
+    "artist": "M!LK",
+    "member": "M!LK",
+    "image": "https://m.media-amazon.com/images/I/61lMBX4YjvL._SL160_.jpg",
+    "url": "https://www.oricon.co.jp/prof/643953/products/1557291/1/",
+    "label": "リリース日： 2026年02月18日",
+    "release_date": ""
+  },
+  {
     "id": "4a5e3acd72ce",
     "chart_code": "st",
     "chart_name": "ストリーミング",
@@ -259,21 +274,6 @@
     "image": "",
     "url": "https://www.oricon.co.jp/prof/643953/",
     "label": "配信開始日：2026年02月09日",
-    "release_date": ""
-  },
-  {
-    "id": "a64f6a41d528",
-    "chart_code": "cos",
-    "chart_name": "合算シングル",
-    "date": "2026-09-07",
-    "rank": 6,
-    "status": "DOWN",
-    "title": "爆裂愛してる / 好きすぎて滅!",
-    "artist": "M!LK",
-    "member": "M!LK",
-    "image": "https://m.media-amazon.com/images/I/61lMBX4YjvL._SL160_.jpg",
-    "url": "https://www.oricon.co.jp/prof/643953/products/1557291/1/",
-    "label": "リリース日： 2026年02月18日",
     "release_date": ""
   },
   {
@@ -464,6 +464,21 @@
     "source": "billboard_japan"
   },
   {
+    "id": "da23d76fde1f",
+    "chart_code": "cos",
+    "chart_name": "合算シングル",
+    "date": "2026-08-31",
+    "rank": 5,
+    "status": "DOWN",
+    "title": "爆裂愛してる / 好きすぎて滅!",
+    "artist": "M!LK",
+    "member": "M!LK",
+    "image": "https://m.media-amazon.com/images/I/61lMBX4YjvL._SL160_.jpg",
+    "url": "https://www.oricon.co.jp/prof/643953/products/1557291/1/",
+    "label": "リリース日： 2026年02月18日",
+    "release_date": ""
+  },
+  {
     "id": "2ca8ecf876af",
     "chart_code": "st",
     "chart_name": "ストリーミング",
@@ -491,21 +506,6 @@
     "image": "",
     "url": "https://www.oricon.co.jp/prof/643953/",
     "label": "配信開始日：2026年02月09日",
-    "release_date": ""
-  },
-  {
-    "id": "da23d76fde1f",
-    "chart_code": "cos",
-    "chart_name": "合算シングル",
-    "date": "2026-08-31",
-    "rank": 5,
-    "status": "DOWN",
-    "title": "爆裂愛してる / 好きすぎて滅!",
-    "artist": "M!LK",
-    "member": "M!LK",
-    "image": "https://m.media-amazon.com/images/I/61lMBX4YjvL._SL160_.jpg",
-    "url": "https://www.oricon.co.jp/prof/643953/products/1557291/1/",
-    "label": "リリース日： 2026年02月18日",
     "release_date": ""
   },
   {
