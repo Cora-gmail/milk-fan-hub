@@ -1,5 +1,9 @@
 [
   {
+    "chart_code": "js",
+    "date": "2026-09-10"
+  },
+  {
     "chart_code": "ja",
     "date": "2026-08-29"
   },
@@ -713,10 +717,6 @@
   },
   {
     "chart_code": "coa",
-    "date": "2026-06-29"
-  },
-  {
-    "chart_code": "js",
     "date": "2026-06-29"
   }
 ]
