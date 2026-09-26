@@ -1,5 +1,37 @@
 [
   {
+    "id": "e3c66d326985",
+    "chart_code": "js",
+    "chart_name": "シングル",
+    "date": "2026-09-24",
+    "period_type": "daily",
+    "rank": 10,
+    "status": "UP",
+    "title": "爆裂愛してる/好きすぎて滅!",
+    "artist": "M!LK",
+    "member": "M!LK",
+    "image": "https://m.media-amazon.com/images/I/61lMBX4YjvL._SL160_.jpg",
+    "url": "https://www.oricon.co.jp/prof/643953/products/1557291/1/",
+    "label": "ビクターエンタテインメント",
+    "release_date": "2026年02月18日"
+  },
+  {
+    "id": "e781d89dda10",
+    "chart_code": "ja",
+    "chart_name": "アルバム",
+    "date": "2026-09-21",
+    "period_type": "daily",
+    "rank": 2,
+    "status": "DOWN",
+    "title": "LOVE ENG!NE",
+    "artist": "M!LK",
+    "member": "M!LK",
+    "image": "https://m.media-amazon.com/images/I/61o-5xOFCcL._SL160_.jpg",
+    "url": "https://www.oricon.co.jp/prof/643953/products/1574091/1/",
+    "label": "ビクターエンタテインメント",
+    "release_date": "2026年09月16日"
+  },
+  {
     "id": "39269e1d9c20",
     "chart_code": "cos",
     "chart_name": "合算シングル",
