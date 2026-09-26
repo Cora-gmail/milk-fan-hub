@@ -8135,15 +8135,6 @@
     "source": "gnews"
   },
   {
-    "id": "93324cf283ae",
-    "date": "2026-09-26",
-    "title": "【M!LK】NHK「Venue101 EXTRA」出演決定！",
-    "details": "MEDIA",
-    "title_zh": "",
-    "url": "https://sd-milk.com/contents/1098376",
-    "source": "official"
-  },
-  {
     "id": "a834017d5248",
     "date": "2026-09-26",
     "title": "【塩﨑太智】フジテレビ「新しいカギ」出演決定！",
@@ -8169,15 +8160,6 @@
     "title_zh": "",
     "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE13bFVVaDJTM2V0TkluY1huckNYalNqejlnNWNuYWhmWnJzQWVTSmpmcjhaTDhaak5tX3V4dWFaY1JOWktUTWhpekNCeEFpZXBadUdqb3VMblAyX2gz?oc=5",
     "source": "gnews"
-  },
-  {
-    "id": "e07b426dd28c",
-    "date": "2026-09-26",
-    "title": "【M!LK】TBS『M!LKの爆裂ミッション 第2弾直前SP』放送！",
-    "details": "MEDIA",
-    "title_zh": "",
-    "url": "https://sd-milk.com/contents/1113356",
-    "source": "official"
   },
   {
     "id": "21abc49d3db4",
@@ -8450,6 +8432,24 @@
     "source": "gnews"
   },
   {
+    "id": "298d545b5fa1",
+    "date": "2026-09-26",
+    "title": "【ミルクセトリ】M!LK ARENA TOUR 2026-2027シャカリキレボリューション全公演セットリストまとめ - もとりょこblog -",
+    "details": "【ミルクセトリ】M!LK ARENA TOUR 2026-2027シャカリキレボリューション全公演セットリストまとめ もとりょこblog -",
+    "title_zh": "",
+    "url": "https://news.google.com/rss/articles/CBMiSkFVX3lxTE9Ub0cyWG1kUFJ1MXFaaFl4ZHZxU2RDQ0VDQWVoU0JNM2ZVbkpELXFndmlKWGRUYnltYmwzckJNeTljWDNHZjdvanhB?oc=5",
+    "source": "gnews"
+  },
+  {
+    "id": "5c552c092831",
+    "date": "2026-09-26",
+    "title": "【Venue101 EXTRA】WEEK2 10/3(土)放送 - Venue101のリリース情報 - Venue101 - NHK",
+    "details": "【Venue101 EXTRA】WEEK2 10/3(土)放送 - Venue101のリリース情報 - Venue101 NHK",
+    "title_zh": "",
+    "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE00UzdvZVlxWllHeXhBNE1SNjFjNklWYnNoMU5rU3FKckROU1hYMWdGWTk4bGVyYm5mcUZIU2xnMk1MRk1fd21PMXNmeHNsSU1EU1ZQazFWeGsyQzRtX0pBcXp5TG85ZjJkQ00zUk9kR05vckNJQmFB?oc=5",
+    "source": "gnews"
+  },
+  {
     "id": "d06916ca25af",
     "date": "2026-09-27",
     "title": "【曽野舜太】テレビ朝日「アメトーーク！踊りたくない芸人SP」出演決定！",
@@ -8495,6 +8495,15 @@
     "source": "official"
   },
   {
+    "id": "93324cf283ae",
+    "date": "2026-10-03",
+    "title": "【M!LK】NHK「Venue101 EXTRA」出演決定！",
+    "details": "MEDIA",
+    "title_zh": "",
+    "url": "https://sd-milk.com/contents/1098376",
+    "source": "official"
+  },
+  {
     "id": "26db5d58a5cc",
     "date": "2026-10-04",
     "title": "【塩﨑太智】ABCテレビ・テレビ朝日系ドラマ「もうパパ！」出演決定！",
@@ -8510,6 +8519,15 @@
     "details": "MEDIA",
     "title_zh": "",
     "url": "https://sd-milk.com/contents/1112788",
+    "source": "official"
+  },
+  {
+    "id": "e07b426dd28c",
+    "date": "2026-10-06",
+    "title": "【M!LK】TBS『M!LKの爆裂ミッション 第2弾直前SP』放送！",
+    "details": "MEDIA",
+    "title_zh": "",
+    "url": "https://sd-milk.com/contents/1113356",
     "source": "official"
   },
   {
