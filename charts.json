@@ -1,5 +1,20 @@
 [
   {
+    "id": "c167370cb1a1",
+    "chart_code": "js",
+    "chart_name": "シングル",
+    "date": "2026-09-28",
+    "rank": 12,
+    "status": "UP",
+    "title": "爆裂愛してる/好きすぎて滅!",
+    "artist": "M!LK",
+    "member": "M!LK",
+    "image": "https://m.media-amazon.com/images/I/61lMBX4YjvL._SL160_.jpg",
+    "url": "https://www.oricon.co.jp/prof/643953/products/1557291/1/",
+    "label": "推定売上枚数：3,251枚",
+    "release_date": "2026年02月18日"
+  },
+  {
     "id": "ce9808d548f1",
     "chart_code": "bj_hot100",
     "chart_name": "BJ Hot 100",
