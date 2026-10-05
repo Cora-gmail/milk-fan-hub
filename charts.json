@@ -1,5 +1,35 @@
 [
   {
+    "id": "fb773cf546c7",
+    "chart_code": "cos",
+    "chart_name": "合算シングル",
+    "date": "2026-10-05",
+    "rank": 3,
+    "status": "UP",
+    "title": "爆裂愛してる / 好きすぎて滅!",
+    "artist": "M!LK",
+    "member": "M!LK",
+    "image": "https://m.media-amazon.com/images/I/61lMBX4YjvL._SL160_.jpg",
+    "url": "https://www.oricon.co.jp/prof/643953/products/1557291/1/",
+    "label": "リリース日： 2026年02月18日",
+    "release_date": ""
+  },
+  {
+    "id": "fd1fe593d340",
+    "chart_code": "cos",
+    "chart_name": "合算シングル",
+    "date": "2026-10-05",
+    "rank": 12,
+    "status": "DOWN",
+    "title": "時空超えてユニバース",
+    "artist": "M!LK",
+    "member": "M!LK",
+    "image": "https://contents.oricon.co.jp/img/_parts/common/ph-noimage02.png",
+    "url": "https://www.oricon.co.jp/prof/643953/",
+    "label": "リリース日： 2026年09月07日",
+    "release_date": ""
+  },
+  {
     "id": "593735c0558e",
     "chart_code": "js",
     "chart_name": "シングル",
