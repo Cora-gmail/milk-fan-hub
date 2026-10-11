@@ -1,5 +1,28 @@
 [
   {
+    "id": "5b8de7ff4bf8",
+    "url": "https://sd-milk.com/contents/1117947",
+    "category": "グッズ",
+    "title": "NEWS",
+    "title_zh": "NEWS",
+    "date": "2026-10-11",
+    "release_date": "",
+    "release_label": "",
+    "sale_start": "",
+    "sale_end": "",
+    "image": "https://sd-milk.com/s3/skiyaki/uploads/ckeditor/pictures/883363/content_M_LK_66_syashinichiran__5_.jpg",
+    "images": [
+      "https://sd-milk.com/s3/skiyaki/uploads/ckeditor/pictures/883363/content_M_LK_66_syashinichiran__5_.jpg",
+      "/s3/skiyaki/uploads/ckeditor/pictures/883363/content_M_LK_66_syashinichiran__5_.jpg",
+      "/s3/skiyaki/uploads/ckeditor/pictures/883361/content_M_LK_67_syashinichiran__4_.jpg",
+      "/s3/skiyaki/uploads/ckeditor/pictures/883362/content_M_LK_%E3%82%B7%E3%83%A3%E3%82%AB%E3%83%AC%E3%83%9B%E3%82%99_ichiran%E6%9E%A0%E7%84%A1%E3%81%97__2___1_.jpg"
+    ],
+    "formats": [],
+    "buy_links": [],
+    "body_ja": "M!LK ARENA TOUR 2026-2027「シャカリキレボリューション」オフィシャルグッズ＆生写真セット追加販売決定！",
+    "body_zh": "M!LK ARENA TOUR 2026-2027「シャカリキレボリューション」オフィシャルグッズ＆生写真セット追加販売決定！"
+  },
+  {
     "id": "afb0347835c4",
     "url": "https://sd-milk.com/contents/1116930",
     "category": "グッズ",
@@ -2033,22 +2056,5 @@
         "url": "https://www.jvcmusic.co.jp/cs/form01/ "
       }
     ]
-  },
-  {
-    "id": "447f7aa58c00",
-    "url": "https://sd-milk.com/contents/1088043",
-    "category": "リリース",
-    "title": "NEWS",
-    "title_zh": "訊息",
-    "date": "2026-07-01",
-    "release_date": "",
-    "release_label": "",
-    "image": "https://sd-milk.com/s3/skiyaki/uploads/ckeditor/pictures/848604/content__%E9%80%9A%E5%B8%B8%E7%9B%A4%E3%82%B8%E3%83%A3%E3%82%B1%E3%83%83%E3%83%88%E5%86%99%E7%9C%9F.jpg",
-    "images": [
-      "https://sd-milk.com/s3/skiyaki/uploads/ckeditor/pictures/848604/content__%E9%80%9A%E5%B8%B8%E7%9B%A4%E3%82%B8%E3%83%A3%E3%82%B1%E3%83%83%E3%83%88%E5%86%99%E7%9C%9F.jpg",
-      "/s3/skiyaki/uploads/ckeditor/pictures/848604/content__%E9%80%9A%E5%B8%B8%E7%9B%A4%E3%82%B8%E3%83%A3%E3%82%B1%E3%83%83%E3%83%88%E5%86%99%E7%9C%9F.jpg"
-    ],
-    "formats": [],
-    "buy_links": []
   }
 ]
