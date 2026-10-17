@@ -1,5 +1,29 @@
 [
   {
+    "id": "0fcde7d4eb2c",
+    "url": "https://sd-milk.com/contents/1119591",
+    "category": "グッズ",
+    "title": "NEWS",
+    "title_zh": "NEWS",
+    "date": "2026-10-17",
+    "release_date": "",
+    "release_label": "",
+    "sale_start": "",
+    "sale_end": "",
+    "image": "https://sd-milk.com/s3/skiyaki/uploads/ckeditor/pictures/884706/content_M_LK_66_syashinichiran__6_.jpg",
+    "images": [
+      "https://sd-milk.com/s3/skiyaki/uploads/ckeditor/pictures/884706/content_M_LK_66_syashinichiran__6_.jpg",
+      "/s3/skiyaki/uploads/ckeditor/pictures/884706/content_M_LK_66_syashinichiran__6_.jpg",
+      "/s3/skiyaki/uploads/ckeditor/pictures/884707/content_M_LK_67_syashinichiran__5_.jpg",
+      "/s3/skiyaki/uploads/ckeditor/pictures/884708/content_M_LK_%E3%82%B7%E3%83%A3%E3%82%AB%E3%83%AC%E3%83%9B%E3%82%99_ichiran%E6%9E%A0%E7%84%A1%E3%81%97__3_.jpg",
+      "/s3/skiyaki/uploads/ckeditor/pictures/884705/content_M_LK_%E3%82%B7%E3%83%A3%E3%82%AB%E3%83%AC%E3%83%9B%E3%82%99_ichiran%E4%BC%9A%E5%A0%B4_%E5%AE%AE%E5%9F%8E__1_.jpg"
+    ],
+    "formats": [],
+    "buy_links": [],
+    "body_ja": "M!LK ARENA TOUR 2026-2027「シャカリキレボリューション」オフィシャルグッズ＆生写真セット 【10/24(土)、25(日)宮城・ゼビオアリーナ仙台公演】会場販売＆整理券配布のお知らせ",
+    "body_zh": "M!LK ARENA TOUR 2026-2027「シャカリキレボリューション」オフィシャルグッズ＆生写真セット 【10/24(土)、25(日)宮城・ゼビオアリーナ仙台公演】会場販売＆整理券配布のお知らせ"
+  },
+  {
     "id": "5b8de7ff4bf8",
     "url": "https://sd-milk.com/contents/1117947",
     "category": "グッズ",
@@ -2024,36 +2048,6 @@
       {
         "text": "https://www.jvcmusic.co.jp/cs/form01/",
         "url": "https://www.jvcmusic.co.jp/cs/form01/"
-      }
-    ]
-  },
-  {
-    "id": "470a79e8c63f",
-    "url": "https://sd-milk.com/contents/1089675",
-    "category": "リリース",
-    "title": "NEWS",
-    "title_zh": "訊息",
-    "date": "2026-07-06",
-    "release_date": "",
-    "release_label": "",
-    "image": "https://sd-milk.com/s3/skiyaki/uploads/ckeditor/pictures/859783/content_%E3%81%97%E3%81%8A%E3%81%95%E3%82%99%E3%81%8D_%E6%A5%BD%E6%9B%B2%E3%82%B7%E3%82%A7%E3%82%A2CP%E7%94%BB%E5%83%8Fv2.jpg",
-    "images": [
-      "https://sd-milk.com/s3/skiyaki/uploads/ckeditor/pictures/859783/content_%E3%81%97%E3%81%8A%E3%81%95%E3%82%99%E3%81%8D_%E6%A5%BD%E6%9B%B2%E3%82%B7%E3%82%A7%E3%82%A2CP%E7%94%BB%E5%83%8Fv2.jpg",
-      "/s3/skiyaki/uploads/ckeditor/pictures/859783/content_%E3%81%97%E3%81%8A%E3%81%95%E3%82%99%E3%81%8D_%E6%A5%BD%E6%9B%B2%E3%82%B7%E3%82%A7%E3%82%A2CP%E7%94%BB%E5%83%8Fv2.jpg"
-    ],
-    "formats": [],
-    "buy_links": [
-      {
-        "text": "https://form.run/@ve-jvcmusic-shiozaki-wonderland-dspshare",
-        "url": "https://form.run/@ve-jvcmusic-shiozaki-wonderland-dspshare "
-      },
-      {
-        "text": "https://www.jvcmusic.co.jp/privacy/",
-        "url": "https://www.jvcmusic.co.jp/privacy/"
-      },
-      {
-        "text": "https://www.jvcmusic.co.jp/cs/form01/",
-        "url": "https://www.jvcmusic.co.jp/cs/form01/ "
       }
     ]
   }
