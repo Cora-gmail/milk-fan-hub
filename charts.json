@@ -15,6 +15,36 @@
     "release_date": ""
   },
   {
+    "id": "8783411ef31b",
+    "chart_code": "coa",
+    "chart_name": "合算アルバム",
+    "date": "2026-10-19",
+    "rank": 5,
+    "status": "STAY",
+    "title": "LOVE ENG!NE",
+    "artist": "M!LK",
+    "member": "M!LK",
+    "image": "https://m.media-amazon.com/images/I/61o-5xOFCcL._SL160_.jpg",
+    "url": "https://www.oricon.co.jp/prof/643953/products/1574091/1/",
+    "label": "リリース日： 2026年09月16日",
+    "release_date": ""
+  },
+  {
+    "id": "6a3a53f09132",
+    "chart_code": "dis",
+    "chart_name": "デジタルシングル",
+    "date": "2026-10-19",
+    "rank": 13,
+    "status": "DOWN",
+    "title": "好きすぎて滅!",
+    "artist": "M!LK",
+    "member": "M!LK",
+    "image": "",
+    "url": "https://www.oricon.co.jp/prof/643953/",
+    "label": "配信開始日：2025年10月27日",
+    "release_date": ""
+  },
+  {
     "id": "bd753f191ffa",
     "chart_code": "bj_hot100",
     "chart_name": "BJ Hot 100",
@@ -251,21 +281,6 @@
     "release_date": ""
   },
   {
-    "id": "f31b19df238a",
-    "chart_code": "ja",
-    "chart_name": "アルバム",
-    "date": "2026-10-12",
-    "rank": 5,
-    "status": "DOWN",
-    "title": "LOVE ENG!NE",
-    "artist": "M!LK",
-    "member": "M!LK",
-    "image": "https://m.media-amazon.com/images/I/61o-5xOFCcL._SL160_.jpg",
-    "url": "https://www.oricon.co.jp/prof/643953/products/1574091/1/",
-    "label": "ビクターエンタテインメント",
-    "release_date": "2026年09月16日"
-  },
-  {
     "id": "fae5ed7b3990",
     "chart_code": "coa",
     "chart_name": "合算アルバム",
@@ -279,6 +294,21 @@
     "url": "https://www.oricon.co.jp/prof/643953/products/1574091/1/",
     "label": "リリース日： 2026年09月16日",
     "release_date": ""
+  },
+  {
+    "id": "f31b19df238a",
+    "chart_code": "ja",
+    "chart_name": "アルバム",
+    "date": "2026-10-12",
+    "rank": 5,
+    "status": "DOWN",
+    "title": "LOVE ENG!NE",
+    "artist": "M!LK",
+    "member": "M!LK",
+    "image": "https://m.media-amazon.com/images/I/61o-5xOFCcL._SL160_.jpg",
+    "url": "https://www.oricon.co.jp/prof/643953/products/1574091/1/",
+    "label": "ビクターエンタテインメント",
+    "release_date": "2026年09月16日"
   },
   {
     "id": "4b0a09b145c3",
@@ -546,21 +576,6 @@
     "release_date": ""
   },
   {
-    "id": "f178e3a23b64",
-    "chart_code": "ja",
-    "chart_name": "アルバム",
-    "date": "2026-10-05",
-    "rank": 2,
-    "status": "DOWN",
-    "title": "LOVE ENG!NE",
-    "artist": "M!LK",
-    "member": "M!LK",
-    "image": "https://m.media-amazon.com/images/I/61o-5xOFCcL._SL160_.jpg",
-    "url": "https://www.oricon.co.jp/prof/643953/products/1574091/1/",
-    "label": "ビクターエンタテインメント",
-    "release_date": "2026年09月16日"
-  },
-  {
     "id": "a98579e5f113",
     "chart_code": "coa",
     "chart_name": "合算アルバム",
@@ -574,6 +589,21 @@
     "url": "https://www.oricon.co.jp/prof/643953/products/1574091/1/",
     "label": "リリース日： 2026年09月16日",
     "release_date": ""
+  },
+  {
+    "id": "f178e3a23b64",
+    "chart_code": "ja",
+    "chart_name": "アルバム",
+    "date": "2026-10-05",
+    "rank": 2,
+    "status": "DOWN",
+    "title": "LOVE ENG!NE",
+    "artist": "M!LK",
+    "member": "M!LK",
+    "image": "https://m.media-amazon.com/images/I/61o-5xOFCcL._SL160_.jpg",
+    "url": "https://www.oricon.co.jp/prof/643953/products/1574091/1/",
+    "label": "ビクターエンタテインメント",
+    "release_date": "2026年09月16日"
   },
   {
     "id": "8a8bdce72748",
@@ -981,6 +1011,21 @@
     "release_date": ""
   },
   {
+    "id": "687d28125d7c",
+    "chart_code": "coa",
+    "chart_name": "合算アルバム",
+    "date": "2026-09-28",
+    "rank": 1,
+    "status": "NEW",
+    "title": "LOVE ENG!NE",
+    "artist": "M!LK",
+    "member": "M!LK",
+    "image": "https://contents.oricon.co.jp/img/_parts/common/ph-noimage02.png",
+    "url": "https://www.oricon.co.jp/prof/643953/",
+    "label": "リリース日： 2026年09月16日",
+    "release_date": ""
+  },
+  {
     "id": "5169eb105f3e",
     "chart_code": "st",
     "chart_name": "ストリーミング",
@@ -1054,21 +1099,6 @@
     "url": "https://www.oricon.co.jp/prof/643953/products/1557291/1/",
     "label": "ビクターエンタテインメント",
     "release_date": "2026年02月18日"
-  },
-  {
-    "id": "687d28125d7c",
-    "chart_code": "coa",
-    "chart_name": "合算アルバム",
-    "date": "2026-09-28",
-    "rank": 1,
-    "status": "NEW",
-    "title": "LOVE ENG!NE",
-    "artist": "M!LK",
-    "member": "M!LK",
-    "image": "https://contents.oricon.co.jp/img/_parts/common/ph-noimage02.png",
-    "url": "https://www.oricon.co.jp/prof/643953/",
-    "label": "リリース日： 2026年09月16日",
-    "release_date": ""
   },
   {
     "id": "4d6887b79846",
