@@ -1,5 +1,27 @@
 [
   {
+    "id": "8fa8e99b10cb",
+    "url": "https://sd-milk.com/contents/1121455",
+    "category": "グッズ",
+    "title": "NEWS",
+    "title_zh": "NEWS",
+    "date": "2026-10-23",
+    "release_date": "",
+    "release_label": "",
+    "sale_start": "",
+    "sale_end": "",
+    "image": "https://sd-milk.com/s3/skiyaki/uploads/ckeditor/pictures/886314/content_%E7%94%BB%E5%83%8F__%E3%82%BF%E3%82%A4%E3%83%88%E3%83%AB_EBiDAN%E3%82%AA%E3%83%B3%E3%83%A9%E3%82%A4%E3%83%B3%E3%81%8F%E3%81%97%E3%82%99_vol.2.jpg",
+    "images": [
+      "https://sd-milk.com/s3/skiyaki/uploads/ckeditor/pictures/886314/content_%E7%94%BB%E5%83%8F__%E3%82%BF%E3%82%A4%E3%83%88%E3%83%AB_EBiDAN%E3%82%AA%E3%83%B3%E3%83%A9%E3%82%A4%E3%83%B3%E3%81%8F%E3%81%97%E3%82%99_vol.2.jpg",
+      "/s3/skiyaki/uploads/ckeditor/pictures/886314/content_%E7%94%BB%E5%83%8F__%E3%82%BF%E3%82%A4%E3%83%88%E3%83%AB_EBiDAN%E3%82%AA%E3%83%B3%E3%83%A9%E3%82%A4%E3%83%B3%E3%81%8F%E3%81%97%E3%82%99_vol.2.jpg",
+      "/s3/skiyaki/uploads/ckeditor/pictures/886315/content_%E3%82%AA%E3%83%B3%E3%83%A9%E3%82%A4%E3%83%B3%E3%81%8F%E3%81%97%E3%82%99vol.2_M_LK.jpg"
+    ],
+    "formats": [],
+    "buy_links": [],
+    "body_ja": "EBiDAN オンラインくじ vol.2発売決定！\n\n「EBiDAN museum 2026」の大盛況を記念し、10月26日(月)13:00より「EBiDAN オンラインくじ vol.2」の販売が決定しました！ グループ別のくじとなり、それぞれ全5等級のいずれかの景品が必ず当たります！ ここでしか手に入らない特別カットを使用したグッズのラインナップとなりますので、是非チェックしてください！ ◆EBiDAN オンラインくじ vol.2 ・価格：1回800円（税込） ・期間：2026年10月26日(月)13：00～2026年11月2日(月)23:59 ※販売期間中であればいつでもご購入いただけます。 ▼購入ページはこちら https://hapichan-kuji.entry-system.jp/",
+    "body_zh": "EBiDAN オンラインくじ vol.2発売決定！\n\n「EBiDAN museum 2026」の大盛況を記念し、10月26日(月)13:00より「EBiDAN オンラインくじ vol.2」の販売が決定しました！ グループ別のくじとなり、それぞれ全5等級のいずれかの景品が必ず当たります！ ここでしか手に入らない特別カットを使用したグッズのラインナップとなりますので、是非チェックしてください！ ◆EBiDAN オンラインくじ vol.2 ・価格：1回800円（税込） ・期間：2026年10月26日(月)13：00～2026年11月2日(月)23:59 ※販売期間中であればいつでもご購入いただけます。 ▼購入ページはこちら https://hapichan-kuji.entry-system.jp/"
+  },
+  {
     "id": "0dbfae7b8552",
     "url": "https://sd-milk.com/contents/1120246",
     "category": "グッズ",
@@ -2027,21 +2049,5 @@
         "url": "https://www.jvcmusic.co.jp/MILK/1stMiniAlbum/"
       }
     ]
-  },
-  {
-    "id": "bd1cfcc01a90",
-    "url": "https://sd-milk.com/contents/1089801",
-    "category": "リリース",
-    "title": "NEWS",
-    "title_zh": "訊息",
-    "date": "2026-07-07",
-    "release_date": "2026-08-11",
-    "release_label": "2026年8月11日発売",
-    "image": "https://sd-milk.com/assets/milk2/app/og_image.png",
-    "images": [
-      "https://sd-milk.com/assets/milk2/app/og_image.png"
-    ],
-    "formats": [],
-    "buy_links": []
   }
 ]
