@@ -1,5 +1,35 @@
 [
   {
+    "id": "50bd7e298b6f",
+    "chart_code": "cos",
+    "chart_name": "合算シングル",
+    "date": "2026-10-26",
+    "rank": 5,
+    "status": "STAY",
+    "title": "爆裂愛してる / 好きすぎて滅!",
+    "artist": "M!LK",
+    "member": "M!LK",
+    "image": "https://m.media-amazon.com/images/I/61lMBX4YjvL._SL160_.jpg",
+    "url": "https://www.oricon.co.jp/prof/643953/products/1557291/1/",
+    "label": "リリース日： 2026年02月18日",
+    "release_date": ""
+  },
+  {
+    "id": "5a2c659fffd6",
+    "chart_code": "ja",
+    "chart_name": "アルバム",
+    "date": "2026-10-26",
+    "rank": 12,
+    "status": "DOWN",
+    "title": "LOVE ENG!NE",
+    "artist": "M!LK",
+    "member": "M!LK",
+    "image": "https://m.media-amazon.com/images/I/61o-5xOFCcL._SL160_.jpg",
+    "url": "https://www.oricon.co.jp/prof/643953/products/1574091/1/",
+    "label": "推定売上枚数：11,220枚",
+    "release_date": "2026年09月16日"
+  },
+  {
     "id": "2450f91fbe84",
     "chart_code": "bj_hot100",
     "chart_name": "BJ Hot 100",
@@ -221,6 +251,36 @@
     "source": "billboard_japan"
   },
   {
+    "id": "63b7be115fd9",
+    "chart_code": "cos",
+    "chart_name": "合算シングル",
+    "date": "2026-10-19",
+    "rank": 5,
+    "status": "UP",
+    "title": "爆裂愛してる / 好きすぎて滅!",
+    "artist": "M!LK",
+    "member": "M!LK",
+    "image": "https://m.media-amazon.com/images/I/61lMBX4YjvL._SL160_.jpg",
+    "url": "https://www.oricon.co.jp/prof/643953/products/1557291/1/",
+    "label": "リリース日： 2026年02月18日",
+    "release_date": ""
+  },
+  {
+    "id": "8783411ef31b",
+    "chart_code": "coa",
+    "chart_name": "合算アルバム",
+    "date": "2026-10-19",
+    "rank": 5,
+    "status": "STAY",
+    "title": "LOVE ENG!NE",
+    "artist": "M!LK",
+    "member": "M!LK",
+    "image": "https://m.media-amazon.com/images/I/61o-5xOFCcL._SL160_.jpg",
+    "url": "https://www.oricon.co.jp/prof/643953/products/1574091/1/",
+    "label": "リリース日： 2026年09月16日",
+    "release_date": ""
+  },
+  {
     "id": "14d3c560eb09",
     "chart_code": "st",
     "chart_name": "ストリーミング",
@@ -248,36 +308,6 @@
     "image": "",
     "url": "https://www.oricon.co.jp/prof/643953/",
     "label": "配信開始日：2026年09月07日",
-    "release_date": ""
-  },
-  {
-    "id": "8783411ef31b",
-    "chart_code": "coa",
-    "chart_name": "合算アルバム",
-    "date": "2026-10-19",
-    "rank": 5,
-    "status": "STAY",
-    "title": "LOVE ENG!NE",
-    "artist": "M!LK",
-    "member": "M!LK",
-    "image": "https://m.media-amazon.com/images/I/61o-5xOFCcL._SL160_.jpg",
-    "url": "https://www.oricon.co.jp/prof/643953/products/1574091/1/",
-    "label": "リリース日： 2026年09月16日",
-    "release_date": ""
-  },
-  {
-    "id": "63b7be115fd9",
-    "chart_code": "cos",
-    "chart_name": "合算シングル",
-    "date": "2026-10-19",
-    "rank": 5,
-    "status": "UP",
-    "title": "爆裂愛してる / 好きすぎて滅!",
-    "artist": "M!LK",
-    "member": "M!LK",
-    "image": "https://m.media-amazon.com/images/I/61lMBX4YjvL._SL160_.jpg",
-    "url": "https://www.oricon.co.jp/prof/643953/products/1557291/1/",
-    "label": "リリース日： 2026年02月18日",
     "release_date": ""
   },
   {
@@ -828,6 +858,36 @@
     "release_date": ""
   },
   {
+    "id": "f178e3a23b64",
+    "chart_code": "ja",
+    "chart_name": "アルバム",
+    "date": "2026-10-05",
+    "rank": 2,
+    "status": "DOWN",
+    "title": "LOVE ENG!NE",
+    "artist": "M!LK",
+    "member": "M!LK",
+    "image": "https://m.media-amazon.com/images/I/61o-5xOFCcL._SL160_.jpg",
+    "url": "https://www.oricon.co.jp/prof/643953/products/1574091/1/",
+    "label": "ビクターエンタテインメント",
+    "release_date": "2026年09月16日"
+  },
+  {
+    "id": "db0b06810d50",
+    "chart_code": "st",
+    "chart_name": "ストリーミング",
+    "date": "2026-10-05",
+    "rank": 11,
+    "status": "STAY",
+    "title": "爆裂愛してる",
+    "artist": "M!LK",
+    "member": "M!LK",
+    "image": "",
+    "url": "https://www.oricon.co.jp/prof/643953/",
+    "label": "配信開始日：2026年02月09日",
+    "release_date": ""
+  },
+  {
     "id": "fd1fe593d340",
     "chart_code": "cos",
     "chart_name": "合算シングル",
@@ -858,21 +918,6 @@
     "release_date": ""
   },
   {
-    "id": "f178e3a23b64",
-    "chart_code": "ja",
-    "chart_name": "アルバム",
-    "date": "2026-10-05",
-    "rank": 2,
-    "status": "DOWN",
-    "title": "LOVE ENG!NE",
-    "artist": "M!LK",
-    "member": "M!LK",
-    "image": "https://m.media-amazon.com/images/I/61o-5xOFCcL._SL160_.jpg",
-    "url": "https://www.oricon.co.jp/prof/643953/products/1574091/1/",
-    "label": "ビクターエンタテインメント",
-    "release_date": "2026年09月16日"
-  },
-  {
     "id": "8a8bdce72748",
     "chart_code": "st",
     "chart_name": "ストリーミング",
@@ -900,21 +945,6 @@
     "image": "",
     "url": "https://www.oricon.co.jp/prof/643953/",
     "label": "配信開始日：2026年09月07日",
-    "release_date": ""
-  },
-  {
-    "id": "db0b06810d50",
-    "chart_code": "st",
-    "chart_name": "ストリーミング",
-    "date": "2026-10-05",
-    "rank": 11,
-    "status": "STAY",
-    "title": "爆裂愛してる",
-    "artist": "M!LK",
-    "member": "M!LK",
-    "image": "",
-    "url": "https://www.oricon.co.jp/prof/643953/",
-    "label": "配信開始日：2026年02月09日",
     "release_date": ""
   },
   {
