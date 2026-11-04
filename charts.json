@@ -1,5 +1,20 @@
 [
   {
+    "id": "19eedb8784de",
+    "chart_code": "st",
+    "chart_name": "ストリーミング",
+    "date": "2026-11-02",
+    "rank": 10,
+    "status": "DOWN",
+    "title": "好きすぎて滅!",
+    "artist": "M!LK",
+    "member": "M!LK",
+    "image": "",
+    "url": "https://www.oricon.co.jp/prof/643953/",
+    "label": "配信開始日：2025年10月27日",
+    "release_date": ""
+  },
+  {
     "id": "e88106db6ba7",
     "chart_code": "bj_hot100",
     "chart_name": "BJ Hot 100",
