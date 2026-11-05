@@ -1,5 +1,21 @@
 [
   {
+    "id": "28bcb21c922f",
+    "chart_code": "ja",
+    "chart_name": "アルバム",
+    "date": "2026-11-02",
+    "period_type": "daily",
+    "rank": 10,
+    "status": "DOWN",
+    "title": "LOVE ENG!NE",
+    "artist": "M!LK",
+    "member": "M!LK",
+    "image": "https://m.media-amazon.com/images/I/61o-5xOFCcL._SL160_.jpg",
+    "url": "https://www.oricon.co.jp/prof/643953/products/1574091/1/",
+    "label": "ビクターエンタテインメント",
+    "release_date": "2026年09月16日"
+  },
+  {
     "id": "19eedb8784de",
     "chart_code": "st",
     "chart_name": "ストリーミング",
@@ -795,6 +811,21 @@
     "url": "https://www.oricon.co.jp/prof/643953/products/1574091/1/",
     "label": "ビクターエンタテインメント",
     "release_date": "2026年09月16日"
+  },
+  {
+    "id": "79487cce6be8",
+    "chart_code": "st",
+    "chart_name": "ストリーミング",
+    "date": "2026-10-12",
+    "rank": 4,
+    "status": "UP",
+    "title": "好きすぎて滅!",
+    "artist": "M!LK",
+    "member": "M!LK",
+    "image": "",
+    "url": "https://www.oricon.co.jp/prof/643953/",
+    "label": "配信開始日：2025年10月27日",
+    "release_date": ""
   },
   {
     "id": "bbe9b4673c16",
