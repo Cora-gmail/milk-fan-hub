@@ -813,6 +813,21 @@
     "release_date": "2026年09月16日"
   },
   {
+    "id": "fae5ed7b3990",
+    "chart_code": "coa",
+    "chart_name": "合算アルバム",
+    "date": "2026-10-12",
+    "rank": 5,
+    "status": "DOWN",
+    "title": "LOVE ENG!NE",
+    "artist": "M!LK",
+    "member": "M!LK",
+    "image": "https://m.media-amazon.com/images/I/61o-5xOFCcL._SL160_.jpg",
+    "url": "https://www.oricon.co.jp/prof/643953/products/1574091/1/",
+    "label": "リリース日： 2026年09月16日",
+    "release_date": ""
+  },
+  {
     "id": "79487cce6be8",
     "chart_code": "st",
     "chart_name": "ストリーミング",
@@ -840,21 +855,6 @@
     "image": "https://m.media-amazon.com/images/I/61lMBX4YjvL._SL160_.jpg",
     "url": "https://www.oricon.co.jp/prof/643953/products/1557291/1/",
     "label": "リリース日： 2026年02月18日",
-    "release_date": ""
-  },
-  {
-    "id": "fae5ed7b3990",
-    "chart_code": "coa",
-    "chart_name": "合算アルバム",
-    "date": "2026-10-12",
-    "rank": 5,
-    "status": "DOWN",
-    "title": "LOVE ENG!NE",
-    "artist": "M!LK",
-    "member": "M!LK",
-    "image": "https://m.media-amazon.com/images/I/61o-5xOFCcL._SL160_.jpg",
-    "url": "https://www.oricon.co.jp/prof/643953/products/1574091/1/",
-    "label": "リリース日： 2026年09月16日",
     "release_date": ""
   },
   {
