@@ -1,5 +1,35 @@
 [
   {
+    "id": "1c1eebc09cf9",
+    "chart_code": "cos",
+    "chart_name": "合算シングル",
+    "date": "2026-11-16",
+    "rank": 13,
+    "status": "DOWN",
+    "title": "ザッツ!超常",
+    "artist": "M!LK",
+    "member": "M!LK",
+    "image": "https://contents.oricon.co.jp/img/_parts/common/ph-noimage02.png",
+    "url": "https://www.oricon.co.jp/prof/643953/",
+    "label": "リリース日： 2026年10月26日",
+    "release_date": ""
+  },
+  {
+    "id": "1a506dd75f5a",
+    "chart_code": "coa",
+    "chart_name": "合算アルバム",
+    "date": "2026-11-16",
+    "rank": 11,
+    "status": "DOWN",
+    "title": "LOVE ENG!NE",
+    "artist": "M!LK",
+    "member": "M!LK",
+    "image": "https://m.media-amazon.com/images/I/61o-5xOFCcL._SL160_.jpg",
+    "url": "https://www.oricon.co.jp/prof/643953/products/1574091/1/",
+    "label": "リリース日： 2026年09月16日",
+    "release_date": ""
+  },
+  {
     "id": "0e69ddb2b1b1",
     "chart_code": "st",
     "chart_name": "ストリーミング",
@@ -219,21 +249,6 @@
     "source": "billboard_japan"
   },
   {
-    "id": "7a5059b65f54",
-    "chart_code": "dis",
-    "chart_name": "デジタルシングル",
-    "date": "2026-11-09",
-    "rank": 2,
-    "status": "NEW",
-    "title": "ザッツ!超常",
-    "artist": "M!LK",
-    "member": "M!LK",
-    "image": "",
-    "url": "https://www.oricon.co.jp/prof/643953/",
-    "label": "配信開始日：2026年10月26日",
-    "release_date": ""
-  },
-  {
     "id": "ecfcfce6ff27",
     "chart_code": "cos",
     "chart_name": "合算シングル",
@@ -261,6 +276,21 @@
     "image": "https://m.media-amazon.com/images/I/61lMBX4YjvL._SL160_.jpg",
     "url": "https://www.oricon.co.jp/prof/643953/products/1557291/1/",
     "label": "リリース日： 2026年02月18日",
+    "release_date": ""
+  },
+  {
+    "id": "7a5059b65f54",
+    "chart_code": "dis",
+    "chart_name": "デジタルシングル",
+    "date": "2026-11-09",
+    "rank": 2,
+    "status": "NEW",
+    "title": "ザッツ!超常",
+    "artist": "M!LK",
+    "member": "M!LK",
+    "image": "",
+    "url": "https://www.oricon.co.jp/prof/643953/",
+    "label": "配信開始日：2026年10月26日",
     "release_date": ""
   },
   {
